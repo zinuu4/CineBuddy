@@ -25,6 +25,10 @@
   opacity: 1;
 }
 
+.link__active {
+  opacity: 1;
+}
+
 .link__active::before {
   content: "";
   position: absolute;

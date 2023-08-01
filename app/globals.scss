@@ -36,3 +36,9 @@ body {
   align-items: center;
   height: 100%;
 }
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--color-second);
+}
