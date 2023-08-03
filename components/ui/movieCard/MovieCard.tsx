@@ -4,25 +4,28 @@ import Image from "next/image";
 
 import styles from "./movieCard.module.scss";
 
-const MovieCard: React.FC = () => {
+interface MovieCardProps extends MovieCard {}
+
+const MovieCard: React.FC<MovieCardProps> = ({
+  img,
+  name,
+  year,
+  rating,
+  length,
+}) => {
   return (
     <div className={styles.item}>
       <Link className={styles.link} href="/home">
         <div className={styles.imageWrapper}>
-          <Image
-            className={styles.image}
-            src="/slide.webp"
-            alt="slide"
-            layout="fill"
-          />
+          <Image className={styles.image} src={img} alt="slide" layout="fill" />
         </div>
 
         <div className={styles.content}>
-          <span className={styles.rating}>6.0</span>
-          <h3 className={styles.name}>Чебурашка</h3>
+          <span className={styles.rating}>{rating}</span>
+          <h3 className={styles.name}>{name}</h3>
           <div className={styles.info}>
-            <span className={styles.year}>2022</span>
-            <span className={styles.length}>2 ч 22 мин</span>
+            <span className={styles.year}>{year}</span>
+            <span className={styles.length}>{length}</span>
           </div>
         </div>
       </Link>

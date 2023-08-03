@@ -5,14 +5,19 @@ import classNames from "classnames";
 
 import styles from "./titleWithChevron.module.scss";
 
-const TitleWithChevron: React.FC = () => {
+interface TitleWithChevronProps {
+  title: string;
+}
+
+const TitleWithChevron: React.FC<TitleWithChevronProps> = ({ title }) => {
   return (
-    <Link className={classNames("title", "title-small")} href="">
-      Комедийные фильмы
-      <span>
+    <Link className={classNames(styles.title, "title", "title-medium")} href="">
+      {title}
+      <span className={styles.iconWrapper}>
         <Image
+          className={styles.icon}
           src="/chevron.svg"
-          alt="Комедийные фильмы"
+          alt={title}
           width={15}
           height={15}
         />

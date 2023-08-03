@@ -1,11 +1,11 @@
 import CategoriesCarousel from "@/components/categoriesCarousel/CategoriesCarousel";
-import CategoriesSlider from "@/components/categoriesSlider/CategoriesSlider";
+import CategoriesList from "@/components/categoriesList/CategoriesList";
 
 export default function Home() {
   return (
     <main>
       <CategoriesCarousel />
-      <CategoriesSlider />
+      <CategoriesList />
     </main>
   );
 }
