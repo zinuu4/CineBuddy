@@ -1,0 +1,16 @@
+.card {
+  position: relative;
+  max-width: 70vw;
+  height: 30vw;
+  margin: 0 auto;
+}
+
+.img {
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .img {
+    border-radius: 8px;
+  }
+}
