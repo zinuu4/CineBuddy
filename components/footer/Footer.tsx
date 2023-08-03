@@ -6,7 +6,7 @@ import styles from "./footer.module.scss";
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <div className={classNames(styles.container, "container")}>
         <a target="_blank" href="https://github.com/zinuu4/CineBuddy">
           <Image
