@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  position: sticky;
+  height: 75px;
+  width: 100%;
+  z-index: var(--header-z-index);
+}
+
+.logo {
+  margin-right: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  width: 100%;
+}
