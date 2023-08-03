@@ -1,13 +1,11 @@
-import { TrailersCarousel } from './components/trailersCarousel/TrailersCarousel';
+import { TrailersCarousel } from '../components/trailersCarousel/TrailersCarousel';
 import CategoriesCarousel from '@/components/categoriesCarousel/CategoriesCarousel';
 import CategoriesList from '@/components/categoriesList/CategoriesList';
 
 export default function Home() {
   return (
     <main>
-      <section>
-        <TrailersCarousel />
-      </section>
+      <TrailersCarousel />
       <CategoriesCarousel />
       <CategoriesList />
     </main>
