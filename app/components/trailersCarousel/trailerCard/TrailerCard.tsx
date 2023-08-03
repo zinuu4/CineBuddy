@@ -3,32 +3,36 @@ import styles from './trailerCard.module.scss';
 import Image from 'next/image';
 
 interface ITrailerCardProps {
-  props: {
-    url: string;
-    title: string;
-    rating: number;
-    year: number;
-    genre: string;
-  };
+  url: string;
+  title: string;
+  rating: number;
+  year: number;
+  genre: string;
 }
 
-export const TrailerCard: React.FC<ITrailerCardProps> = ({ props }) => {
+export const TrailerCard: React.FC<ITrailerCardProps> = ({
+  url,
+  title,
+  rating,
+  year,
+  genre,
+}) => {
   return (
     <div className={styles.card}>
       <Image
-        src={props.url}
+        src={url}
         alt="Image"
-        fill
         className={styles.img}
-        sizes="width: 100%,   height: 30vw"
-        priority={true}
+        fill
+        sizes="width: 100%, height: 30vw"
+        priority
       />
       <div className={styles.content}>
-        <h2 className={styles.title}>{props.title}</h2>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.properties}>
-          <span className={styles.rating}>{props.rating.toFixed(1)}</span>
-          <span className={styles.year}>{props.year}</span>
-          <span className={styles.genre}>{props.genre}</span>
+          <span className={styles.rating}>{rating.toFixed(1)}</span>
+          <span className={styles.year}>{year}</span>
+          <span className={styles.genre}>{genre}</span>
         </div>
       </div>
     </div>

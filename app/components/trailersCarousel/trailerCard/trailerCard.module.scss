@@ -4,6 +4,8 @@
   height: 30vw;
   margin: 0 auto;
   font-family: var(--font-family);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 20px;
 }
 
 .img {
@@ -73,6 +75,10 @@
     bottom: 20px;
     left: 20px;
     right: 20px;
+  }
+
+  .card {
+    border-radius: 8px;
   }
 
   .img {
