@@ -19,7 +19,7 @@ interface SliderProps {
   centeredSlides?: boolean;
 }
 
-const Slider: React.FC<SliderProps> = ({
+export const Slider: React.FC<SliderProps> = ({
   slidesData,
   Card,
   slidesPerView,
@@ -66,5 +66,3 @@ const Slider: React.FC<SliderProps> = ({
     </Swiper>
   );
 };
-
-export default Slider;

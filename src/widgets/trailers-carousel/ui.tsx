@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Slider from "@/shared/ui/slider/ui";
+import { Slider } from "@/shared/ui/slider";
 
 import { TrailerCard } from "@/entities/trailer/ui/trailer-card";
 

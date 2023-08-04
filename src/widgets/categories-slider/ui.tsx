@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Slider from "@/shared/ui/slider/ui";
+import { Slider } from "@/shared/ui/slider";
 import { MovieCard } from "@/entities/movie/ui/movie-card";
 
 interface CategoriesSliderProps {
