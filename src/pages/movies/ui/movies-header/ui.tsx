@@ -4,14 +4,14 @@ import React from "react";
 import classNames from "classnames";
 import { useSearchParams } from 'next/navigation';
 
-import styles from "./moviesHeader.module.scss";
-import MoviesFilters from '../moviesFilters/MoviesFilters';
-import { genreOptions } from '../moviesFilters/MoviesFilters';
+import { MoviesFilters, genreOptions } from '@/features/movies-filters';
 
-const MoviesHeader: React.FC = () => {
+import styles from "./styles.module.scss";
+
+export const MoviesHeader: React.FC = () => {
   const searchParams = useSearchParams();
 
-  const genre = searchParams.get('genre');
+  const genre = searchParams?.get('genre');
 
   const selectedGenre = genreOptions.find(option => option.value === genre);
 
@@ -24,5 +24,3 @@ const MoviesHeader: React.FC = () => {
     </div>
   );
 };
-
-export default MoviesHeader;

@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 
-import Drawer from '@/components/ui/drawer/drawer';
+import { Drawer } from '@/shared/ui/drawer';
 
-import styles from "./moviesDrawer.module.scss";
+import styles from "./styles.module.scss";
 
 type FilterType = 'rate' | 'genre' | 'release' | 'sort';
 
@@ -27,7 +27,7 @@ interface MoviesDrawerProps {
   onChange?: (value: string) => void
 }
 
-const MoviesDrawer: React.FC<MoviesDrawerProps> = ({ filter, value, onChange }) => {
+export const MoviesDrawer: React.FC<MoviesDrawerProps> = ({ filter, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (value: string) => {
@@ -82,5 +82,3 @@ const MoviesDrawer: React.FC<MoviesDrawerProps> = ({ filter, value, onChange }) 
     </Drawer>
   );
 };
-
-export default MoviesDrawer;

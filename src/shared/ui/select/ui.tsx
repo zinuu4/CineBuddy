@@ -2,10 +2,11 @@
 
 import React, { useState, useRef } from "react";
 import { FiChevronDown, FiCheck } from 'react-icons/fi';
-
-import styles from './select.module.scss';
 import classNames from 'classnames';
-import { useClickOutside } from '@/hooks/useClickOutside';
+
+import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
+
+import styles from './styles.module.scss';
 
 interface Option {
   label: string
@@ -28,7 +29,7 @@ interface SelectorProps<T> {
   size?: Size
 }
 
-const Select = <T extends string | number>(props: SelectorProps<T>) => {
+export const Select = <T extends string | number>(props: SelectorProps<T>) => {
   const {
     name,
     options,
@@ -80,5 +81,3 @@ const Select = <T extends string | number>(props: SelectorProps<T>) => {
     </div>
   );
 };
-
-export default Select;

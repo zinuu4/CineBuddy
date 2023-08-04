@@ -4,9 +4,9 @@ import React, { useState, useRef, ReactNode } from "react";
 import classNames from 'classnames';
 import { FiX } from 'react-icons/fi';
 
-import { useClickOutside } from '@/hooks/useClickOutside';
+import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
 
-import styles from './drawer.module.scss';
+import styles from './styles.module.scss';
 
 interface DrawerProps {
   children: ReactNode
@@ -18,7 +18,7 @@ interface DrawerProps {
   onOpen?: () => void
 }
 
-const Drawer = (props: DrawerProps) => {
+export const Drawer = (props: DrawerProps) => {
   const {
     children,
     className,
@@ -52,5 +52,3 @@ const Drawer = (props: DrawerProps) => {
     </>
   );
 };
-
-export default Drawer;

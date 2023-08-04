@@ -5,12 +5,13 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import classNames from 'classnames';
 import { VscSettings, VscClose } from 'react-icons/vsc';
 
-import { createQueryString } from '@/helpers/createQuery';
+import { Select } from '@/shared/ui/select';
+import { Button } from '@/shared/ui/button';
+import { createQueryString } from '@/shared/lib/helpers/createQuery';
 
-import MoviesDrawer from './moviesDrawer/MoviesDrawer';
-import styles from './moviesFilters.module.scss';
-import Select from '../ui/select/Select';
-import ButtonBase from '../ui/buttonBase/ButtonBase';
+import { MoviesDrawer } from './movies-drawer';
+
+import styles from './styles.module.scss';
 
 export const genreOptions = [
   {
@@ -158,7 +159,7 @@ const filters: IFilters[] = [
 
 const sortFilter: IFilters = { label: 'Сортировка', name: 'sort', options: sortOptions }
 
-const MoviesFilters: React.FC = () => {
+export const MoviesFilters: React.FC = () => {
   const [filter, setFilter] = useState(initialFilter);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -171,8 +172,9 @@ const MoviesFilters: React.FC = () => {
       [name]: value
     });
 
-
-    router.push(pathname + '?' + createQueryString(name, value, searchParams))
+    if (searchParams) {
+      router.push(pathname + '?' + createQueryString(name, value, searchParams))
+    }
   }
 
   return (
@@ -195,9 +197,9 @@ const MoviesFilters: React.FC = () => {
             />
           ))}
         </div>
-        <ButtonBase className={styles.resultsBtn}>
+        <Button className={styles.resultsBtn}>
           Показать результаты
-        </ButtonBase>
+        </Button>
       </div>
       <div className={styles.options}>
         <div className={styles.container}>
@@ -227,5 +229,3 @@ const MoviesFilters: React.FC = () => {
     </section>
   );
 };
-
-export default MoviesFilters;

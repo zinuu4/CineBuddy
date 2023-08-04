@@ -1,8 +1,8 @@
 import React from "react";
 
-import MovieCard from '../ui/movieCard/MovieCard';
+import { MovieCard } from '../movie-card';
 
-import styles from "./moviesList.module.scss";
+import styles from "./styles.module.scss";
 
 const films = [
   {
@@ -105,24 +105,16 @@ const films = [
   },
 ];
 
-const MoviesList: React.FC = () => {
+export const MoviesList: React.FC = () => {
   return (
     <section className={"container"}>
       <div className={styles.list}>
         {films.map((film, index) => (
           <div className={styles.card} key={index}>
-            <MovieCard
-              img={film.img}
-              name={film.name}
-              year={film.year}
-              rating={film.rating}
-              length={film.length}
-            />
+            <MovieCard data={film} />
           </div>
         ))}
       </div>
     </section>
   );
 };
-
-export default MoviesList;
