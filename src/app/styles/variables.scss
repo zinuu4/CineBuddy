@@ -6,12 +6,25 @@
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --radius: 16px;
 
+  // animations
+  --duration: 0.3s;
+
   // colors
   --color-main: #000;
   --color-second: #e50914;
   --color-white: #fff;
-  --duration: 0.3s;
   --color-gray-200: #2a2a2e;
+  --color-gray-300: #1C1C1F;
+  --overlay-color: rgba(0,0,0,.8);
+
+  // borders
+  --rounded-sm: 6px;
+  --rounded-md: 10px;
+  --rounded-lg: 18px;
+
   // z-index
   --header-z-index: 100;
+  --select-z-index: 50;
+  --drawer-z-index: 150;
+  --filters-z-index: 125;
 }

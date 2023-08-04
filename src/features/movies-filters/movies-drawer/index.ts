@@ -1,0 +1,1 @@
+export { MoviesDrawer } from './ui';
