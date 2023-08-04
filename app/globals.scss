@@ -16,10 +16,10 @@ body {
 }
 
 .container {
-	margin: 0 auto;
-	padding-left: var(--container-offset);
-	padding-right: var(--container-offset);
-	max-width: var(--container-width);
+  margin: 0 auto;
+  padding-left: var(--container-offset);
+  padding-right: var(--container-offset);
+  max-width: var(--container-width);
 }
 
 .btn-reset {

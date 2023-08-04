@@ -1,0 +1,121 @@
+.card {
+  position: relative;
+  width: 100%;
+  height: 30vw;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: 20px;
+}
+
+.img {
+  border-radius: 20px;
+  color: transparent;
+  display: block;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.genre {
+  display: block;
+  text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.2))
+    drop-shadow(0 -1px 15px rgba(0, 0, 0, 0.12));
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.year {
+  display: block;
+  text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.2))
+    drop-shadow(0 -1px 15px rgba(0, 0, 0, 0.12));
+  font-size: 16px;
+  margin-right: 15px;
+  line-height: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: 400;
+  background-color: hsla(258, 4%, 55%, 0.32);
+  border-radius: 5px;
+  margin-right: 15px;
+  font-size: 15px;
+  line-height: 24px;
+  padding: 0 5px;
+}
+
+.properties {
+  display: flex;
+  align-items: center;
+  transition: opacity var(--duration);
+}
+
+.title {
+  position: relative;
+  text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  transition: transform var(--duration), margin-bottom var(--duration);
+}
+
+@media only screen and (max-width: 767px) {
+  .content {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .card {
+    border-radius: 8px;
+  }
+
+  .img {
+    border-radius: 8px;
+  }
+
+  .genre {
+    font-size: 8px;
+    line-height: 10px;
+  }
+
+  .year {
+    font-size: 8px;
+    margin-right: 15px;
+    line-height: 10px;
+  }
+
+  .rating {
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 6px;
+    line-height: 12px;
+    padding: 0 3px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .card {
+    height: 50vw;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+}
