@@ -1,6 +1,6 @@
-import { TrailersCarousel } from "@/shared/ui/trailers-carousel";
-import { CategoriesCarousel } from "@/shared/ui/categories-carousel";
-import { CategoriesList } from "@/widgets/categories-list";
+import { CategoriesCarousel } from "@/widgets/categories-carousel";
+import { CategoriesList } from "@/entities/category/ui/categories-list";
+import { TrailersCarousel } from "@/widgets/trailers-carousel";
 
 export default function Home() {
   return (

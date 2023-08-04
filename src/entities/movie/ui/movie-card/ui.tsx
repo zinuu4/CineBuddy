@@ -4,15 +4,12 @@ import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
-interface MovieCardProps extends MovieCard {}
+interface MovieCardProps {
+  data: MovieCard;
+}
 
-export const MovieCard: React.FC<MovieCardProps> = ({
-  img,
-  name,
-  year,
-  rating,
-  length,
-}) => {
+export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+  const { img, name, year, rating, length } = data;
   return (
     <div className={styles.item}>
       <Link className={styles.link} href="/home">

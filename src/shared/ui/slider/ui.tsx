@@ -5,22 +5,34 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import { MovieCard } from "@/entities/movie-card";
+import "./styles.scss";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-import "./styles.scss";
-
-interface CategoriesSliderProps {
-  data: MovieCard[];
+interface SliderProps {
+  slidesData: any;
+  Card: React.ComponentType<any>;
+  slidesPerView: number | "auto";
+  loop?: boolean;
+  spaceBetween?: number;
+  centeredSlides?: boolean;
 }
 
-export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => {
+const Slider: React.FC<SliderProps> = ({
+  slidesData,
+  Card,
+  slidesPerView,
+  loop,
+  spaceBetween,
+  centeredSlides,
+}) => {
   return (
     <Swiper
-      slidesPerView={6}
-      freeMode
+      slidesPerView={slidesPerView}
+      loop={loop}
+      spaceBetween={spaceBetween}
+      centeredSlides={centeredSlides}
       navigation={{
         prevEl: ".custom-prev-button",
         nextEl: ".custom-next-button",
@@ -46,18 +58,13 @@ export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => {
           alt="img"
         />
       </button>
-      {data.map(({ img, name, year, rating, length }) => (
-        <SwiperSlide key={name}>
-          <MovieCard
-            key={name}
-            img={img}
-            name={name}
-            year={year}
-            rating={rating}
-            length={length}
-          />
+      {slidesData.map((data: any, index: number) => (
+        <SwiperSlide key={index}>
+          <Card data={data} />
         </SwiperSlide>
       ))}
     </Swiper>
   );
 };
+
+export default Slider;

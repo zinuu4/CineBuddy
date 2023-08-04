@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { Logo } from "./logo";
 import { Nav } from "./nav";
-import { Profile } from "./profile";
+import { Profile } from "./profile-btn";
 import { SearchButton } from "./search-btn";
 
 import styles from "./styles.module.scss";

@@ -1,14 +1,9 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import Slider from "@/shared/ui/slider/ui";
 
-import { TrailerCard } from "@/entities/trailer-card";
-
-import "swiper/css";
-import "swiper/css/navigation";
+import { TrailerCard } from "@/entities/trailer/ui/trailer-card";
 
 export const TrailersCarousel = () => {
   const slides = [
@@ -50,49 +45,13 @@ export const TrailersCarousel = () => {
   ];
 
   return (
-    <section>
-      <Swiper
-        slidesPerView={1.5}
-        loop
-        spaceBetween={12}
-        centeredSlides
-        navigation={{
-          prevEl: ".custom-prev-button",
-          nextEl: ".custom-next-button",
-        }}
-        modules={[Navigation]}
-        className="mySwiper"
-      >
-        <button className="custom-prev-button">
-          <Image
-            className="img-prev"
-            src="/chevron.svg"
-            width={30}
-            height={30}
-            alt="img"
-          />
-        </button>
-        <button className="custom-next-button">
-          <Image
-            className="img-next"
-            src="/chevron.svg"
-            width={30}
-            height={30}
-            alt="img"
-          />
-        </button>
-        {slides.map(({ url, title, genre, rating, year }, index) => (
-          <SwiperSlide key={index}>
-            <TrailerCard
-              url={url}
-              title={title}
-              genre={genre}
-              rating={rating}
-              year={year}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </section>
+    <Slider
+      slidesData={slides}
+      Card={TrailerCard}
+      slidesPerView={1.5}
+      loop={true}
+      spaceBetween={12}
+      centeredSlides={true}
+    />
   );
 };

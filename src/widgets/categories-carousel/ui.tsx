@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
-import { CarouselSlide } from "@/entities/categories-carousel-slide";
+import { CarouselSlide } from "@/entities/category/ui/category-card";
 
 import styles from "./styles.module.scss";
 

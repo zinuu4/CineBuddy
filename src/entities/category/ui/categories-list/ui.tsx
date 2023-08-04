@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { TitleChevron } from "@/shared/ui/title-chevron";
-import { CategoriesSlider } from "@/shared/ui/categories-slider";
+import { CategoriesSlider } from "@/widgets/categories-slider";
 
 import styles from "./styles.module.scss";
 

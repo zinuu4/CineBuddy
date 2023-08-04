@@ -1,4 +1,4 @@
-import { routes } from "@/shared/routing";
+import { routes } from "@/shared/lib/routing";
 
 export const items = [
   { title: "Главная", href: routes.home },
