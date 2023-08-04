@@ -36,3 +36,16 @@
   font-weight: 200;
   font-size: 22px;
 }
+
+.triggerFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+.triggerSelected {
+  color: rgba(255,255,255,.6);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  font-weight: 200;
+}

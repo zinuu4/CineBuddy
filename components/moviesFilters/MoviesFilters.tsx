@@ -1,16 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import classNames from 'classnames';
 import { VscSettings, VscClose } from 'react-icons/vsc';
 
-import MoviesDrawer from './moviesDrawer/MoviesDrawer';
+import { createQueryString } from '@/helpers/createQuery';
 
+import MoviesDrawer from './moviesDrawer/MoviesDrawer';
 import styles from './moviesFilters.module.scss';
 import Select from '../ui/select/Select';
 import ButtonBase from '../ui/buttonBase/ButtonBase';
 
-const genreOptions = [
+export const genreOptions = [
   {
     label: 'Все',
     value: '',
@@ -53,7 +55,7 @@ const genreOptions = [
   },
 ]
 
-const ratingOptions = [
+export const ratingOptions = [
   {
     label: 'Любой рейтинг',
     value: '',
@@ -80,7 +82,7 @@ const ratingOptions = [
   },
 ]
 
-const releaseOptions = [
+export const releaseOptions = [
   {
     label: 'Все годы',
     value: '',
@@ -115,7 +117,7 @@ const releaseOptions = [
   },
 ]
 
-const sortOptions = [
+export const sortOptions = [
   {
     label: 'Рекоммендуемые',
     value: ''
@@ -131,10 +133,10 @@ const sortOptions = [
 ]
 
 const initialFilter = {
-  genre: 'all',
-  rate: 'all',
-  release: 'all',
-  sort: 'all',
+  genre: '',
+  rate: '',
+  release: '',
+  sort: '',
 }
 
 type FilterType = 'rate' | 'genre' | 'release' | 'sort';
@@ -159,12 +161,18 @@ const sortFilter: IFilters = { label: 'Сортировка', name: 'sort', opti
 const MoviesFilters: React.FC = () => {
   const [filter, setFilter] = useState(initialFilter);
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const onChange = (value: string, name: FilterType) => {
     setFilter({
       ...filter, 
       [name]: value
     });
+
+
+    router.push(pathname + '?' + createQueryString(name, value, searchParams))
   }
 
   return (

@@ -42,13 +42,15 @@ const Select = <T extends string | number>(props: SelectorProps<T>) => {
   } = props;
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement | null>(null);
-
+  
   useClickOutside(selectRef, () => setIsOpen(false))
 
   const handleChange = (value: string) => {
     onChange?.(value, name);
     setIsOpen(false);
   }
+  
+  const selectedOption = options.find((option) => option.value === value) ?? options[0];
 
   return (
     <div 
@@ -56,7 +58,7 @@ const Select = <T extends string | number>(props: SelectorProps<T>) => {
       ref={selectRef}
     >
       <div onClick={() => setIsOpen(prev => !prev)} className={styles.label}>
-        <span className={styles.value}>{label}</span>
+        <span className={styles.value}>{selectedOption.label ?? label}</span>
         <span className={styles.arrow}><FiChevronDown /></span>
       </div>
       <div className={classNames(styles.options, styles[position], styles[size])}>

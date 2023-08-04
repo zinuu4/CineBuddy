@@ -35,6 +35,8 @@ const MoviesDrawer: React.FC<MoviesDrawerProps> = ({ filter, value, onChange }) 
     setIsOpen(false);
   }
 
+  const selectedOption = filter.options.find((option) => option.value === value) ?? filter.options[0];
+
   return (
     <Drawer
       isOpen={isOpen}
@@ -44,7 +46,10 @@ const MoviesDrawer: React.FC<MoviesDrawerProps> = ({ filter, value, onChange }) 
       trigger={(
         <>
           <div className={styles.trigger}>
-            <span className={styles.triggerLabel}>{filter.label}</span>
+            <div className={styles.triggerFilter}>
+              <span className={styles.triggerLabel}>{filter.label}</span>
+              <span className={styles.triggerSelected}>{selectedOption.label}</span>
+            </div>
             <span className={styles.triggerArrow}><FiArrowRight size={22} /></span>
           </div>
           <div className={styles.divider} />
