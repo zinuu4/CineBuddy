@@ -1,1 +1,1 @@
-export { CarouselSlide } from "./ui";
+export { CarouselSlide } from './ui';

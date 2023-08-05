@@ -1,14 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import { Slider } from "@/shared/ui/slider";
-import { MovieCard } from "@/entities/movie/ui/movie-card";
+import { MovieCard } from '@/entities/movie/ui/movie-card';
+import { IMovieCard } from '@/shared/api';
+import { Slider } from '@/shared/ui/slider';
 
 interface CategoriesSliderProps {
-  data: MovieCard[];
+  data: IMovieCard[];
 }
 
-export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => {
-  return <Slider slidesData={data} Card={MovieCard} slidesPerView={6} />;
-};
+export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => (
+  <Slider slidesData={data} Card={MovieCard} slidesPerView={6} />
+);
