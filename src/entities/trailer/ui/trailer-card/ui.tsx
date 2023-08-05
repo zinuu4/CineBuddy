@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
+import Image from 'next/image';
+import React from 'react';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface ITrailerCardProps {
   data: {
@@ -18,14 +18,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
-        <Image
-          src={url}
-          alt="Image"
-          className={styles.img}
-          fill
-          sizes="width: 100%, height: 30vw"
-          priority
-        />
+        <Image src={url} alt="Image" className={styles.img} fill sizes="width: 100%, height: 30vw" priority />
         <div className={styles.content}>
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.properties}>

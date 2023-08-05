@@ -1,1 +1,1 @@
-export { CategoriesCarousel } from "./ui";
+export { CategoriesCarousel } from './ui';

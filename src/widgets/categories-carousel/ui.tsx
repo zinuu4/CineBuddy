@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import classNames from "classnames";
+import classNames from 'classnames';
+import React, { useEffect, useRef, useState } from 'react';
 
-import { CarouselSlide } from "@/entities/category/ui/category-card";
+import { CarouselSlide } from '@/entities/category/ui/category-card';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 const swiperItemsData = [
-  { title: "Лучшие", img: "/cup.svg", href: "/" },
-  { title: "Новые", img: "/fire.svg", href: "/" },
-  { title: "Мелодраммы", img: "/hearts.svg", href: "/" },
-  { title: "Ужасы", img: "/knife.svg", href: "/" },
-  { title: "Приключения", img: "/map.svg", href: "/" },
-  { title: "Фантастика", img: "/rocket.svg", href: "/" },
-  { title: "Семейные", img: "/people.svg", href: "/" },
-  { title: "Комедии", img: "/happy.svg", href: "/" },
-  { title: "Концерты", img: "/music.svg", href: "/" },
-  { title: "Военные", img: "/tank.svg", href: "/" },
+  { title: 'Лучшие', img: '/cup.svg', href: '/' },
+  { title: 'Новые', img: '/fire.svg', href: '/' },
+  { title: 'Мелодраммы', img: '/hearts.svg', href: '/' },
+  { title: 'Ужасы', img: '/knife.svg', href: '/' },
+  { title: 'Приключения', img: '/map.svg', href: '/' },
+  { title: 'Фантастика', img: '/rocket.svg', href: '/' },
+  { title: 'Семейные', img: '/people.svg', href: '/' },
+  { title: 'Комедии', img: '/happy.svg', href: '/' },
+  { title: 'Концерты', img: '/music.svg', href: '/' },
+  { title: 'Военные', img: '/tank.svg', href: '/' },
 ];
 
 export const CategoriesCarousel: React.FC = () => {
@@ -34,18 +34,19 @@ export const CategoriesCarousel: React.FC = () => {
   };
 
   useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.addEventListener("scroll", getScrollPositions);
-    }
-    if (carouselRef.current) {
-      const contentWidth = carouselRef.current.scrollWidth;
-      const containerWidth = carouselRef.current.clientWidth;
+    const currentCarouselRef = carouselRef.current;
+
+    if (currentCarouselRef) {
+      currentCarouselRef.addEventListener('scroll', getScrollPositions);
+      const contentWidth = currentCarouselRef.scrollWidth;
+      const containerWidth = currentCarouselRef.clientWidth;
       const maxScroll = contentWidth - containerWidth;
       setMaxScrollX(maxScroll);
     }
+
     return () => {
-      if (carouselRef.current) {
-        carouselRef.current.removeEventListener("scroll", getScrollPositions);
+      if (currentCarouselRef) {
+        currentCarouselRef.removeEventListener('scroll', getScrollPositions);
       }
     };
   }, []);
@@ -65,16 +66,9 @@ export const CategoriesCarousel: React.FC = () => {
       <div className="container">
         <div className={styles.base}>
           <div ref={carouselRef} className={styles.list}>
-            {swiperItemsData.map(({ title, img, href }) => {
-              return (
-                <CarouselSlide
-                  href={href}
-                  key={title}
-                  title={title}
-                  img={img}
-                />
-              );
-            })}
+            {swiperItemsData.map(({ title, img, href }) => (
+              <CarouselSlide href={href} key={title} title={title} img={img} />
+            ))}
           </div>
         </div>
       </div>
