@@ -2,10 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { MovieCard as IMovieCard } from '@/app/types/types';
 import styles from "./styles.module.scss";
 
 interface MovieCardProps {
-  data: MovieCard;
+  data: IMovieCard
 }
 
 export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
@@ -14,7 +15,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
     <div className={styles.item}>
       <Link className={styles.link} href="/home">
         <div className={styles.imageWrapper}>
-          <Image className={styles.image} src={img} alt="slide" layout="fill" />
+          <Image className={styles.image} src={img} alt="slide" fill sizes="100%" />
         </div>
 
         <div className={styles.content}>

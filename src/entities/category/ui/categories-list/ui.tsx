@@ -1,96 +1,46 @@
 import React from "react";
-import classNames from "classnames";
 
-import { TitleChevron } from "@/shared/ui/title-chevron";
-import { CategoriesSlider } from "@/widgets/categories-slider";
+import { getCurrentYear } from '@/shared/lib/helpers/date';
 
-import styles from "./styles.module.scss";
+import { categoriesApi } from '../../api';
 
-const ComedyFilms = [
+import { CategoriesListItem } from '../categories-list-item';
+import { Genres } from '../../model/types';
+
+const api = categoriesApi();
+
+const categories = [
   {
-    img: "/slide.webp",
-    name: "Чебурашка",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
+    title: "Смотрим всей семьей",
+    fetcher: () => api.getMovies({ genre: Genres.Family, limit: 8 }),
   },
   {
-    img: "/slide.webp",
-    name: "Чебурашка1",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
+    title: "Новые фильмы",
+    fetcher: () => api.getMovies({ year: getCurrentYear(), limit: 8 }),
   },
   {
-    img: "/slide.webp",
-    name: "Чебурашка2",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
+    title: "Комедийные фильмы",
+    fetcher: () => api.getMovies({ genre: Genres.Comedy, limit: 8 }),
   },
   {
-    img: "/slide.webp",
-    name: "Чебурашка3",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
+    title: "Фильмы для взрослых",
+    fetcher: () => api.getMovies({ genre: Genres.Adult, limit: 8 }),
   },
   {
-    img: "/slide.webp",
-    name: "Чебурашка4",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
+    title: "Фантастика",
+    fetcher: () => api.getMovies({ genre: Genres.Fantasy, limit: 8 }),
   },
-  {
-    img: "/slide.webp",
-    name: "Чебурашка5",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
-  },
-  {
-    img: "/slide.webp",
-    name: "Чебурашка6",
-    year: 2022,
-    rating: 9.1,
-    length: "2 ч 22 мин",
-  },
-];
+]
 
 export const CategoriesList: React.FC = () => {
-  return (
-    <>
-      <section>
-        <div className={classNames(styles.container, "container")}>
-          <TitleChevron title="Смотрим всей семьей" />
-          <CategoriesSlider data={ComedyFilms} />
-        </div>
-      </section>
-      <section>
-        <div className={classNames(styles.container, "container")}>
-          <TitleChevron title="Новые фильмы" />
-          <CategoriesSlider data={ComedyFilms} />
-        </div>
-      </section>
-      <section>
-        <div className={classNames(styles.container, "container")}>
-          <TitleChevron title="Комедийные фильмы" />
-          <CategoriesSlider data={ComedyFilms} />
-        </div>
-      </section>
-      <section>
-        <div className={classNames(styles.container, "container")}>
-          <TitleChevron title="Фильмы для взрослых" />
-          <CategoriesSlider data={ComedyFilms} />
-        </div>
-      </section>
-      <section>
-        <div className={classNames(styles.container, "container")}>
-          <TitleChevron title="Фантастика" />
-          <CategoriesSlider data={ComedyFilms} />
-        </div>
-      </section>
-    </>
-  );
+
+  const categoriesList = categories.map((category) => (
+    <CategoriesListItem
+      key={category.title}
+      title={category.title}
+      fetcher={category.fetcher}
+    />
+  ))
+
+  return categoriesList;
 };

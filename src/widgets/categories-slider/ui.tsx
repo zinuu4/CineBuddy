@@ -3,10 +3,11 @@
 import React from "react";
 
 import { Slider } from "@/shared/ui/slider";
-import { MovieCard } from "@/entities/movie/ui/movie-card";
+import { MovieCard as IMovieCard } from '@/app/types/types';
+import { MovieCard } from '@/entities/movie/ui/movie-card';
 
 interface CategoriesSliderProps {
-  data: MovieCard[];
+  data: IMovieCard[];
 }
 
 export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => {

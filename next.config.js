@@ -8,6 +8,10 @@ const nextConfig = {
         // port: '',
         // pathname: '/account123/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'st.kp.yandex.net',
+      },
     ],
   },
 };
