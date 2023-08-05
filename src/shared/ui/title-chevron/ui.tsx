@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import classNames from "classnames";
+
+import { Title } from "../title";
 
 import styles from "./styles.module.scss";
 
@@ -11,8 +12,7 @@ interface TitleWithChevronProps {
 
 export const TitleChevron: React.FC<TitleWithChevronProps> = ({ title }) => {
   return (
-    <Link className={classNames(styles.title, "title", "title-medium")} href="">
-      {title}
+    <Title href={"/"} as={Link} title={title} className={styles.title}>
       <span className={styles.iconWrapper}>
         <Image
           className={styles.icon}
@@ -22,6 +22,6 @@ export const TitleChevron: React.FC<TitleWithChevronProps> = ({ title }) => {
           height={15}
         />
       </span>
-    </Link>
+    </Title>
   );
 };

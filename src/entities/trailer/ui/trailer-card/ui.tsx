@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import { Title } from "@/shared/ui/title";
+
 import styles from "./styles.module.scss";
 
 interface ITrailerCardProps {
@@ -27,7 +29,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
           priority
         />
         <div className={styles.content}>
-          <h2 className={styles.title}>{title}</h2>
+          <Title title={title} as={"h3"} className={styles.title} />
           <div className={styles.properties}>
             <span className={styles.rating}>{rating?.toFixed(1)}</span>
             <span className={styles.year}>{year}</span>
