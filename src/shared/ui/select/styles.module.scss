@@ -5,10 +5,10 @@
 
   &:hover {
     background-color: var(--color-gray-200);
-    
+
     transition: background-color var(--duration);
   }
-  
+
   &.selected {
     background-color: var(--color-gray-200);
     display: flex;
@@ -78,11 +78,11 @@
   &.md {
     width: calc(100% + 75px);
   }
-  
+
   &.lg {
     width: calc(100% + 115px);
   }
-  
+
   &.xl {
     width: calc(100% + 155px);
   }

@@ -15,7 +15,7 @@
   height: 100%;
   font-size: 14px;
   line-height: 22px;
-  opacity: .6;
+  opacity: 0.6;
   color: var(--color-white);
   transition: opacity var(--duration);
   text-decoration: none;
@@ -36,5 +36,12 @@
   left: -10px;
   right: -10px;
   height: 2px;
-  background: linear-gradient(270deg,transparent .17%,#E50914 15%,#fff 50%,#E50914 85%,transparent);
+  background: linear-gradient(
+    270deg,
+    transparent 0.17%,
+    #e50914 15%,
+    #fff 50%,
+    #e50914 85%,
+    transparent
+  );
 }

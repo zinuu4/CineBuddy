@@ -2,7 +2,7 @@
   @media (max-width: 768px) {
     .drawersContainer {
       position: fixed;
-      background-color: var(--overlay-color);
+      background-color: var(--color-overlay);
       z-index: var(--filters-z-index);
       top: 0;
       left: 0;
@@ -13,7 +13,9 @@
       padding: 24px 30px 30px;
       opacity: 0;
       visibility: hidden;
-      transition: opacity var(--duration), visibility var(--duration);
+      transition:
+        opacity var(--duration),
+        visibility var(--duration);
     }
 
     &.open {
@@ -25,7 +27,7 @@
       .filtersBtn {
         display: none;
       }
-      
+
       .closeBtn {
         opacity: 1;
         visibility: visible;
@@ -59,7 +61,7 @@
   cursor: pointer;
 
   &:hover {
-    color: rgba(255,255,255,.4);
+    color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -96,7 +98,7 @@
   gap: 4px;
 }
 
-.filtersHero  {
+.filtersHero {
   font-size: 35px;
   font-weight: 500;
   padding: 20px 0;

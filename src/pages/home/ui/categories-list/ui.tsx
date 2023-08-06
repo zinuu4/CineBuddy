@@ -1,94 +1,41 @@
-import classNames from 'classnames';
 import React from 'react';
 
-import { MoviesSlider } from '@/widgets/movies-slider/ui';
-import { TitleChevron } from '@/shared/ui/title-chevron';
+import { Genres } from '@/shared/api';
+import { getCurrentYear } from '@/shared/lib/helpers/date';
 
-import styles from './styles.module.scss';
+import { CategoriesListItem } from '../categories-list-item';
 
-const ComedyFilms = [
+const categories = [
   {
-    img: '/slide.webp',
-    name: 'Чебурашка',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
+    title: 'Смотрим всей семьей',
+    params: { genre: Genres.Family, limit: 8 },
   },
   {
-    img: '/slide.webp',
-    name: 'Чебурашка1',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
+    title: 'Новые фильмы',
+    params: { year: getCurrentYear(), limit: 8 },
   },
   {
-    img: '/slide.webp',
-    name: 'Чебурашка2',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
+    title: 'Комедийные фильмы',
+    params: { genre: Genres.Comedy, limit: 8 },
   },
   {
-    img: '/slide.webp',
-    name: 'Чебурашка3',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
+    title: 'Фильмы для взрослых',
+    params: { genre: Genres.Adult, limit: 8 },
   },
   {
-    img: '/slide.webp',
-    name: 'Чебурашка4',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка5',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка6',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
+    title: 'Фантастика',
+    params: { genre: Genres.Fantasy, limit: 8 },
   },
 ];
 
-export const CategoriesList: React.FC = () => (
-  <>
-    <section>
-      <div className={classNames(styles.container, 'container')}>
-        <TitleChevron title="Смотрим всей семьей" />
-        <MoviesSlider data={ComedyFilms} />
-      </div>
-    </section>
-    <section>
-      <div className={classNames(styles.container, 'container')}>
-        <TitleChevron title="Новые фильмы" />
-        <MoviesSlider data={ComedyFilms} />
-      </div>
-    </section>
-    <section>
-      <div className={classNames(styles.container, 'container')}>
-        <TitleChevron title="Комедийные фильмы" />
-        <MoviesSlider data={ComedyFilms} />
-      </div>
-    </section>
-    <section>
-      <div className={classNames(styles.container, 'container')}>
-        <TitleChevron title="Фильмы для взрослых" />
-        <MoviesSlider data={ComedyFilms} />
-      </div>
-    </section>
-    <section>
-      <div className={classNames(styles.container, 'container')}>
-        <TitleChevron title="Фантастика" />
-        <MoviesSlider data={ComedyFilms} />
-      </div>
-    </section>
-  </>
-  );
+export const CategoriesList: React.FC = () => {
+  const categoriesList = categories.map((category) => (
+    <CategoriesListItem
+      key={category.title}
+      title={category.title}
+      params={category.params}
+    />
+  ));
+
+  return categoriesList;
+};

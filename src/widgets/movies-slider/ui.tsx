@@ -17,4 +17,4 @@ export const MoviesSlider: React.FC<IMoviesSliderProps> = ({ data }) => (
     slidesPerView={6}
     spaceBetween={14}
   />
-  );
+);
