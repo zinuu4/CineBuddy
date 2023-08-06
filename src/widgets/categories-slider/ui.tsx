@@ -10,5 +10,12 @@ interface CategoriesSliderProps {
 }
 
 export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => {
-  return <Slider slidesData={data} Card={MovieCard} slidesPerView={6} />;
+  return (
+    <Slider
+      slidesData={data}
+      Card={MovieCard}
+      slidesPerView={6}
+      spaceBetween={14}
+    />
+  );
 };

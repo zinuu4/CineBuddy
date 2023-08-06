@@ -5,7 +5,7 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 
 interface TitleProps<E extends ElementType = ElementType> {
-  size?: "small" | "medium" | "large" | "xl";
+  size?: "xs" | "small" | "medium" | "large" | "xl";
   className?: string;
   as?: E;
   title: string;
