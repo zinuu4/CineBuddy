@@ -74,3 +74,9 @@ export interface IMovieCard {
   rating: string | number;
   length: string | number;
 }
+
+export interface IProfileCard {
+  avatarUrl: string;
+  name: string;
+  email: string;
+}
