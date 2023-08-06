@@ -1,0 +1,13 @@
+.item {
+  padding-top: 15px;
+  padding-bottom: 17px;
+  font-weight: 300;
+  color: var(--color-white);
+  border-top: 1px solid hsla(0,0%,100%,.2);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.item:last-child {
+  border-bottom: 1px solid hsla(0,0%,100%,.2);
+}

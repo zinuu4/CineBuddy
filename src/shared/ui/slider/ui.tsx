@@ -1,22 +1,26 @@
-"use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+'use client';
 
-import "./styles.scss";
+import Image from 'next/image';
+import React from 'react';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import "swiper/css";
-import "swiper/css/navigation";
+import './styles.scss';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 interface SliderProps {
   slidesData: any;
   Card: React.ComponentType<any>;
-  slidesPerView: number | "auto";
+  slidesPerView: number | 'auto';
   loop?: boolean;
   spaceBetween?: number;
   centeredSlides?: boolean;
+  navigation?: boolean;
+  slideClassName?: string;
 }
 
 export const Slider: React.FC<SliderProps> = ({
@@ -24,22 +28,29 @@ export const Slider: React.FC<SliderProps> = ({
   Card,
   slidesPerView,
   loop,
-  spaceBetween,
+  spaceBetween = 14,
   centeredSlides,
-}) => {
-  return (
-    <Swiper
-      slidesPerView={slidesPerView}
-      loop={loop}
-      spaceBetween={spaceBetween}
-      centeredSlides={centeredSlides}
-      navigation={{
-        prevEl: ".custom-prev-button",
-        nextEl: ".custom-next-button",
-      }}
-      modules={[Navigation]}
-      className="mySwiper"
-    >
+  navigation = true,
+  slideClassName,
+}) => (
+  <Swiper
+    slidesPerView={slidesPerView}
+    loop={loop}
+    spaceBetween={spaceBetween}
+    centeredSlides={centeredSlides}
+    navigation={
+        navigation
+          ? {
+              prevEl: '.custom-prev-button',
+              nextEl: '.custom-next-button',
+            }
+          : false
+      }
+    modules={[Navigation]}
+    className="mySwiper"
+  >
+    {navigation && (
+    <>
       <button className="custom-prev-button">
         <Image
           className="img-prev"
@@ -58,11 +69,12 @@ export const Slider: React.FC<SliderProps> = ({
           alt="img"
         />
       </button>
-      {slidesData.map((data: any, index: number) => (
-        <SwiperSlide key={index}>
-          <Card data={data} />
-        </SwiperSlide>
+    </>
+      )}
+    {slidesData.map((data: any, index: number) => (
+      <SwiperSlide className={slideClassName} key={index}>
+        <Card data={data} />
+      </SwiperSlide>
       ))}
-    </Swiper>
+  </Swiper>
   );
-};

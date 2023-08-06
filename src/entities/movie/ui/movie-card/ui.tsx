@@ -1,11 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { IMovieCard } from '@/shared/api';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface MovieCardProps {
-  data: MovieCard;
+  data: IMovieCard;
 }
 
 export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {

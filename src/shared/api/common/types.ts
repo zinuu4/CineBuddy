@@ -1,4 +1,4 @@
-interface MovieCard {
+export interface IMovieCard {
   img: string;
   name: string;
   year: string | number;
