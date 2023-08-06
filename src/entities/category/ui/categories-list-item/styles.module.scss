@@ -1,3 +1,25 @@
 .container {
   padding-bottom: 25px;
 }
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.errorWrapper p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+}
+
+.refetchBtn {
+  padding: 7px 24px;
+  background-color: var(--color-second);
+  color: white;
+  opacity: 1;
+  border: none;
+  border-radius: var(--rounded-md);
+}

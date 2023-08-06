@@ -1,8 +1,14 @@
-import axios from 'axios';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const $api = axios.create({
-  baseURL: process.env.BASE_URL,
-  headers: {
-    'X-API-KEY': process.env.API_KEY
-  }
+export const $api = createApi({
+  reducerPath: 'api',
+  baseQuery: fetchBaseQuery({ 
+    baseUrl: process.env.BASE_URL,
+    prepareHeaders: (headers) => {
+      headers.set('X-API-KEY', process.env.API_KEY ?? '')
+
+      return headers;
+    }
+  }),
+  endpoints: () => ({})
 })

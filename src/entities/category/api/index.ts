@@ -1,12 +1,12 @@
-import { AxiosError } from 'axios';
-
 import { $api } from '@/shared/api';
+
 import { LIMIT } from '@/shared/lib/consts';
 
 import { RawMovieItems, MovieCard } from '@/app/types/types';
 import { Genres } from '../model/types';
 
-interface CategoriesApiProps {
+
+export interface CategoriesApiProps {
   genre?: Genres,
   year?: number,
   sort?: string
@@ -14,41 +14,36 @@ interface CategoriesApiProps {
   limit?: number
 }
 
-export const categoriesApi = () => {
-  const getMovies = async (props: CategoriesApiProps) => {
-    try {
-      const response = await $api.get<RawMovieItems>('/v1.3/movie', {
+
+export const categoryApi = $api.injectEndpoints({
+  endpoints: (builder) => ({
+    getMovies: builder.query<MovieCard[], CategoriesApiProps>({
+      query: ({ genre, limit, sort, sortField, year }) => ({
+        url: '/v1.3/movie',
+        method: 'GET',
         params: {
-          'genres.name': props.genre,
+          'genres.name': genre,
           'poster.previewUrl': '!null',
           name: '!null',
-          year: props.year,
-          sortField: props.sortField ?? 'votes.imdb',
-          sortType: props.sort ?? '-1',
-          limit: props.limit ?? LIMIT,
+          year: year,
+          sortField: sortField ?? 'votes.imdb',
+          sortType: sort ?? '-1',
+          limit: limit ?? LIMIT,
         }
-      });
+      }),
+      transformResponse: (response: RawMovieItems) => {
+        const movies: MovieCard[] = response.docs.map((movie) => ({
+          name: movie.name,
+          img: movie.poster.previewUrl,
+          length: movie.movieLength,
+          rating: movie.rating.imdb,
+          year: movie.year
+        }))
 
-      const movies: MovieCard[] = response.data.docs.map((movie) => ({
-        name: movie.name,
-        img: movie.poster.previewUrl,
-        length: movie.movieLength,
-        rating: movie.rating.imdb,
-        year: movie.year
-      }))
+        return movies;
+      }
+    })
+  })
+})
 
-      return { 
-        movies,
-        error: null
-      };
-    } catch (error) {
-      if (error instanceof AxiosError) return { error: error.message, movies: [] }
-
-      return { error: 'Something went wrong', movies: [] }
-    }
-  }
-
-  return {
-    getMovies,
-  }
-}
+export const { useGetMoviesQuery } = categoryApi;
