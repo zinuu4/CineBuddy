@@ -1,5 +1,5 @@
 {
-  "printWidth": 120,
+  "printWidth": 80,
   "bracketSpacing": true,
   "trailingComma": "all",
   "useTabs": false,
@@ -8,6 +8,7 @@
   "jsxBracketSameLine": false,
   "endOfLine": "lf",
   "singleQuote": true,
+  "singleAttributePerLine": true,
   "overrides": [
     {
       "files": "*.{css,scss}",

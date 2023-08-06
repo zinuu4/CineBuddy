@@ -6,6 +6,7 @@
   font-family: var(--font-family);
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .img {
@@ -13,7 +14,6 @@
   color: transparent;
   display: block;
   object-fit: cover;
-  opacity: 0.8;
 }
 
 .content {
@@ -67,7 +67,9 @@
   position: relative;
   text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
-  transition: transform var(--duration), margin-bottom var(--duration);
+  transition:
+    transform var(--duration),
+    margin-bottom var(--duration);
 }
 
 @media only screen and (max-width: 767px) {
@@ -118,4 +120,12 @@
   .title {
     font-size: 12px;
   }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transform: scale(1.1);
 }
