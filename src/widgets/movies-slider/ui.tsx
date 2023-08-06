@@ -6,10 +6,15 @@ import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { IMovieCard } from '@/shared/api';
 import { Slider } from '@/shared/ui/slider';
 
-interface CategoriesSliderProps {
+interface IMoviesSliderProps {
   data: IMovieCard[];
 }
 
-export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => (
-  <Slider slidesData={data} Card={MovieCard} slidesPerView={6} />
-);
+export const MoviesSlider: React.FC<IMoviesSliderProps> = ({ data }) => (
+  <Slider
+    slidesData={data}
+    Card={MovieCard}
+    slidesPerView={6}
+    spaceBetween={14}
+  />
+  );

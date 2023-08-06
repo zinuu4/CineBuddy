@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { CategoriesSlider } from '@/widgets/categories-slider';
+import { MoviesSlider } from '@/widgets/movies-slider/ui';
 import { TitleChevron } from '@/shared/ui/title-chevron';
 
 import styles from './styles.module.scss';
@@ -63,32 +63,32 @@ export const CategoriesList: React.FC = () => (
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title="Смотрим всей семьей" />
-        <CategoriesSlider data={ComedyFilms} />
+        <MoviesSlider data={ComedyFilms} />
       </div>
     </section>
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title="Новые фильмы" />
-        <CategoriesSlider data={ComedyFilms} />
+        <MoviesSlider data={ComedyFilms} />
       </div>
     </section>
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title="Комедийные фильмы" />
-        <CategoriesSlider data={ComedyFilms} />
+        <MoviesSlider data={ComedyFilms} />
       </div>
     </section>
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title="Фильмы для взрослых" />
-        <CategoriesSlider data={ComedyFilms} />
+        <MoviesSlider data={ComedyFilms} />
       </div>
     </section>
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title="Фантастика" />
-        <CategoriesSlider data={ComedyFilms} />
+        <MoviesSlider data={ComedyFilms} />
       </div>
     </section>
   </>
-);
+  );
