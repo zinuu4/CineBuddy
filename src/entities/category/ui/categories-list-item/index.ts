@@ -1,1 +1,0 @@
-export { CategoriesListItem } from './ui';

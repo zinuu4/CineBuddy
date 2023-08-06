@@ -8,8 +8,8 @@ export const createReduxStore = () => {
       [$api.reducerPath]: $api.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat($api.middleware)
-  })
+      getDefaultMiddleware().concat($api.middleware),
+  });
 
   return store;
-}
+};

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import classNames from 'classnames';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import React, { useState } from 'react';
 import { VscSettings, VscClose } from 'react-icons/vsc';
 
-import { Select } from '@/shared/ui/select';
+import { createQueryString } from '@/shared/lib/helpers/create-query';
 import { Button } from '@/shared/ui/button';
-import { createQueryString } from '@/shared/lib/helpers/createQuery';
+import { Select } from '@/shared/ui/select';
 
 import { MoviesDrawer } from './movies-drawer';
 
@@ -54,7 +54,7 @@ export const genreOptions = [
     label: 'Мелодрамы',
     value: 'melodrama',
   },
-]
+];
 
 export const ratingOptions = [
   {
@@ -81,7 +81,7 @@ export const ratingOptions = [
     label: 'Больше 5',
     value: 'five',
   },
-]
+];
 
 export const releaseOptions = [
   {
@@ -116,48 +116,52 @@ export const releaseOptions = [
     label: '1980-1989',
     value: '1980-1989',
   },
-]
+];
 
 export const sortOptions = [
   {
     label: 'Рекоммендуемые',
-    value: ''
+    value: '',
   },
   {
     label: 'По рейтингу',
-    value: 'by rate'
+    value: 'by rate',
   },
   {
     label: 'По дате выхода',
-    value: 'by release'
+    value: 'by release',
   },
-]
+];
 
 const initialFilter = {
   genre: '',
   rate: '',
   release: '',
   sort: '',
-}
+};
 
 type FilterType = 'rate' | 'genre' | 'release' | 'sort';
 
 interface IFilters {
-  label: string
-  name: FilterType
+  label: string;
+  name: FilterType;
   options: {
-    label: string
-    value: string
-  }[]
+    label: string;
+    value: string;
+  }[];
 }
 
 const filters: IFilters[] = [
   { label: 'Жанры', name: 'genre', options: genreOptions },
   { label: 'Рейтинг', name: 'rate', options: ratingOptions },
   { label: 'Годы выхода', name: 'release', options: releaseOptions },
-]
+];
 
-const sortFilter: IFilters = { label: 'Сортировка', name: 'sort', options: sortOptions }
+const sortFilter: IFilters = {
+  label: 'Сортировка',
+  name: 'sort',
+  options: sortOptions,
+};
 
 export const MoviesFilters: React.FC = () => {
   const [filter, setFilter] = useState(initialFilter);
@@ -168,14 +172,16 @@ export const MoviesFilters: React.FC = () => {
 
   const onChange = (value: string, name: FilterType) => {
     setFilter({
-      ...filter, 
-      [name]: value
+      ...filter,
+      [name]: value,
     });
 
     if (searchParams) {
-      router.push(pathname + '?' + createQueryString(name, value, searchParams))
+      router.push(
+        `${pathname}?${createQueryString(name, value, searchParams)}`,
+      );
     }
-  }
+  };
 
   return (
     <section className={classNames(styles.root, isOpen && styles.open)}>
@@ -189,17 +195,15 @@ export const MoviesFilters: React.FC = () => {
         <h3 className={styles.filtersHero}>Фильтры</h3>
         <div className={styles.col}>
           {[...filters, sortFilter].map((filterCategory) => (
-            <MoviesDrawer 
-              key={filterCategory.name} 
-              filter={filterCategory} 
-              value={filter[filterCategory.name]} 
+            <MoviesDrawer
+              key={filterCategory.name}
+              filter={filterCategory}
+              value={filter[filterCategory.name]}
               onChange={(value: string) => onChange(value, filterCategory.name)}
             />
           ))}
         </div>
-        <Button className={styles.resultsBtn}>
-          Показать результаты
-        </Button>
+        <Button className={styles.resultsBtn}>Показать результаты</Button>
       </div>
       <div className={styles.options}>
         <div className={styles.container}>

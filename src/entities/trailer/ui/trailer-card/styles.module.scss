@@ -67,7 +67,9 @@
   position: relative;
   text-shadow: 0 0.75px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
-  transition: transform var(--duration), margin-bottom var(--duration);
+  transition:
+    transform var(--duration),
+    margin-bottom var(--duration);
 }
 
 @media only screen and (max-width: 767px) {

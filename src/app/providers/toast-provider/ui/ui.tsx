@@ -1,19 +1,17 @@
-"use client";
+'use client';
 
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 interface ToastProviderProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
-  return (
-    <>
-      {children}
-      <ToastContainer />
-    </>
-  )
-}
+export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => (
+  <>
+    {children}
+    <ToastContainer />
+  </>
+);

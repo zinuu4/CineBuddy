@@ -1,1 +1,1 @@
-export { CategoriesSlider } from "./ui";
+export { CategoriesSlider } from './ui';

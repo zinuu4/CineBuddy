@@ -32,7 +32,7 @@
   position: absolute;
   -webkit-backdrop-filter: blur(13px);
   backdrop-filter: blur(13px);
-  background: hsla(258,4%,55%,.32);
+  background: hsla(258, 4%, 55%, 0.32);
   z-index: -1;
   top: 0;
   bottom: 0;
@@ -40,12 +40,16 @@
   left: 0;
   border: none;
   border-radius: 8px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .custom-prev-button:hover::before,
 .custom-next-button:hover::before {
-  background: radial-gradient(100% 100% at 100% 0,hsla(257,5%,74%,.32) 0,hsla(258,4%,55%,.32) 100%);
+  background: radial-gradient(
+    100% 100% at 100% 0,
+    hsla(257, 5%, 74%, 0.32) 0,
+    hsla(258, 4%, 55%, 0.32) 100%
+  );
   transform: scale(1.2) translateZ(0);
 }
 
@@ -57,7 +61,8 @@
   right: 20px;
 }
 
-.img-prev, .img-next {
+.img-prev,
+.img-next {
   filter: brightness(0) invert(1);
 }
 

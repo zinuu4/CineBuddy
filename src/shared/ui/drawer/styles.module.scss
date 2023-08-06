@@ -11,7 +11,8 @@
   visibility: hidden;
 
   &.open {
-    &, .closeBtn {
+    &,
+    .closeBtn {
       opacity: 1;
       visibility: visible;
     }
@@ -22,7 +23,9 @@
   }
 
   overflow: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
 }
 
 .wrapper {
@@ -55,6 +58,6 @@
   cursor: pointer;
 
   &:hover {
-    color: rgba(255,255,255,.4);
+    color: rgba(255, 255, 255, 0.4);
   }
 }
