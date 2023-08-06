@@ -4,8 +4,9 @@ import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-import { CategoriesSlider } from '@/widgets/categories-slider';
+import { MoviesSlider } from '@/widgets/movies-slider';
 import { TitleChevron } from '@/shared/ui/title-chevron';
+import { Loader } from '@/shared/ui/loader';
 
 import { CategoriesApiProps, useGetMoviesQuery } from '../../api';
 
@@ -37,7 +38,11 @@ export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title={title} />
-        <CategoriesSlider data={data} />
+        {data ? (
+          <MoviesSlider data={data} />
+        ) : (
+          <Loader />
+        )}
       </div>
     </section>
   );
