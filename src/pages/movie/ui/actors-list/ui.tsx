@@ -7,10 +7,12 @@ import styles from "./styles.module.scss";
 
 export const ActorsList = () => {
   return (
-    <div className={classNames(styles.container, "container")}>
-      <Title title="Актеры и создатели" className={styles.title} />
-      <ActorsSlider data={actors} />
-    </div>
+    <section>
+      <div className={classNames(styles.container, "container")}>
+        <Title title="Актеры и создатели" className={styles.title} />
+        <ActorsSlider data={actors} />
+      </div>
+    </section>
   );
 };
 

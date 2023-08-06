@@ -1,0 +1,1 @@
+export { SameMoviesList } from "./ui";

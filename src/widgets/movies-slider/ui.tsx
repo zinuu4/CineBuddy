@@ -5,11 +5,11 @@ import React from "react";
 import { Slider } from "@/shared/ui/slider";
 import { MovieCard } from "@/entities/movie/ui/movie-card";
 
-interface CategoriesSliderProps {
+interface IMoviesSliderProps {
   data: MovieCard[];
 }
 
-export const CategoriesSlider: React.FC<CategoriesSliderProps> = ({ data }) => {
+export const MoviesSlider: React.FC<IMoviesSliderProps> = ({ data }) => {
   return (
     <Slider
       slidesData={data}
