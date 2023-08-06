@@ -5,8 +5,8 @@ import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import { MoviesSlider } from '@/widgets/movies-slider';
-import { TitleChevron } from '@/shared/ui/title-chevron';
 import { Loader } from '@/shared/ui/loader';
+import { TitleChevron } from '@/shared/ui/title-chevron';
 
 import { CategoriesApiProps, useGetMoviesQuery } from '../../api';
 
