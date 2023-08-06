@@ -5,10 +5,10 @@ import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import { MoviesSlider } from '@/widgets/movies-slider';
+import { CategoriesApiProps, useGetMoviesQuery } from '@/entities/movie/api';
+
 import { Loader } from '@/shared/ui/loader';
 import { TitleChevron } from '@/shared/ui/title-chevron';
-
-import { CategoriesApiProps, useGetMoviesQuery } from '../../api';
 
 import styles from './styles.module.scss';
 
