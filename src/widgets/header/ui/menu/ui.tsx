@@ -25,8 +25,8 @@ export const Menu: React.FC<MenuProps> = ({ onClose, isOpen }) => {
       <div className={classNames('container', styles.container)}>
         <ul className={styles.list}>
           {navItems.map(({ label, href }) => (
-            <li className={classNames(styles.listItem, pathname === href && styles.active)} key={href} onClick={onClose}>
-              <Link href={href} className={styles.link}>
+            <li key={href} className={classNames(styles.listItem, pathname === href && styles.active)}>
+              <Link href={href} className={styles.link} onClick={onClose}>
                 {label}
               </Link>
             </li>
