@@ -75,8 +75,9 @@ export interface IMovieCard {
   length: string | number;
 }
 
-export interface IProfileCard {
+export interface IProfile {
   avatarUrl: string;
   name: string;
+  surname: string;
   email: string;
 }

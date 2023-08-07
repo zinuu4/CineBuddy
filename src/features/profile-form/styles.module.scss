@@ -1,0 +1,14 @@
+.container {
+  padding: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.fieldInput {
+  width: calc(100% + 215px);
+}
