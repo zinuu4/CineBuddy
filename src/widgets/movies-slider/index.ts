@@ -1,0 +1,1 @@
+export { MoviesSlider } from './ui';

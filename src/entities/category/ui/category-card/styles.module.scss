@@ -1,0 +1,30 @@
+.item:not(:last-child) {
+  margin-right: 9px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 8px;
+  font-weight: 400;
+  color: var(--color-white);
+  background-color: rgba(34, 34, 37, 0.75);
+  transition: background-color var(--duration);
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: var(--color-gray-200);
+}
+
+.icon {
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.title {
+  opacity: 0.7;
+}

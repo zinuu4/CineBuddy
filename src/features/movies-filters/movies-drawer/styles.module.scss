@@ -1,0 +1,51 @@
+.content {
+  width: 100%;
+}
+
+.option {
+  cursor: pointer;
+  padding: 15px 10px;
+
+  &.selected {
+    background-color: var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.divider {
+  height: 2px;
+  background-color: var(--color-gray-200);
+}
+
+.filterName {
+  text-align: left;
+  font-size: 22px;
+  padding: 8px 10px;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.triggerLabel {
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.triggerFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+.triggerSelected {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  font-weight: 200;
+}
