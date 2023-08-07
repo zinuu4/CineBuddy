@@ -1,1 +1,2 @@
-export { MoviesFilters, genreOptions } from './ui';
+export { MoviesFilters } from './ui';
+export { genreOptions } from './config/index';

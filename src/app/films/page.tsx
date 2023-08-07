@@ -1,9 +1,9 @@
-import Movies from '@/pages/movies/ui/movies';
+import Films from '@/pages/films/films';
 
-export default function MoviesPage() {
+export default function FilmsPage() {
   return (
     <main>
-      <Movies />
+      <Films />
     </main>
   );
 }

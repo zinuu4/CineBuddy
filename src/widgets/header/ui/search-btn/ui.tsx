@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 
-import { Button } from '@/shared/ui/button';
+import { Button } from '@/shared/ui/btn-base';
 
 import styles from './styles.module.scss';
 

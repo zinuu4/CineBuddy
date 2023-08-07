@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 
 import { FactItem } from '@/entities/fact/ui/fact-card';
-import { Button } from '@/shared/ui/button';
+import { Button } from '@/shared/ui/btn-base';
 import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
@@ -20,4 +20,4 @@ export const FactsList = () => (
       <Button className={styles.btn}>Показать еще</Button>
     </div>
   </section>
-  );
+);

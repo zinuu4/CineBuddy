@@ -6,132 +6,18 @@ import React, { useState } from 'react';
 import { VscSettings, VscClose } from 'react-icons/vsc';
 
 import { createQueryString } from '@/shared/lib/helpers/create-query';
-import { Button } from '@/shared/ui/button';
+import { Button } from '@/shared/ui/btn-base';
 import { Select } from '@/shared/ui/select';
+import {
+  genreOptions,
+  ratingOptions,
+  releaseOptions,
+  sortOptions,
+} from '../config';
 
 import { MoviesDrawer } from './movies-drawer';
 
 import styles from './styles.module.scss';
-
-export const genreOptions = [
-  {
-    label: 'Все',
-    value: '',
-  },
-  {
-    label: 'Триллер',
-    value: 'thriller',
-  },
-  {
-    label: 'Ужасы',
-    value: 'horror',
-  },
-  {
-    label: 'Приключения',
-    value: 'adventure',
-  },
-  {
-    label: 'Боевики',
-    value: 'action',
-  },
-  {
-    label: 'Фантастика',
-    value: 'fantasy',
-  },
-  {
-    label: 'Научная Фантастика',
-    value: 'sci-fi',
-  },
-  {
-    label: 'Комедии',
-    value: 'comedy',
-  },
-  {
-    label: 'Драмы',
-    value: 'drama',
-  },
-  {
-    label: 'Мелодрамы',
-    value: 'melodrama',
-  },
-];
-
-export const ratingOptions = [
-  {
-    label: 'Любой рейтинг',
-    value: '',
-  },
-  {
-    label: 'Больше 9',
-    value: 'nine',
-  },
-  {
-    label: 'Больше 8',
-    value: 'eight',
-  },
-  {
-    label: 'Больше 7',
-    value: 'seven',
-  },
-  {
-    label: 'Больше 6',
-    value: 'six',
-  },
-  {
-    label: 'Больше 5',
-    value: 'five',
-  },
-];
-
-export const releaseOptions = [
-  {
-    label: 'Все годы',
-    value: '',
-  },
-  {
-    label: '2022-2023',
-    value: '2022-2023',
-  },
-  {
-    label: '2020-2021',
-    value: '2020-2021',
-  },
-  {
-    label: '2014-2019',
-    value: '2014-2019',
-  },
-  {
-    label: '2010-2014',
-    value: '2010-2014',
-  },
-  {
-    label: '2000-2009',
-    value: '2000-2009',
-  },
-  {
-    label: '1990-1999',
-    value: '1990-1999',
-  },
-  {
-    label: '1980-1989',
-    value: '1980-1989',
-  },
-];
-
-export const sortOptions = [
-  {
-    label: 'Рекоммендуемые',
-    value: '',
-  },
-  {
-    label: 'По рейтингу',
-    value: 'by rate',
-  },
-  {
-    label: 'По дате выхода',
-    value: 'by release',
-  },
-];
 
 const initialFilter = {
   genre: '',
