@@ -12,7 +12,11 @@ import { Loader } from '@/shared/ui/loader';
 
 import styles from './styles.module.scss';
 
-export const MoviesList: React.FC = () => {
+interface IMoviesListProps {
+  type: string;
+}
+
+export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   const searchParams = useSearchParams();
 
   const [limit, setLimit] = useState(30);
@@ -25,12 +29,12 @@ export const MoviesList: React.FC = () => {
   const selectedGenre = genreOptions.find((option) => option.value === genre);
 
   const {
-    data: films,
+    data: movies,
     isLoading,
     isFetching,
     isError,
   } = useGetMoviesQuery({
-    type: 'movie',
+    type,
     ...(selectedGenre?.value !== '' && { genre: selectedGenre?.value }),
     ...(selectedGenre === null && { genre: '' }),
     limit,
@@ -75,9 +79,9 @@ export const MoviesList: React.FC = () => {
   return (
     <section className="container">
       <div className={styles.list}>
-        {films?.map((film) => (
-          <div className={styles.card} key={film.img}>
-            <MovieCard data={film} />
+        {movies?.map((movie) => (
+          <div className={styles.card} key={movie.img}>
+            <MovieCard data={movie} />
           </div>
         ))}
       </div>
