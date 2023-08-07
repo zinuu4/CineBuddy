@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { MovieCard } from '../movie-card';
+import { useGetMoviesQuery } from '@/entities/movie/api';
+import { MovieCard } from '@/entities/movie/ui/movie-card';
+import { Genres } from '@/shared/api';
 
 import styles from './styles.module.scss';
 
@@ -105,14 +107,18 @@ const films = [
   },
 ];
 
-export const MoviesList: React.FC = () => (
-  <section className="container">
-    <div className={styles.list}>
-      {films.map((film, index) => (
-        <div className={styles.card} key={index}>
-          <MovieCard data={film} />
-        </div>
-      ))}
-    </div>
-  </section>
-);
+export const MoviesList: React.FC = () => {
+  const { data } = useGetMoviesQuery({ genre: Genres.Comedy, limit: 30 });
+
+  return (
+    <section className="container">
+      <div onClick={() => console.log(data)} className={styles.list}>
+        {films.map((film, index) => (
+          <div className={styles.card} key={index}>
+            <MovieCard data={film} />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
