@@ -9,15 +9,26 @@ export interface CategoriesApiProps {
   sortField?: string;
   rating?: number | string;
   limit?: number;
+  page?: number | string;
+  type?: string;
 }
 
 export const categoryApi = $api.injectEndpoints({
   endpoints: (builder) => ({
     getMovies: builder.query<IMovieCard[], CategoriesApiProps>({
-      query: ({ genre, limit, rating = '1-10', sort, sortField, year }) => ({
+      query: ({
+        type,
+        genre,
+        limit,
+        rating = '1-10',
+        sort,
+        sortField,
+        year,
+      }) => ({
         url: '/v1.3/movie',
         method: 'GET',
         params: {
+          type,
           'genres.name': genre,
           'poster.previewUrl': '!null',
           name: '!null',

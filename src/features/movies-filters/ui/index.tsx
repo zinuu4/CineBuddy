@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { VscSettings, VscClose } from 'react-icons/vsc';
 
 import { createQueryString } from '@/shared/lib/helpers/create-query';
-import { Button } from '@/shared/ui/button';
+import { Button } from '@/shared/ui/btn-base';
 import { Select } from '@/shared/ui/select';
 import {
   genreOptions,
