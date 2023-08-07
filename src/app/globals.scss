@@ -10,6 +10,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: var(--color-main);
   font-size: 16px;
   color: var(--color-white);
@@ -20,6 +23,10 @@ body {
   padding-left: var(--container-offset);
   padding-right: var(--container-offset);
   max-width: var(--container-width);
+}
+
+.pageContainer {
+  flex: 1;
 }
 
 .btn-reset {
