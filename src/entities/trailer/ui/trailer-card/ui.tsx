@@ -20,7 +20,14 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
-        <Image src={url} alt="Image" className={styles.img} fill sizes="width: 100%, height: 30vw" priority />
+        <Image
+          src={url}
+          alt="Image"
+          className={styles.img}
+          fill
+          sizes="width: 100%, height: 30vw"
+          priority
+        />
         <div className={styles.content}>
           <Title title={title} as="h3" className={styles.title} />
           <div className={styles.properties}>

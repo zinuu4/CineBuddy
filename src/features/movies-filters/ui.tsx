@@ -157,7 +157,11 @@ const filters: IFilters[] = [
   { label: 'Годы выхода', name: 'release', options: releaseOptions },
 ];
 
-const sortFilter: IFilters = { label: 'Сортировка', name: 'sort', options: sortOptions };
+const sortFilter: IFilters = {
+  label: 'Сортировка',
+  name: 'sort',
+  options: sortOptions,
+};
 
 export const MoviesFilters: React.FC = () => {
   const [filter, setFilter] = useState(initialFilter);
@@ -173,7 +177,9 @@ export const MoviesFilters: React.FC = () => {
     });
 
     if (searchParams) {
-      router.push(`${pathname}?${createQueryString(name, value, searchParams)}`);
+      router.push(
+        `${pathname}?${createQueryString(name, value, searchParams)}`,
+      );
     }
   };
 
@@ -203,7 +209,14 @@ export const MoviesFilters: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.row}>
             {filters.map(({ name, ...rest }) => (
-              <Select<FilterType> key={name} name={name} value={filter[name]} onChange={onChange} size="xl" {...rest} />
+              <Select<FilterType>
+                key={name}
+                name={name}
+                value={filter[name]}
+                onChange={onChange}
+                size="xl"
+                {...rest}
+              />
             ))}
           </div>
           <Select<FilterType>

@@ -1,6 +1,6 @@
 :root {
   // base
-  --font-family: 'Fira sans', sans-serif;
+  --font-family: "Fira sans", sans-serif;
   --content-width: 1230px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -14,13 +14,16 @@
   --color-second: #e50914;
   --color-white: #fff;
   --color-gray-200: #2a2a2e;
-  --color-gray-300: #1C1C1F;
-  --overlay-color: rgba(0,0,0,.8);
+  --color-gray-300: #1c1c1f;
+  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-warning: #fb923c;
+  --color-success: #a3e635;
 
   // borders
   --rounded-sm: 6px;
   --rounded-md: 10px;
   --rounded-lg: 18px;
+  --rounded-full: 100%;
 
   --color-gray-100: hsla(0,0%,100%,.6);
   // z-index

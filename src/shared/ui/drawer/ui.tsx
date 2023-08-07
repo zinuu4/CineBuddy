@@ -29,9 +29,15 @@ export const Drawer = (props: DrawerProps) => {
   return (
     <>
       <div onClick={onOpen}>{trigger}</div>
-      <div className={classNames(styles.drawer, open && styles.open, className)}>
+      <div
+        className={classNames(styles.drawer, open && styles.open, className)}
+      >
         <div className={styles.wrapper} ref={drawerRef}>
-          <button type="button" onClick={() => onClose?.()} className={styles.closeBtn}>
+          <button
+            type="button"
+            onClick={() => onClose?.()}
+            className={styles.closeBtn}
+          >
             <span className={styles.close}>
               <FiX size={20} />
             </span>

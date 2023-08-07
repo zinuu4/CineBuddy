@@ -7,7 +7,11 @@ import styles from './styles.module.scss';
 export const Footer: React.FC = () => (
   <footer className={styles.footer}>
     <div className={classNames(styles.container, 'container')}>
-      <a target="_blank" href="https://github.com/zinuu4/CineBuddy" rel="noreferrer">
+      <a
+        target="_blank"
+        href="https://github.com/zinuu4/CineBuddy"
+        rel="noreferrer"
+      >
         <Image
           className={styles.icon}
           src="/github.svg"

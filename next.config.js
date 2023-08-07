@@ -8,7 +8,15 @@ const nextConfig = {
         // port: '',
         // pathname: '/account123/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'st.kp.yandex.net',
+      },
     ],
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    API_KEY: process.env.API_KEY,
   },
 };
 
