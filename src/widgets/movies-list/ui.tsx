@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 import { genreOptions } from '@/features/movies-filters';
 import { useGetMoviesQuery } from '@/entities/movie/api';
 import { MovieCard } from '@/entities/movie/ui/movie-card';
-import { IMovieCard } from '@/shared/api';
 import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
 import { Loader } from '@/shared/ui/loader';
 
@@ -21,8 +20,6 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   const searchParams = useSearchParams();
 
   const [limit, setLimit] = useState(30);
-  const [movies, setMovies] = useState<IMovieCard[] | []>([]);
-  const [total, setTotal] = useState(0);
 
   const genre = searchParams?.get('genre');
   const year = searchParams?.get('release');
@@ -41,10 +38,8 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     ...(rating && { rating }),
   });
 
-  useEffect(() => {
-    setMovies(data ? data.movies : []);
-    setTotal(data ? data.total : 0);
-  }, [data]);
+  const movies = data?.movies ? data.movies : [];
+  const total = data?.total ? data.total : 0;
 
   const handleLoadMore = () => {
     setLimit((prevLimit) => prevLimit + 30);
