@@ -6,10 +6,18 @@ import styles from './styles.module.scss';
 interface ButtonBaseProps {
   className?: string;
   children: ReactNode;
+  onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonBaseProps> = ({ className, children }) => (
-  <button className={classNames('btn-reset', styles.btn, className)}>
+export const Button: React.FC<ButtonBaseProps> = ({
+  className,
+  children,
+  onClick,
+}) => (
+  <button
+    onClick={onClick}
+    className={classNames('btn-reset', styles.btn, className)}
+  >
     {children}
   </button>
 );

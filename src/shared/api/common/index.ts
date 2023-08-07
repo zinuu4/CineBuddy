@@ -1,3 +1,3 @@
-export { $api } from './api';
+export { $api, $trailerApi } from './api';
 
 export * from './types';
