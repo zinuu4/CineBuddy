@@ -2,7 +2,7 @@ import { RawMovieItems, IMovieCard, Genres, $api } from '@/shared/api';
 
 import { LIMIT } from '@/shared/lib/consts';
 
-export interface CategoriesApiProps {
+export interface ICategoriesApiProps {
   genre?: Genres | string;
   year?: number | string;
   sort?: string;
@@ -13,9 +13,14 @@ export interface CategoriesApiProps {
   type?: string;
 }
 
+interface IReturnValues {
+  movies: IMovieCard[];
+  total: number;
+}
+
 export const categoryApi = $api.injectEndpoints({
   endpoints: (builder) => ({
-    getMovies: builder.query<IMovieCard[], CategoriesApiProps>({
+    getMovies: builder.query<IReturnValues, ICategoriesApiProps>({
       query: ({
         type,
         genre,
@@ -40,7 +45,6 @@ export const categoryApi = $api.injectEndpoints({
         },
       }),
       transformResponse: (response: RawMovieItems) => {
-        console.log(response);
         const movies: IMovieCard[] = response.docs.map((movie) => ({
           name: movie.name,
           img: movie.poster.previewUrl,
@@ -48,9 +52,13 @@ export const categoryApi = $api.injectEndpoints({
           rating: movie.rating.kp.toFixed(1),
           year: movie.year,
           genre: movie.genres,
+          total: response.total,
         }));
 
-        return movies;
+        return {
+          movies,
+          total: response.total,
+        };
       },
     }),
   }),

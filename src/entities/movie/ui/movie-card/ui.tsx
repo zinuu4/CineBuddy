@@ -19,7 +19,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
           <Image
             className={styles.image}
             src={img}
-            alt="slide"
+            alt={name}
             fill
             sizes="100%"
           />

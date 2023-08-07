@@ -5,26 +5,28 @@ import styles from './styles.module.scss';
 
 interface ILoadMoreBtnProps {
   title?: string;
-  isLoading: boolean;
-  isError: boolean;
   disabled: boolean;
+  hide: boolean;
   onClick: () => void;
 }
 
 export const LoadMoreBtn: React.FC<ILoadMoreBtnProps> = ({
   title = 'Показать больше',
   onClick,
-  isLoading,
-  isError,
+  hide,
   disabled,
 }) => (
   <button
     onClick={onClick}
     disabled={disabled}
+    style={{
+      display: hide ? 'none' : 'block',
+      visibility: hide ? 'hidden' : 'visible',
+    }}
     className={classNames(
       'btn-reset',
       styles.btn,
-      isLoading || isError ? styles.disabled : '',
+      disabled ? styles.disabled : '',
     )}
   >
     {title}

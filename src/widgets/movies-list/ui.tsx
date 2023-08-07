@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { genreOptions } from '@/features/movies-filters';
 import { useGetMoviesQuery } from '@/entities/movie/api';
 import { MovieCard } from '@/entities/movie/ui/movie-card';
+import { IMovieCard } from '@/shared/api';
 import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
 import { Loader } from '@/shared/ui/loader';
 
@@ -20,6 +21,8 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   const searchParams = useSearchParams();
 
   const [limit, setLimit] = useState(30);
+  const [movies, setMovies] = useState<IMovieCard[] | []>([]);
+  const [total, setTotal] = useState(0);
 
   const genre = searchParams?.get('genre');
   const year = searchParams?.get('release');
@@ -28,20 +31,20 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
 
   const selectedGenre = genreOptions.find((option) => option.value === genre);
 
-  const {
-    data: movies,
-    isLoading,
-    isFetching,
-    isError,
-  } = useGetMoviesQuery({
+  const { data, isLoading, isFetching, isError } = useGetMoviesQuery({
     type,
+    limit,
     ...(selectedGenre?.value !== '' && { genre: selectedGenre?.value }),
     ...(selectedGenre === null && { genre: '' }),
-    limit,
     ...(year && { year }),
     ...(sort && { sortField: sort }),
     ...(rating && { rating }),
   });
+
+  useEffect(() => {
+    setMovies(data ? data.movies : []);
+    setTotal(data ? data.total : 0);
+  }, [data]);
 
   const handleLoadMore = () => {
     setLimit((prevLimit) => prevLimit + 30);
@@ -51,7 +54,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     const offset = window.innerHeight + window.pageYOffset;
     // prettier-ignore
     if (
-      offset >= document.body.offsetHeight - 1 && !(isLoading || isError || isFetching)
+      offset >= document.body.offsetHeight - 1 && !(isLoading || isError || isFetching || limit >= total)
     ) {
       handleLoadMore();
     }
@@ -63,7 +66,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  }, [isLoading, isError, isFetching]);
+  }, [isLoading, isError, isFetching, limit, total]);
 
   const notify = () =>
     toast('Something went wrong. Network error', {
@@ -87,10 +90,9 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
       </div>
       {isFetching || isLoading ? <Loader /> : null}
       <LoadMoreBtn
-        isLoading={isLoading || isFetching}
-        isError={isError}
         onClick={handleLoadMore}
         disabled={isFetching || isLoading || isError}
+        hide={limit >= total}
       />
     </section>
   );
