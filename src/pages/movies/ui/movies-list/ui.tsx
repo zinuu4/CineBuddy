@@ -1,120 +1,38 @@
+'use client';
+
+import { useSearchParams } from 'next/navigation';
 import React from 'react';
 
+import { genreOptions } from '@/features/movies-filters';
 import { useGetMoviesQuery } from '@/entities/movie/api';
 import { MovieCard } from '@/entities/movie/ui/movie-card';
-import { Genres } from '@/shared/api';
 
 import styles from './styles.module.scss';
 
-const films = [
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка1',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка2',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка3',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка4',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка5',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка6',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка1',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка2',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка3',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка4',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка5',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-  {
-    img: '/slide.webp',
-    name: 'Чебурашка6',
-    year: 2022,
-    rating: 9.1,
-    length: '2 ч 22 мин',
-  },
-];
-
 export const MoviesList: React.FC = () => {
-  const { data } = useGetMoviesQuery({ genre: Genres.Comedy, limit: 30 });
+  const searchParams = useSearchParams();
+
+  const genre = searchParams?.get('genre');
+  const year = searchParams?.get('release');
+  const rating = searchParams?.get('rate');
+  const sort = searchParams?.get('sort');
+
+  const selectedGenre = genreOptions.find((option) => option.value === genre);
+
+  const { data: films } = useGetMoviesQuery({
+    ...(selectedGenre?.value !== '' && { genre: selectedGenre?.value }),
+    ...(selectedGenre === null && { genre: '' }),
+    limit: 50,
+    ...(year && { year }),
+    ...(sort && { sortField: sort }),
+    ...(rating && { rating }),
+  });
 
   return (
     <section className="container">
-      <div onClick={() => console.log(data)} className={styles.list}>
-        {films.map((film, index) => (
-          <div className={styles.card} key={index}>
+      <div className={styles.list}>
+        {films?.map((film) => (
+          <div className={styles.card} key={film.img}>
             <MovieCard data={film} />
           </div>
         ))}

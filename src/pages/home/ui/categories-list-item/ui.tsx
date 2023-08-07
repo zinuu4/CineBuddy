@@ -38,11 +38,7 @@ export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title={title} />
-        {data ? (
-          <MoviesSlider data={data} />
-        ) : (
-          <Loader />
-        )}
+        {data ? <MoviesSlider data={data} /> : <Loader />}
       </div>
     </section>
   );
