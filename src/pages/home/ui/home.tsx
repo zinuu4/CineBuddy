@@ -1,4 +1,4 @@
-import { CategoriesList } from '@/pages/home/ui/categories-list';
+// import { CategoriesList } from '@/pages/home/ui/categories-list';
 import { CategoriesCarousel } from '@/widgets/categories-carousel';
 import { TrailersCarousel } from '@/widgets/trailers-carousel';
 
@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <TrailersCarousel />
       <CategoriesCarousel />
-      <CategoriesList />
+      {/* <CategoriesList /> */}
     </>
   );
 }

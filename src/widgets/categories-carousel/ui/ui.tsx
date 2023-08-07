@@ -1,24 +1,14 @@
 'use client';
 
 import classNames from 'classnames';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
-import { CarouselSlide } from '@/entities/category/ui/category-card';
+import { CategoryCard } from '@/entities/category/ui/category-card/ui';
+import { createQueryString } from '@/shared/lib/helpers/create-query';
+import { categories } from '../config';
 
 import styles from './styles.module.scss';
-
-const swiperItemsData = [
-  { title: 'Лучшие', img: '/cup.svg', href: '/' },
-  { title: 'Новые', img: '/fire.svg', href: '/' },
-  { title: 'Мелодраммы', img: '/hearts.svg', href: '/' },
-  { title: 'Ужасы', img: '/knife.svg', href: '/' },
-  { title: 'Приключения', img: '/map.svg', href: '/' },
-  { title: 'Фантастика', img: '/rocket.svg', href: '/' },
-  { title: 'Семейные', img: '/people.svg', href: '/' },
-  { title: 'Комедии', img: '/happy.svg', href: '/' },
-  { title: 'Концерты', img: '/music.svg', href: '/' },
-  { title: 'Военные', img: '/tank.svg', href: '/' },
-];
 
 export const CategoriesCarousel: React.FC = () => {
   const [scroll, setScroll] = useState(0);
@@ -61,13 +51,29 @@ export const CategoriesCarousel: React.FC = () => {
     }
   }, [scroll]);
 
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const onChooseCategory = (name: string, value: string) => {
+    if (searchParams) {
+      router.push(
+        `${pathname}films?${createQueryString(name, value, searchParams)}`,
+      );
+    }
+  };
+
   return (
     <section className={classNames(styles.section, boxShadowClassname)}>
       <div className="container">
         <div className={styles.base}>
           <div ref={carouselRef} className={styles.list}>
-            {swiperItemsData.map(({ title, img, href }) => (
-              <CarouselSlide href={href} key={title} title={title} img={img} />
+            {categories.map((data) => (
+              <CategoryCard
+                onClick={onChooseCategory}
+                key={data.title}
+                data={data}
+              />
             ))}
           </div>
         </div>
