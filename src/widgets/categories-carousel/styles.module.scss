@@ -17,7 +17,8 @@
   display: none;
 }
 
-.end::before, .start::after {
+.end::before,
+.start::after {
   content: "";
   display: block;
   position: absolute;

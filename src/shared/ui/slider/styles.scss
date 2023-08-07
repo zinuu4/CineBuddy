@@ -1,5 +1,4 @@
 .swiper-slide {
-  margin-right: 18px;
   border-radius: var(--radius);
 }
 
@@ -45,7 +44,11 @@
 
 .custom-prev-button:hover::before,
 .custom-next-button:hover::before {
-  background: radial-gradient(100% 100% at 100% 0, hsla(257, 5%, 74%, 0.32) 0, hsla(258, 4%, 55%, 0.32) 100%);
+  background: radial-gradient(
+    100% 100% at 100% 0,
+    hsla(257, 5%, 74%, 0.32) 0,
+    hsla(258, 4%, 55%, 0.32) 100%
+  );
   transform: scale(1.2) translateZ(0);
 }
 

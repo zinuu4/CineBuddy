@@ -105,20 +105,11 @@
     line-height: 12px;
     padding: 0 3px;
   }
-
-  .title {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
 }
 
 @media only screen and (max-width: 520px) {
   .card {
     height: 50vw;
-  }
-
-  .title {
-    font-size: 12px;
   }
 }
 

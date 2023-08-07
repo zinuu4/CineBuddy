@@ -2,7 +2,10 @@
 
 import { useEffect, MutableRefObject } from 'react';
 
-export function useClickOutside<T extends HTMLElement | null>(ref: MutableRefObject<T>, handler: () => void) {
+export function useClickOutside<T extends HTMLElement | null>(
+  ref: MutableRefObject<T>,
+  handler: () => void,
+) {
   useEffect(() => {
     const pointerHandler = (event: PointerEvent) => {
       if (!(event.target instanceof Node)) return;

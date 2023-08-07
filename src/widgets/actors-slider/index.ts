@@ -1,0 +1,1 @@
+export { ActorsSlider } from './ui';

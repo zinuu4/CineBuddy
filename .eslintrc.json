@@ -52,14 +52,10 @@
     "react/no-unknown-property": [
       "error",
       {
-        "ignore": [
-          "css"
-        ]
+        "ignore": ["css"]
       }
     ],
-    "react/no-unstable-nested-components": [
-      "warn"
-    ],
+    "react/no-unstable-nested-components": ["warn"],
     "import/extensions": 0,
     "import/no-named-as-default": 0,
     "import/prefer-default-export": 0,
@@ -67,10 +63,7 @@
     "import/no-extraneous-dependencies": 1,
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/comma-dangle": [
-      "error",
-      "only-multiline"
-    ],
+    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -86,11 +79,11 @@
       }
     ],
     "no-param-reassign": [
-			"warn",
-			{
-				"props": false
-			}
-		],
+      "warn",
+      {
+        "props": false
+      }
+    ],
     "no-underscore-dangle": 0,
     "quotes": 0,
 
@@ -118,14 +111,8 @@
         "omitLastInOneLineBlock": true
       }
     ],
-    "spaced-comment": [
-      "error",
-      "always"
-    ],
-    "eqeqeq": [
-      "error",
-      "always"
-    ],
+    "spaced-comment": ["error", "always"],
+    "eqeqeq": ["error", "always"],
     "import/no-unresolved": 0,
     "no-unused-vars": 0,
     "no-eval": "error",
@@ -151,46 +138,36 @@
       }
     ],
     "block-spacing": "error",
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
+    "object-curly-spacing": ["error", "always"],
     "object-curly-newline": 0,
     "unicorn/no-unused-properties": "warn",
     "unicorn/throw-new-error": "error",
     "unicorn/no-useless-spread": "error",
     "unicorn/no-unnecessary-await": "error",
-    "unicorn/catch-error-name": ["error", {
-      "ignore": ["^_\\d*$"]
-    }],
-    "unicorn/filename-case": ["error", {
-      "cases": {
-        "kebabCase": true,
-        "pascalCase": true
+    "unicorn/catch-error-name": [
+      "error",
+      {
+        "ignore": ["^_\\d*$"]
       }
-    }],
+    ],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "kebabCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
     "jsx-quotes": [2, "prefer-double"],
     "jsx-a11y/alt-text": [
       2,
       {
-        "elements": [
-          "img",
-          "object",
-          "area",
-          "input[type=\"image\"]"
-        ],
-        "img": [
-          "Image"
-        ],
-        "object": [
-          "Object"
-        ],
-        "area": [
-          "Area"
-        ],
-        "input[type=\"image\"]": [
-          "InputImage"
-        ]
+        "elements": ["img", "object", "area", "input[type=\"image\"]"],
+        "img": ["Image"],
+        "object": ["Object"],
+        "area": ["Area"],
+        "input[type=\"image\"]": ["InputImage"]
       }
     ],
     "jsx-a11y/label-has-associated-control": 0,
@@ -200,7 +177,13 @@
     "jsx-a11y/no-static-element-interactions": [
       2,
       {
-        "handlers": ["onMouseDown", "onMouseUp", "onKeyPress", "onKeyDown", "onKeyUp"]
+        "handlers": [
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
       }
     ],
     "react/jsx-one-expression-per-line": 0,

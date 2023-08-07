@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+
 import { IMovieCard } from '@/shared/api';
 
 import styles from './styles.module.scss';
@@ -15,7 +16,13 @@ export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
     <div className={styles.item}>
       <Link className={styles.link} href="/home">
         <div className={styles.imageWrapper}>
-          <Image className={styles.image} src={img} alt="slide" layout="fill" />
+          <Image
+            className={styles.image}
+            src={img}
+            alt="slide"
+            fill
+            sizes="100%"
+          />
         </div>
 
         <div className={styles.content}>

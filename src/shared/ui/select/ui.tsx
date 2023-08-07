@@ -13,7 +13,11 @@ interface Option {
   value: string;
 }
 
-export type Position = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+export type Position =
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right';
 
 export type Size = 'sm' | 'md' | 'lg' | 'xl';
 
@@ -54,19 +58,27 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
   const selectedOption = options.find((option) => option.value === value) ?? options[0];
 
   return (
-    <div className={classNames(styles.select, isOpen && styles.open, className)} ref={selectRef}>
+    <div
+      className={classNames(styles.select, isOpen && styles.open, className)}
+      ref={selectRef}
+    >
       <div onClick={() => setIsOpen((prev) => !prev)} className={styles.label}>
         <span className={styles.value}>{selectedOption.label ?? label}</span>
         <span className={styles.arrow}>
           <FiChevronDown />
         </span>
       </div>
-      <div className={classNames(styles.options, styles[position], styles[size])}>
+      <div
+        className={classNames(styles.options, styles[position], styles[size])}
+      >
         {options.map((option) => (
           <div
             onClick={() => handleChange(option.value)}
             key={option.value}
-            className={classNames(styles.option, option.value === value && styles.selected)}
+            className={classNames(
+              styles.option,
+              option.value === value && styles.selected,
+            )}
           >
             {option.label}
             {option.value === value && (
