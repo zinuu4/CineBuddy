@@ -13,7 +13,7 @@ interface IActorCard {
   };
 }
 
-export const ActorCard: React.FC<IActorCard> = ({ data }) => {
+export const PersonCard: React.FC<IActorCard> = ({ data }) => {
   const { img, name, profession } = data;
   return (
     <a className={styles.item}>

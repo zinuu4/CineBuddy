@@ -1,9 +1,9 @@
 'use client';
 
 import { useGetMovieQuery } from './api';
-import { ActorsList } from './ui/actors-list';
 import { FactsList } from './ui/facts-list';
 import { MovieMain } from './ui/movie-main';
+import { PersonsList } from './ui/persons-list';
 import { SameMoviesList } from './ui/same-movies-list';
 import { MovieTabs } from './ui/tabs/ui';
 
@@ -15,7 +15,7 @@ export default function Movie() {
       <MovieMain />
       <MovieTabs />
       <SameMoviesList />
-      <ActorsList />
+      <PersonsList />
       {data?.facts && <FactsList facts={data.facts} />}
     </>
   );

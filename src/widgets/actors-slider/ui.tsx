@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { ActorCard } from '@/entities/actor/ui/actor-card';
+import { PersonCard } from '@/entities/person/ui/person-card';
 import { Slider } from '@/shared/ui/slider';
 
 import styles from './styles.module.scss';
@@ -15,7 +15,7 @@ interface IActorsSliderProps {
 export const ActorsSlider: React.FC<IActorsSliderProps> = ({ data }) => (
   <Slider
     slidesData={data}
-    Card={ActorCard}
+    Card={PersonCard}
     slidesPerView="auto"
     navigation={false}
     spaceBetween={14}

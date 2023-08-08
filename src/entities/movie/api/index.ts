@@ -1,4 +1,4 @@
-import { RawMovieItems, IMovieCard, Genres, $api } from '@/shared/api';
+import { IRawMovieItems, IMovieCard, Genres, $api } from '@/shared/api';
 
 import { LIMIT } from '@/shared/lib/consts';
 
@@ -44,7 +44,7 @@ export const categoryApi = $api.injectEndpoints({
           limit: limit ?? LIMIT,
         },
       }),
-      transformResponse: (response: RawMovieItems) => {
+      transformResponse: (response: IRawMovieItems) => {
         const movies: IMovieCard[] = response.docs
           ? response.docs.map((movie) => ({
               name: movie.name,

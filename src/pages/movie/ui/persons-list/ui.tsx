@@ -11,7 +11,7 @@ const actors = [
   { img: '/nagiev.webp', name: 'Дмитрий Нагиев2', profession: 'Актер' },
 ];
 
-export const ActorsList = () => (
+export const PersonsList = () => (
   <section>
     <div className={classNames(styles.container, 'container')}>
       <Title title="Актеры и создатели" className={styles.title} />

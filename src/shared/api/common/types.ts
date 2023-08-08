@@ -32,7 +32,7 @@ export const enum Genres {
   Ceremony = 'церемония',
 }
 
-export interface ExternalId {
+export interface IExternalId {
   /**
    * ID из kinopoisk HD
    * @example "48e8d0acb0f62d8585101798eaeceec5"
@@ -44,13 +44,13 @@ export interface ExternalId {
   tmdb?: number | null;
 }
 
-export interface Name {
+export interface IName {
   name?: string;
   language?: string | null;
   type?: string | null;
 }
 
-export interface Rating {
+export interface IRating {
   /**
    * Рейтинг кинопоиска
    * @example 6.2
@@ -83,7 +83,7 @@ export interface Rating {
   await?: number | null;
 }
 
-export interface Votes {
+export interface IVotes {
   /** @example 60000 */
   kp?: string | null;
   /** @example 50000 */
@@ -107,19 +107,19 @@ export interface Votes {
   await?: number | null;
 }
 
-export interface Logo {
+export interface ILogo {
   /** Чтобы найти фильмы с этим полем, используйте: `!null` */
   url?: string | null;
 }
 
-export interface ShortImage {
+export interface IShortImage {
   /** Чтобы найти фильмы с этим полем, используйте: `!null` */
   url?: string | null;
   /** Чтобы найти фильмы с этим полем, используйте: `!null` */
   previewUrl?: string | null;
 }
 
-export interface Video {
+export interface IVideo {
   /**
    * Url трейлера
    * @example "https://www.youtube.com/embed/ZsJz2TJAPjw"
@@ -134,16 +134,16 @@ export interface Video {
   size: number;
 }
 
-export interface VideoTypes {
-  trailers?: Video[];
-  teasers: Video[];
+export interface IVideoTypes {
+  trailers?: IVideo[];
+  teasers: IVideo[];
 }
 
-export interface ItemName {
+export interface IItemName {
   name?: string;
 }
 
-export interface PersonInMovie {
+export interface IPersonInMovie {
   /**
    * Id персоны с кинопоиска
    * @example 6317
@@ -160,18 +160,18 @@ export interface PersonInMovie {
   enProfession: string;
 }
 
-export interface ReviewInfo {
+export interface IReviewInfo {
   count?: number | null;
   positiveCount?: number | null;
   percentage?: string | null;
 }
 
-export interface SeasonInfo {
+export interface ISeasonInfo {
   number?: number | null;
   episodesCount?: number | null;
 }
 
-export interface CurrencyValue {
+export interface ICurrencyValue {
   /**
    * Сумма
    * @example 207283
@@ -184,13 +184,13 @@ export interface CurrencyValue {
   currency?: string | null;
 }
 
-export interface Fees {
-  world?: CurrencyValue;
-  russia?: CurrencyValue;
-  usa?: CurrencyValue;
+export interface IFees {
+  world?: ICurrencyValue;
+  russia?: ICurrencyValue;
+  usa?: ICurrencyValue;
 }
 
-export interface Premiere {
+export interface IPremiere {
   /** @example "США" */
   country?: string | null;
   /**
@@ -216,26 +216,26 @@ export interface Premiere {
   dvd: string;
 }
 
-export interface LinkedMovie {
+export interface ILinkedMovie {
   id?: number | null;
   name: string;
   enName: string;
   alternativeName: string;
   type?: string;
-  poster: ShortImage;
+  poster: IShortImage;
 }
 
-export interface WatchabilityItem {
+export interface IWatchabilityItem {
   name?: string | null;
-  logo: Logo;
+  logo: ILogo;
   url: string;
 }
 
-export interface Watchability {
-  items?: WatchabilityItem[];
+export interface IWatchability {
+  items?: IWatchabilityItem[];
 }
 
-export interface YearRange {
+export interface IYearRange {
   /**
    * Год начала
    * @example 2022
@@ -248,7 +248,7 @@ export interface YearRange {
   end?: number | null;
 }
 
-export interface Audience {
+export interface IAudience {
   /**
    * Количество просмотров в кино
    * @example 1000
@@ -261,30 +261,30 @@ export interface Audience {
   country: string;
 }
 
-export interface FactInMovie {
+export interface IFactInMovie {
   value: string;
   type: string;
   spoiler: boolean;
 }
 
-export interface Images {
+export interface IImages {
   postersCount: number;
   backdropsCount: number;
   framesCount: number;
 }
 
-export interface VendorImage {
+export interface IVendorImage {
   name?: string | null;
   url?: string | null;
   previewUrl?: string | null;
 }
 
-export interface RawMovieItem {
+export interface IRawMovieItem {
   id: number;
   type: string;
-  externalId: ExternalId;
+  externalId: IExternalId;
   name: string;
-  rating: Rating;
+  rating: IRating;
   description: string;
   votes: {
     kp: number;
@@ -317,8 +317,8 @@ export interface RawMovieItem {
   };
 }
 
-export interface RawMovieItems {
-  docs: RawMovieItem[] | null;
+export interface IRawMovieItems {
+  docs: IRawMovieItem[];
   total: number;
   limit: number;
   page: number;
@@ -345,14 +345,14 @@ export interface IMovie {
    * @example 666
    */
   id: number;
-  externalId: ExternalId;
+  externalId: IExternalId;
   /** @example "Человек паук" */
   name?: string | null;
   /** @example "Spider man" */
   alternativeName?: string | null;
   /** @example "Spider man" */
   enName?: string | null;
-  names: Name[];
+  names: IName[];
   /**
    * Тип тайтла. Доступны: movie | tv-series | cartoon | anime | animated-series | tv-show
    * @example "movie"
@@ -379,8 +379,8 @@ export interface IMovie {
    * @example "completed"
    */
   status?: string | null;
-  rating?: Rating;
-  votes?: Votes;
+  rating?: IRating;
+  votes?: IVotes;
   /**
    * Продолжительность фильма
    * @example 120
@@ -396,22 +396,22 @@ export interface IMovie {
    * @example "16"
    */
   ageRating?: number | null;
-  logo?: Logo;
-  poster?: ShortImage;
-  backdrop?: ShortImage;
-  videos?: VideoTypes;
-  genres?: ItemName[];
-  countries?: ItemName[];
-  persons?: PersonInMovie[];
-  reviewInfo?: ReviewInfo;
-  seasonsInfo?: SeasonInfo[];
-  budget?: CurrencyValue;
-  fees?: Fees;
-  premiere?: Premiere;
-  similarMovies?: LinkedMovie[];
-  sequelsAndPrequels?: LinkedMovie[];
-  watchability?: Watchability;
-  releaseYears?: YearRange[];
+  logo?: ILogo;
+  poster?: IShortImage;
+  backdrop?: IShortImage;
+  videos?: IVideoTypes;
+  genres?: IItemName[];
+  countries?: IItemName[];
+  persons?: IPersonInMovie[];
+  reviewInfo?: IReviewInfo;
+  seasonsInfo?: ISeasonInfo[];
+  budget?: ICurrencyValue;
+  fees?: IFees;
+  premiere?: IPremiere;
+  similarMovies?: ILinkedMovie[];
+  sequelsAndPrequels?: ILinkedMovie[];
+  watchability?: IWatchability;
+  releaseYears?: IYearRange[];
   /**
    * Позиция тайтла в топ 10. Чтобы найти фильмы участвующие в рейтинге используйте: `!null`
    * @example 1
@@ -442,8 +442,8 @@ export interface IMovie {
    * @example true
    */
   isSeries: boolean;
-  audience?: Audience[] | null;
-  facts: FactInMovie[];
-  imagesInfo: Images;
-  productionCompanies: VendorImage[];
+  audience?: IAudience[] | null;
+  facts: IFactInMovie[];
+  imagesInfo: IImages;
+  productionCompanies: IVendorImage[];
 }
