@@ -14,7 +14,7 @@ export default function Movie() {
   return (
     <>
       <MovieMain />
-      <MovieTabs />
+      {data?.description && <MovieTabs description={data.description} />}
       {data?.similarMovies && <SimilarMoviesList movies={data.similarMovies} />}
       {data?.persons && <PersonsList persons={data.persons} />}
       {data?.facts && <FactsList facts={data.facts} />}
