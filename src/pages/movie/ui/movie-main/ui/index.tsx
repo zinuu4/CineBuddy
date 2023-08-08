@@ -21,8 +21,7 @@ const MainInfoData = {
 const actors = ['Дмитрий Назаров', 'Марк Богатырев', 'Дмитрий Нагиев'];
 
 export const MovieMain = () => {
-  console.log(10);
-
+  const lol = 10;
   return (
     <section className={styles.section}>
       <div className={styles.height} />

@@ -27,7 +27,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         </div>
 
         <div className={styles.content}>
-          <MovieRating rating={rating} className={styles.rating} />
+          <MovieRating rating={+rating} className={styles.rating} />
           <h3 className={styles.name}>{name}</h3>
           <div className={styles.info}>
             <span className={styles.year}>{year}</span>

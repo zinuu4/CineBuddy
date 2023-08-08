@@ -45,15 +45,16 @@ export const categoryApi = $api.injectEndpoints({
         },
       }),
       transformResponse: (response: RawMovieItems) => {
-        const movies: IMovieCard[] = response.docs.map((movie) => ({
-          name: movie.name,
-          img: movie.poster.previewUrl,
-          length: movie.movieLength,
-          rating: movie.rating.kp.toFixed(1),
-          year: movie.year,
-          genre: movie.genres,
-          total: response.total,
-        }));
+        const movies: IMovieCard[] = response.docs
+          ? response.docs.map((movie) => ({
+              name: movie.name,
+              img: movie.poster.previewUrl,
+              length: movie.movieLength,
+              rating: movie.rating.kp ? movie.rating.kp.toFixed(1) : 0,
+              year: movie.year,
+              genre: movie.genres,
+            }))
+          : [];
 
         return {
           movies,
