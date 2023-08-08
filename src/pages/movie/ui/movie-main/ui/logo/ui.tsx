@@ -11,7 +11,7 @@ interface IMovieLogoProps {
 export const MovieLogo: React.FC<IMovieLogoProps> = ({ img, alt }) => (
   <div className={styles.root}>
     <div className={styles.logo}>
-      <Image src={img} alt={alt} fill sizes="100%" />
+      <Image className={styles.img} src={img} alt={alt} fill sizes="100%" />
     </div>
   </div>
 );

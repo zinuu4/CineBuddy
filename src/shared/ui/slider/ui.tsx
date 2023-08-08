@@ -21,6 +21,7 @@ interface SliderProps {
   centeredSlides?: boolean;
   navigation?: boolean;
   slideClassName?: string;
+  swiperClassName?: string;
 }
 
 export const Slider: React.FC<SliderProps> = ({
@@ -32,6 +33,7 @@ export const Slider: React.FC<SliderProps> = ({
   centeredSlides,
   navigation = true,
   slideClassName,
+  swiperClassName,
 }) => (
   <Swiper
     slidesPerView={slidesPerView}
@@ -39,42 +41,42 @@ export const Slider: React.FC<SliderProps> = ({
     spaceBetween={spaceBetween}
     centeredSlides={centeredSlides}
     navigation={
-        navigation
-          ? {
-              prevEl: '.custom-prev-button',
-              nextEl: '.custom-next-button',
-            }
-          : false
-      }
+      navigation
+        ? {
+            prevEl: '.custom-prev-button',
+            nextEl: '.custom-next-button',
+          }
+        : false
+    }
     modules={[Navigation]}
-    className="mySwiper"
+    className={swiperClassName}
   >
     {navigation && (
-    <>
-      <button className="custom-prev-button">
-        <Image
-          className="img-prev"
-          src="/chevron.svg"
-          width={30}
-          height={30}
-          alt="img"
-        />
-      </button>
-      <button className="custom-next-button">
-        <Image
-          className="img-next"
-          src="/chevron.svg"
-          width={30}
-          height={30}
-          alt="img"
-        />
-      </button>
-    </>
-      )}
+      <>
+        <button className="custom-prev-button">
+          <Image
+            className="img-prev"
+            src="/chevron.svg"
+            width={30}
+            height={30}
+            alt="img"
+          />
+        </button>
+        <button className="custom-next-button">
+          <Image
+            className="img-next"
+            src="/chevron.svg"
+            width={30}
+            height={30}
+            alt="img"
+          />
+        </button>
+      </>
+    )}
     {slidesData.map((data: any, index: number) => (
       <SwiperSlide className={slideClassName} key={index}>
         <Card data={data} />
       </SwiperSlide>
-      ))}
+    ))}
   </Swiper>
-  );
+);

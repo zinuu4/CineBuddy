@@ -20,5 +20,6 @@ export const ActorsSlider: React.FC<IActorsSliderProps> = ({ data }) => (
     navigation={false}
     spaceBetween={14}
     slideClassName={styles.slide}
+    swiperClassName={styles.swiper}
   />
 );
