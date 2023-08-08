@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CiVolumeMute } from 'react-icons/ci';
-import { Button } from '../button';
+import { Button } from '../btn-base';
 import styles from './styles.module.scss';
 
 interface IMuteButtonProps {

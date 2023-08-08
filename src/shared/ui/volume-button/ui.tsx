@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CiVolumeHigh } from 'react-icons/ci';
-import { Button } from '../button';
+import { Button } from '../btn-base';
 import styles from './styles.module.scss';
 
 interface IVolumeButtonProps {

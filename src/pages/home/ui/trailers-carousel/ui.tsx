@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { useGetTrailersQuery } from '@/pages/home/api';
+import { useGetTrailersQuery } from '@/entities/movie/api';
 import { TrailerCard } from '@/entities/trailer/ui/trailer-card';
 import { Loader } from '@/shared/ui/loader';
 import { Slider } from '@/shared/ui/slider';
