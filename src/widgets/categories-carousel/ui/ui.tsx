@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
-import { CategoryCard } from '@/entities/category/ui/category-card/ui';
+import { CategoryCard } from '@/entities/category/ui/category-card';
 import { createQueryString } from '@/shared/lib/helpers/create-query';
 import { categories } from '../config';
 

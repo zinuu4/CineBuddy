@@ -1,1 +1,1 @@
-export { CarouselSlide } from './ui';
+export { CategoryCard } from './ui';
