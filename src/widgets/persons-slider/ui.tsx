@@ -12,7 +12,7 @@ interface IActorsSliderProps {
   data: any;
 }
 
-export const ActorsSlider: React.FC<IActorsSliderProps> = ({ data }) => (
+export const PersonsSlider: React.FC<IActorsSliderProps> = ({ data }) => (
   <Slider
     slidesData={data}
     Card={PersonCard}

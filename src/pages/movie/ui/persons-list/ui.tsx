@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { ActorsSlider } from '@/widgets/actors-slider';
+import { PersonsSlider } from '@/widgets/persons-slider';
 import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
@@ -15,7 +15,7 @@ export const PersonsList = () => (
   <section>
     <div className={classNames(styles.container, 'container')}>
       <Title title="Актеры и создатели" className={styles.title} />
-      <ActorsSlider data={actors} />
+      <PersonsSlider data={actors} />
     </div>
   </section>
 );

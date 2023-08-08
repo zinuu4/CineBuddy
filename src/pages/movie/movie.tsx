@@ -4,7 +4,7 @@ import { useGetMovieQuery } from './api';
 import { FactsList } from './ui/facts-list';
 import { MovieMain } from './ui/movie-main';
 import { PersonsList } from './ui/persons-list';
-import { SameMoviesList } from './ui/same-movies-list';
+import { SimilarMoviesList } from './ui/similar-movies';
 import { MovieTabs } from './ui/tabs/ui';
 
 export default function Movie() {
@@ -14,7 +14,7 @@ export default function Movie() {
     <>
       <MovieMain />
       <MovieTabs />
-      <SameMoviesList />
+      {data?.similarMovies && <SimilarMoviesList movies={data.similarMovies} />}
       <PersonsList />
       {data?.facts && <FactsList facts={data.facts} />}
     </>
