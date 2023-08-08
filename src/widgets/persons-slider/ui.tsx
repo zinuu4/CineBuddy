@@ -3,13 +3,13 @@
 import React from 'react';
 
 import { PersonCard } from '@/entities/person/ui/person-card';
+import { IPersonInMovie } from '@/shared/api';
 import { Slider } from '@/shared/ui/slider';
 
 import styles from './styles.module.scss';
 
 interface IActorsSliderProps {
-  // eslint-disable-next-line
-  data: any;
+  data: IPersonInMovie[];
 }
 
 export const PersonsSlider: React.FC<IActorsSliderProps> = ({ data }) => (

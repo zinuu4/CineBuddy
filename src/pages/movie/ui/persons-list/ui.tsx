@@ -1,21 +1,21 @@
 import classNames from 'classnames';
+import React from 'react';
 
 import { PersonsSlider } from '@/widgets/persons-slider';
+import { IPersonInMovie } from '@/shared/api';
 import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
 
-const actors = [
-  { img: '/nagiev.webp', name: 'Дмитрий Нагиев', profession: 'Актер' },
-  { img: '/nagiev.webp', name: 'Дмитрий Нагиев1', profession: 'Актер' },
-  { img: '/nagiev.webp', name: 'Дмитрий Нагиев2', profession: 'Актер' },
-];
+interface IPersonsListProps {
+  persons: IPersonInMovie[];
+}
 
-export const PersonsList = () => (
+export const PersonsList: React.FC<IPersonsListProps> = ({ persons }) => (
   <section>
     <div className={classNames(styles.container, 'container')}>
       <Title title="Актеры и создатели" className={styles.title} />
-      <PersonsSlider data={actors} />
+      <PersonsSlider data={persons} />
     </div>
   </section>
 );

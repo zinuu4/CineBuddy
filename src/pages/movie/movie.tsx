@@ -9,13 +9,14 @@ import { MovieTabs } from './ui/tabs/ui';
 
 export default function Movie() {
   const { data } = useGetMovieQuery({ id: 430 });
+  console.log(data);
 
   return (
     <>
       <MovieMain />
       <MovieTabs />
       {data?.similarMovies && <SimilarMoviesList movies={data.similarMovies} />}
-      <PersonsList />
+      {data?.persons && <PersonsList persons={data.persons} />}
       {data?.facts && <FactsList facts={data.facts} />}
     </>
   );
