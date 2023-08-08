@@ -90,9 +90,9 @@ export interface RawMovieItems {
 export interface IMovieCard {
   img: string;
   name: string;
-  year: string | number;
-  rating: string | number;
-  length: string | number;
+  year: number;
+  rating: number;
+  length: number;
 }
 
 export interface IProfileCard {
