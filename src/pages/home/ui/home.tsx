@@ -4,10 +4,10 @@ import { TrailersCarousel } from './trailers-carousel';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <TrailersCarousel />
       <CategoriesCarousel />
       <CategoriesList />
-    </main>
+    </>
   );
 }

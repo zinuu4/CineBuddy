@@ -8,7 +8,11 @@ import { MoviesFilters, genreOptions } from '@/features/movies-filters';
 
 import styles from './styles.module.scss';
 
-export const MoviesHeader: React.FC = () => {
+interface IMoviesHeaderProps {
+  title: string;
+}
+
+export const MoviesHeader: React.FC<IMoviesHeaderProps> = ({ title }) => {
   const searchParams = useSearchParams();
 
   const genre = searchParams?.get('genre');
@@ -18,7 +22,9 @@ export const MoviesHeader: React.FC = () => {
   return (
     <div className={classNames('container')}>
       <div className={styles.header}>
-        <h2>Фильмы {genre && `: ${selectedGenre?.label}`}</h2>
+        <h2>
+          {title} {genre && `: ${selectedGenre?.label}`}
+        </h2>
         <MoviesFilters />
       </div>
     </div>
