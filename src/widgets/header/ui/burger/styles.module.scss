@@ -1,6 +1,6 @@
 .btn {
-  opacity: 0.5;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,9 +14,14 @@
     height: 16px;
   }
 
-  &.open {
-    opacity: 0;
-    visibility: hidden;
+  @media (max-width: 768px) {
+    opacity: 0.5;
+    visibility: visible;
+
+    &.open {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   transition: opacity var(--duration);
