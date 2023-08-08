@@ -8,16 +8,26 @@ interface ButtonBaseProps
   className?: string;
   children: ReactNode;
   onClick?: () => void;
+  stylesType?: 'opacity' | 'bg';
+  size?: 'big';
 }
 
 export const Button: React.FC<ButtonBaseProps> = ({
   className,
   children,
   onClick,
+  stylesType = 'opacity',
+  size = 'big',
 }) => (
   <button
     onClick={onClick}
-    className={classNames('btn-reset', styles.btn, className)}
+    className={classNames(
+      'btn-reset',
+      stylesType === 'bg'
+        ? `${styles.bgBtn} ${styles[size]}`
+        : styles.opacityBtn,
+      className,
+    )}
   >
     {children}
   </button>

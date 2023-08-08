@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { BtnBgOpacity } from '@/shared/ui/btn-bg-opacity';
+import { Button } from '@/shared/ui/btn-base';
 
 export const FavoriteBtn = () => (
-  <BtnBgOpacity>
+  <Button stylesType="bg">
     <Image src="/bookmark.svg" alt="Add to favorites" width={22} height={22} />
-  </BtnBgOpacity>
+  </Button>
 );
