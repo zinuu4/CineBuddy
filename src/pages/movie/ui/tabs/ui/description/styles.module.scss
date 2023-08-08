@@ -18,9 +18,10 @@
   line-height: 20px;
   margin-top: 15px;
   color: rgba(#fff, 0.6);
-  color: #2067f0;
+  color: var(--color-second);
   transition: color var(--duration);
   display: block;
+  font-weight: 500;
 
   @media (max-width: 576px) {
     font-size: 14px;
@@ -30,7 +31,7 @@
 
   @media (any-hover: hover) {
     &:hover {
-      color: #0057ff;
+      color: #ce0505;
     }
   }
 }
