@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MovieRating } from '@/shared/ui/movie-rating/ui';
+import { Rating } from '@/shared/ui/rating';
 
 import styles from './styles.module.scss';
 
@@ -18,7 +18,7 @@ export const MainInfo: React.FC<MainInfoProps> = ({ data }) => {
   const { year, genre, ageRestriction, country, seasons } = data;
   return (
     <div className={styles.root}>
-      <MovieRating rating={9} showState />
+      <Rating rating={9} showState />
       <span className={styles.item}>{year}</span>
       <span className={styles.item}>{genre}</span>
       <span className={styles.item}>{ageRestriction}</span>

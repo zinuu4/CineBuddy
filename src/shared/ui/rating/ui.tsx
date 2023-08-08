@@ -8,7 +8,7 @@ interface RatingProps {
   rating: number;
 }
 
-export const MovieRating = ({
+export const Rating = ({
   showState,
   size = 'medium',
   rating,

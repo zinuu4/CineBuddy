@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { IMovieCard } from '@/shared/api';
-import { MovieRating } from '@/shared/ui/movie-rating/ui';
+import { Rating } from '@/shared/ui/rating';
 
 import styles from './styles.module.scss';
 
@@ -27,7 +27,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         </div>
 
         <div className={styles.content}>
-          <MovieRating rating={+rating} className={styles.rating} />
+          <Rating rating={+rating} className={styles.rating} />
           <h3 className={styles.name}>{name}</h3>
           <div className={styles.info}>
             <span className={styles.year}>{year}</span>
