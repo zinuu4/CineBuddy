@@ -26,6 +26,9 @@ interface IMovieMainProps {
   persons: IPersonInMovie[];
   trailers: IVideo[];
   id: number;
+  name: string;
+  isSeries: boolean;
+  seasons?: number;
 }
 
 export const MovieMain: React.FC<IMovieMainProps> = ({
@@ -41,6 +44,9 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
   persons,
   trailers,
   id,
+  name,
+  isSeries,
+  seasons,
 }) => {
   const [youTubePlayer, setYouTubePlayer] = useState(false);
   const [youTubeTrailers, setYouTubeTrailers] = useState<IVideo[]>([]);
@@ -63,7 +69,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
         />
         <div className={classNames(styles.container, 'container')}>
           <div className={styles.content}>
-            <MovieLogo img={logo} alt="img" />
+            <MovieLogo img={logo} alt={name} />
             <MainInfo
               rating={rating}
               year={year}
@@ -71,6 +77,8 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               ageRestriction={ageRestriction}
               country={country}
               length={length}
+              isSeries={isSeries}
+              seasons={seasons}
             />
             <Descr descr={shortDescription} />
             <People persons={persons} />

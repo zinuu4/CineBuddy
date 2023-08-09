@@ -32,7 +32,9 @@ export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
           <h3 className={styles.name}>{name}</h3>
           <div className={styles.info}>
             <span className={styles.year}>{year}</span>
-            <span className={styles.length}>{convertMinutes(length)}</span>
+            <span className={styles.length}>
+              {length > 1 ? convertMinutes(length) : null}
+            </span>
           </div>
         </div>
       </Link>

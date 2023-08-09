@@ -22,6 +22,7 @@ export default function Movie({ id }: IMovieProps) {
   const { data, isFetching, isLoading, isError } = useGetMovieQuery({
     id: +id,
   });
+  console.log(data);
 
   useEffect(() => {
     ErrorMsg(isError);
@@ -34,25 +35,24 @@ export default function Movie({ id }: IMovieProps) {
         <Loader />
       ) : (
         <>
-          {data?.backdrop?.url
-            && data?.logo?.url
-            && data?.countries
-            && data?.genres
-            && data?.id && (
-              <MovieMain
-                backdrop={data.backdrop.url}
-                logo={data.logo.url}
-                rating={data?.rating?.kp ?? 0}
-                year={data?.year ?? 0}
-                genre={data?.genres[0]?.name ?? ''}
-                ageRestriction={data?.ageRating ?? 0}
-                country={data?.countries[0]?.name ?? ''}
-                length={data?.movieLength ?? 0}
-                shortDescription={data?.shortDescription ?? ''}
-                persons={data?.persons ?? []}
-                trailers={data?.videos?.trailers ?? []}
-                id={data.id}
-              />
+          {data?.id && (
+            <MovieMain
+              backdrop={data?.backdrop?.url ?? ''}
+              logo={data?.logo?.url ?? ''}
+              rating={data?.rating?.kp ?? 0}
+              year={data?.year ?? 0}
+              genre={data?.genres ? data?.genres[0]?.name ?? '' : ''}
+              ageRestriction={data?.ageRating ?? 0}
+              country={data?.countries ? data?.countries[0]?.name ?? '' : ''}
+              length={data?.movieLength ?? 0}
+              shortDescription={data?.shortDescription ?? ''}
+              persons={data?.persons ?? []}
+              trailers={data?.videos?.trailers ?? []}
+              id={data.id}
+              name={data?.name ?? ''}
+              isSeries={data?.isSeries}
+              seasons={data?.seasonsInfo?.length}
+            />
             )}
           {data?.description && <MovieTabs description={data.description} />}
           {data?.similarMovies && (

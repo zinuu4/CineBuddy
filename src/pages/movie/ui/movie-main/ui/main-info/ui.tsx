@@ -12,6 +12,8 @@ interface IMainInfoProps {
   ageRestriction: number;
   country: string;
   length: number;
+  isSeries: boolean;
+  seasons?: number;
 }
 
 export const MainInfo: React.FC<IMainInfoProps> = ({
@@ -21,6 +23,8 @@ export const MainInfo: React.FC<IMainInfoProps> = ({
   ageRestriction,
   country,
   length,
+  isSeries,
+  seasons,
 }) => (
   <div className={styles.root}>
     <Rating rating={rating} showState />
@@ -28,6 +32,8 @@ export const MainInfo: React.FC<IMainInfoProps> = ({
     <span className={styles.item}>{capitalizeFirstLetter(genre)}</span>
     <span className={styles.item}>{ageRestriction}+</span>
     <span className={styles.item}>{country}</span>
-    <span className={styles.item}>{convertMinutes(length)}</span>
+    <span className={styles.item}>
+      {isSeries ? `${seasons} сезонов` : convertMinutes(length)}
+    </span>
   </div>
 );
