@@ -17,7 +17,7 @@ export default function Movie() {
       {data?.backdrop?.url
       && data?.logo?.url
       && data?.countries
-      && data?.genres && (
+      && data?.genres && data?.id && (
       <MovieMain
         backdrop={data.backdrop.url}
         logo={data.logo.url}
@@ -30,6 +30,7 @@ export default function Movie() {
         shortDescription={data?.shortDescription ?? ''}
         persons={data?.persons ?? []}
         trailers={data?.videos?.trailers ?? []}
+        id={data.id}
       />
         )}
       {data?.description && <MovieTabs description={data.description} />}

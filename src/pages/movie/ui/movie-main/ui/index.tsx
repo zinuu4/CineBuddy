@@ -5,7 +5,7 @@ import { FavoriteBtn } from '@/features/favorites';
 import { IPersonInMovie, IVideo } from '@/shared/api';
 import { Button } from '@/shared/ui/btn-base';
 import { Modal } from '@/shared/ui/modal';
-import { YouTubePlayer } from '@/shared/ui/players';
+import { YouTubePlayer, Player } from '@/shared/ui/players';
 import { Descr } from './descr';
 import { MovieLogo } from './logo';
 import { MainInfo } from './main-info';
@@ -25,6 +25,7 @@ interface IMovieMainProps {
   shortDescription: string;
   persons: IPersonInMovie[];
   trailers: IVideo[];
+  id: number;
 }
 
 export const MovieMain: React.FC<IMovieMainProps> = ({
@@ -39,9 +40,12 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
   shortDescription,
   persons,
   trailers,
+  id,
 }) => {
   const [youTubePlayer, setYouTubePlayer] = useState(false);
   const [youTubeTrailers, setYouTubeTrailers] = useState<IVideo[]>([]);
+
+  const [moviePlayer, setMoviePlayer] = useState(false);
 
   useEffect(() => {
     setYouTubeTrailers(trailers.filter(({ site }) => site === 'youtube'));
@@ -71,11 +75,15 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
             <Descr descr={shortDescription} />
             <People persons={persons} />
             <div className={styles.btns}>
-              <Button stylesType="bg" className={styles.btnWatch}>
+              <Button
+                onClick={() => setMoviePlayer(true)}
+                stylesType="bg"
+                className={styles.btnWatch}
+              >
                 <span className={styles.textWatch}>Смотреть {genre}</span>
               </Button>
               <Button
-                onClick={() => setYouTubePlayer(!youTubePlayer)}
+                onClick={() => setYouTubePlayer(true)}
                 stylesType="bg"
                 className={styles.btnTrailer}
               >
@@ -89,11 +97,19 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
       <Modal
         onClose={() => setYouTubePlayer(false)}
         isOpen={youTubePlayer}
-        className={styles.modal}
+        className={styles.trailer}
       >
         {youTubeTrailers && (
           <YouTubePlayer videoLink={youTubeTrailers[0]?.url ?? ''} />
         )}
+      </Modal>
+      <Modal
+        className={styles.movie}
+        onClose={() => setMoviePlayer(false)}
+        isOpen={moviePlayer}
+        closeClassname={styles.close}
+      >
+        {moviePlayer && <Player id={id} />}
       </Modal>
     </>
   );

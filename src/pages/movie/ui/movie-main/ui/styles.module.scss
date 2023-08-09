@@ -88,7 +88,21 @@
   background: #d01414;
 }
 
-.modal {
+.trailer {
   width: 948px;
   max-width: calc(100vw - 100px);
+}
+
+.movie {
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+  top: 25px;
+  right: 30px;
+  width: 28px;
+  height: 28px;
+  backdrop-filter: blur(7px);
+  background-color: hsla(0,0%,100%,.2);
 }
