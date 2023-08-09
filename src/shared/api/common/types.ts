@@ -329,8 +329,9 @@ export interface IMovieCard {
   img: string;
   name: string;
   year: number;
-  rating: string | number;
+  rating: number;
   length: number;
+  id: number;
 }
 
 export interface IProfileCard {

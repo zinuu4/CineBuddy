@@ -25,7 +25,7 @@ export const Rating = ({
         className,
       )}
     >
-      {rating}
+      {rating.toFixed(1)}
     </span>
   );
 };

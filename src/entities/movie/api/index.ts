@@ -4,12 +4,11 @@ import { LIMIT } from '@/shared/lib/consts';
 
 export interface ICategoriesApiProps {
   genre?: Genres | string;
-  year?: number | string;
+  year?: number;
   sort?: string;
   sortField?: string;
-  rating?: number | string;
+  rating?: number;
   limit?: number;
-  page?: number | string;
   type?: string;
 }
 
@@ -50,9 +49,10 @@ export const categoryApi = $api.injectEndpoints({
               name: movie.name,
               img: movie.poster.previewUrl,
               length: movie.movieLength,
-              rating: movie.rating.kp ? movie.rating.kp.toFixed(1) : 0,
+              rating: movie.rating.kp ? movie.rating.kp : 0,
               year: movie.year,
               genre: movie.genres,
+              id: movie.id,
             }))
           : [];
 
