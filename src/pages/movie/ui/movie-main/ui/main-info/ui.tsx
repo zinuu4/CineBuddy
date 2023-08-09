@@ -4,26 +4,29 @@ import { Rating } from '@/shared/ui/rating';
 
 import styles from './styles.module.scss';
 
-interface MainInfoProps {
-  data: {
-    year: number;
-    genre: string;
-    ageRestriction: string;
-    country: string;
-    seasons: string;
-  };
+interface IMainInfoProps {
+  rating: number;
+  year: number;
+  genre: string;
+  ageRestriction: number;
+  country: string;
+  length: number;
 }
 
-export const MainInfo: React.FC<MainInfoProps> = ({ data }) => {
-  const { year, genre, ageRestriction, country, seasons } = data;
-  return (
-    <div className={styles.root}>
-      <Rating rating={9} showState />
-      <span className={styles.item}>{year}</span>
-      <span className={styles.item}>{genre}</span>
-      <span className={styles.item}>{ageRestriction}</span>
-      <span className={styles.item}>{country}</span>
-      <span className={styles.item}>{seasons}</span>
-    </div>
-  );
-};
+export const MainInfo: React.FC<IMainInfoProps> = ({
+  rating,
+  year,
+  genre,
+  ageRestriction,
+  country,
+  length,
+}) => (
+  <div className={styles.root}>
+    <Rating rating={rating} showState />
+    <span className={styles.item}>{year}</span>
+    <span className={styles.item}>{genre}</span>
+    <span className={styles.item}>{ageRestriction}</span>
+    <span className={styles.item}>{country}</span>
+    <span className={styles.item}>{length}</span>
+  </div>
+);

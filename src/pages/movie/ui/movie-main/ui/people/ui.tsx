@@ -1,37 +1,52 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { IPersonInMovie } from '@/shared/api';
 
 import styles from './styles.module.scss';
 
 interface PeopleProps {
-  director: string;
-  actors: string[];
+  persons: IPersonInMovie[];
 }
 
-export const People: React.FC<PeopleProps> = ({ director, actors }) => (
-  <div className={styles.root}>
-    <div className={styles.row}>
-      <span className={styles.label}>Режиссер: </span>
-      <ul className={classNames('list-reset', styles.list)}>
-        <li className={styles.item}>
-          <Link className={styles.link} href="/">
-            {director}
-          </Link>
-        </li>
-      </ul>
-    </div>
-    <div className={styles.row}>
-      <span className={styles.label}>Актеры: </span>
-      <ul className={classNames('list-reset', styles.list)}>
-        {actors.map((actor) => (
-          <li key={actor} className={styles.item}>
+export const People: React.FC<PeopleProps> = ({ persons }) => {
+  const [directors, setDirectors] = useState<IPersonInMovie[]>([]);
+  const [actors, setActors] = useState<IPersonInMovie[]>([]);
+
+  useEffect(() => {
+    setDirectors(
+      persons.filter(({ enProfession }) => enProfession === 'director'),
+    );
+    setActors(persons.filter(({ enProfession }) => enProfession === 'actor'));
+  }, [persons]);
+
+  const shortActors = actors.slice(0, 3);
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.row}>
+        <span className={styles.label}>Режиссер: </span>
+        <ul className={classNames('list-reset', styles.list)}>
+          <li className={styles.item}>
             <Link className={styles.link} href="/">
-              {actor}
+              {directors[0] && directors[0].name}
             </Link>
           </li>
-        ))}
-      </ul>
+        </ul>
+      </div>
+      <div className={styles.row}>
+        <span className={styles.label}>Актеры: </span>
+        <ul className={classNames('list-reset', styles.list)}>
+          {shortActors.map(({ name }) => (
+            <li key={name} className={styles.item}>
+              <Link className={styles.link} href="/">
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  </div>
-);
+  );
+};

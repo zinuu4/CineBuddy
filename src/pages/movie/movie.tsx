@@ -11,9 +11,26 @@ export default function Movie() {
   const { data } = useGetMovieQuery({ id: 430 });
   console.log(data);
 
+  // prettier-ignore
   return (
     <>
-      <MovieMain />
+      {data?.backdrop?.url
+      && data?.logo?.url
+      && data?.countries
+      && data?.genres && (
+      <MovieMain
+        backdrop={data.backdrop.url}
+        logo={data.logo.url}
+        rating={data?.rating?.kp ?? 0}
+        year={data?.year ?? 0}
+        genre={data?.genres[0].name ?? ''}
+        ageRestriction={data?.ageRating ?? 0}
+        country={data?.countries[0].name ?? ''}
+        length={data?.movieLength ?? 0}
+        shortDescription={data?.shortDescription ?? ''}
+        persons={data?.persons ?? []}
+      />
+        )}
       {data?.description && <MovieTabs description={data.description} />}
       {data?.similarMovies && <SimilarMoviesList movies={data.similarMovies} />}
       {data?.persons && <PersonsList persons={data.persons} />}
