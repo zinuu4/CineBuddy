@@ -61,3 +61,26 @@
     line-height: 36px;
   }
 }
+
+.chevron {
+  margin-bottom: 14px;
+}
+
+.iconWrapper {
+  margin-top: 3px;
+  margin-left: 12px;
+  opacity: 0.7;
+  transform: rotate(180deg);
+}
+
+.icon {
+  display: block;
+  filter: brightness(0) invert(0.85);
+  transition: transform var(--duration);
+}
+
+@media (any-hover: hover) {
+  .title:hover .iconWrapper .icon {
+    transform: translateX(-2px);
+  }
+}
