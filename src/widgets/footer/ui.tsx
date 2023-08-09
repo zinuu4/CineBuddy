@@ -14,7 +14,7 @@ export const Footer: React.FC = () => (
       >
         <Image
           className={styles.icon}
-          src="/github.svg"
+          src="/icons/social/github.svg"
           alt="GitHub"
           width={40}
           height={40}

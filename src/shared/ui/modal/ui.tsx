@@ -37,7 +37,12 @@ export const Modal: React.FC<IModalProps> = ({
               onClick={onClose}
               className={classNames(styles.btn, closeClassname)}
             >
-              <Image src="/close.svg" alt="close" width={13} height={13} />
+              <Image
+                src="/icons/common/close.svg"
+                alt="close"
+                width={13}
+                height={13}
+              />
             </Button>
           </div>
         </div>

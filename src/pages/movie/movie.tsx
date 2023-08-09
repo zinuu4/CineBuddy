@@ -22,7 +22,6 @@ export default function Movie({ id }: IMovieProps) {
   const { data, isFetching, isLoading, isError } = useGetMovieQuery({
     id: +id,
   });
-  console.log(data);
 
   useEffect(() => {
     ErrorMsg(isError);

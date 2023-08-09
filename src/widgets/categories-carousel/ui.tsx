@@ -8,16 +8,16 @@ import { CarouselSlide } from '@/entities/category/ui/category-card';
 import styles from './styles.module.scss';
 
 const swiperItemsData = [
-  { title: 'Лучшие', img: '/cup.svg', href: '/' },
-  { title: 'Новые', img: '/fire.svg', href: '/' },
-  { title: 'Мелодраммы', img: '/hearts.svg', href: '/' },
-  { title: 'Ужасы', img: '/knife.svg', href: '/' },
-  { title: 'Приключения', img: '/map.svg', href: '/' },
-  { title: 'Фантастика', img: '/rocket.svg', href: '/' },
-  { title: 'Семейные', img: '/people.svg', href: '/' },
-  { title: 'Комедии', img: '/happy.svg', href: '/' },
-  { title: 'Концерты', img: '/music.svg', href: '/' },
-  { title: 'Военные', img: '/tank.svg', href: '/' },
+  { title: 'Лучшие', img: '/icons/genres/cup.svg', href: '/' },
+  { title: 'Новые', img: '/icons/genres/fire.svg', href: '/' },
+  { title: 'Мелодраммы', img: '/icons/genres/hearts.svg', href: '/' },
+  { title: 'Ужасы', img: '/icons/genres/knife.svg', href: '/' },
+  { title: 'Приключения', img: '/icons/genres/map.svg', href: '/' },
+  { title: 'Фантастика', img: '/icons/genres/rocket.svg', href: '/' },
+  { title: 'Семейные', img: '/icons/genres/people.svg', href: '/' },
+  { title: 'Комедии', img: '/icons/genres/happy.svg', href: '/' },
+  { title: 'Концерты', img: '/icons/genres/music.svg', href: '/' },
+  { title: 'Военные', img: '/icons/genres/tank.svg', href: '/' },
 ];
 
 export const CategoriesCarousel: React.FC = () => {

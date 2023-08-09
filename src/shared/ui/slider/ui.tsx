@@ -56,7 +56,7 @@ export const Slider: React.FC<SliderProps> = ({
         <button className="custom-prev-button">
           <Image
             className="img-prev"
-            src="/chevron.svg"
+            src="/icons/common/chevron.svg"
             width={30}
             height={30}
             alt="img"
@@ -65,7 +65,7 @@ export const Slider: React.FC<SliderProps> = ({
         <button className="custom-next-button">
           <Image
             className="img-next"
-            src="/chevron.svg"
+            src="/icons/common/chevron.svg"
             width={30}
             height={30}
             alt="img"

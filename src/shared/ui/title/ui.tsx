@@ -46,7 +46,7 @@ export const Title: React.FC<TitleProps> = ({
         <span className={styles.iconWrapper}>
           <Image
             className={styles.icon}
-            src="/chevron.svg"
+            src="/icons/common/chevron.svg"
             alt={title}
             width={15}
             height={15}
