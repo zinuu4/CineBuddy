@@ -87,3 +87,8 @@
 .btnWatch:hover::before {
   background: #d01414;
 }
+
+.modal {
+  width: 948px;
+  max-width: calc(100vw - 100px);
+}

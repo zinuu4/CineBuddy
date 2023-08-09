@@ -29,6 +29,7 @@ export default function Movie() {
         length={data?.movieLength ?? 0}
         shortDescription={data?.shortDescription ?? ''}
         persons={data?.persons ?? []}
+        trailers={data?.videos?.trailers ?? []}
       />
         )}
       {data?.description && <MovieTabs description={data.description} />}

@@ -1,0 +1,55 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--popup-z-index);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  z-index: var(--modalbg-z-index);
+}
+
+.modal::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.modal::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: rgba(0,0,0,.7);
+}
+
+.container {
+  position: relative;
+  z-index: var(--modal-z-index);
+  margin: 35px auto;
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  background-color: #000;
+}
+
+.btn {
+  top: -35px;
+  right: -35px;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  transition: opacity var(--duration);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
