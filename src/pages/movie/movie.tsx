@@ -7,9 +7,12 @@ import { PersonsList } from './ui/persons-list';
 import { SimilarMoviesList } from './ui/similar-movies';
 import { MovieTabs } from './ui/tabs/ui';
 
-export default function Movie() {
-  const { data } = useGetMovieQuery({ id: 430 });
-  console.log(data);
+interface IMovieProps {
+  id: string;
+}
+
+export default function Movie({ id }: IMovieProps) {
+  const { data } = useGetMovieQuery({ id: +id });
 
   // prettier-ignore
   return (
