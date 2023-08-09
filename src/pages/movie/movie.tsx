@@ -1,5 +1,9 @@
 'use client';
 
+import { useEffect } from 'react';
+
+import { ErrorMsg } from '@/shared/ui/error-msg';
+
 import { useGetMovieQuery } from './api';
 import { FactsList } from './ui/facts-list';
 import { MovieMain } from './ui/movie-main';
@@ -12,7 +16,13 @@ interface IMovieProps {
 }
 
 export default function Movie({ id }: IMovieProps) {
-  const { data } = useGetMovieQuery({ id: +id });
+  const { data, isFetching, isLoading, isError } = useGetMovieQuery({
+    id: +id,
+  });
+
+  useEffect(() => {
+    ErrorMsg(isError);
+  }, [isError]);
 
   // prettier-ignore
   return (

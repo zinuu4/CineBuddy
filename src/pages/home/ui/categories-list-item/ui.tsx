@@ -2,11 +2,11 @@
 
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
-import { toast } from 'react-toastify';
 
 import { MoviesSlider } from '@/widgets/movies-slider';
 import { ICategoriesApiProps, useGetMoviesQuery } from '@/entities/movie/api';
 
+import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
 import { TitleChevron } from '@/shared/ui/title-chevron';
 
@@ -21,20 +21,13 @@ export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
   params,
   title,
 }) => {
-  const { data, error } = useGetMoviesQuery(params);
+  const { data, isError } = useGetMoviesQuery(params);
 
   const sliderData = data?.movies ? data.movies : [];
 
-  const notify = () =>
-    toast('Something went wrong. Network error', {
-      theme: 'dark',
-      autoClose: 5000,
-      position: 'top-right',
-    });
-
   useEffect(() => {
-    if (error) notify();
-  }, [error]);
+    ErrorMsg(isError);
+  }, [isError]);
 
   return (
     <section>
