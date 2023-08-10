@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
-import { MuteButton } from '@/shared/ui/mute-button';
 import { Title } from '@/shared/ui/title';
 import { VolumeButton } from '@/shared/ui/volume-button';
 import styles from './styles.module.scss';
@@ -75,11 +74,15 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
-        {isMuted ? (
+        <VolumeButton
+          onClick={toggleMuted}
+          isMuted={isMuted}
+        />
+        {/* {isMuted ? (
           <MuteButton onClick={toggleMuted} />
         ) : (
           <VolumeButton onClick={toggleMuted} />
-        )}
+        )} */}
         <video
           ref={videoRef}
           className={styles.video}
