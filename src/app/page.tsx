@@ -1,4 +1,4 @@
-import Home from '@/page-s/home/ui/home';
+import { Home } from '@/page-s/home';
 
 export default function HomePage() {
   return (

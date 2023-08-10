@@ -4,21 +4,20 @@
 
 import { useEffect } from 'react';
 
+import { FactsList } from '@/widgets/facts-list';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
-
-import { useGetMovieQuery } from './api';
-import { FactsList } from './ui/facts-list';
-import { MovieMain } from './ui/movie-main';
-import { PersonsList } from './ui/persons-list';
-import { SimilarMoviesList } from './ui/similar-movies';
-import { MovieTabs } from './ui/tabs/ui';
+import { useGetMovieQuery } from '../api';
+import { MovieMain } from './movie-main';
+import { PersonsList } from './persons-list';
+import { SimilarMoviesList } from './similar-movies';
+import { MovieTabs } from './tabs/ui';
 
 interface IMovieProps {
   id: string;
 }
 
-export default function Movie({ id }: IMovieProps) {
+export const Movie = ({ id }: IMovieProps) => {
   const { data, isFetching, isLoading, isError } = useGetMovieQuery({
     id: +id,
   });
@@ -63,4 +62,4 @@ export default function Movie({ id }: IMovieProps) {
       )}
     </>
   );
-}
+};

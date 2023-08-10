@@ -1,4 +1,4 @@
-import Movie from '@/page-s/movie/movie';
+import { Movie } from '@/page-s/movie';
 
 interface IMoviePageProps {
   params: {
