@@ -1,12 +1,12 @@
 import {
-  RawMovieItems,
+  IRawMovieItems,
   IMovieCard,
   Genres,
   $api,
   $trailerApi,
 } from '@/shared/api';
 
-import { LIMIT } from '@/shared/lib/consts';
+import { LIMIT } from '@/shared/consts';
 
 export interface ICategoriesApiProps {
   genre?: Genres | string;
@@ -15,7 +15,6 @@ export interface ICategoriesApiProps {
   sortField?: string;
   rating?: number | string;
   limit?: number;
-  page?: number | string;
   type?: string;
 }
 
@@ -50,16 +49,18 @@ export const categoryApi = $api.injectEndpoints({
           limit: limit ?? LIMIT,
         },
       }),
-      transformResponse: (response: RawMovieItems) => {
-        const movies: IMovieCard[] = response.docs.map((movie) => ({
-          name: movie.name,
-          img: movie.poster.previewUrl,
-          length: movie.movieLength,
-          rating: movie.rating.kp.toFixed(1),
-          year: movie.year,
-          genre: movie.genres,
-          total: response.total,
-        }));
+      transformResponse: (response: IRawMovieItems) => {
+        const movies: IMovieCard[] = response.docs
+          ? response.docs.map((movie) => ({
+              name: movie.name,
+              img: movie.poster.previewUrl,
+              length: movie.movieLength,
+              rating: movie.rating.kp ? movie.rating.kp : 0,
+              year: movie.year,
+              genre: movie.genres,
+              id: movie.id,
+            }))
+          : [];
 
         return {
           movies,

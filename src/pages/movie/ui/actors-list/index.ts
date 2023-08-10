@@ -1,1 +1,0 @@
-export { ActorsList } from './ui';

@@ -1,0 +1,1 @@
+export { SimilarMoviesSlider } from './ui';

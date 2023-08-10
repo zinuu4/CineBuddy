@@ -1,7 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+
 import { Button } from '@/shared/ui/btn-base';
+
 import styles from './styles.module.scss';
 
 interface BurgerProps {
