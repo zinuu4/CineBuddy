@@ -3,14 +3,13 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-export const Photo = () => (
+interface IPhotoProps {
+  photo: string;
+  name: string;
+}
+
+export const Photo: React.FC<IPhotoProps> = ({ photo, name }) => (
   <div className={styles.photoWrapper}>
-    <Image
-      className={styles.photo}
-      src="/maks.jpeg"
-      alt="avatar"
-      fill
-      sizes="100%"
-    />
+    <Image className={styles.photo} src={photo} alt={name} fill sizes="100%" />
   </div>
 );
