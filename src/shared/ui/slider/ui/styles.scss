@@ -1,0 +1,12 @@
+.swiper {
+  position: static;
+}
+
+.swiper-slide {
+  border-radius: var(--radius);
+}
+
+.swiper-button-disabled {
+  visibility: hidden;
+  opacity: 0;
+}

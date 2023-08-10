@@ -1,6 +1,6 @@
 import { IRawMovieItems, IMovieCard, Genres, $api } from '@/shared/api';
 
-import { LIMIT } from '@/shared/lib/consts';
+import { LIMIT } from '@/shared/consts';
 
 export interface ICategoriesApiProps {
   genre?: Genres | string;

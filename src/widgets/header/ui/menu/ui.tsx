@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { VscClose } from 'react-icons/vsc';
 
-import { navItems } from '@/shared/lib/consts';
+import { navItems } from '@/shared/consts';
 import { Button } from '@/shared/ui/btn-base';
 
 import styles from './styles.module.scss';
