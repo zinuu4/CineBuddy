@@ -448,3 +448,96 @@ export interface IMovie {
   imagesInfo: IImages;
   productionCompanies: IVendorImage[];
 }
+
+export interface INominationAward {
+  title: string;
+  year: number;
+}
+
+export interface INomination {
+  award: INominationAward;
+  title: string;
+}
+
+export interface IMeiliPersonEntity {
+  id: number;
+  name: string;
+  enName: string;
+  photo: string;
+  sex: string;
+  growth: number;
+  birthday: string;
+  death: string;
+  age: number;
+  birthPlace: string[];
+  deathPlace: string[];
+  profession: string[];
+}
+
+export interface IPersonAwardMovie {
+  id: number;
+  name: string;
+  rating: number;
+}
+
+export interface IPersonAward {
+  nomination: INomination;
+  winning: boolean;
+  personId: number;
+  movie: IPersonAwardMovie;
+}
+
+export interface IBirthPlace {
+  value?: string;
+}
+
+export interface IDeathPlace {
+  value?: string;
+}
+
+export interface ISpouses {
+  id?: number;
+  name?: string;
+  divorced?: boolean;
+  divorcedReason?: string;
+  sex?: string;
+  children?: number;
+  relation?: string;
+}
+
+export interface IProfession {
+  value?: string;
+}
+
+export interface IFactInPerson {
+  value?: string;
+}
+
+export interface IMovieInPerson {
+  id: number;
+  name?: string | null;
+  alternativeName?: string | null;
+  rating?: number | null;
+  general?: boolean | null;
+  description?: string | null;
+  enProfession?: string | null;
+}
+
+export interface IPerson {
+  id: number;
+  name?: string | null;
+  enName?: string | null;
+  photo?: string | null;
+  sex?: string | null;
+  growth?: number | null;
+  birthday?: string | null;
+  death?: string | null;
+  age?: number | null;
+  birthPlace?: IBirthPlace[];
+  deathPlace?: IDeathPlace[];
+  spouses?: ISpouses;
+  countAwards?: number;
+  profession?: IProfession[];
+  facts?: IFactInPerson[];
+  movies?: IMovieInPerson[];
+}

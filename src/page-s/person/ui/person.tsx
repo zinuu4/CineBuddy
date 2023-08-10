@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { FactsList } from '@/widgets/facts-list';
+// import { FactsList } from '@/widgets/facts-list';
 import { MoviesList } from '@/widgets/movies-list';
 import { Title } from '@/shared/ui/title';
 import { Profile } from './profile';
@@ -28,7 +28,7 @@ export const Person = () => (
       >
         <Title title="Фильмография" />
         <MoviesList narrow />
-        <FactsList />
+        {/* <FactsList /> */}
       </div>
     </section>
   </>

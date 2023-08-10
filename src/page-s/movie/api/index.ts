@@ -4,7 +4,7 @@ export interface ICategoriesApiProps {
   id: number;
 }
 
-export const categoryApi = $api.injectEndpoints({
+export const movieApi = $api.injectEndpoints({
   endpoints: (builder) => ({
     getMovie: builder.query<IMovie, ICategoriesApiProps>({
       query: ({ id }) => ({
@@ -15,4 +15,4 @@ export const categoryApi = $api.injectEndpoints({
   }),
 });
 
-export const { useGetMovieQuery } = categoryApi;
+export const { useGetMovieQuery } = movieApi;
