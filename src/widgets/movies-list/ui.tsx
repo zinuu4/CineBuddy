@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -13,10 +14,16 @@ import { Loader } from '@/shared/ui/loader';
 import styles from './styles.module.scss';
 
 interface IMoviesListProps {
-  type: string;
+  type?: string;
+  id?: number;
+  narrow?: boolean;
 }
 
-export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
+export const MoviesList: React.FC<IMoviesListProps> = ({
+  type,
+  id,
+  narrow,
+}) => {
   const searchParams = useSearchParams();
 
   const [limit, setLimit] = useState(30);
@@ -68,8 +75,8 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   }, [isError]);
 
   return (
-    <section className="container">
-      <div className={styles.list}>
+    <section className={narrow ? '' : 'container'}>
+      <div className={classNames(narrow ? styles.narrowList : styles.list)}>
         {movies?.map((movie) => (
           <div className={styles.card} key={movie.img}>
             <MovieCard data={movie} />

@@ -1,0 +1,36 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: title;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  grid-area: info;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.value {
+  font-size: 14px;
+  line-height: 18px;
+  color: hsla(0,0%,100%,.5);
+}
+
+.value:first-child {
+  min-width: 145px;
+}
+
+.value:last-child {
+  letter-spacing: .3px;
+  color: hsla(0,0%,100%,.95);
+}

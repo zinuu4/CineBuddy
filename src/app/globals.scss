@@ -25,6 +25,10 @@ body {
   max-width: var(--container-width);
 }
 
+.container-narrow {
+  max-width: 1100px;
+}
+
 .pageContainer {
   flex: 1;
 }
