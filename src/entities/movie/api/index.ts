@@ -4,10 +4,10 @@ import { LIMIT } from '@/shared/consts';
 
 export interface ICategoriesApiProps {
   genre?: Genres | string;
-  year?: number;
+  year?: number | string;
   sort?: string;
   sortField?: string;
-  rating?: number;
+  rating?: number | string;
   limit?: number;
   type?: string;
 }
