@@ -1,0 +1,1 @@
+export { Descr } from './ui';

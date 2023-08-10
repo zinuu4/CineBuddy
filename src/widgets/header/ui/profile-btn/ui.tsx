@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 
 export const Profile: React.FC = () => (
   <Button className={styles.btn}>
-    <Image width={20} height={20} src="/profile.svg" alt="Войти" />
+    <Image width={20} height={20} src="/icons/common/profile.svg" alt="Войти" />
     Войти
   </Button>
 );
