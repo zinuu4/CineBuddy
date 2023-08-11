@@ -1,4 +1,10 @@
-import { IRawMovieItems, IMovieCard, Genres, $api } from '@/shared/api';
+import {
+  IRawMovieItems,
+  IMovieCard,
+  Genres,
+  $api,
+  $trailerApi,
+} from '@/shared/api';
 
 import { LIMIT } from '@/shared/consts';
 
@@ -64,4 +70,22 @@ export const categoryApi = $api.injectEndpoints({
   }),
 });
 
+export interface ITrailer {
+  imgUrl: string;
+  videoUrl: string;
+  title: string;
+  rating: number;
+  year: number;
+  genre: string;
+}
+
+export const trailerApi = $trailerApi.injectEndpoints({
+  endpoints: (builder) => ({
+    getTrailers: builder.query<ITrailer[], number>({
+      query: (limit) => `trailers?limit=${limit}`,
+    }),
+  }),
+});
+
 export const { useGetMoviesQuery } = categoryApi;
+export const { useGetTrailersQuery } = trailerApi;
