@@ -1,10 +1,6 @@
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: var(--popup-z-index);
+  inset: 0;
   overflow-x: hidden;
   text-align: center;
   z-index: var(--modalbg-z-index);
@@ -21,12 +17,9 @@
   content: "";
   display: block;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   cursor: pointer;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgb(0 0 0 / 70%);
 }
 
 .container {

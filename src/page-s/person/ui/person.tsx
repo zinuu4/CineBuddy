@@ -22,7 +22,6 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
   const { data, isFetching, isLoading, isError } = useGetPersonQuery({
     id: +id,
   });
-  console.log(data);
 
   useEffect(() => {
     ErrorMsg(isError);

@@ -11,14 +11,13 @@
 .bgBtn {
   backdrop-filter: blur(16px);
   border-radius: 8px;
-
   position: relative;
   display: inline-flex;
   align-items: center;
   overflow: hidden;
   justify-content: center;
   color: var(--color-white);
-  background-color: hsla(216,4%,55%,.3);
+  background-color: hsl(216deg 4% 55% / 30%);
   transition: background-color var(--duration), color var(--duration);
 }
 
@@ -27,7 +26,7 @@
 }
 
 .bgBtn:hover {
-  background-color: hsla(216,4%,55%,.4);
+  background-color: hsl(216deg 4% 55% / 40%);
 }
 
 .big {

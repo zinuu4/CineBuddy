@@ -43,8 +43,11 @@ jobs:
       - name: Install modules
         run: yarn install
 
-      - name: Linting
+      - name: Linting ts
         run: yarn lint
+
+      - name: Linting scss
+        run: yarn lint:scss
 
       - name: Build
         run: yarn build
