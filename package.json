@@ -29,6 +29,8 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-unicorn": "^48.0.1",
     "next": "13.4.12",
+    "next-nprogress-bar": "^2.1.0",
+    "nextjs-progressbar": "^0.0.16",
     "prettier": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
