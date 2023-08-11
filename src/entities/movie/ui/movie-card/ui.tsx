@@ -9,11 +9,11 @@ import { Rating } from '@/shared/ui/rating';
 
 import styles from './styles.module.scss';
 
-interface MovieCardProps {
+interface IMovieCardProps {
   data: Partial<IMovieCard>;
 }
 
-export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+export const MovieCard: React.FC<IMovieCardProps> = ({ data }) => {
   const { name, year, rating, movieLength, id } = data;
   return (
     <div className={styles.item}>

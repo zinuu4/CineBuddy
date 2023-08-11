@@ -3,11 +3,10 @@
 import classNames from 'classnames';
 import React from 'react';
 
-// import { FactsList } from '@/widgets/facts-list';
-import { MoviesList } from '@/widgets/movies-list';
 import { Title } from '@/shared/ui/title';
 
 import { useGetPersonQuery } from '../api';
+import { PersonMoviesList } from './movies-list';
 import { Profile } from './profile';
 
 import styles from './styles.module.scss';
@@ -41,9 +40,8 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
         <div
           className={classNames('container container-narrow', styles.container)}
         >
-          <Title title="Фильмография" />
-          <MoviesList narrow />
-          {/* <FactsList /> */}
+          <Title title={`Фильмография (${data?.movies?.length ?? 0})`} />
+          <PersonMoviesList movies={data?.movies ?? []} />
         </div>
       </section>
     </>

@@ -538,5 +538,5 @@ export interface IPerson {
   countAwards?: number;
   profession?: IProfession[];
   facts?: IFactInPerson[];
-  movies?: IMovieInPerson[];
+  movies?: IMovieCard[];
 }
