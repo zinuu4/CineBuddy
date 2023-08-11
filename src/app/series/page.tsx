@@ -1,8 +1,8 @@
-import Series from '@/pages/series/series';
+import Series from '@/page-s/series/series';
 
 export default function SeriesPage() {
   return (
-    <main>
+    <main className="pageContainer">
       <Series />
     </main>
   );

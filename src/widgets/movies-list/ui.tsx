@@ -3,10 +3,10 @@
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
-import { toast } from 'react-toastify';
 import { genreOptions } from '@/features/movies-filters';
 import { useGetMoviesQuery } from '@/entities/movie/api';
 import { MovieCard } from '@/entities/movie/ui/movie-card';
+import { ErrorMsg } from '@/shared/ui/error-msg';
 import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
 import { Loader } from '@/shared/ui/loader';
 
@@ -47,9 +47,9 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
 
   const onScroll = () => {
     const offset = window.innerHeight + window.pageYOffset;
-    // prettier-ignore
     if (
-      offset >= document.body.offsetHeight - 1 && !(isLoading || isError || isFetching || limit >= total)
+      offset >= document.body.offsetHeight - 1 &&
+      !(isLoading || isError || isFetching || limit >= total)
     ) {
       handleLoadMore();
     }
@@ -63,22 +63,15 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     };
   }, [isLoading, isError, isFetching, limit, total]);
 
-  const notify = () =>
-    toast('Something went wrong. Network error', {
-      theme: 'dark',
-      autoClose: 5000,
-      position: 'top-right',
-    });
-
   useEffect(() => {
-    if (isError) notify();
+    ErrorMsg(isError);
   }, [isError]);
 
   return (
     <section className="container">
       <div className={styles.list}>
         {movies?.map((movie) => (
-          <div className={styles.card} key={movie.img}>
+          <div className={styles.card} key={movie.id}>
             <MovieCard data={movie} />
           </div>
         ))}

@@ -6,4 +6,6 @@ interface IFactItemProps {
   text: string;
 }
 
-export const FactItem: React.FC<IFactItemProps> = ({ text }) => <li className={styles.item}>{text}</li>;
+export const FactItem: React.FC<IFactItemProps> = ({ text }) => (
+  <li className={styles.item}>{text}</li>
+);

@@ -26,6 +26,7 @@
     "prettier"
   ],
   "rules": {
+    "operator-linebreak": 0,
     "linebreak-style": 0,
     "implicit-arrow-linebreak": 0,
     "react-hooks/rules-of-hooks": "error",

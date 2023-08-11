@@ -7,7 +7,7 @@ import { IMovieCard } from '@/shared/api';
 import { Slider } from '@/shared/ui/slider';
 
 interface IMoviesSliderProps {
-  data: IMovieCard[];
+  data: Partial<IMovieCard[]>;
   direction?: 'horizontal' | 'vertical'
 }
 

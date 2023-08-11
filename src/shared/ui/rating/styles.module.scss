@@ -1,0 +1,36 @@
+.rating {
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: 400;
+  background-color: rgb(139 136 146 / 32%);
+  border-radius: 5px;
+  display: flex;
+}
+
+.small {
+  font-size: 12px;
+  line-height: 19px;
+  padding: 0 4px;
+
+  @media (width <= 576px) {
+    font-size: 12px;
+    line-height: 19px;
+    padding: 0 4px;
+  }
+}
+
+.medium {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 0 5px;
+
+  @media (width <= 576px) {
+    font-size: 14px;
+    line-height: 23px;
+    padding: 0 4px;
+  }
+}
+
+.isHighRating {
+  background-color: #12b77c;
+}

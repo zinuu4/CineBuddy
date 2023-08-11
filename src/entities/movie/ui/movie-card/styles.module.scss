@@ -11,10 +11,29 @@
   transform: scale(1.03);
 }
 
+.content {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 23px 20px;
+  justify-content: flex-end;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgb(0 0 0 / 50%);
+  border: 1px solid hsl(0deg 0% 100% / 10%);
+  transition:
+    opacity var(--duration),
+    visibility var(--duration),
+    background-color var(--duration);
+}
+
 .item:hover .content {
   opacity: 1;
   visibility: visible;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgb(0 0 0 / 85%);
 }
 
 .link {
@@ -42,48 +61,15 @@
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   border-radius: var(--radius);
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
-}
-
-.content {
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 23px 20px;
-  justify-content: flex-end;
-  opacity: 0;
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
-  transition:
-    opacity var(--duration),
-    visibility var(--duration),
-    background-color var(--duration);
+  border: 1px solid hsl(0deg 0% 100% / 10%);
 }
 
 .rating {
   position: absolute;
   top: 23px;
   left: 20px;
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  background-color: hsla(258, 4%, 55%, 0.32);
-  border-radius: 5px;
-  font-size: 15px;
-  line-height: 24px;
-  padding: 0 5px;
 }
 
 .name {
@@ -103,6 +89,6 @@
   display: block;
   font-size: 14px;
   line-height: 18px;
-  color: hsla(0, 0%, 100%, 0.8);
+  color: hsl(0deg 0% 100% / 80%);
   margin-right: 12px;
 }

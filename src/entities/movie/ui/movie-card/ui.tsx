@@ -3,35 +3,44 @@ import Link from 'next/link';
 import React from 'react';
 
 import { IMovieCard } from '@/shared/api';
+import { convertMinutes } from '@/shared/lib/helpers';
+import { routes } from '@/shared/lib/routing';
+import { Rating } from '@/shared/ui/rating';
 
 import styles from './styles.module.scss';
 
-interface MovieCardProps {
-  data: IMovieCard;
+interface IMovieCardProps {
+  data: Partial<IMovieCard>;
 }
 
-export const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
-  const { img, name, year, rating, length } = data;
+export const MovieCard: React.FC<IMovieCardProps> = ({ data }) => {
+  const { name, year, rating, movieLength, id } = data;
   return (
     <div className={styles.item}>
-      <Link className={styles.link} href="/home">
+      <Link className={styles.link} href={`${routes.movie}/${id}`}>
         <div className={styles.imageWrapper}>
           <Image
             className={styles.image}
-            src={img}
-            alt={name}
+            alt={name ?? ''}
             fill
             sizes="100%"
+            src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${id}.jpg`}
           />
         </div>
 
         <div className={styles.content}>
-          <span className={styles.rating}>{rating}</span>
+          {rating && (
+            <Rating rating={Number(rating)} className={styles.rating} />
+          )}
           <h3 className={styles.name}>{name}</h3>
-          <div className={styles.info}>
-            <span className={styles.year}>{year}</span>
-            <span className={styles.length}>{length}</span>
-          </div>
+          {year && movieLength && (
+            <div className={styles.info}>
+              <span className={styles.year}>{year}</span>
+              <span className={styles.length}>
+                {movieLength > 1 ? convertMinutes(movieLength) : null}
+              </span>
+            </div>
+          )}
         </div>
       </Link>
     </div>

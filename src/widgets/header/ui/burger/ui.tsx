@@ -7,12 +7,15 @@ import { Button } from '@/shared/ui/btn-base';
 import styles from './styles.module.scss';
 
 interface BurgerProps {
-  isOpen: boolean
-  onOpen: () => void
+  isOpen: boolean;
+  onOpen: () => void;
 }
 
 export const Burger: React.FC<BurgerProps> = ({ isOpen, onOpen }) => (
-  <Button onClick={onOpen} className={classNames(styles.btn, isOpen && styles.open)}>
+  <Button
+    onClick={onOpen}
+    className={classNames(styles.btn, isOpen && styles.open)}
+  >
     <AiOutlineMenu />
   </Button>
 );

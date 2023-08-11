@@ -1,5 +1,6 @@
 .container {
   padding: 30px;
+  max-width: 768px;
 }
 
 .field {
@@ -10,5 +11,5 @@
 }
 
 .fieldInput {
-  width: calc(100% + 215px);
+  width: 100%;
 }

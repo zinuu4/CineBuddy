@@ -1,8 +1,8 @@
-import Profile from '@/pages/profile/ui/profile';
+import { Profile } from '@/page-s/profile';
 
 export default function ProfilePage() {
   return (
-    <main>
+    <main className="child-container">
       <Profile />
     </main>
   );

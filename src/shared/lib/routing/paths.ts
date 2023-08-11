@@ -3,5 +3,6 @@ export enum routes {
   films = '/films',
   series = '/series',
   cartoons = '/cartoons',
-  favourites = '/favourites',
+  movie = '/movie',
+  person = '/person',
 }

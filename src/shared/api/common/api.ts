@@ -12,3 +12,9 @@ export const $api = createApi({
   }),
   endpoints: () => ({}),
 });
+
+export const $trailerApi = createApi({
+  reducerPath: 'api/trailers',
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/' }),
+  endpoints: () => ({}),
+});

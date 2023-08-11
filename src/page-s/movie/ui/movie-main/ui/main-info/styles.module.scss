@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 10px;
+}
+
+.item {
+  color: hsl(0deg 0% 100% / 60%);
+}

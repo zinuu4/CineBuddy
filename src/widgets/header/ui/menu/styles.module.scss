@@ -15,8 +15,7 @@
   opacity var(--duration),
   visibility var(--duration);
 
-  @media (max-width: 768px) {
-    
+  @media (width <= 768px) {
     &.open {
       opacity: 1;
       visibility: visible;
@@ -47,7 +46,7 @@
   position: relative;
 
   &.active {
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       top: 0;

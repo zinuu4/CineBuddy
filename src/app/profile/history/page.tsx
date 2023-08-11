@@ -1,4 +1,4 @@
-import History from '@/pages/history/ui/history';
+import History from '@/page-s/history/ui/history';
 
 export default function HistoryPage() {
   return (

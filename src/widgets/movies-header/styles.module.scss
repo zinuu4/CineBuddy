@@ -4,7 +4,7 @@
   justify-content: space-between;
   margin: 35px 0;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

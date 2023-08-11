@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import { navItems } from '@/shared/lib/consts/nav';
+import { navItems } from '@/shared/consts/nav';
 
 import styles from './styles.module.scss';
 

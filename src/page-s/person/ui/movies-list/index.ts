@@ -1,0 +1,1 @@
+export { PersonMoviesList } from './ui';

@@ -1,4 +1,4 @@
-import Favorites from '@/pages/favorites/ui/favorites';
+import Favorites from '@/page-s/favorites/ui/favorites';
 
 export default function FavoritesPage() {
   return (
