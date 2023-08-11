@@ -6,8 +6,4 @@ const profile = {
   avatarUrl: '/avatar.svg',
 };
 
-export default function Profile() {
-  return (
-    <ProfileCard data={profile} />
-  );
-}
+export const Profile = () => <ProfileCard data={profile} />;

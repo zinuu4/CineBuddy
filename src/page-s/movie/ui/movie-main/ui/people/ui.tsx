@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 import { IPersonInMovie } from '@/shared/api';
+import { routes } from '@/shared/lib/routing';
 
 import styles from './styles.module.scss';
 
@@ -29,7 +30,10 @@ export const People: React.FC<PeopleProps> = ({ persons }) => {
         <span className={styles.label}>Режиссер: </span>
         <ul className={classNames('list-reset', styles.list)}>
           <li className={styles.item}>
-            <Link className={styles.link} href="/">
+            <Link
+              className={styles.link}
+              href={`${routes.person}/${directors[0] && directors[0].id}`}
+            >
               {directors[0] && directors[0].name}
             </Link>
           </li>
@@ -38,9 +42,9 @@ export const People: React.FC<PeopleProps> = ({ persons }) => {
       <div className={styles.row}>
         <span className={styles.label}>Актеры: </span>
         <ul className={classNames('list-reset', styles.list)}>
-          {shortActors.map(({ name }) => (
+          {shortActors.map(({ name, id }) => (
             <li key={name} className={styles.item}>
-              <Link className={styles.link} href="/">
+              <Link className={styles.link} href={`${routes.person}/${id}`}>
                 {name}
               </Link>
             </li>

@@ -1,5 +1,5 @@
 .root {
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .drawersContainer {
       position: fixed;
       background-color: var(--color-overlay);
@@ -39,7 +39,7 @@
 .filtersBtn {
   display: none;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     display: block;
     background-color: transparent;
     align-self: flex-end;
@@ -61,14 +61,14 @@
   cursor: pointer;
 
   &:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(255 255 255 / 40%);
   }
 }
 
 .drawersContainer {
   display: none;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     display: block;
   }
 }
@@ -79,7 +79,7 @@
   align-items: center;
   margin: 35px 0;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     display: none;
   }
 }

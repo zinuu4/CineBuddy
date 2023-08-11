@@ -1,8 +1,12 @@
 /* eslint-disable jsx-a11y/media-has-caption */
+
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
+
+import { Rating } from '@/shared/ui/rating';
 import { Title } from '@/shared/ui/title';
 import { VolumeButton } from '@/shared/ui/volume-button';
+
 import styles from './styles.module.scss';
 
 interface ITrailerCardProps {
@@ -18,7 +22,9 @@ interface ITrailerCardProps {
 
 export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   const { imgUrl, videoUrl, title, rating, year, genre } = data;
+
   const videoRef = useRef<HTMLVideoElement>(null);
+
   const [isMuted, setIsMuted] = useState(true);
   const [imgVisibility, setImgVisibility] = useState(true);
 
@@ -78,11 +84,6 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
           onClick={toggleMuted}
           isMuted={isMuted}
         />
-        {/* {isMuted ? (
-          <MuteButton onClick={toggleMuted} />
-        ) : (
-          <VolumeButton onClick={toggleMuted} />
-        )} */}
         <video
           ref={videoRef}
           className={styles.video}
@@ -109,7 +110,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
                 className={styles.title}
               />
               <div className={styles.properties}>
-                <span className={styles.rating}>{rating?.toFixed(1)}</span>
+                <Rating rating={rating} />
                 <span className={styles.year}>{year}</span>
                 <span className={styles.genre}>{genre}</span>
               </div>

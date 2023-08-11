@@ -19,7 +19,7 @@
   overflow: hidden;
   margin: 0 auto 15px;
   border-radius: 100%;
-  border: 1px solid hsla(0,0%,100%,.1);
+  border: 1px solid hsl(0deg 0% 100% / 10%);
   background-color: var(--color-loader);
 }
 
@@ -27,10 +27,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   color: transparent;
   object-fit: cover;
 }

@@ -47,9 +47,9 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
 
   const onScroll = () => {
     const offset = window.innerHeight + window.pageYOffset;
-    // prettier-ignore
     if (
-      offset >= document.body.offsetHeight - 1 && !(isLoading || isError || isFetching || limit >= total)
+      offset >= document.body.offsetHeight - 1 &&
+      !(isLoading || isError || isFetching || limit >= total)
     ) {
       handleLoadMore();
     }
@@ -71,7 +71,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     <section className="container">
       <div className={styles.list}>
         {movies?.map((movie) => (
-          <div className={styles.card} key={movie.img}>
+          <div className={styles.card} key={movie.id}>
             <MovieCard data={movie} />
           </div>
         ))}

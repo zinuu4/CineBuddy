@@ -5,9 +5,9 @@ import styles from './styles.module.scss';
 
 interface ILoadMoreBtnProps {
   title?: string;
-  disabled: boolean;
-  hide: boolean;
-  onClick: () => void;
+  disabled?: boolean;
+  hide?: boolean;
+  onClick?: () => void;
 }
 
 export const LoadMoreBtn: React.FC<ILoadMoreBtnProps> = ({

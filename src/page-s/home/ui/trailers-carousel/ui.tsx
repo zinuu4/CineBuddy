@@ -2,10 +2,13 @@
 
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
+
 import { useGetTrailersQuery } from '@/entities/movie/api';
 import { TrailerCard } from '@/entities/trailer/ui/trailer-card';
 import { Loader } from '@/shared/ui/loader';
 import { Slider } from '@/shared/ui/slider';
+
+import styles from './styles.module.scss';
 
 export const TrailersCarousel = () => {
   const { data, isLoading, error } = useGetTrailersQuery(5);
@@ -33,6 +36,7 @@ export const TrailersCarousel = () => {
       loop
       spaceBetween={12}
       centeredSlides
+      swiperClassName={styles.slider}
     />
   );
 };

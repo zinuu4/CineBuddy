@@ -1,4 +1,4 @@
-import Profile from '@/page-s/profile/ui/profile';
+import { Profile } from '@/page-s/profile';
 
 export default function ProfilePage() {
   return (

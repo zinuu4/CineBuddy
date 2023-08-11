@@ -13,10 +13,11 @@
   --color-main: #000;
   --color-second: #e50914;
   --color-white: #fff;
-  --color-gray-100: hsla(0, 0%, 100%, 0.6);
+  --color-gray-100: #1c1c1f;
   --color-gray-200: #2a2a2e;
   --color-gray-300: #1c1c1f;
-  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-gray-900: hsl(0deg 0% 100% / 60%);
+  --color-overlay: rgb(0 0 0 / 80%);
   --color-warning: #fb923c;
   --color-success: #a3e635;
 
@@ -27,7 +28,7 @@
   --rounded-full: 100%;
 
   // z-index
-  --header-z-index: 100;
+  --header-z-index: 1000;
   --select-z-index: 50;
   --drawer-z-index: 150;
   --filters-z-index: 125;

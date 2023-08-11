@@ -1,33 +1,3 @@
-.drawer {
-  position: fixed;
-  z-index: var(--drawer-z-index);
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: 0 auto;
-  background-color: var(--color-overlay);
-  opacity: 0;
-  visibility: hidden;
-
-  &.open {
-    &,
-    .closeBtn {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .wrapper {
-      transform: translateY(0);
-    }
-  }
-
-  overflow: hidden;
-  transition:
-    opacity 0.3s,
-    visibility 0.3s;
-}
-
 .wrapper {
   position: absolute;
   display: flex;
@@ -58,6 +28,33 @@
   cursor: pointer;
 
   &:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(255 255 255 / 40%);
   }
+}
+
+.drawer {
+  position: fixed;
+  z-index: var(--drawer-z-index);
+  inset: 0;
+  margin: 0 auto;
+  background-color: var(--color-overlay);
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    &,
+    .closeBtn {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .wrapper {
+      transform: translateY(0);
+    }
+  }
+
+  overflow: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
 }

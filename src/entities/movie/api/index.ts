@@ -53,8 +53,7 @@ export const categoryApi = $api.injectEndpoints({
         const movies: IMovieCard[] = response.docs
           ? response.docs.map((movie) => ({
               name: movie.name,
-              img: movie.poster.previewUrl,
-              length: movie.movieLength,
+              movieLength: movie.movieLength,
               rating: movie.rating.kp ? movie.rating.kp : 0,
               year: movie.year,
               genre: movie.genres,

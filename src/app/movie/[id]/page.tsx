@@ -1,4 +1,4 @@
-import Movie from '@/page-s/movie/movie';
+import { Movie } from '@/page-s/movie';
 
 interface IMoviePageProps {
   params: {
@@ -8,7 +8,7 @@ interface IMoviePageProps {
 
 export default function MoviePage({ params: { id } }: IMoviePageProps) {
   return (
-    <main>
+    <main className="pageContainer">
       <Movie id={id} />
     </main>
   );

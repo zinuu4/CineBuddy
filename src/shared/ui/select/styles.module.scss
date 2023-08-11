@@ -1,3 +1,47 @@
+.options {
+  position: absolute;
+  background-color: rgb(28 28 31);
+  border-radius: var(--rounded-sm);
+  height: max-content;
+  width: max-content;
+  display: none;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &.md {
+    width: calc(100% + 75px);
+  }
+
+  &.lg {
+    width: calc(100% + 115px);
+  }
+
+  &.xl {
+    width: calc(100% + 155px);
+  }
+
+  &.bottom-left {
+    left: 0;
+    top: calc(100% + 8px);
+  }
+
+  &.bottom-right {
+    right: 0;
+    top: calc(100% + 8px);
+  }
+
+  &.top-left {
+    left: 0;
+    bottom: calc(100% + 8px);
+  }
+
+  &.top-right {
+    right: 0;
+    bottom: calc(100% + 8px);
+  }
+}
+
 .option {
   padding: 20px 8px;
   color: white;
@@ -5,7 +49,6 @@
 
   &:hover {
     background-color: var(--color-gray-200);
-
     transition: background-color var(--duration);
   }
 
@@ -25,13 +68,6 @@
   display: flex;
   align-items: center;
   padding: 10px 8px;
-}
-
-.options {
-  display: none;
-  max-height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .arrow {
@@ -66,44 +102,4 @@
   line-height: 20px;
   font-size: 13px;
   font-weight: 400;
-}
-
-.options {
-  position: absolute;
-  background-color: rgb(28, 28, 31);
-  border-radius: var(--rounded-sm);
-  height: max-content;
-  width: max-content;
-
-  &.md {
-    width: calc(100% + 75px);
-  }
-
-  &.lg {
-    width: calc(100% + 115px);
-  }
-
-  &.xl {
-    width: calc(100% + 155px);
-  }
-
-  &.bottom-left {
-    left: 0;
-    top: calc(100% + 8px);
-  }
-
-  &.bottom-right {
-    right: 0;
-    top: calc(100% + 8px);
-  }
-
-  &.top-left {
-    left: 0;
-    bottom: calc(100% + 8px);
-  }
-
-  &.top-right {
-    right: 0;
-    bottom: calc(100% + 8px);
-  }
 }
