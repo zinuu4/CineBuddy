@@ -2,15 +2,15 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 
 import { FactItem } from '@/entities/fact/ui/fact-card';
-import { IFactInMovie } from '@/shared/api';
-import { cleanHtmlFromText } from '@/shared/lib/helpers/clean-html';
+import { IFact } from '@/shared/api';
+import { cleanHtmlFromText } from '@/shared/lib/helpers';
 import { Button } from '@/shared/ui/btn-base';
 import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
 
 interface IFactsListProps {
-  facts: IFactInMovie[];
+  facts: IFact[];
 }
 
 export const FactsList: React.FC<IFactsListProps> = ({ facts }) => {

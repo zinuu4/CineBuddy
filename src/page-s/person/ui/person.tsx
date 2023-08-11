@@ -1,8 +1,11 @@
 'use client';
 
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { FactsList } from '@/widgets/facts-list';
+import { ErrorMsg } from '@/shared/ui/error-msg';
+import { Loader } from '@/shared/ui/loader';
 import { Title } from '@/shared/ui/title';
 
 import { useGetPersonQuery } from '../api';
@@ -16,10 +19,15 @@ interface IPersonProps {
 }
 
 export const Person: React.FC<IPersonProps> = ({ id }) => {
-  const { data } = useGetPersonQuery({ id: +id });
-  console.log(data);
+  const { data, isFetching, isLoading, isError } = useGetPersonQuery({
+    id: +id,
+  });
 
-  return (
+  useEffect(() => {
+    ErrorMsg(isError);
+  }, [isError]);
+
+  return !isFetching && !isLoading ? (
     <>
       <section>
         <div
@@ -38,12 +46,27 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
       </section>
       <section>
         <div
-          className={classNames('container container-narrow', styles.container)}
+          className={classNames(
+            'container container-narrow',
+            styles.containerMovies,
+          )}
         >
           <Title title={`Фильмография (${data?.movies?.length ?? 0})`} />
           <PersonMoviesList movies={data?.movies ?? []} />
         </div>
       </section>
+      <section>
+        <div
+          className={classNames(
+            'container container-narrow',
+            styles.containerFacts,
+          )}
+        >
+          <FactsList facts={data?.facts ?? []} />
+        </div>
+      </section>
     </>
+  ) : (
+    <Loader />
   );
 };

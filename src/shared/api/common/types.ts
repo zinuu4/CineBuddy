@@ -261,7 +261,7 @@ export interface IAudience {
   country: string;
 }
 
-export interface IFactInMovie {
+export interface IFact {
   value: string;
   type: string;
   spoiler: boolean;
@@ -443,7 +443,7 @@ export interface IMovie {
    */
   isSeries: boolean;
   audience?: IAudience[] | null;
-  facts: IFactInMovie[];
+  facts: IFact[];
   imagesInfo: IImages;
   productionCompanies: IVendorImage[];
 }
@@ -508,10 +508,6 @@ export interface IProfession {
   value?: string;
 }
 
-export interface IFactInPerson {
-  value?: string;
-}
-
 export interface IMovieInPerson {
   id: number;
   name?: string | null;
@@ -537,6 +533,6 @@ export interface IPerson {
   spouses?: ISpouses;
   countAwards?: number;
   profession?: IProfession[];
-  facts?: IFactInPerson[];
+  facts?: IFact[];
   movies?: IMovieCard[];
 }
