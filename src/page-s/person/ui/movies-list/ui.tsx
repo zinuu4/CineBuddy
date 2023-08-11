@@ -21,14 +21,16 @@ export const PersonMoviesList: React.FC<IMoviesListProps> = ({ movies }) => {
     <section className="container">
       <div className={styles.list}>
         {limitedMovies?.map((movie) => (
-          <div className={styles.card} key={movie?.id}>
+          <div
+            className={styles.card}
+            key={movie?.id}
+          >
             <MovieCard data={movie} />
           </div>
         ))}
       </div>
       {movies?.length > moviesAmount && (
         <LoadMoreBtn
-          title="Показать больше"
           onClick={() => setMoviesAmount((prevAmount) => prevAmount + 40)}
         />
       )}

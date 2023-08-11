@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 interface ILoadMoreBtnProps {
-  title: string;
+  title?: string;
   disabled?: boolean;
   hide?: boolean;
   onClick?: () => void;
