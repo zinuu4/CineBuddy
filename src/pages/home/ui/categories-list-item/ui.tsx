@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 import { MoviesSlider } from '@/widgets/movies-slider';
-import { CategoriesApiProps, useGetMoviesQuery } from '@/entities/movie/api';
+import { ICategoriesApiProps, useGetMoviesQuery } from '@/entities/movie/api';
 
 import { Loader } from '@/shared/ui/loader';
 import { TitleChevron } from '@/shared/ui/title-chevron';
@@ -14,7 +14,7 @@ import styles from './styles.module.scss';
 
 interface CategoriesListItemProps {
   title: string;
-  params: CategoriesApiProps;
+  params: ICategoriesApiProps;
 }
 
 export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
@@ -22,6 +22,8 @@ export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
   title,
 }) => {
   const { data, error } = useGetMoviesQuery(params);
+
+  const sliderData = data?.movies ? data.movies : [];
 
   const notify = () =>
     toast('Something went wrong. Network error', {
@@ -38,11 +40,7 @@ export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
     <section>
       <div className={classNames(styles.container, 'container')}>
         <TitleChevron title={title} />
-        {data ? (
-          <MoviesSlider data={data} />
-        ) : (
-          <Loader />
-        )}
+        {data ? <MoviesSlider data={sliderData} /> : <Loader />}
       </div>
     </section>
   );

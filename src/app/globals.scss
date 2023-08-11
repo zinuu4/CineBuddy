@@ -10,6 +10,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: var(--color-main);
   font-size: 16px;
   color: var(--color-white);
@@ -17,9 +20,14 @@ body {
 
 .container {
   margin: 0 auto;
+  width: 100%;
   padding-left: var(--container-offset);
   padding-right: var(--container-offset);
   max-width: var(--container-width);
+}
+
+.flex-1-expand {
+  flex: 1;
 }
 
 .btn-reset {
@@ -31,9 +39,15 @@ body {
   cursor: pointer;
 }
 
-.row {
+.row, 
+.sidebar-wrapper {
   display: flex;
   align-items: center;
+  height: 100%;
+}
+
+.child-container {
+  width: 100%;
   height: 100%;
 }
 
@@ -50,4 +64,10 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebarWrapper {
+    flex-direction: column;
+  }
 }

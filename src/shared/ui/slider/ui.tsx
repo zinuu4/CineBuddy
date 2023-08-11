@@ -21,6 +21,7 @@ interface SliderProps {
   centeredSlides?: boolean;
   navigation?: boolean;
   slideClassName?: string;
+  direction?: 'horizontal' | 'vertical'
 }
 
 export const Slider: React.FC<SliderProps> = ({
@@ -32,12 +33,14 @@ export const Slider: React.FC<SliderProps> = ({
   centeredSlides,
   navigation = true,
   slideClassName,
+  direction = 'horizontal',
 }) => (
   <Swiper
     slidesPerView={slidesPerView}
     loop={loop}
     spaceBetween={spaceBetween}
     centeredSlides={centeredSlides}
+    direction={direction}
     navigation={
         navigation
           ? {

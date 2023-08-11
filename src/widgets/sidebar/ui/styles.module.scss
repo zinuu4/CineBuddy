@@ -1,3 +1,11 @@
 .container {
-  padding: 45px 0;
+  padding: 45px 20px;
+  align-self: flex-start;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+  }
 }

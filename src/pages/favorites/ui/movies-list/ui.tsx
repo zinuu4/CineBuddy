@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { MovieCard } from '../movie-card';
+import { MovieCard } from '@/entities/movie/ui/movie-card';
 
 import styles from './styles.module.scss';
 
@@ -105,14 +103,12 @@ const films = [
   },
 ];
 
-export const MoviesList: React.FC = () => (
-  <section className="container">
-    <div className={styles.list}>
-      {films.map((film, index) => (
-        <div className={styles.card} key={index}>
-          <MovieCard data={film} />
-        </div>
+export const MoviesList = () => (
+  <div className={styles.container}>
+    {films.map((film) => (
+      <div key={film.name} className={styles.card}>
+        <MovieCard data={film} />
+      </div>
       ))}
-    </div>
-  </section>
-);
+  </div>
+  );

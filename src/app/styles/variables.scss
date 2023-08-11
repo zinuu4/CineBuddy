@@ -14,8 +14,10 @@
   --color-second: #e50914;
   --color-white: #fff;
   --color-light-gray: #D2D2D7;
+  --color-gray-100: #1c1c1f;
   --color-gray-200: #2a2a2e;
   --color-gray-300: #1c1c1f;
+  --color-gray-900: hsla(0,0%,100%,.6);
   --color-overlay: rgba(0, 0, 0, 0.8);
   --color-warning: #fb923c;
   --color-success: #a3e635;
@@ -26,7 +28,6 @@
   --rounded-lg: 18px;
   --rounded-full: 100%;
 
-  --color-gray-100: hsla(0,0%,100%,.6);
   // z-index
   --header-z-index: 100;
   --select-z-index: 50;

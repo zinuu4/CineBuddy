@@ -4,6 +4,7 @@
   line-height: 19.2px;
   font-family: Roboto;
   color: var(--color-light-gray);
+  white-space: nowrap;
 
   &.active {
     color: var(--color-second);

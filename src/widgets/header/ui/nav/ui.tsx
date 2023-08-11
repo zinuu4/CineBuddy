@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import { items } from './config';
+import { navItems } from '@/shared/lib/consts/nav';
 
 import styles from './styles.module.scss';
 
@@ -13,14 +13,14 @@ export const Nav: React.FC = () => {
 
   return (
     <ul className={styles.list}>
-      {items.map(({ title, href }) => {
+      {navItems.map(({ label, href }) => {
         const linkClasses = `${styles.link} ${
           pathname === href ? styles.link__active : ''
         }`;
         return (
-          <li key={title} className={styles.item}>
+          <li key={label} className={styles.item}>
             <Link className={linkClasses} href={href}>
-              {title}
+              {label}
             </Link>
           </li>
         );
