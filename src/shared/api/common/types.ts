@@ -326,11 +326,10 @@ export interface IRawMovieItems {
 }
 
 export interface IMovieCard {
-  img: string;
   name: string;
   year: number;
   rating: number;
-  length: number;
+  movieLength: number;
   id: number;
 }
 

@@ -1,1 +1,0 @@
-export { SimilarMovieCard } from './ui';

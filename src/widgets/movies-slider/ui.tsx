@@ -7,7 +7,7 @@ import { IMovieCard } from '@/shared/api';
 import { Slider } from '@/shared/ui/slider';
 
 interface IMoviesSliderProps {
-  data: IMovieCard[];
+  data: Partial<IMovieCard[]>;
 }
 
 export const MoviesSlider: React.FC<IMoviesSliderProps> = ({ data }) => (

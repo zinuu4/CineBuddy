@@ -1,6 +1,5 @@
 'use client';
 
-import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -14,16 +13,10 @@ import { Loader } from '@/shared/ui/loader';
 import styles from './styles.module.scss';
 
 interface IMoviesListProps {
-  type?: string;
-  id?: number;
-  narrow?: boolean;
+  type: string;
 }
 
-export const MoviesList: React.FC<IMoviesListProps> = ({
-  type,
-  id,
-  narrow,
-}) => {
+export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   const searchParams = useSearchParams();
 
   const [limit, setLimit] = useState(30);
@@ -54,9 +47,9 @@ export const MoviesList: React.FC<IMoviesListProps> = ({
 
   const onScroll = () => {
     const offset = window.innerHeight + window.pageYOffset;
-    // prettier-ignore
     if (
-      offset >= document.body.offsetHeight - 1 && !(isLoading || isError || isFetching || limit >= total)
+      offset >= document.body.offsetHeight - 1 &&
+      !(isLoading || isError || isFetching || limit >= total)
     ) {
       handleLoadMore();
     }
@@ -75,10 +68,10 @@ export const MoviesList: React.FC<IMoviesListProps> = ({
   }, [isError]);
 
   return (
-    <section className={narrow ? '' : 'container'}>
-      <div className={classNames(narrow ? styles.narrowList : styles.list)}>
+    <section className="container">
+      <div className={styles.list}>
         {movies?.map((movie) => (
-          <div className={styles.card} key={movie.img}>
+          <div className={styles.card} key={movie.id}>
             <MovieCard data={movie} />
           </div>
         ))}
