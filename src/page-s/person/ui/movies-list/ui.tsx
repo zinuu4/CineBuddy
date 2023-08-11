@@ -29,7 +29,7 @@ export const PersonMoviesList: React.FC<IMoviesListProps> = ({ movies }) => {
       {movies?.length > moviesAmount && (
         <LoadMoreBtn
           title="Показать больше"
-          onClick={() => setMoviesAmount((prevAmount) => prevAmount + 20)}
+          onClick={() => setMoviesAmount((prevAmount) => prevAmount + 40)}
         />
       )}
     </section>

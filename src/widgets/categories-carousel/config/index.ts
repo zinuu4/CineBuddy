@@ -40,7 +40,7 @@ export const categories = [
     title: 'Фантастика',
     name: 'genre',
     value: Genres.Fantasy,
-    img: '/rocket.svg',
+    img: '/icons/genres/rocket.svg',
     href: '/films',
   },
   {

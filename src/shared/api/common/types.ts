@@ -408,7 +408,7 @@ export interface IMovie {
   budget?: ICurrencyValue;
   fees?: IFees;
   premiere?: IPremiere;
-  similarMovies?: ILinkedMovie[];
+  similarMovies?: IMovieCard[];
   sequelsAndPrequels?: ILinkedMovie[];
   watchability?: IWatchability;
   releaseYears?: IYearRange[];

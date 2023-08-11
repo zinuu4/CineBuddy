@@ -4,4 +4,5 @@ export enum routes {
   series = '/series',
   cartoons = '/cartoons',
   movie = '/movie',
+  person = '/person',
 }
