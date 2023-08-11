@@ -2,7 +2,7 @@ import { Home } from '@/page-s/home';
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="pageContainer">
       <Home />
     </main>
   );

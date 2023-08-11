@@ -1,11 +1,7 @@
-import React from 'react';
-
 import { Genres } from '@/shared/api';
 import { getCurrentYear } from '@/shared/lib/helpers/date';
 
-import { CategoriesListItem } from '../categories-list-item';
-
-const categories = [
+export const categories = [
   {
     title: 'Смотрим всей семьей',
     queryName: 'genre',
@@ -37,19 +33,3 @@ const categories = [
     params: { genre: Genres.Fantasy, limit: 8 },
   },
 ];
-
-export const CategoriesList: React.FC = () => {
-  const categoriesList = categories.map(
-    ({ params, title, queryName, queryValue }) => (
-      <CategoriesListItem
-        key={title}
-        params={params}
-        title={title}
-        queryName={queryName}
-        queryValue={queryValue}
-      />
-    ),
-  );
-
-  return categoriesList;
-};

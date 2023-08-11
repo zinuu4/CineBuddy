@@ -8,7 +8,7 @@ interface IMoviePageProps {
 
 export default function MoviePage({ params: { id } }: IMoviePageProps) {
   return (
-    <main>
+    <main className="pageContainer">
       <Movie id={id} />
     </main>
   );

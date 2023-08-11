@@ -8,7 +8,7 @@ interface IPersonPageProps {
 
 export default function PersonPage({ params: { id } }: IPersonPageProps) {
   return (
-    <main>
+    <main className="pageContainer">
       <Person id={id} />
     </main>
   );
