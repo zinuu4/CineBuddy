@@ -2,6 +2,7 @@
   "extends": "stylelint-config-standard-scss",
   "rules": {
     "selector-class-pattern": null,
-    "import-notation": null
+    "import-notation": null,
+    "media-feature-range-notation": null
   }
 }

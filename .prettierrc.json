@@ -8,7 +8,7 @@
   "jsxBracketSameLine": false,
   "endOfLine": "lf",
   "singleQuote": true,
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "overrides": [
     {
       "files": "*.{css,scss}",
