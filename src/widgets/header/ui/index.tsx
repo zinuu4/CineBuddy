@@ -8,6 +8,7 @@ import { Logo } from './logo';
 import { Menu } from './menu';
 import { Nav } from './nav';
 import { Profile } from './profile-btn';
+import { SavedMoviesBtn } from './saved-movies-btn/ui';
 import { SearchButton } from './search-btn';
 
 import styles from './styles.module.scss';
@@ -28,6 +29,7 @@ export const Header: React.FC = () => {
         </div>
         <div className="row">
           <SearchButton />
+          <SavedMoviesBtn />
           <Profile />
           <Burger isOpen={isOpen} onOpen={onToggle} />
         </div>

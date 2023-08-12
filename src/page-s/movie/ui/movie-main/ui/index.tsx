@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 
-import { FavoriteBtn } from '@/features/favorites';
+import { SaveBtn } from '@/features/save-movie';
 import { IPersonInMovie, IVideo } from '@/shared/api';
 import { Button } from '@/shared/ui/btn-base';
 import { Modal } from '@/shared/ui/modal';
@@ -97,7 +97,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               >
                 <span>Трейлер</span>
               </Button>
-              <FavoriteBtn />
+              <SaveBtn />
             </div>
           </div>
         </div>
