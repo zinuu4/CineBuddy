@@ -537,3 +537,12 @@ export interface IPerson {
   facts?: IFact[];
   movies?: IMovieCard[];
 }
+
+export interface ISidebarItem {
+  label: string;
+  href: string;
+}
+
+export interface IProfileConfig {
+  sidebarItems: ISidebarItem[];
+}

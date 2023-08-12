@@ -1,6 +1,6 @@
 import { routes } from '@/shared/lib/routing';
 
-import { ProfileConfig } from '../types/nav';
+import { IProfileConfig } from '../api';
 
 export const navItems = [
   { label: 'Главная', href: routes.home },
@@ -9,7 +9,7 @@ export const navItems = [
   { label: 'Мультфильмы', href: routes.cartoons },
 ];
 
-export const profileConfig: ProfileConfig = {
+export const profileConfig: IProfileConfig = {
   sidebarItems: [
     {
       href: '/profile',
