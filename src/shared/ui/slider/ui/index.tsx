@@ -22,6 +22,7 @@ interface SliderProps {
   spaceBetween?: number;
   centeredSlides?: boolean;
   navigation?: boolean;
+  direction?: 'horizontal' | 'vertical';
   slideClassName?: string;
   swiperClassName?: string;
 }
@@ -34,6 +35,7 @@ export const Slider: React.FC<SliderProps> = ({
   spaceBetween = 14,
   centeredSlides,
   navigation = true,
+  direction = 'horizontal',
   slideClassName,
   swiperClassName,
 }) => {
@@ -52,6 +54,7 @@ export const Slider: React.FC<SliderProps> = ({
       }}
       modules={[Navigation]}
       className={swiperClassName}
+      direction={direction}
     >
       {navigation && (
         <>

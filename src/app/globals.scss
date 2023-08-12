@@ -19,6 +19,7 @@ body {
 
 .container {
   margin: 0 auto;
+  width: 100%;
   padding-left: var(--container-offset);
   padding-right: var(--container-offset);
   max-width: var(--container-width);
@@ -32,6 +33,10 @@ body {
   flex: 1;
 }
 
+.flex-1-expand {
+  flex: 1;
+}
+
 .btn-reset {
   border: none;
   font-family: inherit;
@@ -41,9 +46,15 @@ body {
   cursor: pointer;
 }
 
-.row {
+.row, 
+.sidebar-wrapper {
   display: flex;
   align-items: center;
+  height: 100%;
+}
+
+.child-container {
+  width: 100%;
   height: 100%;
 }
 
@@ -60,4 +71,10 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar-wrapper {
+    flex-direction: column;
+  }
 }

@@ -1,9 +1,10 @@
-import { ProfileCard } from '@/entities/profile/ui/profile-card';
+import { ProfileForm } from '@/features/profile-form';
 
 const profile = {
   name: 'Josh',
+  surname: 'Smith',
   email: 'josh@gmail.com',
   avatarUrl: '/avatar.svg',
 };
 
-export const Profile = () => <ProfileCard data={profile} />;
+export const Profile = () => <ProfileForm data={profile} />;
