@@ -4,14 +4,14 @@ import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import { ISidebarItem } from '@/shared/lib/types/nav';
+import { ISidebarItem } from '@/shared/api';
 
 import { SidebarItem } from './sidebar-item';
 import styles from './styles.module.scss';
 
 interface SidebarProps {
-  items: ISidebarItem[]
-  className?: string
+  items: ISidebarItem[];
+  className?: string;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ items, className }) => {
