@@ -15,8 +15,8 @@ export const SavedMoviesBtn = () => {
 
   return (
     <button className={classNames('btn-reset', styles.btn)}>
-      <Link href={routes.favorites}>
-        {pathname !== routes.favorites ? (
+      <Link href={routes.saved}>
+        {pathname !== routes.saved ? (
           <Image
             src="/icons/common/bookmark.svg"
             alt="Saved movies"

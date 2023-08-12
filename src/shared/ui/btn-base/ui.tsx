@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 

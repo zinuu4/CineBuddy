@@ -2,8 +2,8 @@ import React from 'react';
 
 import { IProfession } from '@/shared/api';
 
+import { Avatar } from '@/shared/ui/avatar';
 import { MainInfo } from './main-info';
-import { Photo } from './photo';
 
 import styles from './styles.module.scss';
 
@@ -21,7 +21,7 @@ export const Profile: React.FC<IProfileProps> = ({
   profession,
 }) => (
   <div className={styles.profile}>
-    <Photo photo={photo} name={name} />
+    <Avatar photo={photo} name={name} />
     <MainInfo name={name} birthday={birthday} profession={profession} />
   </div>
 );

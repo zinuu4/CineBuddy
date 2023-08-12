@@ -1,1 +1,0 @@
-export { NotLoggedBtn } from './ui';

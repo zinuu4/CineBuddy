@@ -88,7 +88,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
                 stylesType="bg"
                 className={styles.btnWatch}
               >
-                <span className={styles.textWatch}>Смотреть {genre}</span>
+                <span className={styles.btnWatchText}>Смотреть {genre}</span>
               </Button>
               <Button
                 onClick={() => setYouTubePlayer(true)}

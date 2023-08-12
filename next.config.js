@@ -20,6 +20,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'imagetmdb.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
     ],
   },
   env: {

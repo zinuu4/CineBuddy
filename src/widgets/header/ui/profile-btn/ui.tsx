@@ -5,13 +5,13 @@
 import { useSession } from 'next-auth/react';
 import React from 'react';
 
-import { LoggedBtn } from './logged/ui';
-import { NotLoggedBtn } from './not-logged/ui';
+import { ProfileBtn } from './profile';
+import { SignInBtn } from './sign-in';
 
 export const Profile: React.FC = () => {
   const session = useSession();
 
   console.log(session);
 
-  return <>{session?.data?.user ? <LoggedBtn /> : <NotLoggedBtn />}</>;
+  return <>{session?.data?.user ? <ProfileBtn /> : <SignInBtn />}</>;
 };
