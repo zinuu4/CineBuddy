@@ -10,8 +10,8 @@ import { Button } from '@/shared/ui/btn-base';
 import styles from './styles.module.scss';
 
 export const SignInBtn: React.FC = () => (
-  <Button className={styles.btn}>
-    <Link href={routes.signin}>
+  <Button>
+    <Link href={routes.signin} className={styles.link}>
       <Image
         width={20}
         height={20}

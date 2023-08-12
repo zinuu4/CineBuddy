@@ -5,13 +5,14 @@
 import { useSession } from 'next-auth/react';
 import React from 'react';
 
+import { IProfile } from '@/shared/api';
 import { ProfileBtn } from './profile';
 import { SignInBtn } from './sign-in';
 
-export const Profile: React.FC = () => {
+export const Profile: React.FC<Partial<IProfile>> = ({ photo }) => {
   const session = useSession();
 
-  console.log(session);
-
-  return <>{session?.data?.user ? <ProfileBtn /> : <SignInBtn />}</>;
+  return (
+    <>{session?.data?.user ? <ProfileBtn photo={photo} /> : <SignInBtn />}</>
+  );
 };
