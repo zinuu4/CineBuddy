@@ -3,9 +3,10 @@
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
+import { VolumeButton } from '@/features/volume-button';
 import { Rating } from '@/shared/ui/rating';
 import { Title } from '@/shared/ui/title';
-import { VolumeButton } from '@/shared/ui/volume-button';
+import { createObserver } from '../../lib';
 
 import styles from './styles.module.scss';
 
@@ -39,34 +40,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   useEffect(() => {
     const videoElement = videoRef.current;
 
-    if (!videoElement) {
-      return;
-    }
-
-    const options = {
-      threshold: 0.5,
-    };
-
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (timeoutId) {
-            clearTimeout(timeoutId);
-          }
-
-          timeoutId = setTimeout(() => {
-            setImgVisibility(false);
-            videoElement.currentTime = 0;
-            videoElement.play();
-          }, 1500);
-        } else {
-          setImgVisibility(true);
-          videoElement?.pause();
-        }
-      });
-    }, options);
+    const { observer } = createObserver(videoElement, setImgVisibility)!;
 
     if (videoElement) {
       observer.observe(videoElement);
@@ -80,10 +54,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
-        <VolumeButton
-          onClick={toggleMuted}
-          isMuted={isMuted}
-        />
+        <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
         <video
           ref={videoRef}
           className={styles.video}
@@ -104,11 +75,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
               priority
             />
             <div className={styles.content}>
-              <Title
-                title={title}
-                as="h2"
-                className={styles.title}
-              />
+              <Title title={title} as="h2" className={styles.title} />
               <div className={styles.properties}>
                 <Rating rating={rating} />
                 <span className={styles.year}>{year}</span>

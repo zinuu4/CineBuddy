@@ -1,28 +1,21 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { toast } from 'react-toastify';
 
+import { TrailerCard } from '@/widgets/trailer/ui/trailer-card';
 import { useGetTrailersQuery } from '@/entities/movie/api';
-import { TrailerCard } from '@/entities/trailer/ui/trailer-card';
+import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
 import { Slider } from '@/shared/ui/slider';
 
 import styles from './styles.module.scss';
 
 export const TrailersCarousel = () => {
-  const { data, isLoading, error } = useGetTrailersQuery(5);
-
-  const notify = () =>
-    toast('Something went wrong. Network error', {
-      theme: 'dark',
-      autoClose: 5000,
-      position: 'top-right',
-    });
+  const { data, isLoading, isError } = useGetTrailersQuery(5);
 
   useEffect(() => {
-    if (error) notify();
-  }, [error]);
+    ErrorMsg(isError);
+  }, [isError]);
 
   if (isLoading) {
     return <Loader />;
