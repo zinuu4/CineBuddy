@@ -1,0 +1,22 @@
+/* stylelint-disable property-no-unknown */
+.container {
+  height: calc(100vh - 250px);
+  max-width: 768px;
+  margin: 0 auto;
+  overflow: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card {
+  max-height: 320px;
+  aspect-ratio: 16/9;
+  width: 100%;
+  overflow: hidden;
+  margin: 32px 0;
+  border-radius: 16px;
+  scrollbarWidth: none;
+}

@@ -1,0 +1,15 @@
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: var(--color-light-gray);
+  white-space: nowrap;
+
+  &.active {
+    color: var(--color-second);
+  }
+}
+
+.item {
+  padding: 14px 0;
+}

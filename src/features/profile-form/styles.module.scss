@@ -1,0 +1,15 @@
+.container {
+  padding: 30px;
+  max-width: 768px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.fieldInput {
+  width: 100%;
+}
