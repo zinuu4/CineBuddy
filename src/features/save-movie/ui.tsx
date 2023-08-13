@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Button } from '@/shared/ui/btn-base';
 
-export const FavoriteBtn = () => (
+export const SaveBtn = () => (
   <Button stylesType="bg">
     <Image
       src="/icons/common/bookmark.svg"

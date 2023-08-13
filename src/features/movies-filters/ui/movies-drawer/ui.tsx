@@ -41,8 +41,9 @@ export const MoviesDrawer: React.FC<MoviesDrawerProps> = ({
     setIsOpen(false);
   };
 
-  const selectedOption = filter.options.find((option) => option.value === value)
-    ?? filter.options[0];
+  const selectedOption =
+    filter.options.find((option) => option.value === value) ??
+    filter.options[0];
 
   // prettier-ignore
   return (

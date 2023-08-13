@@ -1,10 +1,15 @@
+import { getServerSession } from 'next-auth';
+
 import { ProfileForm } from '@/features/profile-form';
 
-const profile = {
-  name: 'Josh',
-  surname: 'Smith',
-  email: 'josh@gmail.com',
-  avatarUrl: '/avatar.svg',
-};
+export const Profile = async () => {
+  const session = await getServerSession();
 
-export const Profile = () => <ProfileForm data={profile} />;
+  return (
+    <ProfileForm
+      name={session?.user?.name ?? ''}
+      email={session?.user?.email ?? ''}
+      photo={session?.user?.image ?? ''}
+    />
+  );
+};

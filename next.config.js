@@ -5,8 +5,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'nest-kinomore-server-gnzn.onrender.com',
-        // port: '',
-        // pathname: '/account123/**',
       },
       {
         protocol: 'https',
@@ -19,6 +17,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'imagetmdb.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
       },
     ],
   },

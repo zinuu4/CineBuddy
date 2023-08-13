@@ -1,0 +1,19 @@
+.btn {
+  background: linear-gradient(85.23deg,#b22222,#c51919);
+}
+
+.btnText {
+  z-index: 2;
+}
+
+.btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  transition: background-color var(--duration);
+}
+
+.btn:hover::before {
+  background: #d01414;
+}

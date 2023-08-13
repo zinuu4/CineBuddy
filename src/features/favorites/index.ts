@@ -1,1 +1,0 @@
-export { FavoriteBtn } from './ui';

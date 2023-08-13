@@ -104,3 +104,33 @@ export const sortOptions = [
     value: 'year',
   },
 ];
+
+export const initialFilter = {
+  genre: '',
+  rate: '',
+  release: '',
+  sort: '',
+};
+
+export type FilterType = 'rate' | 'genre' | 'release' | 'sort';
+
+export interface IFilters {
+  label: string;
+  name: FilterType;
+  options: {
+    label: string;
+    value: string;
+  }[];
+}
+
+export const filters: IFilters[] = [
+  { label: 'Жанры', name: 'genre', options: genreOptions },
+  { label: 'Рейтинг', name: 'rate', options: ratingOptions },
+  { label: 'Годы выхода', name: 'release', options: releaseOptions },
+];
+
+export const sortFilter: IFilters = {
+  label: 'Сортировка',
+  name: 'sort',
+  options: sortOptions,
+};

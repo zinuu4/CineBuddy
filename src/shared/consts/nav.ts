@@ -12,15 +12,15 @@ export const navItems = [
 export const profileConfig: IProfileConfig = {
   sidebarItems: [
     {
-      href: '/profile',
+      href: routes.profile,
       label: 'Профиль',
     },
     {
-      href: '/profile/history',
+      href: routes.history,
       label: 'История просмотров',
     },
     {
-      href: '/profile/favorites',
+      href: routes.saved,
       label: 'Избранное',
     },
   ],

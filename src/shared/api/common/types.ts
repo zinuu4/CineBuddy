@@ -334,9 +334,8 @@ export interface IMovieCard {
 }
 
 export interface IProfile {
-  avatarUrl: string;
+  photo: string;
   name: string;
-  surname: string;
   email: string;
 }
 

@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import React from 'react';
-import { FiSearch } from 'react-icons/fi';
 
 import { Button } from '@/shared/ui/btn-base';
 
@@ -7,6 +7,6 @@ import styles from './styles.module.scss';
 
 export const SearchButton: React.FC = () => (
   <Button className={styles.openSearch}>
-    <FiSearch />
+    <Image width={20} height={20} src="/icons/common/search.svg" alt="search" />
   </Button>
 );

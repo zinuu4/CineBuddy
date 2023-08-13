@@ -8,50 +8,17 @@ import { VscSettings, VscClose } from 'react-icons/vsc';
 import { createQueryString } from '@/shared/lib/helpers/create-query';
 import { Button } from '@/shared/ui/btn-base';
 import { Select } from '@/shared/ui/select';
-import {
-  genreOptions,
-  ratingOptions,
-  releaseOptions,
-  sortOptions,
-} from '../config';
+
+import { initialFilter, FilterType, filters, sortFilter } from '../config';
 
 import { MoviesDrawer } from './movies-drawer';
 
 import styles from './styles.module.scss';
 
-const initialFilter = {
-  genre: '',
-  rate: '',
-  release: '',
-  sort: '',
-};
-
-type FilterType = 'rate' | 'genre' | 'release' | 'sort';
-
-interface IFilters {
-  label: string;
-  name: FilterType;
-  options: {
-    label: string;
-    value: string;
-  }[];
-}
-
-const filters: IFilters[] = [
-  { label: 'Жанры', name: 'genre', options: genreOptions },
-  { label: 'Рейтинг', name: 'rate', options: ratingOptions },
-  { label: 'Годы выхода', name: 'release', options: releaseOptions },
-];
-
-const sortFilter: IFilters = {
-  label: 'Сортировка',
-  name: 'sort',
-  options: sortOptions,
-};
-
 export const MoviesFilters: React.FC = () => {
   const [filter, setFilter] = useState(initialFilter);
   const [isOpen, setIsOpen] = useState(false);
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -98,7 +65,6 @@ export const MoviesFilters: React.FC = () => {
               <Select<FilterType>
                 key={name}
                 name={name}
-                value={filter[name]}
                 onChange={onChange}
                 size="xl"
                 {...rest}
@@ -107,7 +73,6 @@ export const MoviesFilters: React.FC = () => {
           </div>
           <Select<FilterType>
             name="sort"
-            value={filter.sort}
             label="Рекомендуемые"
             onChange={onChange}
             options={sortFilter.options}
