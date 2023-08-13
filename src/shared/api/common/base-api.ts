@@ -1,4 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import {
+  createApi,
+  fakeBaseQuery,
+  fetchBaseQuery,
+} from '@reduxjs/toolkit/query/react';
 
 export const $api = createApi({
   reducerPath: 'api',
@@ -13,8 +17,14 @@ export const $api = createApi({
   endpoints: () => ({}),
 });
 
-export const $trailerApi = createApi({
-  reducerPath: 'api/trailers',
+export const $nextApi = createApi({
+  reducerPath: 'api/next',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/' }),
+  endpoints: () => ({}),
+});
+
+export const $firebaseApi = createApi({
+  reducerPath: 'api/firebase',
+  baseQuery: fakeBaseQuery(),
   endpoints: () => ({}),
 });

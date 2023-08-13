@@ -537,6 +537,11 @@ export interface IPerson {
   movies?: IMovieCard[];
 }
 
+export interface IBaseFirebaseProps {
+  collection: string;
+  document: string;
+}
+
 export interface ISidebarItem {
   label: string;
   href: string;

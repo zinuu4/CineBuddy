@@ -1,17 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { $api, $trailerApi } from '@/shared/api';
+import { $api, $nextApi, $firebaseApi } from '@/shared/api';
 
 export const createReduxStore = () => {
   const store = configureStore({
     reducer: {
       [$api.reducerPath]: $api.reducer,
-      [$trailerApi.reducerPath]: $trailerApi.reducer,
+      [$nextApi.reducerPath]: $nextApi.reducer,
+      [$firebaseApi.reducerPath]: $firebaseApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware()
         .concat($api.middleware)
-        .concat($trailerApi.middleware),
+        .concat($nextApi.middleware)
+        .concat($firebaseApi.middleware),
   });
 
   return store;

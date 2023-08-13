@@ -1,4 +1,4 @@
-import { $trailerApi } from '@/shared/api';
+import { $nextApi } from '@/shared/api';
 
 export interface ITrailer {
   imgUrl: string;
@@ -9,7 +9,7 @@ export interface ITrailer {
   genre: string;
 }
 
-export const trailerApi = $trailerApi.injectEndpoints({
+export const trailerApi = $nextApi.injectEndpoints({
   endpoints: (builder) => ({
     getTrailers: builder.query<ITrailer[], number>({
       query: (limit) => `trailers?limit=${limit}`,

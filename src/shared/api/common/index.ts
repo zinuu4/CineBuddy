@@ -1,3 +1,3 @@
-export { $api, $trailerApi } from './api';
+export { $api, $nextApi, $firebaseApi } from './base-api';
 
 export * from './types';
