@@ -2,8 +2,8 @@
 
 import React, { useEffect } from 'react';
 
+import { useGetTrailersQuery } from '@/widgets/trailer/api';
 import { TrailerCard } from '@/widgets/trailer/ui/trailer-card';
-import { useGetTrailersQuery } from '@/entities/movie/api';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
 import { Slider } from '@/shared/ui/slider';

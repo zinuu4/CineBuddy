@@ -1,35 +1,36 @@
 import { Genres } from '@/shared/api';
+import { LIMIT } from '@/shared/consts';
 import { getCurrentYear } from '@/shared/lib/helpers/date';
 
 export const categories = [
   {
-    title: 'Смотрим всей семьей',
+    title: 'Комедийные фильмы',
     queryName: 'genre',
-    queryValue: Genres.Family,
-    params: { genre: Genres.Family, limit: 8 },
+    queryValue: Genres.Comedy,
+    params: { genre: Genres.Comedy, limit: LIMIT },
   },
   {
     title: 'Новые фильмы',
     queryName: 'release',
     queryValue: '2022-2023',
-    params: { year: getCurrentYear(), limit: 8 },
+    params: { year: getCurrentYear(), limit: LIMIT },
   },
   {
-    title: 'Комедийные фильмы',
+    title: 'Смотрим всей семьей',
     queryName: 'genre',
-    queryValue: Genres.Comedy,
-    params: { genre: Genres.Comedy, limit: 8 },
-  },
-  {
-    title: 'Фильмы для взрослых',
-    queryName: 'genre',
-    queryValue: Genres.Adult,
-    params: { genre: Genres.Adult, limit: 8 },
+    queryValue: Genres.Family,
+    params: { genre: Genres.Family, limit: LIMIT },
   },
   {
     title: 'Фантастика',
     queryName: 'genre',
     queryValue: Genres.Fantasy,
-    params: { genre: Genres.Fantasy, limit: 8 },
+    params: { genre: Genres.Fantasy, limit: LIMIT },
+  },
+  {
+    title: 'Фильмы для взрослых',
+    queryName: 'genre',
+    queryValue: Genres.Adult,
+    params: { genre: Genres.Adult, limit: LIMIT },
   },
 ];
