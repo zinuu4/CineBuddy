@@ -8,8 +8,15 @@ interface IPhotoProps {
   name: string;
 }
 
-export const Photo: React.FC<IPhotoProps> = ({ photo, name }) => (
+export const Avatar: React.FC<IPhotoProps> = ({ photo, name }) => (
   <div className={styles.photoWrapper}>
-    <Image className={styles.photo} src={photo} alt={name} fill sizes="100%" />
+    <Image
+      className={styles.photo}
+      src={photo}
+      alt={name}
+      fill
+      sizes="100%"
+      quality={100}
+    />
   </div>
 );

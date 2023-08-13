@@ -3,7 +3,7 @@
 import React from 'react';
 import { CiVolumeHigh, CiVolumeMute } from 'react-icons/ci';
 
-import { Button } from '../btn-base';
+import { Button } from '@/shared/ui/btn-base';
 
 import styles from './styles.module.scss';
 
@@ -16,10 +16,7 @@ export const VolumeButton: React.FC<IVolumeButtonProps> = ({
   onClick,
   isMuted,
 }) => (
-  <Button
-    onClick={onClick}
-    className={styles.button}
-  >
+  <Button onClick={onClick} className={styles.button}>
     {isMuted ? <CiVolumeMute size={24} /> : <CiVolumeHigh size={24} />}
   </Button>
 );

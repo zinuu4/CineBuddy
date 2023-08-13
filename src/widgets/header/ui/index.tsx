@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { useSession } from 'next-auth/react';
 import React, { useState } from 'react';
 
 import { Burger } from './burger';
@@ -8,12 +9,15 @@ import { Logo } from './logo';
 import { Menu } from './menu';
 import { Nav } from './nav';
 import { Profile } from './profile-btn';
+import { SavedMoviesBtn } from './saved-movies-btn/ui';
 import { SearchButton } from './search-btn';
 
 import styles from './styles.module.scss';
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const session = useSession();
 
   const onToggle = () => {
     setIsOpen((prev) => !prev);
@@ -28,7 +32,8 @@ export const Header: React.FC = () => {
         </div>
         <div className="row">
           <SearchButton />
-          <Profile />
+          {session?.data?.user && <SavedMoviesBtn />}
+          <Profile photo={session?.data?.user?.image ?? ''} />
           <Burger isOpen={isOpen} onOpen={onToggle} />
         </div>
       </div>

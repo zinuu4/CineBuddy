@@ -1,3 +1,7 @@
+'use client';
+
+import { SessionProvider } from 'next-auth/react';
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import React, { ReactNode } from 'react';
 
 import { StoreProvider } from './store-provider';
@@ -8,7 +12,17 @@ interface ProvidersProps {
 }
 
 export const Providers: React.FC<ProvidersProps> = ({ children }) => (
-  <ToastProvider>
-    <StoreProvider>{children}</StoreProvider>
-  </ToastProvider>
+  <>
+    <ProgressBar
+      height="2px"
+      color="#e50914"
+      options={{ showSpinner: false }}
+      shallowRouting
+    />
+    <SessionProvider>
+      <ToastProvider>
+        <StoreProvider>{children}</StoreProvider>
+      </ToastProvider>
+    </SessionProvider>
+  </>
 );

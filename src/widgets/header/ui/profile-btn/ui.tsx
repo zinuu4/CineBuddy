@@ -1,13 +1,18 @@
-import Image from 'next/image';
+/* eslint-disable react/jsx-no-useless-fragment */
+
+'use client';
+
+import { useSession } from 'next-auth/react';
 import React from 'react';
 
-import { Button } from '@/shared/ui/btn-base';
+import { IProfile } from '@/shared/api';
+import { ProfileBtn } from './profile';
+import { SignInBtn } from './sign-in';
 
-import styles from './styles.module.scss';
+export const Profile: React.FC<Partial<IProfile>> = ({ photo }) => {
+  const session = useSession();
 
-export const Profile: React.FC = () => (
-  <Button className={styles.btn}>
-    <Image width={20} height={20} src="/icons/common/profile.svg" alt="Войти" />
-    Войти
-  </Button>
-);
+  return (
+    <>{session?.data?.user ? <ProfileBtn photo={photo} /> : <SignInBtn />}</>
+  );
+};

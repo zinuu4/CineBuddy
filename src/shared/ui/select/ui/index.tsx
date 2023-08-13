@@ -1,31 +1,18 @@
 'use client';
 
 import classNames from 'classnames';
+import { useSearchParams } from 'next/navigation';
 import React, { useState, useRef } from 'react';
 import { FiChevronDown, FiCheck } from 'react-icons/fi';
 
 import { useClickOutside } from '@/shared/lib/hooks/use-click-outside';
+import { IOption, Size, Position } from '../config';
 
 import styles from './styles.module.scss';
 
-interface Option {
-  label: string;
-  value: string;
-}
-
-export type Position =
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right';
-
-export type Size = 'sm' | 'md' | 'lg' | 'xl';
-
 interface SelectorProps<T> {
   name: T;
-  options: Option[];
-  value: string;
-  // defaultValue?: string;
+  options: IOption[];
   position?: Position;
   label?: string;
   onChange?: (value: string, name: T) => void;
@@ -37,8 +24,6 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
   const {
     name,
     options,
-    value,
-    // defaultValue,
     onChange,
     label,
     className,
@@ -47,6 +32,9 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
   } = props;
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement | null>(null);
+  const searchParams = useSearchParams();
+
+  const query = searchParams?.get(name.toString());
 
   useClickOutside(selectRef, () => setIsOpen(false));
 
@@ -55,7 +43,8 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
     setIsOpen(false);
   };
 
-  const selectedOption = options.find((option) => option.value === value) ?? options[0];
+  const selectedOption =
+    options.find((option) => option.value === query) ?? options[0];
 
   return (
     <div
@@ -77,11 +66,11 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
             key={option.value}
             className={classNames(
               styles.option,
-              option.value === value && styles.selected,
+              option.value === query && styles.selected,
             )}
           >
             {option.label}
-            {option.value === value && (
+            {option.value === query && (
               <span className={styles.check}>
                 <FiCheck />
               </span>

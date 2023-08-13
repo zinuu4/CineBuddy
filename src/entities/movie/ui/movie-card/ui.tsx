@@ -17,7 +17,10 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ data }) => {
   const { name, year, rating, movieLength, id } = data;
   return (
     <div className={styles.item}>
-      <Link className={styles.link} href={`${routes.movie}/${id}`}>
+      <Link
+        className={styles.link}
+        href={`${routes.movie}/${id}`}
+      >
         <div className={styles.imageWrapper}>
           <Image
             className={styles.image}
@@ -30,7 +33,10 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ data }) => {
 
         <div className={styles.content}>
           {rating && (
-            <Rating rating={Number(rating)} className={styles.rating} />
+            <Rating
+              rating={Number(rating)}
+              className={styles.rating}
+            />
           )}
           <h3 className={styles.name}>{name}</h3>
           {year && movieLength && (
