@@ -4,7 +4,7 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-interface SwiperItemProps {
+interface ISwiperItemProps {
   data: {
     title: string;
     img: string;
@@ -15,7 +15,7 @@ interface SwiperItemProps {
   onClick: (name: string, value: string) => void;
 }
 
-export const CategoryCard: React.FC<SwiperItemProps> = ({ data, onClick }) => {
+export const CategoryCard: React.FC<ISwiperItemProps> = ({ data, onClick }) => {
   const { title, img, href, name, value } = data;
   return (
     <div onClick={() => onClick(name, value)} className={styles.item}>

@@ -14,28 +14,28 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({ id }) => {
   const email = session?.data?.user?.email;
   const baseImgUrl = '/icons/common/';
 
-  const [postId] = usePostIdMutation({});
   const { data } = useGetIdsQuery({
     collectionName: 'saved-movies',
     documentId: email ?? '',
   });
+  const [postId, { isLoading }] = usePostIdMutation({});
 
   const [isSaved, setIsSaved] = useState(false);
 
-  useEffect(() => {
-    if (data !== undefined) {
-      setIsSaved(data?.ids.some((idd) => idd === id));
-    }
-  }, [id, data]);
-
-  const handleClick = () => {
+  const handleSaveToggle = () => {
     if (email) {
       postId({ collectionName: 'saved-movies', documentId: email, id });
     }
   };
 
+  useEffect(() => {
+    if (data !== undefined && data?.ids) {
+      setIsSaved(data.ids.some((idd) => idd === id));
+    }
+  }, [id, data?.ids]);
+
   return (
-    <Button onClick={handleClick} stylesType="bg">
+    <Button disabled={isLoading} onClick={handleSaveToggle} stylesType="bg">
       <Image
         src={
           isSaved

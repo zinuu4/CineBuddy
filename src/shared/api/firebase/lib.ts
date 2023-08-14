@@ -12,9 +12,8 @@ import { IBaseFirebaseProps } from '..';
 
 export const fetchFirestoreDocument = async ({
   collectionName,
-  documentId,
-} // @ts-expect-error
-: IBaseFirebaseProps): { ids: number[] } | undefined => {
+  documentId, // @ts-expect-error
+}: IBaseFirebaseProps): { ids: number[] } | undefined => {
   const docRef = doc(collection(db, collectionName), documentId);
   const docSnapshot = await getDoc(docRef);
 
@@ -37,9 +36,23 @@ export const postId = async ({
   const docSnapshot = await getDoc(movieDocRef);
 
   if (docSnapshot.exists()) {
-    await updateDoc(movieDocRef, {
-      ids: arrayUnion(id),
-    });
+    const docData = docSnapshot.data();
+
+    if (docData && docData.ids && Array.isArray(docData.ids)) {
+      if (docData.ids.includes(id)) {
+        const updatedIds = docData.ids.filter(
+          (existingId) => existingId !== id,
+        );
+
+        await updateDoc(movieDocRef, {
+          ids: updatedIds,
+        });
+      } else {
+        await updateDoc(movieDocRef, {
+          ids: arrayUnion(id),
+        });
+      }
+    }
   } else {
     await setDoc(movieDocRef, {
       ids: [id],
