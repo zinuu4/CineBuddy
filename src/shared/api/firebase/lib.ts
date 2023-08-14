@@ -1,35 +1,48 @@
 import {
   collection,
   getDoc,
+  setDoc,
   doc,
   arrayUnion,
   updateDoc,
 } from 'firebase/firestore';
 import { db } from '@/shared/configs';
 
-export const fetchFirestoreDocument = async (
-  collectionName: string,
-  documentId: string,
-) => {
+import { IBaseFirebaseProps } from '..';
+
+export const fetchFirestoreDocument = async ({
+  collectionName,
+  documentId,
+} // @ts-expect-error
+: IBaseFirebaseProps): { ids: number[] } | undefined => {
   const docRef = doc(collection(db, collectionName), documentId);
   const docSnapshot = await getDoc(docRef);
 
-  const data = {
-    id: docSnapshot.id,
-    ...docSnapshot.data(),
-  };
-
-  return data;
+  return docSnapshot.exists()
+    ? (docSnapshot.data() as { ids: number[] } | undefined)
+    : undefined;
 };
 
-export const postId = async (
-  collectionName: string,
-  documentId: string,
-  id: number,
-) => {
+interface IPostIdProps extends IBaseFirebaseProps {
+  id: number;
+}
+
+export const postId = async ({
+  collectionName,
+  documentId,
+  id,
+}: IPostIdProps) => {
   const movieDocRef = doc(db, collectionName, documentId);
 
-  await updateDoc(movieDocRef, {
-    ids: arrayUnion(id),
-  });
+  const docSnapshot = await getDoc(movieDocRef);
+
+  if (docSnapshot.exists()) {
+    await updateDoc(movieDocRef, {
+      ids: arrayUnion(id),
+    });
+  } else {
+    await setDoc(movieDocRef, {
+      ids: [id],
+    });
+  }
 };

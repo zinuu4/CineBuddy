@@ -97,7 +97,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               >
                 <span>Трейлер</span>
               </Button>
-              <SaveBtn />
+              <SaveBtn id={id} />
             </div>
           </div>
         </div>

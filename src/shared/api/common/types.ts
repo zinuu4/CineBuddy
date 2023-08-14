@@ -538,8 +538,8 @@ export interface IPerson {
 }
 
 export interface IBaseFirebaseProps {
-  collection: string;
-  document: string;
+  collectionName: string;
+  documentId: string;
 }
 
 export interface ISidebarItem {

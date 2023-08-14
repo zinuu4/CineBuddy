@@ -26,5 +26,6 @@ export const $nextApi = createApi({
 export const $firebaseApi = createApi({
   reducerPath: 'api/firebase',
   baseQuery: fakeBaseQuery(),
+  tagTypes: ['Ids'],
   endpoints: () => ({}),
 });
