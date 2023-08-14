@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
-import { VolumeButton } from '@/features/volume-button';
+import { VolumeButton } from '@/features/volume-btn';
 import { Rating } from '@/shared/ui/rating';
 import { Title } from '@/shared/ui/title';
 import { createObserver } from '../../lib';

@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 
+import { BtnBack } from '@/features/back-btn';
 import { IVideo } from '@/shared/api';
 import { Modal } from '@/shared/ui/modal';
 import { YouTubePlayer, Player } from '@/shared/ui/players';
@@ -51,6 +52,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
           className={styles.bg}
         />
         <div className={classNames(styles.container, 'container')}>
+          <BtnBack />
           <div className={styles.content}>
             <MovieLogo img={logo} alt={name} />
             <MainInfo

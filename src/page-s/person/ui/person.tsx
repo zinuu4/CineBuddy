@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { useEffect } from 'react';
 
 import { FactsList } from '@/widgets/facts-list';
+import { BtnBack } from '@/features/back-btn';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
 import { Title } from '@/shared/ui/title';
@@ -36,6 +37,7 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
             styles.containerProfile,
           )}
         >
+          <BtnBack />
           <Profile
             photo={data?.photo ?? ''}
             name={data?.name ?? ''}
