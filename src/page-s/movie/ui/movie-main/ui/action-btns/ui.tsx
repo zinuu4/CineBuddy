@@ -15,6 +15,8 @@ interface IActionBtnsProps {
   genre: string;
   name: string;
   rating: number;
+  length: number;
+  year: number;
 }
 
 export const ActionBtns: React.FC<IActionBtnsProps> = ({
@@ -24,6 +26,8 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
   genre,
   name,
   rating,
+  length,
+  year,
 }) => {
   const [postMovie] = usePostMovieMutation();
 
@@ -36,7 +40,7 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
       postMovie({
         collectionName: collections.history,
         documentId: email,
-        movie: { name, rating, id },
+        movie: { name, rating, id, movieLength: length, year },
       });
     }
   };
@@ -53,7 +57,7 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
       >
         <span>Трейлер</span>
       </Button>
-      <SaveBtn movie={{ name, rating, id }} />
+      <SaveBtn movie={{ name, rating, id, movieLength: length, year }} />
     </div>
   );
 };

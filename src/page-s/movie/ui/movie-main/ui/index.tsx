@@ -72,6 +72,8 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               genre={genre}
               rating={rating}
               name={name}
+              length={length}
+              year={year}
             />
           </div>
         </div>

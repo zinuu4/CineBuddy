@@ -1,10 +1,12 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { useGetMoviesQuery } from '@/shared/api/firebase/api';
+import { ErrorMsg } from '@/shared/ui/error-msg';
+import { Loader } from '@/shared/ui/loader';
 import { Slider } from '@/shared/ui/slider';
 
 import styles from './styles.module.scss';
@@ -19,15 +21,23 @@ export const ProfileMoviesList: React.FC<IProfileMoviesListProps> = ({
   const session = useSession();
   const email = session?.data?.user?.email;
 
-  const { data } = useGetMoviesQuery({
+  const { data, isLoading, isFetching, isError } = useGetMoviesQuery({
     collectionName: collection,
-    documentId: email ?? '',
+    documentId: email ?? 'no-email',
   });
+
+  useEffect(() => {
+    ErrorMsg(isError);
+  }, [isError]);
+
+  if ((isLoading || isFetching) && !data) {
+    return <Loader />;
+  }
 
   return (
     <div className={styles.container}>
       {data?.movies && data?.movies?.length > 0 ? (
-        <Slider Card={MovieCard} slidesData={data?.movies} slidesPerView={3} />
+        <Slider Card={MovieCard} slidesData={data?.movies} slidesPerView={4} />
       ) : (
         <span className={styles.text}>Пока здесь пусто</span>
       )}
