@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import React from 'react';
 
 import { SaveBtn } from '@/features/save-movie';
-import { usePostIdMutation } from '@/shared/api/firebase/api';
+import { usePostMovieMutation } from '@/shared/api/firebase/api';
 import { collections } from '@/shared/lib/firebase-collections';
 import { Button } from '@/shared/ui/btn-base';
 
@@ -13,6 +13,8 @@ interface IActionBtnsProps {
   setYouTubePlayer: (arg: boolean) => void;
   id: number;
   genre: string;
+  name: string;
+  rating: number;
 }
 
 export const ActionBtns: React.FC<IActionBtnsProps> = ({
@@ -20,8 +22,10 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
   setYouTubePlayer,
   id,
   genre,
+  name,
+  rating,
 }) => {
-  const [postId] = usePostIdMutation();
+  const [postMovie] = usePostMovieMutation();
 
   const session = useSession();
   const email = session?.data?.user?.email;
@@ -29,7 +33,11 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
   const onWatch = () => {
     setMoviePlayer(true);
     if (email) {
-      postId({ collectionName: collections.history, documentId: email, id });
+      postMovie({
+        collectionName: collections.history,
+        documentId: email,
+        movie: { name, rating, id },
+      });
     }
   };
 
@@ -45,7 +53,7 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
       >
         <span>Трейлер</span>
       </Button>
-      <SaveBtn id={id} />
+      <SaveBtn movie={{ name, rating, id }} />
     </div>
   );
 };

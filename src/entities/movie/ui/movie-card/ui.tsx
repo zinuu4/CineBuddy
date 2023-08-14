@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -11,16 +12,17 @@ import styles from './styles.module.scss';
 
 interface IMovieCardProps {
   data: Partial<IMovieCard>;
+  cardClassName: string;
 }
 
-export const MovieCard: React.FC<IMovieCardProps> = ({ data }) => {
+export const MovieCard: React.FC<IMovieCardProps> = ({
+  data,
+  cardClassName,
+}) => {
   const { name, year, rating, movieLength, id } = data;
   return (
-    <div className={styles.item}>
-      <Link
-        className={styles.link}
-        href={`${routes.movie}/${id}`}
-      >
+    <div className={classNames(styles.item, cardClassName)}>
+      <Link className={styles.link} href={`${routes.movie}/${id}`}>
         <div className={styles.imageWrapper}>
           <Image
             className={styles.image}
@@ -33,10 +35,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({ data }) => {
 
         <div className={styles.content}>
           {rating && (
-            <Rating
-              rating={Number(rating)}
-              className={styles.rating}
-            />
+            <Rating rating={Number(rating)} className={styles.rating} />
           )}
           <h3 className={styles.name}>{name}</h3>
           {year && movieLength && (

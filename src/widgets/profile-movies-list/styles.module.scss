@@ -1,0 +1,10 @@
+.container {
+  height: calc(100vh - 250px);
+  max-width: 768px;
+  margin: 45px auto 0;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+}

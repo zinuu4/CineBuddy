@@ -1,17 +1,17 @@
-import { $firebaseApi, IBaseFirebaseProps } from '../common';
+import { $firebaseApi, IBaseFirebaseProps, IMovieCard } from '../common';
 
-import { fetchFirestoreDocument, postId } from './lib';
+import { fetchFirestoreDocument, postMovie } from './lib';
 
 interface IGetDataProps extends IBaseFirebaseProps {}
 
 interface IPostIdProps extends IBaseFirebaseProps {
-  id: number;
+  movie: Partial<IMovieCard>;
 }
 
 // prettier-ignore
 export const userMoviesApi = $firebaseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getIds: builder.query<{ids: number[]} | undefined, IGetDataProps>({
+    getMovies: builder.query<{movies: IMovieCard[]} | undefined, IGetDataProps>({
       queryFn({ collectionName, documentId }) {
         try {
           const data = fetchFirestoreDocument({ collectionName, documentId });
@@ -22,10 +22,10 @@ export const userMoviesApi = $firebaseApi.injectEndpoints({
       },
       providesTags: ['Ids'],
     }),
-    postId: builder.mutation<{} | {error: unknown}, IPostIdProps>({
-      queryFn({ collectionName, documentId, id }) {
+    postMovie: builder.mutation<{} | {error: unknown}, IPostIdProps>({
+      queryFn({ collectionName, documentId, movie }) {
         try {
-          postId({ collectionName, documentId, id });
+          postMovie({ collectionName, documentId, movie });
           return { data: 'ok' };
         } catch (error) {
           return { error };
@@ -36,4 +36,4 @@ export const userMoviesApi = $firebaseApi.injectEndpoints({
   }),
 });
 
-export const { useGetIdsQuery, usePostIdMutation } = userMoviesApi;
+export const { useGetMoviesQuery, usePostMovieMutation } = userMoviesApi;

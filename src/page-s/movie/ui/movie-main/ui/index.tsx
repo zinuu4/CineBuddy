@@ -70,6 +70,8 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               setYouTubePlayer={setYouTubePlayer}
               id={id}
               genre={genre}
+              rating={rating}
+              name={name}
             />
           </div>
         </div>

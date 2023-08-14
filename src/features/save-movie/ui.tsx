@@ -2,38 +2,46 @@ import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 
-import { useGetIdsQuery, usePostIdMutation } from '@/shared/api/firebase/api';
+import { IMovieCard } from '@/shared/api';
+import {
+  useGetMoviesQuery,
+  usePostMovieMutation,
+} from '@/shared/api/firebase/api';
 import { collections } from '@/shared/lib/firebase-collections';
 import { Button } from '@/shared/ui/btn-base';
 
 interface ISaveBtnProps {
-  id: number;
+  movie: Partial<IMovieCard>;
 }
 
-export const SaveBtn: React.FC<ISaveBtnProps> = ({ id }) => {
+export const SaveBtn: React.FC<ISaveBtnProps> = ({ movie }) => {
   const session = useSession();
   const email = session?.data?.user?.email;
   const baseImgUrl = '/icons/common/';
 
-  const { data } = useGetIdsQuery({
+  const { data } = useGetMoviesQuery({
     collectionName: collections.saved,
     documentId: email ?? '',
   });
-  const [postId, { isLoading }] = usePostIdMutation({});
+  const [postMovie, { isLoading }] = usePostMovieMutation({});
 
   const [isSaved, setIsSaved] = useState(false);
 
   const handleSaveToggle = () => {
     if (email) {
-      postId({ collectionName: collections.saved, documentId: email, id });
+      postMovie({
+        collectionName: collections.saved,
+        documentId: email,
+        movie,
+      });
     }
   };
 
   useEffect(() => {
-    if (data !== undefined && data?.ids) {
-      setIsSaved(data.ids.some((idd) => idd === id));
+    if (data !== undefined && data?.movies) {
+      setIsSaved(data?.movies.some((moviee) => moviee.id === movie.id));
     }
-  }, [id, data?.ids]);
+  }, [data?.movies]);
 
   return (
     <Button disabled={isLoading} onClick={handleSaveToggle} stylesType="bg">
