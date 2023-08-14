@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   return NextResponse.json([
     {
+      id: 1199773,
       imgUrl:
         'https://nest-kinomore-server-gnzn.onrender.com/image/efacf0bc-23e1-4694-bdc6-412c67fcabe7.jpg',
       videoUrl:
@@ -13,6 +14,7 @@ export async function GET() {
       genre: 'Триллеры',
     },
     {
+      id: 505898,
       imgUrl:
         'https://nest-kinomore-server-gnzn.onrender.com/image/07dc5e17-180f-4e20-b06a-5f9c5b465f3d.jpg',
       videoUrl:
@@ -23,6 +25,7 @@ export async function GET() {
       genre: 'Фантастика',
     },
     {
+      id: 4365427,
       imgUrl:
         'https://nest-kinomore-server-gnzn.onrender.com/image/840de864-9493-4bf1-a891-e414ba0d819b.jpg',
       videoUrl:
@@ -33,6 +36,7 @@ export async function GET() {
       genre: 'Фэнтези',
     },
     {
+      id: 1115098,
       imgUrl:
         'https://nest-kinomore-server-gnzn.onrender.com/image/9bfdfffe-ca6c-45a7-b537-ee52641d8ed2.jpg',
       videoUrl:

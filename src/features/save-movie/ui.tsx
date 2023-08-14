@@ -21,7 +21,7 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({ movie }) => {
 
   const { data } = useGetMoviesQuery({
     collectionName: collections.saved,
-    documentId: email ?? '',
+    documentId: email ?? 'no-email',
   });
   const [postMovie, { isLoading }] = usePostMovieMutation({});
 

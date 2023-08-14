@@ -542,12 +542,3 @@ export interface IBaseFirebaseProps {
   collectionName: string;
   documentId: string;
 }
-
-export interface ISidebarItem {
-  label: string;
-  href: string;
-}
-
-export interface IProfileConfig {
-  sidebarItems: ISidebarItem[];
-}

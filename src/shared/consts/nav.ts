@@ -1,6 +1,6 @@
 import { routes } from '@/shared/lib/routing';
 
-import { IProfileConfig } from '../api';
+import { IProfileConfig } from '../types';
 
 export const navItems = [
   { label: 'Главная', href: routes.home },

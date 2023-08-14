@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import { ISidebarItem } from '@/shared/api';
+import { ISidebarItem } from '@/shared/types';
 
 import { SidebarItem } from './sidebar-item';
 import styles from './styles.module.scss';
