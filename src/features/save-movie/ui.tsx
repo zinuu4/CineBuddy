@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 
 import { useGetIdsQuery, usePostIdMutation } from '@/shared/api/firebase/api';
+import { collections } from '@/shared/lib/firebase-collections';
 import { Button } from '@/shared/ui/btn-base';
 
 interface ISaveBtnProps {
@@ -15,7 +16,7 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({ id }) => {
   const baseImgUrl = '/icons/common/';
 
   const { data } = useGetIdsQuery({
-    collectionName: 'saved-movies',
+    collectionName: collections.saved,
     documentId: email ?? '',
   });
   const [postId, { isLoading }] = usePostIdMutation({});
@@ -24,7 +25,7 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({ id }) => {
 
   const handleSaveToggle = () => {
     if (email) {
-      postId({ collectionName: 'saved-movies', documentId: email, id });
+      postId({ collectionName: collections.saved, documentId: email, id });
     }
   };
 

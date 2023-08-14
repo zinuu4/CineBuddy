@@ -1,35 +1,18 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 
-import { SaveBtn } from '@/features/save-movie';
-import { IPersonInMovie, IVideo } from '@/shared/api';
-import { Button } from '@/shared/ui/btn-base';
+import { IVideo } from '@/shared/api';
 import { Modal } from '@/shared/ui/modal';
 import { YouTubePlayer, Player } from '@/shared/ui/players';
+
+import { IMovieMainProps } from '../types';
+import { ActionBtns } from './action-btns';
 import { Descr } from './descr';
 import { MovieLogo } from './logo';
 import { MainInfo } from './main-info';
 import { People } from './people';
 
 import styles from './styles.module.scss';
-
-interface IMovieMainProps {
-  backdrop: string;
-  logo: string;
-  rating: number;
-  year: number;
-  genre: string;
-  ageRestriction: number;
-  country: string;
-  length: number;
-  shortDescription: string;
-  persons: IPersonInMovie[];
-  trailers: IVideo[];
-  id: number;
-  name: string;
-  isSeries: boolean;
-  seasons?: number;
-}
 
 export const MovieMain: React.FC<IMovieMainProps> = ({
   backdrop,
@@ -82,23 +65,12 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
             />
             <Descr descr={shortDescription} />
             <People persons={persons} />
-            <div className={styles.btns}>
-              <Button
-                onClick={() => setMoviePlayer(true)}
-                stylesType="bg"
-                className={styles.btnWatch}
-              >
-                <span className={styles.btnWatchText}>Смотреть {genre}</span>
-              </Button>
-              <Button
-                onClick={() => setYouTubePlayer(true)}
-                stylesType="bg"
-                className={styles.btnTrailer}
-              >
-                <span>Трейлер</span>
-              </Button>
-              <SaveBtn id={id} />
-            </div>
+            <ActionBtns
+              setMoviePlayer={setMoviePlayer}
+              setYouTubePlayer={setYouTubePlayer}
+              id={id}
+              genre={genre}
+            />
           </div>
         </div>
       </section>
