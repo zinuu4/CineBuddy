@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 import { FactItem } from '@/entities/fact/ui/fact-card';
 import { IFact } from '@/shared/api';
-import { cleanHtmlFromText } from '@/shared/lib/helpers';
 import { Button } from '@/shared/ui/btn-base';
 import { Title } from '@/shared/ui/title';
 
@@ -26,7 +26,7 @@ export const FactsList: React.FC<IFactsListProps> = ({ facts }) => {
         <Title title="Знаете ли вы, что..." className={styles.title} />
         <ul className="list-reset">
           {selectedFacts.map(({ value }) => (
-            <FactItem key={value} text={cleanHtmlFromText(value) ?? ''} />
+            <FactItem key={value} text={ReactHtmlParser(value) ?? ''} />
           ))}
         </ul>
         {facts.length >= 5 && (

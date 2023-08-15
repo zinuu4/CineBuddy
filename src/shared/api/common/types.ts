@@ -331,7 +331,6 @@ export interface IMovieCard {
   rating: number;
   movieLength: number;
   id: number;
-  backdrop: string;
 }
 
 export interface IProfile {

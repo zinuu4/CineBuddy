@@ -4,7 +4,7 @@ export enum routes {
   series = '/series',
   cartoons = '/cartoons',
   movie = '/movie',
-  person = '/person',
+  person = '/name',
   profile = '/profile',
   saved = '/profile/saved',
   history = '/profile/history',

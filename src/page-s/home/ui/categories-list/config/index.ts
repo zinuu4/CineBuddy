@@ -10,6 +10,12 @@ export const categories = [
     params: { genre: Genres.Comedy, limit: LIMIT },
   },
   {
+    title: 'Комедийные cериалы',
+    queryName: 'genre',
+    queryValue: Genres.Comedy,
+    params: { genre: Genres.Comedy, type: 'tv-series', limit: LIMIT },
+  },
+  {
     title: 'Новые фильмы',
     queryName: 'release',
     queryValue: '2022-2023',
@@ -26,11 +32,5 @@ export const categories = [
     queryName: 'genre',
     queryValue: Genres.Fantasy,
     params: { genre: Genres.Fantasy, limit: LIMIT },
-  },
-  {
-    title: 'Фильмы для взрослых',
-    queryName: 'genre',
-    queryValue: Genres.Adult,
-    params: { genre: Genres.Adult, limit: LIMIT },
   },
 ];
