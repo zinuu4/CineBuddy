@@ -1,0 +1,18 @@
+.container {
+  align-items: start;
+  width: 850px;
+  padding: 80px 20px;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.modal::before {
+  vertical-align: top;
+}
+
+.close {
+  right: -250px;
+  top: 0;
+}

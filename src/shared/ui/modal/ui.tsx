@@ -8,18 +8,24 @@ import styles from './styles.module.scss';
 
 interface IModalProps {
   children: ReactNode;
-  className?: string;
-  closeClassname?: string;
+  containerClassName?: string;
+  modalClassName?: string;
+  closeClassName?: string;
   isOpen: boolean;
   onClose: () => void;
+  wrapperClose?: boolean;
+  darkBg?: boolean;
 }
 
 export const Modal: React.FC<IModalProps> = ({
   children,
-  className,
+  containerClassName,
+  modalClassName,
+  closeClassName,
+  darkBg,
   isOpen,
   onClose,
-  closeClassname,
+  wrapperClose = true,
 }) => {
   if (isOpen) {
     document.body.style.overflow = 'hidden';
@@ -27,21 +33,34 @@ export const Modal: React.FC<IModalProps> = ({
     document.body.style.overflow = '';
   }
 
+  const handleWrapperClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (e.target === e.currentTarget && wrapperClose) {
+      onClose();
+    }
+  };
+
   return (
     isOpen && (
       <div id="modal">
-        <div onClick={onClose} className={styles.modal}>
-          <div className={classNames(styles.container, className)}>
+        <div
+          onClick={(e) => handleWrapperClick(e)}
+          className={classNames(
+            styles.modal,
+            darkBg && styles.darkBg,
+            modalClassName,
+          )}
+        >
+          <div className={classNames(styles.container, containerClassName)}>
             {children}
             <Button
               onClick={onClose}
-              className={classNames(styles.btn, closeClassname)}
+              className={classNames(styles.btn, closeClassName)}
             >
               <Image
                 src="/icons/common/close.svg"
                 alt="close"
-                width={13}
-                height={13}
+                width={15}
+                height={15}
               />
             </Button>
           </div>

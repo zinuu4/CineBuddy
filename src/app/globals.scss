@@ -78,3 +78,13 @@ a {
     flex-direction: column;
   }
 }
+
+.input-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  background-color: var(--color-white);
+}

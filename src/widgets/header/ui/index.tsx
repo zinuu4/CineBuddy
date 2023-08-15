@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import { useSession } from 'next-auth/react';
 import React, { useState } from 'react';
 
+import { SearchWindow } from '@/features/search-window';
+
 import { Burger } from './burger';
 import { Logo } from './logo';
 import { Menu } from './menu';
@@ -16,6 +18,7 @@ import styles from './styles.module.scss';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchWindow, setSearchWindow] = useState(false);
 
   const session = useSession();
 
@@ -24,20 +27,23 @@ export const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={classNames('container', styles.container)}>
-        <div className="row">
-          <Logo className={styles.logo} />
-          <Nav />
+    <>
+      <header className={styles.header}>
+        <div className={classNames('container', styles.container)}>
+          <div className="row">
+            <Logo className={styles.logo} />
+            <Nav />
+          </div>
+          <div className="row">
+            <SearchButton onClick={() => setSearchWindow(true)} />
+            {session?.data?.user && <SavedMoviesBtn />}
+            <Profile photo={session?.data?.user?.image ?? ''} />
+            <Burger isOpen={isOpen} onOpen={onToggle} />
+          </div>
         </div>
-        <div className="row">
-          <SearchButton />
-          {session?.data?.user && <SavedMoviesBtn />}
-          <Profile photo={session?.data?.user?.image ?? ''} />
-          <Burger isOpen={isOpen} onOpen={onToggle} />
-        </div>
-      </div>
-      <Menu isOpen={isOpen} onClose={onToggle} />
-    </header>
+        <Menu isOpen={isOpen} onClose={onToggle} />
+      </header>
+      <SearchWindow isOpen={searchWindow} setIsOpen={setSearchWindow} />
+    </>
   );
 };

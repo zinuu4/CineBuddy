@@ -2,7 +2,6 @@ import React from 'react';
 
 import { IProfile } from '@/shared/api';
 import { Avatar } from '@/shared/ui/avatar';
-import { Input } from '@/shared/ui/input';
 import { Label } from '@/shared/ui/label';
 import { SignOutBtn } from './sign-out';
 
@@ -15,8 +14,8 @@ export const ProfileForm: React.FC<IProfile> = ({ name, email, photo }) => (
     </div>
     <div className={styles.field}>
       <Label htmlFor="firstname">Имя</Label>
-      <Input
-        className={styles.fieldInput}
+      <input
+        className={styles.input}
         placeholder="Ваше имя"
         type="text"
         id="firstname"
@@ -26,8 +25,8 @@ export const ProfileForm: React.FC<IProfile> = ({ name, email, photo }) => (
     </div>
     <div className={styles.field}>
       <Label htmlFor="email">Почта</Label>
-      <Input
-        className={styles.fieldInput}
+      <input
+        className={styles.input}
         placeholder="Ваша почта"
         type="email"
         id="email"
