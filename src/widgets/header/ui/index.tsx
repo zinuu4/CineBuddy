@@ -1,10 +1,13 @@
 'use client';
 
 import classNames from 'classnames';
+import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { SearchWindow } from '@/features/search-window';
+import { setSearchWindow } from '@/features/search-window/model';
+import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
 
 import { Burger } from './burger';
 import { Logo } from './logo';
@@ -18,9 +21,20 @@ import styles from './styles.module.scss';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchWindow, setSearchWindow] = useState(false);
 
+  const dispatch = useAppDispatch();
   const session = useSession();
+
+  const pathname = usePathname();
+  const prevPathnameRef = useRef(pathname);
+
+  useEffect(() => {
+    if (prevPathnameRef.current !== pathname) {
+      dispatch(setSearchWindow(false));
+    }
+
+    prevPathnameRef.current = pathname;
+  }, [pathname]);
 
   const onToggle = () => {
     setIsOpen((prev) => !prev);
@@ -35,7 +49,7 @@ export const Header = () => {
             <Nav />
           </div>
           <div className="row">
-            <SearchButton onClick={() => setSearchWindow(true)} />
+            <SearchButton onClick={() => dispatch(setSearchWindow(true))} />
             {session?.data?.user && <SavedMoviesBtn />}
             <Profile photo={session?.data?.user?.image ?? ''} />
             <Burger isOpen={isOpen} onOpen={onToggle} />
@@ -43,7 +57,7 @@ export const Header = () => {
         </div>
         <Menu isOpen={isOpen} onClose={onToggle} />
       </header>
-      <SearchWindow isOpen={searchWindow} setIsOpen={setSearchWindow} />
+      <SearchWindow />
     </>
   );
 };

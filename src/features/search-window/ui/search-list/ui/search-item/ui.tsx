@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { IMovieCard } from '@/shared/api';
 import { routes } from '@/shared/lib/routing';
 import { Rating } from '@/shared/ui/rating';
@@ -17,13 +18,13 @@ export const SearchItem = ({ item }: SearchItemProps) => {
     <li className={styles.item}>
       <Link className={styles.link} href={routes.movie(id)}>
         <div className={styles.image}>
-          {poster?.previewUrl && (
+          {poster && (
             <Image
               sizes="100%"
               fill
               quality={100}
               alt={item?.name ?? ''}
-              src={poster.previewUrl}
+              src={poster}
             />
           )}
         </div>

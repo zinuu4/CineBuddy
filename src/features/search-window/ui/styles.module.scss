@@ -1,5 +1,4 @@
 .container {
-  align-items: start;
   width: 850px;
   padding: 80px 20px;
 }
@@ -9,10 +8,10 @@
 }
 
 .modal::before {
-  vertical-align: top;
+  vertical-align: top !important;
 }
 
 .close {
-  right: -250px;
-  top: 0;
+  right: -250px !important;
+  top: 0 !important;
 }

@@ -329,11 +329,9 @@ export interface IMovieCard {
   name: string;
   year: number;
   rating: number;
-  movieLength: number;
+  movieLength?: number;
   id: number;
-  poster?: {
-    previewUrl: string | null;
-  };
+  poster?: string;
 }
 
 export interface IProfile {
@@ -543,4 +541,14 @@ export interface IPerson {
 export interface IBaseFirebaseProps {
   collectionName: string;
   documentId: string;
+}
+
+export interface ISearchMovie {
+  description: string;
+  id: number;
+  movieLength: number;
+  name: string;
+  poster: string;
+  rating: number;
+  year: number;
 }

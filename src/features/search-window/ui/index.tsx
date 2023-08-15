@@ -1,33 +1,35 @@
 import React from 'react';
 
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '@/shared/lib/hooks/use-app-state';
 import { Modal } from '@/shared/ui/modal';
 import { Title } from '@/shared/ui/title';
 
+import { setSearchWindow } from '../model';
 import { SearchInput } from './search-input';
 import { SearchList } from './search-list';
 
 import styles from './styles.module.scss';
 
-interface ISearchWindowProps {
-  isOpen: boolean;
-  setIsOpen: (arg: boolean) => void;
-}
+export const SearchWindow = () => {
+  const { searchWindow } = useAppSelector((state) => state.search);
+  const dispatch = useAppDispatch();
 
-export const SearchWindow: React.FC<ISearchWindowProps> = ({
-  isOpen,
-  setIsOpen,
-}) => (
-  <Modal
-    containerClassName={styles.container}
-    onClose={() => setIsOpen(false)}
-    isOpen={isOpen}
-    wrapperClose={false}
-    modalClassName={styles.modal}
-    closeClassName={styles.close}
-    darkBg
-  >
-    <Title size="xl" title="Поиск" className={styles.title} />
-    <SearchInput />
-    <SearchList />
-  </Modal>
-);
+  return (
+    <Modal
+      containerClassName={styles.container}
+      onClose={() => dispatch(setSearchWindow(false))}
+      isOpen={searchWindow}
+      wrapperClose={false}
+      modalClassName={styles.modal}
+      closeClassName={styles.close}
+      darkBg
+    >
+      <Title size="xl" title="Поиск" className={styles.title} />
+      <SearchInput />
+      <SearchList />
+    </Modal>
+  );
+};
