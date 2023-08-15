@@ -4,6 +4,7 @@ import { Modal } from '@/shared/ui/modal';
 import { Title } from '@/shared/ui/title';
 
 import { SearchInput } from './search-input';
+import { SearchList } from './search-list';
 
 import styles from './styles.module.scss';
 
@@ -27,5 +28,6 @@ export const SearchWindow: React.FC<ISearchWindowProps> = ({
   >
     <Title size="xl" title="Поиск" className={styles.title} />
     <SearchInput />
+    <SearchList />
   </Modal>
 );

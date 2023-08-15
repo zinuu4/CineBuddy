@@ -22,7 +22,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({
   const { name, year, rating, movieLength, id } = data;
   return (
     <div className={classNames(styles.item, cardClassName)}>
-      <Link className={styles.link} href={`${routes.movie}/${id}`}>
+      <Link className={styles.link} href={routes.movie(id)}>
         <div className={styles.imageWrapper}>
           <Image
             className={styles.image}

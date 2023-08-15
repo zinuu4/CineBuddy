@@ -331,6 +331,9 @@ export interface IMovieCard {
   rating: number;
   movieLength: number;
   id: number;
+  poster?: {
+    previewUrl: string | null;
+  };
 }
 
 export interface IProfile {
