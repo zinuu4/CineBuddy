@@ -16,6 +16,10 @@ export const Description: React.FC<IDescriptionProps> = ({ description }) => {
   const words = description?.split(' ');
   const shortText = words?.slice(0, MAX_WORDS).join(' ');
 
+  if (description === '' || description === null) {
+    return <p className={styles.descr}>Без описания</p>;
+  }
+
   return (
     <p className={styles.descr}>
       {isExpanded ? description : shortText}

@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import React, { useState, useRef } from 'react';
 import { FiChevronDown, FiCheck } from 'react-icons/fi';
@@ -34,7 +35,7 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
   const selectRef = useRef<HTMLDivElement | null>(null);
   const searchParams = useSearchParams();
 
-  const query = searchParams?.get(name.toString());
+  const queryValue = searchParams?.get(name.toString());
 
   useClickOutside(selectRef, () => setIsOpen(false));
 
@@ -43,8 +44,7 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
     setIsOpen(false);
   };
 
-  const selectedOption =
-    options.find((option) => option.value === query) ?? options[0];
+  const selectedOption = options.find((option) => option.value === queryValue);
 
   return (
     <div
@@ -52,7 +52,12 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
       ref={selectRef}
     >
       <div onClick={() => setIsOpen((prev) => !prev)} className={styles.label}>
-        <span className={styles.value}>{selectedOption.label ?? label}</span>
+        {name === 'sort' && (
+          <span className={styles.icon}>
+            <Image src="icons/common/sort.svg" alt="Sort" fill sizes="100%" />
+          </span>
+        )}
+        <span className={styles.value}>{selectedOption?.label ?? label}</span>
         <span className={styles.arrow}>
           <FiChevronDown />
         </span>
@@ -60,23 +65,29 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
       <div
         className={classNames(styles.options, styles[position], styles[size])}
       >
-        {options.map((option) => (
-          <div
-            onClick={() => handleChange(option.value)}
-            key={option.value}
-            className={classNames(
-              styles.option,
-              option.value === query && styles.selected,
-            )}
-          >
-            {option.label}
-            {option.value === query && (
-              <span className={styles.check}>
-                <FiCheck />
-              </span>
-            )}
-          </div>
-        ))}
+        {options.map((option) => {
+          const isSelected = option.value === queryValue;
+          const nothingSelected = queryValue === null;
+
+          return (
+            <div
+              onClick={() => handleChange(option.value)}
+              key={option.value}
+              className={classNames(
+                styles.option,
+                (isSelected || (nothingSelected && option.value === '')) &&
+                  styles.selected,
+              )}
+            >
+              {option.label}
+              {(isSelected || (nothingSelected && option.value === '')) && (
+                <span className={styles.check}>
+                  <FiCheck />
+                </span>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

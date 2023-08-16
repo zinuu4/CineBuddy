@@ -70,6 +70,13 @@
   padding: 10px 8px;
 }
 
+.icon {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
 .arrow {
   transform: rotate(0);
   display: flex;
@@ -85,6 +92,10 @@
   border: none;
   cursor: pointer;
   z-index: var(--select-z-index);
+
+  &:hover {
+    background-color: var(--color-gray-200);
+  }
 
   &.open {
     .options {

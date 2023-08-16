@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { Title } from '@/shared/ui/title';
+
 import styles from './styles.module.scss';
 
 interface IMovieLogoProps {
@@ -10,8 +12,12 @@ interface IMovieLogoProps {
 
 export const MovieLogo: React.FC<IMovieLogoProps> = ({ img, alt }) => (
   <div className={styles.root}>
-    <div className={styles.logo}>
-      <Image className={styles.img} src={img} alt={alt} fill sizes="100%" />
-    </div>
+    {img ? (
+      <div className={styles.logo}>
+        <Image className={styles.img} src={img} alt={alt} fill sizes="100%" />
+      </div>
+    ) : (
+      <Title title={alt} size="large" />
+    )}
   </div>
 );

@@ -23,7 +23,10 @@ export const PersonMoviesList: React.FC<IMoviesListProps> = ({ movies }) => {
     <section
       className={classNames('container container-narrow', styles.container)}
     >
-      <Title title={`Фильмография (${movies.length})`} />
+      <Title
+        className={styles.title}
+        title={`Фильмография (${movies.length})`}
+      />
       <div className={styles.list}>
         {limitedMovies?.map((movie) => (
           <div className={styles.card} key={movie?.id}>

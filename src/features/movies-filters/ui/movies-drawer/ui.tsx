@@ -3,6 +3,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { useSearchParams } from 'next/navigation';
 import React, { useState } from 'react';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 
@@ -23,15 +24,15 @@ interface IFilters {
   options: Option[];
 }
 
-interface MoviesDrawerProps {
+interface IMoviesDrawerProps {
   filter: IFilters;
-  value: string;
+  name: string;
   onChange?: (value: string) => void;
 }
 
-export const MoviesDrawer: React.FC<MoviesDrawerProps> = ({
+export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
   filter,
-  value,
+  name,
   onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,8 +42,12 @@ export const MoviesDrawer: React.FC<MoviesDrawerProps> = ({
     setIsOpen(false);
   };
 
+  const searchParams = useSearchParams();
+
+  const queryValue = searchParams?.get(name.toString());
+
   const selectedOption =
-    filter.options.find((option) => option.value === value) ??
+    filter.options.find((option) => option.value === queryValue) ??
     filter.options[0];
 
   // prettier-ignore
@@ -72,7 +77,7 @@ export const MoviesDrawer: React.FC<MoviesDrawerProps> = ({
         <div className={styles.divider} />
         <ul className={styles.options}>
           {filter.options.map((option) => {
-            const isSelected = option.value === value;
+            const isSelected = option.value === queryValue;
             return (
               <li
                 key={option.value}

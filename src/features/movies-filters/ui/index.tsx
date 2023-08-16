@@ -51,7 +51,7 @@ export const MoviesFilters: React.FC = () => {
             <MoviesDrawer
               key={filterCategory.name}
               filter={filterCategory}
-              value={filter[filterCategory.name]}
+              name={filterCategory.name}
               onChange={(value: string) => onChange(value, filterCategory.name)}
             />
           ))}
@@ -61,19 +61,20 @@ export const MoviesFilters: React.FC = () => {
       <div className={styles.options}>
         <div className={styles.container}>
           <div className={styles.row}>
-            {filters.map(({ name, ...rest }) => (
+            {filters.map(({ name, label, ...rest }) => (
               <Select<FilterType>
                 key={name}
                 name={name}
                 onChange={onChange}
                 size="xl"
+                label={label}
                 {...rest}
               />
             ))}
           </div>
           <Select<FilterType>
             name="sort"
-            label="Рекомендуемые"
+            label={sortFilter.label}
             onChange={onChange}
             options={sortFilter.options}
             position="bottom-right"
