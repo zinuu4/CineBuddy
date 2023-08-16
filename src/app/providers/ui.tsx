@@ -14,7 +14,7 @@ interface ProvidersProps {
 export const Providers: React.FC<ProvidersProps> = ({ children }) => (
   <>
     <ProgressBar
-      height="2px"
+      height="3px"
       color="#e50914"
       options={{ showSpinner: false }}
       shallowRouting
