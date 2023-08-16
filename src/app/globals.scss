@@ -1,11 +1,13 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import "./styles/variables";
+@import './styles/fonts';
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--font-family);
 }
 
 body {
@@ -15,6 +17,7 @@ body {
   background: var(--color-main);
   font-size: 16px;
   color: var(--color-white);
+  font-family: var(--font-family) !important;
 }
 
 .container {
@@ -80,8 +83,6 @@ a {
 }
 
 .input-reset {
-  appearance: none;
-  appearance: none;
   appearance: none;
   border: none;
   outline: none;
