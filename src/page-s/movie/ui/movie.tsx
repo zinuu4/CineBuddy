@@ -22,6 +22,8 @@ export const Movie = ({ id }: IMovieProps) => {
     id: +id,
   });
 
+  console.log(data);
+
   useEffect(() => {
     ErrorMsg(isError);
   }, [isError]);
@@ -48,7 +50,7 @@ export const Movie = ({ id }: IMovieProps) => {
             name={data?.name ?? ''}
             isSeries={data?.isSeries ?? false}
             seasons={data?.seasonsInfo?.length}
-            type={data?.type}
+            type={data?.type ?? ''}
           />
           {data?.description && <MovieTabs description={data.description} />}
           {data?.similarMovies && data?.similarMovies?.length > 0 && (

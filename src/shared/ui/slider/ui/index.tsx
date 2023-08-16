@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 
 import { useDomRefWithSetter } from '../lib';
 import { NavBtn } from './nav-btn';
@@ -14,7 +14,7 @@ import './styles.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-interface SliderProps {
+interface SliderProps extends SwiperProps {
   slidesData: any;
   Card: React.ComponentType<any>;
   slidesPerView?: number | 'auto';
@@ -36,6 +36,7 @@ export const Slider: React.FC<SliderProps> = ({
   navigation = true,
   slideClassName,
   swiperClassName,
+  ...props
 }) => {
   const [nextEl, nextElRef] = useDomRefWithSetter<HTMLButtonElement>();
   const [prevEl, prevElRef] = useDomRefWithSetter<HTMLButtonElement>();
@@ -52,6 +53,7 @@ export const Slider: React.FC<SliderProps> = ({
       }}
       modules={[Navigation]}
       className={swiperClassName}
+      {...props}
     >
       {navigation && (
         <>

@@ -7,7 +7,7 @@ export const categories = [
     title: 'Комедийные фильмы',
     queryName: 'genre',
     queryValue: Genres.Comedy,
-    params: { genre: Genres.Comedy, limit: LIMIT },
+    params: { genre: Genres.Comedy, limit: LIMIT, year: '2022', type: 'movie' },
   },
   {
     title: 'Комедийные cериалы',
@@ -19,18 +19,18 @@ export const categories = [
     title: 'Новые фильмы',
     queryName: 'release',
     queryValue: '2022-2023',
-    params: { year: getCurrentYear(), limit: LIMIT },
+    params: { year: getCurrentYear(), limit: LIMIT, type: 'movie' },
   },
   {
     title: 'Смотрим всей семьей',
     queryName: 'genre',
     queryValue: Genres.Family,
-    params: { genre: Genres.Family, limit: LIMIT },
+    params: { genre: Genres.Family, limit: LIMIT, year: '2022' },
   },
   {
     title: 'Фантастика',
     queryName: 'genre',
     queryValue: Genres.Fantasy,
-    params: { genre: Genres.Fantasy, limit: LIMIT },
+    params: { genre: Genres.Fantasy, limit: LIMIT, year: '2022' },
   },
 ];

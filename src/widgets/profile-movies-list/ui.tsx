@@ -37,7 +37,13 @@ export const ProfileMoviesList: React.FC<IProfileMoviesListProps> = ({
   return (
     <div className={styles.container}>
       {data?.movies && data?.movies?.length > 0 ? (
-        <Slider Card={MovieCard} slidesData={data?.movies} slidesPerView={4} />
+        <Slider
+          Card={MovieCard}
+          slidesData={data?.movies}
+          swiperClassName={styles.swiper}
+          slideClassName={styles.swiperSlide}
+          slidesPerView={4}
+        />
       ) : (
         <span className={styles.text}>Пока здесь пусто</span>
       )}
