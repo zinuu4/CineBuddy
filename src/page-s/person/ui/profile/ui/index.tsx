@@ -12,6 +12,7 @@ interface IProfileProps {
   name: string;
   birthday: string;
   profession: IProfession[];
+  enName: string;
 }
 
 export const Profile: React.FC<IProfileProps> = ({
@@ -19,9 +20,15 @@ export const Profile: React.FC<IProfileProps> = ({
   name,
   birthday,
   profession,
+  enName,
 }) => (
   <div className={styles.profile}>
     <Avatar photo={photo} name={name} />
-    <MainInfo name={name} birthday={birthday} profession={profession} />
+    <MainInfo
+      name={name}
+      enName={enName}
+      birthday={birthday}
+      profession={profession}
+    />
   </div>
 );

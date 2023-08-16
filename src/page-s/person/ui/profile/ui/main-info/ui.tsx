@@ -11,19 +11,22 @@ interface IMainInfoProps {
   name: string;
   birthday: string;
   profession: IProfession[];
+  enName: string;
 }
 
 export const MainInfo: React.FC<IMainInfoProps> = ({
   name,
   birthday,
   profession,
+  enName,
 }) => {
   const fomratedProfessions = getProfessions(profession);
 
   return (
     <>
       <div className={styles.title}>
-        <Title size="large" title={name} />
+        <Title size="large" title={name} className={styles.name} />
+        {enName && <span className={styles.enName}>{enName}</span>}
       </div>
       <div className={styles.info}>
         <div className={styles.row}>

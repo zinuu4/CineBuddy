@@ -1,10 +1,12 @@
 'use client';
 
+import classNames from 'classnames';
 import React, { useState } from 'react';
 
 import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { IMovieCard } from '@/shared/api';
 import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
+import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
 
@@ -18,13 +20,13 @@ export const PersonMoviesList: React.FC<IMoviesListProps> = ({ movies }) => {
   const limitedMovies = movies.slice(0, moviesAmount);
 
   return (
-    <section className="container">
+    <section
+      className={classNames('container container-narrow', styles.container)}
+    >
+      <Title title={`Фильмография (${movies.length})`} />
       <div className={styles.list}>
         {limitedMovies?.map((movie) => (
-          <div
-            className={styles.card}
-            key={movie?.id}
-          >
+          <div className={styles.card} key={movie?.id}>
             <MovieCard data={movie} />
           </div>
         ))}

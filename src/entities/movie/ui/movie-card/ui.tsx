@@ -12,7 +12,7 @@ import styles from './styles.module.scss';
 
 interface IMovieCardProps {
   data: Partial<IMovieCard>;
-  cardClassName: string;
+  cardClassName?: string;
 }
 
 export const MovieCard: React.FC<IMovieCardProps> = ({

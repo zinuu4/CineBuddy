@@ -5,6 +5,17 @@
   grid-area: title;
 }
 
+.name {
+  margin-bottom: 10px;
+}
+
+.enName {
+  font-size: 17px;
+  letter-spacing: .7px;
+  color: hsl(0deg 0% 100% / 50%);
+  margin-bottom: 14px;
+}
+
 .info {
   display: flex;
   flex-direction: column;

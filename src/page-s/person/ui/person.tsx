@@ -7,7 +7,6 @@ import { FactsList } from '@/widgets/facts-list';
 import { BtnBack } from '@/features/back-btn';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
-import { Title } from '@/shared/ui/title';
 
 import { useGetPersonQuery } from '../api';
 import { PersonMoviesList } from './movies-list';
@@ -43,24 +42,11 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
             name={data?.name ?? ''}
             birthday={data?.birthday ?? ''}
             profession={data?.profession ?? []}
+            enName={data?.enName ?? ''}
           />
         </div>
       </section>
-      <section>
-        <div
-          className={classNames(
-            'container container-narrow',
-            styles.containerMovies,
-          )}
-        >
-          {data?.movies && data?.movies?.length >= 1 && (
-            <>
-              <Title title={`Фильмография (${data.movies.length})`} />
-              <PersonMoviesList movies={data.movies} />
-            </>
-          )}
-        </div>
-      </section>
+      <PersonMoviesList movies={data?.movies ?? []} />
       <section>
         <div
           className={classNames(
