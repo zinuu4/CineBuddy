@@ -16,4 +16,5 @@ export interface IMovieMainProps {
   name: string;
   isSeries: boolean;
   seasons?: number;
+  type: string;
 }

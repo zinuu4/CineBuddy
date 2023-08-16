@@ -31,6 +31,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
   name,
   isSeries,
   seasons,
+  type,
 }) => {
   const [youTubePlayer, setYouTubePlayer] = useState(false);
   const [youTubeTrailers, setYouTubeTrailers] = useState<IVideo[]>([]);
@@ -71,11 +72,11 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               setMoviePlayer={setMoviePlayer}
               setYouTubePlayer={setYouTubePlayer}
               id={id}
-              genre={genre}
               rating={rating}
               name={name}
               length={length}
               year={year}
+              type={type}
             />
           </div>
         </div>

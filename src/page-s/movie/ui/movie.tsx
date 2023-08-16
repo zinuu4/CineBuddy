@@ -48,6 +48,7 @@ export const Movie = ({ id }: IMovieProps) => {
             name={data?.name ?? ''}
             isSeries={data?.isSeries ?? false}
             seasons={data?.seasonsInfo?.length}
+            type={data?.type}
           />
           {data?.description && <MovieTabs description={data.description} />}
           {data?.similarMovies && data?.similarMovies?.length > 0 && (

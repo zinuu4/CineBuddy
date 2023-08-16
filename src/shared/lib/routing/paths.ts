@@ -5,11 +5,12 @@ export const routes = {
   films: '/films',
   series: '/series',
   cartoons: '/cartoons',
-  person: '/name',
   profile: '/profile',
   saved: '/profile/saved',
   history: '/profile/history',
   signin: 'api/auth/signin',
 
   movie: (id: Id): string => `movie/${id}`,
+
+  person: (id: Id): string => `/name/${id}`,
 };

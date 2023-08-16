@@ -16,7 +16,7 @@ interface IActorCard {
 export const PersonCard: React.FC<IActorCard> = ({ data }) => {
   const { photo, name, profession, id } = data;
   return (
-    <Link href={`${routes.person}/${id}`} className={styles.item}>
+    <Link href={routes.person(id)} className={styles.item}>
       <div className={styles.imgWrapper}>
         <Image
           className={styles.img}

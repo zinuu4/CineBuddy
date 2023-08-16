@@ -16,7 +16,6 @@ export const PersonsSlider: React.FC<IActorsSliderProps> = ({ data }) => (
   <Slider
     slidesData={data}
     Card={PersonCard}
-    slidesPerView="auto"
     navigation={false}
     spaceBetween={14}
     slideClassName={styles.slide}

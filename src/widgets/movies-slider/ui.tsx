@@ -6,17 +6,18 @@ import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { IMovieCard } from '@/shared/api';
 import { Slider } from '@/shared/ui/slider';
 
+import styles from './styles.module.scss';
+
 interface IMoviesSliderProps {
   data: Partial<IMovieCard[]>;
-  direction?: 'horizontal' | 'vertical'
 }
 
-export const MoviesSlider: React.FC<IMoviesSliderProps> = ({ data, direction = 'horizontal' }) => (
+export const MoviesSlider: React.FC<IMoviesSliderProps> = ({ data }) => (
   <Slider
+    swiperClassName={styles.swiper}
+    slideClassName={styles.swiperSlide}
     slidesData={data}
     Card={MovieCard}
-    slidesPerView={6}
     spaceBetween={14}
-    direction={direction}
   />
 );

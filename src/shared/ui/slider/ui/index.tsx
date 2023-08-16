@@ -17,7 +17,7 @@ import 'swiper/css/navigation';
 interface SliderProps {
   slidesData: any;
   Card: React.ComponentType<any>;
-  slidesPerView: number | 'auto';
+  slidesPerView?: number | 'auto';
   loop?: boolean;
   spaceBetween?: number;
   centeredSlides?: boolean;
@@ -29,7 +29,7 @@ interface SliderProps {
 export const Slider: React.FC<SliderProps> = ({
   slidesData,
   Card,
-  slidesPerView,
+  slidesPerView = 'auto',
   loop,
   spaceBetween = 14,
   centeredSlides,
