@@ -22,8 +22,6 @@ export const Movie = ({ id }: IMovieProps) => {
     id: +id,
   });
 
-  console.log(data);
-
   useEffect(() => {
     ErrorMsg(isError);
   }, [isError]);

@@ -25,11 +25,11 @@ export const People: React.FC<PeopleProps> = ({ persons }) => {
         <div key={label} className={styles.row}>
           <span className={styles.label}>{label}:</span>
           <ul className={classNames('list-reset', styles.list)}>
-            {list.map((item) => {
+            {list.map((item, index) => {
               const name = item?.name ?? item?.enName;
 
               return (
-                <li key={item.id} className={styles.item}>
+                <li key={item?.id ?? index} className={styles.item}>
                   <Link className={styles.link} href={routes.person(item?.id)}>
                     {name}
                   </Link>
