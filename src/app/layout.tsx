@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google';
 
 import React from 'react';
 
-import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 import { Providers } from './providers';
 
@@ -27,7 +26,6 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>

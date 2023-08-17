@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { BtnBack } from '@/features/back-btn';
-import { IVideo } from '@/shared/api';
 import { Modal } from '@/shared/ui/modal';
 import { YouTubePlayer, Player } from '@/shared/ui/players';
 
+import { getTrailer } from '../lib';
 import { IMovieMainProps } from '../types';
 import { ActionBtns } from './action-btns';
 import { Descr } from './descr';
@@ -34,13 +34,10 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
   type,
 }) => {
   const [youTubePlayer, setYouTubePlayer] = useState(false);
-  const [youTubeTrailers, setYouTubeTrailers] = useState<IVideo[]>([]);
 
   const [moviePlayer, setMoviePlayer] = useState(false);
 
-  useEffect(() => {
-    setYouTubeTrailers(trailers.filter(({ site }) => site === 'youtube'));
-  }, [trailers]);
+  const trailer = getTrailer(trailers);
 
   return (
     <>
@@ -86,9 +83,7 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
         isOpen={youTubePlayer}
         containerClassName={styles.trailer}
       >
-        {youTubeTrailers && (
-          <YouTubePlayer videoLink={youTubeTrailers[0]?.url ?? ''} />
-        )}
+        {trailer && <YouTubePlayer videoLink={trailer?.url ?? ''} />}
       </Modal>
       <Modal
         containerClassName={styles.movie}

@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { VolumeButton } from '@/features/volume-btn';
+import { routes } from '@/shared/lib/routing';
 import { Rating } from '@/shared/ui/rating';
 import { Title } from '@/shared/ui/title';
+
 import { createObserver } from '../../lib';
 
 import styles from './styles.module.scss';
@@ -18,11 +21,12 @@ interface ITrailerCardProps {
     rating: number;
     year: number;
     genre: string;
+    id: number;
   };
 }
 
 export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
-  const { imgUrl, videoUrl, title, rating, year, genre } = data;
+  const { imgUrl, videoUrl, title, rating, year, genre, id } = data;
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -54,36 +58,38 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
-        <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
-        <video
-          ref={videoRef}
-          className={styles.video}
-          autoPlay
-          muted={isMuted}
-          loop
-          playsInline
-          src={videoUrl}
-        />
-        {imgVisibility && (
-          <>
-            <Image
-              src={imgUrl}
-              alt="Image"
-              className={styles.img}
-              fill
-              sizes="width: 100%, height: 30vw"
-              priority
-            />
-            <div className={styles.content}>
-              <Title title={title} as="h2" className={styles.title} />
-              <div className={styles.properties}>
-                <Rating rating={rating} />
-                <span className={styles.year}>{year}</span>
-                <span className={styles.genre}>{genre}</span>
+        <Link href={routes.movie(id)} className={styles.link}>
+          <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
+          <video
+            ref={videoRef}
+            className={styles.video}
+            autoPlay
+            muted={isMuted}
+            loop
+            playsInline
+            src={videoUrl}
+          />
+          {imgVisibility && (
+            <>
+              <Image
+                src={imgUrl}
+                alt="Image"
+                className={styles.img}
+                fill
+                sizes="width: 100%, height: 30vw"
+                priority
+              />
+              <div className={styles.content}>
+                <Title title={title} as="h2" className={styles.title} />
+                <div className={styles.properties}>
+                  <Rating rating={rating} />
+                  <span className={styles.year}>{year}</span>
+                  <span className={styles.genre}>{genre}</span>
+                </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </Link>
       </div>
     )
   );

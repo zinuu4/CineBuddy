@@ -1,4 +1,4 @@
-import { IPersonInMovie, IVideo } from '@/shared/api';
+import { IPersonInMovie, IVideoTypes } from '@/shared/api';
 
 export interface IMovieMainProps {
   backdrop: string;
@@ -11,7 +11,7 @@ export interface IMovieMainProps {
   length: number;
   shortDescription: string;
   persons: IPersonInMovie[];
-  trailers: IVideo[];
+  trailers: IVideoTypes;
   id: number;
   name: string;
   isSeries: boolean;

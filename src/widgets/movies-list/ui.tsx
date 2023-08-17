@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -68,7 +69,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   }, [isError]);
 
   return (
-    <section className="container">
+    <section className={classNames('container', styles.container)}>
       <div className={styles.list}>
         {movies?.map((movie) => (
           <div className={styles.card} key={movie.id}>

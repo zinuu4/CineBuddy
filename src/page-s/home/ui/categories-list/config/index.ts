@@ -25,7 +25,12 @@ export const categories = [
     title: 'Смотрим всей семьей',
     queryName: 'genre',
     queryValue: Genres.Family,
-    params: { genre: Genres.Family, limit: LIMIT, year: '2022' },
+    params: {
+      genre: Genres.Family,
+      limit: LIMIT,
+      year: '2022',
+      type: 'movie',
+    },
   },
   {
     title: 'Фантастика',

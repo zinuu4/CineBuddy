@@ -21,6 +21,7 @@ export const Movie = ({ id }: IMovieProps) => {
   const { data, isFetching, isLoading, isError } = useGetMovieQuery({
     id: +id,
   });
+  console.log(data);
 
   useEffect(() => {
     ErrorMsg(isError);
@@ -43,7 +44,7 @@ export const Movie = ({ id }: IMovieProps) => {
             length={data?.movieLength ?? 0}
             shortDescription={data?.shortDescription ?? ''}
             persons={data?.persons ?? []}
-            trailers={data?.videos?.trailers ?? []}
+            trailers={data?.videos ?? []}
             id={data?.id ?? 0}
             name={data?.name ?? ''}
             isSeries={data?.isSeries ?? false}
