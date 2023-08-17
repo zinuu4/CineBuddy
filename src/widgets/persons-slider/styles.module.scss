@@ -1,5 +1,17 @@
 .slide {
-  width: calc(11.1111% - 15px) !important;
+  width: calc(11.11% - 15px) !important;
+
+  @media (max-width: 1200px) {
+    width: calc(12.5% - 12px) !important;
+  }
+
+  @media (max-width: 1024px) {
+    width: calc(16.67% - 12px) !important;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(20% - 7px) !important;
+  }
 }
 
 .swiper {

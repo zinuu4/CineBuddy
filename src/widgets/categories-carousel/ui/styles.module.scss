@@ -28,11 +28,3 @@
   box-shadow: 0 0 55px 55px var(--color-main);
   transition: opacity var(--duration);
 }
-
-.end::before {
-  left: 100px;
-}
-
-.start::after {
-  right: 100px;
-}

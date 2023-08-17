@@ -13,12 +13,12 @@ export const SignInBtn: React.FC = () => (
   <Button>
     <Link href={routes.signin} className={styles.link}>
       <Image
-        width={20}
-        height={20}
+        width={21.5}
+        height={21.5}
         src="/icons/common/profile.svg"
         alt="Войти"
       />
-      Войти
+      <span>Войти</span>
     </Link>
   </Button>
 );

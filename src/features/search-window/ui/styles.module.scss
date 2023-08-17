@@ -1,6 +1,10 @@
 .container {
   width: 850px;
   padding: 80px 20px;
+
+  @media (max-width: 824px) {
+    width: 95%;
+  }
 }
 
 .title {
@@ -12,6 +16,10 @@
 }
 
 .close {
-  right: -250px !important;
+  right: -20px !important;
   top: 0 !important;
+
+  @media (max-width: 992px) {
+    right: 0 !important;
+  }
 }

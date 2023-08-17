@@ -52,15 +52,10 @@ export const CategoriesListItem: React.FC<CategoriesListItemProps> = ({
   };
 
   return (
-    <section>
+    <section className={styles.section}>
       <div className={classNames(styles.container, 'container')}>
         <div onClick={onChooseCategory}>
-          <Title
-            href="/films"
-            chevron
-            as={Link}
-            title={title}
-          />
+          <Title href="/films" chevron as={Link} title={title} />
         </div>
         {data ? <MoviesSlider data={sliderData} /> : <Loader />}
       </div>

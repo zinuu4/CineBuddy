@@ -58,8 +58,8 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
+        <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
         <Link href={routes.movie(id)} className={styles.link}>
-          <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
           <video
             ref={videoRef}
             className={styles.video}

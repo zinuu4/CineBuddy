@@ -19,14 +19,11 @@ export const Menu: React.FC<MenuProps> = ({ onClose, isOpen }) => {
 
   return (
     <div className={classNames(styles.menu, isOpen && styles.open)}>
-      <Button
-        onClick={onClose}
-        className={styles.closeBtn}
-      >
+      <Button onClick={onClose} className={styles.closeBtn}>
         <VscClose size={30} />
       </Button>
       <div className={classNames('container', styles.container)}>
-        <ul className={styles.list}>
+        <ul className="list-reset">
           {navItems.map(({ label, href }) => (
             <li
               key={href}
@@ -35,11 +32,7 @@ export const Menu: React.FC<MenuProps> = ({ onClose, isOpen }) => {
                 pathname === href && styles.active,
               )}
             >
-              <Link
-                href={href}
-                className={styles.link}
-                onClick={onClose}
-              >
+              <Link href={href} className={styles.link} onClick={onClose}>
                 {label}
               </Link>
             </li>

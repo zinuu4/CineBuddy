@@ -12,7 +12,7 @@ interface ISimilarMoviesList {
 }
 
 export const SimilarMoviesList: React.FC<ISimilarMoviesList> = ({ movies }) => (
-  <section>
+  <section className={styles.section}>
     <div className={classNames(styles.container, 'container')}>
       <Title title="Похожее" className={styles.title} />
       <MoviesSlider data={movies} />

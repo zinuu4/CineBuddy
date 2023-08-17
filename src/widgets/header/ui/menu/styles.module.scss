@@ -1,7 +1,7 @@
 .menu {
   position: fixed;
   background-color: var(--color-overlay);
-  z-index: var(--filters-z-index);
+  z-index: var(--modal-z-index);
   top: 0;
   left: 0;
   width: 100%;
@@ -15,7 +15,7 @@
   opacity var(--duration),
   visibility var(--duration);
 
-  @media (width <= 768px) {
+  @media (max-width: 864px) {
     &.open {
       opacity: 1;
       visibility: visible;
@@ -36,10 +36,6 @@
 
 .container {
   padding: 70px 25px 30px;
-}
-
-.list {
-  list-style-type: none;
 }
 
 .listItem {

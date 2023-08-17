@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import React from 'react';
 
+import { Button } from '@/shared/ui/btn-base';
 import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
@@ -22,19 +23,20 @@ export const Footer: React.FC = () => (
         начните погружаться в увлекательный мир кино!
       </p>
       <div className={classNames(styles.divider, 'divider')} />
-      <a
-        target="_blank"
-        href="https://github.com/zinuu4/CineBuddy"
-        rel="noreferrer"
-      >
-        <Image
-          className={styles.icon}
-          src="/icons/social/github.svg"
-          alt="GitHub"
-          width={40}
-          height={40}
-        />
-      </a>
+      <Button className={styles.social}>
+        <a
+          target="_blank"
+          href="https://github.com/zinuu4/CineBuddy"
+          rel="noreferrer"
+        >
+          <Image
+            src="/icons/social/github.svg"
+            alt="GitHub"
+            width={40}
+            height={40}
+          />
+        </a>
+      </Button>
     </div>
   </footer>
 );

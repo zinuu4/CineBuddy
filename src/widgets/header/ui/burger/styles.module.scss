@@ -14,7 +14,7 @@
     height: 16px;
   }
 
-  @media (width <= 768px) {
+  @media (max-width: 864px) {
     opacity: 0.5;
     visibility: visible;
 

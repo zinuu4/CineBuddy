@@ -1,7 +1,7 @@
 .card {
   position: relative;
   width: 100%;
-  height: 30vw;
+  height: 100%;
   margin: 0 auto;
   font-family: var(--font-family);
   border: 1px solid hsl(0deg 0% 100% / 10%);
@@ -65,51 +65,52 @@
     margin-bottom var(--duration);
 }
 
-@media only screen and (width <= 767px) {
-  .content {
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-  }
+// @media only screen and (width <= 767px) {
+//   .content {
+//     bottom: 20px;
+//     left: 20px;
+//     right: 20px;
+//   }
 
-  .card {
-    border-radius: 8px;
-  }
+//   .card {
+//     border-radius: 8px;
+//   }
 
-  .img {
-    border-radius: 8px;
-  }
+//   .img {
+//     border-radius: 8px;
+//   }
 
-  .genre {
-    font-size: 8px;
-    line-height: 10px;
-  }
+//   .genre {
+//     font-size: 8px;
+//     line-height: 10px;
+//   }
 
-  .year {
-    font-size: 8px;
-    margin-right: 15px;
-    line-height: 10px;
-  }
+//   .year {
+//     font-size: 8px;
+//     margin-right: 15px;
+//     line-height: 10px;
+//   }
 
-  .rating {
-    border-radius: 5px;
-    margin-right: 10px;
-    font-size: 6px;
-    line-height: 12px;
-    padding: 0 3px;
-  }
-}
+//   .rating {
+//     border-radius: 5px;
+//     margin-right: 10px;
+//     font-size: 6px;
+//     line-height: 12px;
+//     padding: 0 3px;
+//   }
+// }
 
-@media only screen and (width <= 520px) {
-  .card {
-    height: 50vw;
-  }
-}
+// @media only screen and (width <= 520px) {
+//   .card {
+//     height: 50vw;
+//   }
+// }
 
 .video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  transform: scale(1.1);
+  pointer-events: none;
+  transform: scale(1.4);
 }

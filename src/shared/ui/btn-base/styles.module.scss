@@ -2,6 +2,10 @@
   opacity: 0.5;
   color: var(--color-white);
   transition: opacity var(--duration);
+
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
 }
 
 .opacityBtn:hover {
@@ -27,6 +31,10 @@
 
 .bgBtn:hover {
   background-color: hsl(216deg 4% 55% / 40%);
+
+  @media (max-width: 768px) {
+    background-color: hsl(216deg 4% 55% / 30%);
+  }
 }
 
 .big {

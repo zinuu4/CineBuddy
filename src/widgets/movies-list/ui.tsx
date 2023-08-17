@@ -71,11 +71,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   return (
     <section className={classNames('container', styles.container)}>
       <div className={styles.list}>
-        {movies?.map((movie) => (
-          <div className={styles.card} key={movie.id}>
-            <MovieCard data={movie} />
-          </div>
-        ))}
+        {movies?.map((movie) => <MovieCard key={movie?.id} data={movie} />)}
       </div>
       {isFetching || isLoading ? <Loader /> : null}
       <LoadMoreBtn
