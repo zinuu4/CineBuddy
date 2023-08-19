@@ -1,10 +1,10 @@
 .container {
   height: calc(100vh - 250px);
-  max-width: 820px;
+  max-width: 90%;
   margin: 45px auto 0;
 
-  @media (width <= 992px) {
-    max-width: 620px;
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 }
 
@@ -15,4 +15,24 @@
 
 .swiper {
   padding: 6px 4px;
+}
+
+.swiperSlide {
+  width: 20% !important;
+
+  @media (max-width: 1400px) {
+    width: 23% !important;
+  }
+
+  @media (max-width: 1300px) {
+    width: 29% !important;
+  }
+
+  @media (max-width: 1024px) {
+    width: 36% !important;
+  }
+
+  @media (max-width: 768px) {
+    width: 33% !important;
+  }
 }

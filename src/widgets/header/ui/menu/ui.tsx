@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { VscClose } from 'react-icons/vsc';
 
-import { navItems } from '@/shared/consts';
+import { navItemsBurger } from '@/shared/consts';
 import { Button } from '@/shared/ui/btn-base';
 
 import styles from './styles.module.scss';
@@ -24,7 +24,7 @@ export const Menu: React.FC<MenuProps> = ({ onClose, isOpen }) => {
       </Button>
       <div className={classNames('container', styles.container)}>
         <ul className="list-reset">
-          {navItems.map(({ label, href }) => (
+          {navItemsBurger.map(({ label, href }) => (
             <li
               key={href}
               className={classNames(

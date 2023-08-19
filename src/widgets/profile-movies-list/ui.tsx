@@ -42,7 +42,6 @@ export const ProfileMoviesList: React.FC<IProfileMoviesListProps> = ({
           slidesData={data?.movies}
           swiperClassName={styles.swiper}
           slideClassName={styles.swiperSlide}
-          slidesPerView={4}
         />
       ) : (
         <span className={styles.text}>Пока здесь пусто</span>
