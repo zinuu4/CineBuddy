@@ -15,7 +15,7 @@
   opacity var(--duration),
   visibility var(--duration);
 
-  @media (max-width: 864px) {
+  @media (width <= 864px) {
     &.open {
       opacity: 1;
       visibility: visible;

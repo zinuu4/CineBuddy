@@ -3,7 +3,7 @@
   max-width: 90%;
   margin: 45px auto 0;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     max-width: 100%;
   }
 }
@@ -20,19 +20,19 @@
 .swiperSlide {
   width: 20% !important;
 
-  @media (max-width: 1400px) {
+  @media (width <= 1400px) {
     width: 23% !important;
   }
 
-  @media (max-width: 1300px) {
+  @media (width <= 1300px) {
     width: 29% !important;
   }
 
-  @media (max-width: 1024px) {
+  @media (width <= 1024px) {
     width: 36% !important;
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     width: 33% !important;
   }
 }

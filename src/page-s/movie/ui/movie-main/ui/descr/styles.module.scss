@@ -6,8 +6,8 @@
   color: hsl(0deg 0% 100% / 90%);
   margin: 0 0 20px;
 
-  @media (max-width: 576px) {
-    color: hsla(0,0%,100%,.8);
+  @media (width <= 576px) {
+    color: hsl(0deg 0% 100% / 80%);
     font-size: 14px;
     line-height: 22.6px;
   }

@@ -1,7 +1,7 @@
 .container {
   padding-bottom: 100px;
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     padding-bottom: 70px;
   }
 }
@@ -13,12 +13,12 @@
 .btn {
   margin-top: 15px;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     opacity: 1 !important;
     color: hsl(0deg 0% 100% / 60%) !important;
   }
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     font-size: 11.5px;
     line-height: 21px;
     margin-top: 9px;

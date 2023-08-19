@@ -15,7 +15,7 @@
   transition: background-color var(--duration);
   text-decoration: none;
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     padding: 14px 16px;
     font-size: 12.5px;
     line-height: 16px;
@@ -25,7 +25,7 @@
 .link:hover {
   background-color: var(--color-gray-200);
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     background-color: rgb(34 34 37 / 75%);
   }
 }
@@ -34,7 +34,7 @@
   margin-right: 8px;
   opacity: 0.7;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     opacity: 1;
   }
 }
@@ -42,7 +42,7 @@
 .title {
   opacity: 0.7;
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     opacity: 1;
   }
 }

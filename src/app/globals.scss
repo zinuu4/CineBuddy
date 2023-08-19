@@ -76,7 +76,7 @@ a {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .sidebar-wrapper {
     flex-direction: column;
   }

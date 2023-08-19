@@ -12,7 +12,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     &:hover {
       .name {
         color: var(--color-white);
@@ -53,7 +53,7 @@
   max-width: 80%;
   transition: color var(--duration);
 
-  @media (max-width: 1200px) {
+  @media (width <= 1200px) {
     max-width: 100%;
   }
 }

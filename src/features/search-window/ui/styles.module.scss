@@ -2,11 +2,11 @@
   width: 850px;
   padding: 55px 20px;
 
-  @media (max-width: 824px) {
+  @media (width <= 824px) {
     width: 95%;
   }
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     padding: 35px 20px 40px;
   }
 }
@@ -23,7 +23,7 @@
   right: -20px !important;
   top: 0 !important;
 
-  @media (max-width: 992px) {
+  @media (width <= 992px) {
     right: 0 !important;
   }
 }

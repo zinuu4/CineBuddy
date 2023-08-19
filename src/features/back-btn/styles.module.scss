@@ -12,7 +12,7 @@
   backdrop-filter: blur(5px);
   border-radius: 100%;
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     scale: .8;
     top: 10px;
     left: 7px;

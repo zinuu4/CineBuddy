@@ -8,7 +8,7 @@
     margin-right: 3px;
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     span {
       display: none;
     }

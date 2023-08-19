@@ -6,7 +6,7 @@
   height: 30px;
   margin-right: 27px;
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     margin-right: 13px;
   }
 }

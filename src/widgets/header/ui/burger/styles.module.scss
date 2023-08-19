@@ -14,7 +14,7 @@
     height: 16px;
   }
 
-  @media (max-width: 864px) {
+  @media (width <= 864px) {
     opacity: 0.5;
     visibility: visible;
 
@@ -24,7 +24,7 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     margin-left: 13px;
   }
 }

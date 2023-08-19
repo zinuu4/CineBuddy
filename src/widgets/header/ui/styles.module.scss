@@ -6,7 +6,7 @@
   width: 100%;
   z-index: var(--header-z-index);
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     margin-bottom: 0;
   }
 }

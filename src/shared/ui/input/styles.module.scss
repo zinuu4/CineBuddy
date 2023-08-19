@@ -30,7 +30,7 @@
   color: rgba(#000, 0.45);
   transition: font-size var(--duration), line-height var(--duration), top var(--duration), color var(--duration);
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     font-size: 12px;
   }
 

@@ -3,7 +3,7 @@
   align-items: center;
   list-style: none;
 
-  @media (max-width: 864px) {
+  @media (width <= 864px) {
     & {
       display: none;
     }

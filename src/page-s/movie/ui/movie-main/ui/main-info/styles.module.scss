@@ -10,7 +10,7 @@
   color: hsl(0deg 0% 100% / 60%);
   font-weight: 300;
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     font-size: 14px;
     line-height: 14px;
   }

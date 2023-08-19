@@ -2,7 +2,7 @@
   padding: 20px 0 45px;
   position: relative;
 
-  @media (max-width: 576px) {
+  @media (width <= 576px) {
     padding: 13px 0 28px;
   }
 }
