@@ -80,7 +80,12 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
                 priority
               />
               <div className={styles.content}>
-                <Title title={title} as="h2" className={styles.title} />
+                <Title
+                  size="small"
+                  title={title}
+                  as="h2"
+                  className={styles.title}
+                />
                 <div className={styles.properties}>
                   <Rating rating={rating} />
                   <span className={styles.year}>{year}</span>

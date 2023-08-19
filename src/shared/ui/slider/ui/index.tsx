@@ -51,6 +51,14 @@ export const Slider: React.FC<SliderProps> = ({
         prevEl,
         nextEl,
       }}
+      breakpoints={{
+        320: {
+          spaceBetween: 8,
+        },
+        576: {
+          spaceBetween,
+        },
+      }}
       modules={[Navigation]}
       className={swiperClassName}
       {...props}

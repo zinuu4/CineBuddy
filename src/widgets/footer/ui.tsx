@@ -12,6 +12,7 @@ export const Footer: React.FC = () => (
     <div className={classNames(styles.container, 'container')}>
       <Title
         className={styles.title}
+        size="small"
         title="Добро пожаловать на CineBuddy - онлайн кинотеатр с более чем 960 тысячами фильмов!"
       />
       <p className={styles.descr}>
@@ -32,8 +33,8 @@ export const Footer: React.FC = () => (
           <Image
             src="/icons/social/github.svg"
             alt="GitHub"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
           />
         </a>
       </Button>

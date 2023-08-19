@@ -1,5 +1,6 @@
 .footer {
   flex-shrink: 0;
+  padding: 15px 0;
 }
 
 .divider {
@@ -28,4 +29,12 @@
   color: hsl(0deg 0% 100% / 80%);
   text-align: left;
   text-shadow: 0 1px 0 rgb(0 0 0 / 20%);
+
+  @media (max-width: 576px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 }

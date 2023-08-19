@@ -29,6 +29,7 @@ export const MovieCard: React.FC<IMovieCardProps> = ({
             alt={name ?? ''}
             fill
             sizes="100%"
+            quality={100}
             src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${id}.jpg`}
           />
         </div>

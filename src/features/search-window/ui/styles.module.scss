@@ -1,9 +1,13 @@
 .container {
   width: 850px;
-  padding: 80px 20px;
+  padding: 55px 20px;
 
   @media (max-width: 824px) {
     width: 95%;
+  }
+
+  @media (max-width: 576px) {
+    padding: 35px 20px 40px;
   }
 }
 

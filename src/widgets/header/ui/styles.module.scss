@@ -5,10 +5,10 @@
   margin-bottom: 20px;
   width: 100%;
   z-index: var(--header-z-index);
-}
 
-.logo {
-  margin-right: 40px;
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .container {

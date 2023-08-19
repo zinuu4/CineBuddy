@@ -1,6 +1,10 @@
 .container {
   padding-top: 0;
   padding-bottom: 80px;
+
+  @media (max-width: 576px) {
+    padding-bottom: 50px;
+  }
 }
 
 .section {
@@ -9,4 +13,8 @@
 
 .title {
   margin-bottom: 20px;
+
+  @media (max-width: 576px) {
+    margin-bottom: 15px;
+  }
 }

@@ -14,6 +14,12 @@
   background-color: rgb(34 34 37 / 75%);
   transition: background-color var(--duration);
   text-decoration: none;
+
+  @media (max-width: 576px) {
+    padding: 14px 16px;
+    font-size: 12.5px;
+    line-height: 16px;
+  }
 }
 
 .link:hover {

@@ -12,6 +12,10 @@
   @media (max-width: 768px) {
     width: calc(20% - 7px) !important;
   }
+
+  @media (max-width: 576px) {
+    width: calc(37.33% - 24px) !important;
+  }
 }
 
 .swiper {

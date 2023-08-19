@@ -45,7 +45,7 @@ export const Header = () => {
       <header className={styles.header}>
         <div className={classNames('container', styles.container)}>
           <div className="row">
-            <Logo className={styles.logo} />
+            <Logo />
             <Nav />
           </div>
           <div className="row">

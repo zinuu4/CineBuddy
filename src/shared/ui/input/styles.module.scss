@@ -23,17 +23,21 @@
   left: 14px;
   top: 50%;
   font-weight: 400;
-  font-size: 13.2px;
+  font-size: 13px;
   line-height: 15px;
   transform: translateY(-50%);
   pointer-events: none;
   color: rgba(#000, 0.45);
   transition: font-size var(--duration), line-height var(--duration), top var(--duration), color var(--duration);
 
+  @media (max-width: 576px) {
+    font-size: 12px;
+  }
+
   &.isFocus {
     font-size: 10px;
     line-height: 13px;
-    top: 15px;
+    top: 12.5px;
   }
 }
 
@@ -57,7 +61,7 @@
 .clearBtn {
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: 14px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;

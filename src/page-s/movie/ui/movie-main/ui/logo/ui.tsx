@@ -17,7 +17,7 @@ export const MovieLogo: React.FC<IMovieLogoProps> = ({ img, alt }) => (
         <Image className={styles.img} src={img} alt={alt} fill sizes="100%" />
       </div>
     ) : (
-      <Title title={alt} size="large" />
+      <Title className={styles.title} title={alt} size="large" />
     )}
   </div>
 );
