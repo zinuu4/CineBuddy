@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 /* eslint-disable jsx-a11y/media-has-caption */
 
 import Image from 'next/image';
@@ -10,23 +11,16 @@ import { Rating } from '@/shared/ui/rating';
 import { Title } from '@/shared/ui/title';
 
 import { createObserver } from '../../lib';
+import { ITrailerCard } from './types';
 
 import styles from './styles.module.scss';
 
 interface ITrailerCardProps {
-  data: {
-    imgUrl: string;
-    videoUrl: string;
-    title: string;
-    rating: number;
-    year: number;
-    genre: string;
-    id: number;
-  };
+  data: ITrailerCard;
 }
 
 export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
-  const { imgUrl, videoUrl, title, rating, year, genre, id } = data;
+  const { img, trailer, title, rating, year, genre, id } = data;
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -53,7 +47,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
     return () => {
       observer.disconnect();
     };
-  }, [videoUrl]);
+  }, [trailer]);
 
   return (
     data && (
@@ -67,12 +61,12 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
             muted={isMuted}
             loop
             playsInline
-            src={videoUrl}
+            src={trailer}
           />
           {imgVisibility && (
             <>
               <Image
-                src={imgUrl}
+                src={img}
                 alt="Image"
                 className={styles.img}
                 fill
