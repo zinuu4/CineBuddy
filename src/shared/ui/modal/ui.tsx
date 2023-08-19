@@ -59,8 +59,8 @@ export const Modal: React.FC<IModalProps> = ({
               <Image
                 src="/icons/common/close.svg"
                 alt="close"
-                width={15}
-                height={15}
+                width={18}
+                height={18}
               />
             </Button>
           </div>
