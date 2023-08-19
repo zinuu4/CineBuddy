@@ -76,7 +76,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
                 alt="Image"
                 className={styles.img}
                 fill
-                sizes="width: 100%, height: 30vw"
+                sizes="100%"
                 priority
               />
               <div className={styles.content}>

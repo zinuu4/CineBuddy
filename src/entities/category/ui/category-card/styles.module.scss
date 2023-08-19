@@ -18,6 +18,10 @@
 
 .link:hover {
   background-color: var(--color-gray-200);
+
+  @media (max-width: 768px) {
+    background-color: rgb(34 34 37 / 75%);
+  }
 }
 
 .icon {

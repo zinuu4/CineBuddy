@@ -8,4 +8,9 @@
 
 .btn {
   margin-top: 15px;
+
+  @media (max-width: 768px) {
+    opacity: 1 !important;
+    color: hsl(0deg 0% 100% / 60%) !important;
+  }
 }

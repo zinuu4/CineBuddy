@@ -1,13 +1,8 @@
 .list {
   display: grid;
   row-gap: 17px;
-  column-gap: 300px;
   grid-template-columns: repeat(2, 1fr);
-
-  @media (max-width: 1200px) {
-    column-gap: 260px;
-  }
-
+  
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
     row-gap: 15px;

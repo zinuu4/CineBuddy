@@ -1,4 +1,5 @@
 /* stylelint-disable no-descending-specificity */
+
 .link {
   position: relative;
   display: flex;
@@ -8,6 +9,14 @@
   &:hover {
     .name {
       color: var(--color-second);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      .name {
+        color: var(--color-white);
+      }
     }
   }
 }
@@ -37,6 +46,7 @@
 .name {
   display: block;
   margin-bottom: 6px;
+  text-align: start;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;

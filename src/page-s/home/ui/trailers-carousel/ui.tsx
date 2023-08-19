@@ -26,6 +26,14 @@ export const TrailersCarousel = () => {
       slidesData={data}
       Card={TrailerCard}
       slidesPerView={1.5}
+      breakpoints={{
+        320: {
+          slidesPerView: 1.08,
+        },
+        769: {
+          slidesPerView: 1.5,
+        },
+      }}
       loop
       spaceBetween={12}
       centeredSlides
