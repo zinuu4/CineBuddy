@@ -1,6 +1,25 @@
 .btns {
   display: flex;
   align-items: center;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.btn {
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+
+  &:not(:first-child) {
+    margin-left: 12px;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
 }
 
 .btnWatch {
@@ -21,4 +40,8 @@
 
 .btnWatch:hover::before {
   background: #d01414;
+
+  @media (max-width: 576px) {
+    background: linear-gradient(85.23deg,#b22222,#c51919);
+  }
 }

@@ -11,6 +11,7 @@ import { ActionBtns } from './action-btns';
 import { Descr } from './descr';
 import { MovieLogo } from './logo';
 import { MainInfo } from './main-info';
+import { MobileActions } from './mobile-actions';
 import { People } from './people';
 
 import styles from './styles.module.scss';
@@ -74,6 +75,14 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
               length={length}
               year={year}
               type={type}
+            />
+            <MobileActions
+              setYouTubePlayer={setYouTubePlayer}
+              id={id}
+              rating={rating}
+              name={name}
+              length={length}
+              year={year}
             />
           </div>
         </div>

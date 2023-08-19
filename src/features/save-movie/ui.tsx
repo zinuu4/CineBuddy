@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
@@ -10,11 +11,21 @@ import {
 import { collections } from '@/shared/lib/firebase-collections';
 import { Button } from '@/shared/ui/btn-base';
 
+import styles from './styles.module.scss';
+
 interface ISaveBtnProps {
   movie: Partial<IMovieCard>;
+  wrapperClassName?: string;
+  btnClassName?: string;
+  label?: boolean;
 }
 
-export const SaveBtn: React.FC<ISaveBtnProps> = ({ movie }) => {
+export const SaveBtn: React.FC<ISaveBtnProps> = ({
+  movie,
+  wrapperClassName,
+  btnClassName,
+  label,
+}) => {
   const session = useSession();
   const email = session?.data?.user?.email;
   const baseImgUrl = '/icons/common/';
@@ -44,17 +55,29 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({ movie }) => {
   }, [data?.movies]);
 
   return (
-    <Button disabled={isLoading} onClick={handleSaveToggle} stylesType="bg">
-      <Image
-        src={
-          isSaved
-            ? `${baseImgUrl}fill-bookmark.svg`
-            : `${baseImgUrl}bookmark.svg`
-        }
-        alt="Add to favorites"
-        width={22}
-        height={22}
-      />
-    </Button>
+    <div className={classNames(label && styles.wrapper, wrapperClassName)}>
+      <Button
+        className={btnClassName}
+        disabled={isLoading}
+        onClick={handleSaveToggle}
+        stylesType="bg"
+      >
+        <Image
+          src={
+            isSaved
+              ? `${baseImgUrl}fill-bookmark.svg`
+              : `${baseImgUrl}bookmark.svg`
+          }
+          alt="Add to favorites"
+          width={22}
+          height={22}
+        />
+      </Button>
+      {label && (
+        <span className={styles.label}>
+          {isSaved ? 'Запомнен' : 'Запомнить'}
+        </span>
+      )}
+    </div>
   );
 };

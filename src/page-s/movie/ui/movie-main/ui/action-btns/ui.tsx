@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useSession } from 'next-auth/react';
 import React from 'react';
 
@@ -49,7 +50,11 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
 
   return (
     <div className={styles.btns}>
-      <Button onClick={onWatch} stylesType="bg" className={styles.btnWatch}>
+      <Button
+        onClick={onWatch}
+        stylesType="bg"
+        className={classNames(styles.btnWatch, styles.btn)}
+      >
         <span className={styles.btnWatchText}>
           Смотреть {getMovieType(type)}
         </span>
@@ -57,11 +62,14 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
       <Button
         onClick={() => setYouTubePlayer(true)}
         stylesType="bg"
-        className={styles.btnTrailer}
+        className={classNames(styles.btnTrailer, styles.btn)}
       >
         <span>Трейлер</span>
       </Button>
-      <SaveBtn movie={{ name, rating, id, movieLength: length, year }} />
+      <SaveBtn
+        wrapperClassName={styles.btn}
+        movie={{ name, rating, id, movieLength: length, year }}
+      />
     </div>
   );
 };
