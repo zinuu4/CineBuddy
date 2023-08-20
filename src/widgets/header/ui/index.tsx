@@ -34,6 +34,7 @@ export const Header = () => {
     }
 
     prevPathnameRef.current = pathname;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const onToggle = () => {

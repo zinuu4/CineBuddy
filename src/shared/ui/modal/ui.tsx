@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import React, { ReactNode, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import { Button } from '../btn-base';
 
@@ -15,6 +16,7 @@ interface IModalProps {
   onClose: () => void;
   wrapperClose?: boolean;
   darkBg?: boolean;
+  close?: boolean;
   closeSize?: number;
 }
 
@@ -27,6 +29,7 @@ export const Modal: React.FC<IModalProps> = ({
   isOpen,
   onClose,
   wrapperClose = true,
+  close = true,
   closeSize = 18,
 }) => {
   if (isOpen) {
@@ -57,19 +60,27 @@ export const Modal: React.FC<IModalProps> = ({
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, onClose]);
 
   return (
-    isOpen && (
-      <div id="modal">
-        <div
-          onClick={(e) => handleWrapperClick(e)}
-          className={classNames(
-            styles.modal,
-            darkBg && styles.darkBg,
-            modalClassName,
-          )}
-        >
+    <CSSTransition
+      in={isOpen}
+      timeout={0}
+      classNames={{
+        enterDone: styles.open,
+      }}
+      unmountOnExit
+    >
+      <div
+        onClick={(e) => handleWrapperClick(e)}
+        className={classNames(
+          styles.modal,
+          darkBg && styles.darkBg,
+          modalClassName,
+        )}
+      >
+        {close && (
           <Button
             onClick={onClose}
             className={classNames(styles.btn, closeClassName)}
@@ -81,11 +92,11 @@ export const Modal: React.FC<IModalProps> = ({
               height={closeSize}
             />
           </Button>
-          <div className={classNames(styles.container, containerClassName)}>
-            {children}
-          </div>
+        )}
+        <div className={classNames(styles.container, containerClassName)}>
+          {children}
         </div>
       </div>
-    )
+    </CSSTransition>
   );
 };

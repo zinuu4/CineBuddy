@@ -16,11 +16,14 @@ export const CopyBtn = () => {
         `${process.env.APP_BASE_URL}${pathname}`,
       );
       setCopied(true);
-      toast('Успешно скопировано!', {
+      toast('Успешно скопировано ✅', {
         theme: 'light',
         autoClose: 5000,
         position: 'top-right',
       });
+      setTimeout(() => {
+        setCopied(false);
+      }, 6000);
     } catch (error) {
       toast('Что-то пошло не так', {
         theme: 'dark',

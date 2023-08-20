@@ -70,6 +70,7 @@ export const Slider: React.FC<SliderProps> = ({
         </>
       )}
       {slidesData.map((data: any, index: number) => (
+        // eslint-disable-next-line react/no-array-index-key
         <SwiperSlide className={slideClassName} key={index}>
           <Card data={data} />
         </SwiperSlide>

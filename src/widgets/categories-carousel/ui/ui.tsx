@@ -49,6 +49,7 @@ export const CategoriesCarousel: React.FC = () => {
     } else if (scroll === maxScrollX) {
       setBoxShadowClassname(styles.end);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scroll]);
 
   const router = useRouter();

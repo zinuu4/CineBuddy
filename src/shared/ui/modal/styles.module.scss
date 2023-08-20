@@ -5,6 +5,12 @@
   text-align: center;
   z-index: var(--modalbg-z-index);
   padding: 26px;
+  transition: opacity var(--duration);
+  opacity: 0;
+
+  &.open {
+    opacity: 1;
+  }
 }
 
 .modal::before {

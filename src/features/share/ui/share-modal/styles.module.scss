@@ -1,9 +1,9 @@
 .container {
   width: calc(100% - 18px);
   border-radius: 15px;
+  margin-bottom: 12px;
   background-color: var(--color-gray-100);
   vertical-align: bottom !important;
-  margin-bottom: 12px;
 }
 
 .modal {

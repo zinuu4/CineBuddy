@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
@@ -24,8 +25,12 @@ export const ShareModal = () => {
     <Modal
       isOpen={shareModal}
       onClose={() => dispatch(setShareModal(false))}
-      containerClassName={styles.container}
+      containerClassName={classNames(
+        styles.container,
+        shareModal && styles.done,
+      )}
       modalClassName={styles.modal}
+      close={false}
     >
       <div className={styles.content}>
         <Title className={styles.title} title="Поделиться" />

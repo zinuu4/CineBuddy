@@ -5,9 +5,9 @@
 import { useEffect } from 'react';
 
 import { FactsList } from '@/widgets/facts-list';
+import { ShareModal } from '@/features/share';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
-import { ShareModal } from '@/features/share';
 
 import { useGetMovieQuery } from '../api';
 import { MovieMain } from './movie-main';

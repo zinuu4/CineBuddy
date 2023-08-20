@@ -50,6 +50,7 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
     if (data !== undefined && data?.movies) {
       setIsSaved(data?.movies.some((moviee) => moviee.id === movie.id));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data?.movies]);
 
   return (

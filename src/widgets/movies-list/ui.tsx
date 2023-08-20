@@ -62,6 +62,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading, isError, isFetching, limit, total]);
 
   useEffect(() => {
