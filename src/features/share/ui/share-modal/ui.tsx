@@ -1,6 +1,5 @@
-import classNames from 'classnames';
+import { usePathname } from 'next/navigation';
 import React from 'react';
-import { IoCopyOutline } from 'react-icons/io5';
 
 import {
   useAppDispatch,
@@ -10,12 +9,16 @@ import { Modal } from '@/shared/ui/modal';
 import { Title } from '@/shared/ui/title';
 
 import { setShareModal } from '../../model';
+import { CopyBtn } from './copy-btn';
+import { ShareBtns } from './share-btns';
 
 import styles from './styles.module.scss';
 
 export const ShareModal = () => {
   const dispatch = useAppDispatch();
   const { shareModal } = useAppSelector((state) => state.shareModal);
+
+  const pathname = usePathname();
 
   return (
     <Modal
@@ -26,19 +29,8 @@ export const ShareModal = () => {
     >
       <div className={styles.content}>
         <Title className={styles.title} title="Поделиться" />
-        <div className={styles.btns}>
-          <IoCopyOutline size={20} />
-          <IoCopyOutline size={20} />
-          <IoCopyOutline size={20} />
-          <IoCopyOutline size={20} />
-          <IoCopyOutline size={20} />
-        </div>
-        <button className={classNames('btn-reset', styles.copy)}>
-          <span className={styles.icon}>
-            <IoCopyOutline size={20} />
-          </span>
-          Копировать ссылку
-        </button>
+        <ShareBtns url={`${process.env.APP_BASE_URL}${pathname}`} />
+        <CopyBtn />
       </div>
     </Modal>
   );
