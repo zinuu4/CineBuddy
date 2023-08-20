@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { SaveBtn } from '@/features/save-movie';
-import { ShareBtn } from '@/features/share-btn';
+import { ShareBtn } from '@/features/share';
 
 import { TrailerBtn } from './ui/trailer-btn';
 
@@ -27,18 +27,14 @@ export const MobileActions: React.FC<IMobileActionsProps> = ({
 }) => (
   <div className={styles.root}>
     <div className={styles.item}>
-      <TrailerBtn setYouTubePlayer={setYouTubePlayer} className={styles.btn} />
+      <TrailerBtn className={styles.btn} setYouTubePlayer={setYouTubePlayer} />
       <span className={styles.label}>Трейлер</span>
     </div>
     <div className={styles.item}>
-      <SaveBtn
-        btnClassName={styles.btn}
-        movie={{ name, rating, id, movieLength: length, year }}
-        label
-      />
+      <SaveBtn movie={{ name, rating, id, movieLength: length, year }} label />
     </div>
     <div className={styles.item}>
-      <ShareBtn className={styles.btn} />
+      <ShareBtn />
       <span className={styles.label}>Поделиться</span>
     </div>
   </div>

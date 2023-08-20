@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import searchReducer from '@/features/search-window/model/search-slice';
+import shareReducer from '@/features/share/model/share-slice';
 import { $api, $nextApi, $firebaseApi } from '@/shared/api';
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     [$nextApi.reducerPath]: $nextApi.reducer,
     [$firebaseApi.reducerPath]: $firebaseApi.reducer,
     search: searchReducer,
+    shareModal: shareReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

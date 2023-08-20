@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { FactsList } from '@/widgets/facts-list';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
+import { ShareModal } from '@/features/share';
+
 import { useGetMovieQuery } from '../api';
 import { MovieMain } from './movie-main';
 import { PersonsList } from './persons-list';
@@ -62,6 +64,7 @@ export const Movie = ({ id }: IMovieProps) => {
           )}
         </>
       )}
+      <ShareModal />
     </>
   );
 };

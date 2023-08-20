@@ -16,14 +16,12 @@ import styles from './styles.module.scss';
 interface ISaveBtnProps {
   movie: Partial<IMovieCard>;
   wrapperClassName?: string;
-  btnClassName?: string;
   label?: boolean;
 }
 
 export const SaveBtn: React.FC<ISaveBtnProps> = ({
   movie,
   wrapperClassName,
-  btnClassName,
   label,
 }) => {
   const session = useSession();
@@ -57,7 +55,7 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
   return (
     <div className={classNames(label && styles.wrapper, wrapperClassName)}>
       <Button
-        className={btnClassName}
+        className={styles.btn}
         disabled={isLoading}
         onClick={handleSaveToggle}
         stylesType="bg"
