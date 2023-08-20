@@ -1,7 +1,8 @@
 .card {
   position: relative;
+  display: block;
   width: 100%;
-  height: 100%;
+  padding-top: 56.25%;
   margin: 0 auto;
   font-family: var(--font-family);
   border: 1px solid hsl(0deg 0% 100% / 10%);
@@ -11,6 +12,13 @@
 
 .link {
   color: var(--color-white);
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .img {
@@ -26,8 +34,18 @@
   bottom: 30px;
   left: 30px;
   right: 30px;
-  z-index: 2;
+  z-index: 10;
   pointer-events: none;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  transition: opacity var(--duration);
+
+  &.done {
+    opacity: 0;
+  }
 }
 
 .genre {
@@ -50,12 +68,6 @@
   line-height: 20px;
 }
 
-.properties {
-  display: flex;
-  align-items: center;
-  transition: opacity var(--duration);
-}
-
 .title {
   position: relative;
   text-shadow: 0 0.75px 0 rgb(0 0 0 / 20%);
@@ -63,6 +75,22 @@
   transition:
     transform var(--duration),
     margin-bottom var(--duration);
+
+  &.done {
+    transform-origin: left bottom;
+    margin-bottom: 0;
+    transform: translateY(20px) scale(0.9);
+
+    @media (width <= 576px) {
+      transform: translateY(23px) scale(0.9);
+    }
+  }
+
+  @media (width <= 576px) {
+    height: 40px;
+    margin-bottom: 8px;
+    max-width: 230px;
+  }
 }
 
 @media only screen and (width <= 576px) {

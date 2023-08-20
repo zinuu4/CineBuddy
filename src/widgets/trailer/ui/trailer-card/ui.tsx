@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import { VolumeButton } from '@/features/volume-btn';
 import { routes } from '@/shared/lib/routing';
@@ -25,7 +26,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [isMuted, setIsMuted] = useState(true);
-  const [imgVisibility, setImgVisibility] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   const toggleMuted = () => {
     const videoElement = videoRef.current;
@@ -38,7 +39,7 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   useEffect(() => {
     const videoElement = videoRef.current;
 
-    const { observer } = createObserver(videoElement, setImgVisibility)!;
+    const { observer } = createObserver(videoElement, setIsActive)!;
 
     if (videoElement) {
       observer.observe(videoElement);
@@ -52,7 +53,6 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
   return (
     data && (
       <div className={styles.card}>
-        <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
         <Link href={routes.movie(id)} className={styles.link}>
           <video
             ref={videoRef}
@@ -63,32 +63,43 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
             playsInline
             src={trailer}
           />
-          {imgVisibility && (
-            <>
-              <Image
-                src={img}
-                alt="Image"
-                className={styles.img}
-                fill
-                sizes="100%"
-                priority
+          <div className={styles.content}>
+            <CSSTransition
+              timeout={0}
+              in={isActive}
+              classNames={{ enterDone: styles.done }}
+            >
+              <Title
+                size="small"
+                title={title}
+                as="h2"
+                className={styles.title}
               />
-              <div className={styles.content}>
-                <Title
-                  size="small"
-                  title={title}
-                  as="h2"
-                  className={styles.title}
-                />
-                <div className={styles.properties}>
-                  <Rating rating={rating} />
-                  <span className={styles.year}>{year}</span>
-                  <span className={styles.genre}>{genre}</span>
-                </div>
+            </CSSTransition>
+            <CSSTransition
+              timeout={0}
+              in={isActive}
+              classNames={{ enterDone: styles.done }}
+            >
+              <div className={styles.bottom}>
+                <Rating rating={rating} />
+                <span className={styles.year}>{year}</span>
+                <span className={styles.genre}>{genre}</span>
               </div>
-            </>
+            </CSSTransition>
+          </div>
+          {!isActive && (
+            <Image
+              src={img}
+              alt="Image"
+              className={styles.img}
+              fill
+              sizes="100%"
+              priority
+            />
           )}
         </Link>
+        <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
       </div>
     )
   );

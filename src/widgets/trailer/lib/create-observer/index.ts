@@ -1,6 +1,6 @@
 export const createObserver = (
   videoElement: HTMLVideoElement | null,
-  setImgVisibility: (arg: boolean) => void,
+  setIsActive: (arg: boolean) => void,
 ): { observer: IntersectionObserver } | undefined => {
   if (!videoElement) {
     return;
@@ -20,12 +20,12 @@ export const createObserver = (
         }
 
         timeoutId = setTimeout(() => {
-          setImgVisibility(false);
+          setIsActive(true);
           videoElement.currentTime = 0;
           videoElement.play();
         }, 1500);
       } else {
-        setImgVisibility(true);
+        setIsActive(false);
         videoElement?.pause();
       }
     });
