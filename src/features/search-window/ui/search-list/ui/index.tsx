@@ -19,7 +19,7 @@ export const SearchList = () => {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setDebouncedSearch(search);
-    }, 500);
+    }, 650);
 
     return () => {
       clearTimeout(timerId);

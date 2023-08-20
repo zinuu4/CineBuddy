@@ -11,6 +11,8 @@ import { ErrorMsg } from '@/shared/ui/error-msg';
 import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
 import { Loader } from '@/shared/ui/loader';
 
+import { useScroll } from './lib';
+
 import styles from './styles.module.scss';
 
 interface IMoviesListProps {
@@ -46,24 +48,7 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
     setLimit((prevLimit) => prevLimit + 30);
   };
 
-  const onScroll = () => {
-    const offset = window.innerHeight + window.pageYOffset;
-    if (
-      offset >= document.body.offsetHeight - 1 &&
-      !(isLoading || isError || isFetching || limit >= total)
-    ) {
-      handleLoadMore();
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading, isError, isFetching, limit, total]);
+  useScroll({ handleLoadMore, limit, total, isLoading, isError, isFetching });
 
   useEffect(() => {
     ErrorMsg(isError);

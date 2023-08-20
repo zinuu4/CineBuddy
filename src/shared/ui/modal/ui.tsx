@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import Image from 'next/image';
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { Button } from '../btn-base';
+import { useEscape } from './lib';
 
 import styles from './styles.module.scss';
 
@@ -44,24 +45,7 @@ export const Modal: React.FC<IModalProps> = ({
     }
   };
 
-  const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      onClose();
-    }
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener('keydown', handleKeyPress);
-    } else {
-      document.removeEventListener('keydown', handleKeyPress);
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen, onClose]);
+  useEscape(onClose);
 
   return (
     <CSSTransition

@@ -9,7 +9,7 @@ interface LoaderProps {
 }
 
 export const Loader: React.FC<LoaderProps> = (props) => {
-  const { color = 'white', size = 22 } = props;
+  const { color = 'white', size = 30 } = props;
 
   return (
     <div className={styles.loaderWrapper}>

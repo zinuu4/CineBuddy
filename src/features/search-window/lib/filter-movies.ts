@@ -7,5 +7,5 @@ export const filterMovies = (movies: IMovieCard[]) =>
       name !== null &&
       rating !== null &&
       rating !== 0 &&
-      poster !== '',
+      poster !== null,
   );

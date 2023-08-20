@@ -1,14 +1,14 @@
 'use client';
 
 import classNames from 'classnames';
-import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { SearchWindow } from '@/features/search-window';
 import { setSearchWindow } from '@/features/search-window/model';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
 
+import { useSetSearchWindow } from '../lib';
 import { Burger } from './burger';
 import { Logo } from './logo';
 import { Menu } from './menu';
@@ -25,17 +25,7 @@ export const Header = () => {
   const dispatch = useAppDispatch();
   const session = useSession();
 
-  const pathname = usePathname();
-  const prevPathnameRef = useRef(pathname);
-
-  useEffect(() => {
-    if (prevPathnameRef.current !== pathname) {
-      dispatch(setSearchWindow(false));
-    }
-
-    prevPathnameRef.current = pathname;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  useSetSearchWindow();
 
   const onToggle = () => {
     setIsOpen((prev) => !prev);
