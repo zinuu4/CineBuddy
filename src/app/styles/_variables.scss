@@ -18,7 +18,7 @@
   --color-gray-200: #2a2a2e;
   --color-gray-300: #1c1c1f;
   --color-gray-900: hsl(0deg 0% 100% / 60%);
-  --color-overlay: rgb(0 0 0 / 80%);
+  --color-overlay: rgb(0 0 0 / 70%);
   --color-overlay-dark: rgb(0 0 0 / 95%);
   --color-warning: #fb923c;
   --color-success: #a3e635;
@@ -35,6 +35,7 @@
   --drawer-z-index: 150;
   --filters-z-index: 125;
   --slider-z-index: 100;
+  --modal-content-z-index: 210;
   --modal-z-index: 200;
   --modalbg-z-index: 160;
 }

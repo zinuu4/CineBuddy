@@ -1,6 +1,8 @@
 import React from 'react';
 import YouTube, { YouTubeProps } from 'react-youtube';
 
+import styles from './styles.module.scss';
+
 interface IYouTubePlayerProps {
   videoLink: string;
 }
@@ -11,8 +13,7 @@ export const YouTubePlayer: React.FC<IYouTubePlayerProps> = ({ videoLink }) => {
   };
 
   const opts: YouTubeProps['opts'] = {
-    height: '533',
-    width: '948',
+    width: '100%',
     playerVars: {
       autoplay: 0,
     },
@@ -22,5 +23,9 @@ export const YouTubePlayer: React.FC<IYouTubePlayerProps> = ({ videoLink }) => {
 
   const videoId = urlParts[urlParts.length - 1];
 
-  return <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} />;
+  return (
+    <div className={styles.player}>
+      <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} />
+    </div>
+  );
 };

@@ -18,12 +18,3 @@
 .modal::before {
   vertical-align: top !important;
 }
-
-.close {
-  right: -20px !important;
-  top: 0 !important;
-
-  @media (width <= 992px) {
-    right: 0 !important;
-  }
-}

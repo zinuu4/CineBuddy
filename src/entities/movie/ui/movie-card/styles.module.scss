@@ -9,6 +9,10 @@
 
 .item:hover {
   transform: scale(1.03);
+
+  @media (width <= 992px) {
+    transform: scale(1);
+  }
 }
 
 .content {

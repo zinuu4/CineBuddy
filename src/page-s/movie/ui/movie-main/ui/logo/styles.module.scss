@@ -7,6 +7,16 @@
   display: block;
   width: 420px;
   height: 140px;
+
+  @media (width <= 992px) {
+    width: 300px;
+    height: 100px;
+  }
+
+  @media (width <= 576px) {
+    width: 268px;
+    height: 89px;
+  }
 }
 
 .img {
