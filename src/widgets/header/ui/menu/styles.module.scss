@@ -1,7 +1,13 @@
+.modal {
+  @media (width >= 769px) {
+    display: none !important;
+  }
+}
+
 .container {
   padding: 70px 25px 30px;
   width: 100%;
-  vertical-align: top;
+  vertical-align: top !important;
   align-items: start;
 }
 
