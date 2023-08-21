@@ -5,7 +5,10 @@
   overflow-y: hidden;
   padding: 0 15px 5px;
   border-bottom: 1px solid rgb(0 0 0 / 15%);
-  scrollbar-width: none;
+}
+
+.btns::-webkit-scrollbar {
+  display: none;
 }
 
 .btn {

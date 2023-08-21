@@ -22,6 +22,7 @@ export const Menu: React.FC<MenuProps> = ({ onClose, isOpen }) => {
       onClose={onClose}
       containerClassName={styles.container}
       modalClassName={styles.modal}
+      wrapperClose={false}
       darkBg
     >
       <ul className={classNames('list-reset', styles.list)}>

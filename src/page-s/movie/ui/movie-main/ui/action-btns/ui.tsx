@@ -71,7 +71,7 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
         wrapperClassName={styles.btn}
         movie={{ name, rating, id, movieLength: length, year }}
       />
-      <ShareBtn />
+      <ShareBtn className={styles.btn} />
     </div>
   );
 };
