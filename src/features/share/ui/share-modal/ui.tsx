@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -34,7 +36,7 @@ export const ShareModal = () => {
     >
       <div className={styles.content}>
         <Title className={styles.title} title="Поделиться" />
-        <ShareBtns url={`${process.env.APP_BASE_URL}${pathname}`} />
+        <ShareBtns url={`https://cine-buddy.vercel.app/${pathname}`} />
         <CopyBtn />
       </div>
     </Modal>
