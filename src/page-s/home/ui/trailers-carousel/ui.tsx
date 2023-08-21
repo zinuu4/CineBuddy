@@ -29,10 +29,12 @@ export const TrailersCarousel = () => {
         slidesPerView={1.5}
         breakpoints={{
           320: {
-            slidesPerView: 1.08,
+            slidesPerView: 1.12,
+            spaceBetween: 7,
           },
           769: {
             slidesPerView: 1.5,
+            spaceBetween: 12,
           },
         }}
         loop

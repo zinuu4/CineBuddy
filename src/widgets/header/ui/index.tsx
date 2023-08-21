@@ -7,10 +7,10 @@ import React, { useState } from 'react';
 import { SearchWindow } from '@/features/search-window';
 import { setSearchWindow } from '@/features/search-window/model';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
+import { Logo } from '@/shared/ui/logo';
 
 import { useSetSearchWindow } from '../lib';
 import { Burger } from './burger';
-import { Logo } from './logo';
 import { Menu } from './menu';
 import { Nav } from './nav';
 import { Profile } from './profile-btn';

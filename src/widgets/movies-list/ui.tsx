@@ -10,6 +10,7 @@ import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
 import { Loader } from '@/shared/ui/loader';
+import { NoResultsMessage } from '@/shared/ui/no-result-msg';
 
 import { useScroll } from './lib';
 
@@ -53,6 +54,14 @@ export const MoviesList: React.FC<IMoviesListProps> = ({ type }) => {
   useEffect(() => {
     ErrorMsg(isError);
   }, [isError]);
+
+  if (movies && movies.length === 0 && !isLoading && !isFetching && !isError) {
+    return (
+      <section className={classNames('container', styles.container)}>
+        <NoResultsMessage />
+      </section>
+    );
+  }
 
   return (
     <section className={classNames('container', styles.container)}>

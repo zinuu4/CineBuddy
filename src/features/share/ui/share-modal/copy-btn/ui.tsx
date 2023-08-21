@@ -17,7 +17,7 @@ export const CopyBtn = () => {
       );
       setCopied(true);
       toast('Успешно скопировано ✅', {
-        theme: 'light',
+        theme: 'dark',
         autoClose: 5000,
         position: 'top-right',
       });

@@ -17,6 +17,10 @@
 
 .item:hover {
   transform: translateY(-3px);
+
+  @media (width <= 992px) {
+    transform: translateY(0);
+  }
 }
 
 .imgWrapper {

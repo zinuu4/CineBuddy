@@ -6,7 +6,7 @@ import { filterMovies } from '@/features/search-window/lib';
 import { useAppSelector } from '@/shared/lib/hooks/use-app-state';
 import { ErrorMsg } from '@/shared/ui/error-msg';
 import { Loader } from '@/shared/ui/loader';
-import { Title } from '@/shared/ui/title';
+import { NoResultsMessage } from '@/shared/ui/no-result-msg';
 
 import { SearchItem } from './search-item';
 
@@ -42,18 +42,9 @@ export const SearchList = () => {
 
   const filteredMovies = filterMovies(movies ?? []);
 
-  const NoResultsMessage = (
-    <>
-      <Title className={styles.title} size="small" title="Ничего не нашлось" />
-      <p className={styles.desc}>
-        Может быть, вы ищете то, чего пока нет в каталоге
-      </p>
-    </>
-  );
-
   if (debouncedSearch.length === 0) return;
 
-  if (!isLoading && !filteredMovies?.length) return NoResultsMessage;
+  if (!isLoading && !filteredMovies?.length) return <NoResultsMessage />;
 
   const SearchList = (
     <ul className={classNames('list-reset', styles.list)}>

@@ -17,6 +17,7 @@
   --color-gray-100: #1c1c1f;
   --color-gray-200: #2a2a2e;
   --color-gray-300: #1c1c1f;
+  --color-gray-400: #3d3d43;
   --color-gray-900: hsl(0deg 0% 100% / 60%);
   --color-overlay: rgb(0 0 0 / 70%);
   --color-overlay-dark: rgb(0 0 0 / 95%);
@@ -30,10 +31,9 @@
   --rounded-full: 100%;
 
   // z-index
-  --header-z-index: 10;
+  --header-z-index: 159;
   --select-z-index: 50;
   --drawer-z-index: 150;
-  --filters-z-index: 125;
   --slider-z-index: 100;
   --modal-content-z-index: 210;
   --modal-z-index: 200;

@@ -10,8 +10,6 @@
   background-color: var(--color-gray-300);
   border-top-left-radius: var(--rounded-lg);
   border-top-right-radius: var(--rounded-lg);
-  padding: 14px 0 72px;
-  overflow: auto;
   transform: translateY(150vh);
   transition: transform var(--duration);
 }
@@ -20,16 +18,8 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  background-color: transparent;
-  border: none;
-  top: 25px;
-  right: 25px;
-  color: white;
-  cursor: pointer;
-
-  &:hover {
-    color: rgb(255 255 255 / 40%);
-  }
+  top: 15px;
+  right: 15px;
 }
 
 .drawer {

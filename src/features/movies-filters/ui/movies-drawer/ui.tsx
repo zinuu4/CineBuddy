@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 
 import { Drawer } from '@/shared/ui/drawer';
+import { Title } from '@/shared/ui/title';
 
 import styles from './styles.module.scss';
 
@@ -73,7 +74,7 @@ export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
     )}
     >
       <div className={styles.content}>
-        <h5 className={styles.filterName}>{filter.label}</h5>
+        <Title title={filter.label} as="h5" className={styles.title} />
         <div className={styles.divider} />
         <ul className={styles.options}>
           {filter.options.map((option) => {
@@ -87,7 +88,7 @@ export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
                 {option.label}
                 {isSelected && (
                   <span className={styles.check}>
-                    <FiCheck />
+                    <FiCheck size={20} />
                   </span>
                 )}
               </li>

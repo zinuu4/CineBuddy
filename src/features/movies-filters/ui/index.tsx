@@ -7,7 +7,9 @@ import { VscSettings, VscClose } from 'react-icons/vsc';
 
 import { createQueryString } from '@/shared/lib/helpers/create-query';
 import { Button } from '@/shared/ui/btn-base';
+import { Logo } from '@/shared/ui/logo';
 import { Select } from '@/shared/ui/select';
+import { Title } from '@/shared/ui/title';
 
 import { initialFilter, FilterType, filters, sortFilter } from '../config';
 
@@ -38,14 +40,17 @@ export const MoviesFilters: React.FC = () => {
 
   return (
     <section className={classNames(styles.root, isOpen && styles.open)}>
-      <button onClick={() => setIsOpen(true)} className={styles.filtersBtn}>
-        <VscSettings size={22} />
-      </button>
+      <Button onClick={() => setIsOpen(true)} className={styles.triggerBtn}>
+        <VscSettings size={23} />
+      </Button>
       <div className={styles.drawersContainer}>
-        <button onClick={() => setIsOpen(false)} className={styles.closeBtn}>
-          <VscClose size={17} />
-        </button>
-        <h3 className={styles.filtersHero}>Фильтры</h3>
+        <div className={styles.header}>
+          <Logo />
+          <Button onClick={() => setIsOpen(false)} className={styles.closeBtn}>
+            <VscClose size={30} />
+          </Button>
+        </div>
+        <Title title="Фильтры" className={styles.title} />
         <div className={styles.col}>
           {[...filters, sortFilter].map((filterCategory) => (
             <MoviesDrawer
@@ -56,7 +61,9 @@ export const MoviesFilters: React.FC = () => {
             />
           ))}
         </div>
-        <Button className={styles.resultsBtn}>Показать результаты</Button>
+        <Button className={styles.resultsBtn} onClick={() => setIsOpen(false)}>
+          Показать результаты
+        </Button>
       </div>
       <div className={styles.options}>
         <div className={styles.container}>

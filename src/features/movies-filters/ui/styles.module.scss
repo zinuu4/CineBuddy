@@ -2,8 +2,8 @@
   @media (width <= 768px) {
     .drawersContainer {
       position: fixed;
-      background-color: var(--color-overlay);
-      z-index: var(--filters-z-index);
+      background-color: var(--color-overlay-dark);
+      z-index: var(--modal-z-index);
       top: 0;
       left: 0;
       width: 100%;
@@ -36,16 +36,20 @@
   }
 }
 
-.filtersBtn {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.triggerBtn {
   display: none;
 
   @media (width <= 768px) {
     display: block;
-    background-color: transparent;
     align-self: flex-end;
-    color: white;
     transform: rotate(90deg);
-    border: none;
   }
 }
 
@@ -53,16 +57,8 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  background-color: transparent;
-  border: none;
   top: 25px;
   right: 25px;
-  color: white;
-  cursor: pointer;
-
-  &:hover {
-    color: rgb(255 255 255 / 40%);
-  }
 }
 
 .drawersContainer {
@@ -98,9 +94,7 @@
   gap: 4px;
 }
 
-.filtersHero {
-  font-size: 35px;
-  font-weight: 500;
+.title {
   padding: 20px 0;
 }
 
