@@ -17,6 +17,7 @@ export const Portal = ({ rootId, children }: IPortalProps) => {
   }, []);
 
   return mounted && !!containerRef.current
-    ? createPortal(children, containerRef.current)
+    ? // @ts-ignore
+      createPortal(children, containerRef.current)
     : null;
 };
