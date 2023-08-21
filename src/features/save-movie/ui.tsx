@@ -17,12 +17,14 @@ interface ISaveBtnProps {
   movie: Partial<IMovieCard>;
   wrapperClassName?: string;
   label?: boolean;
+  round?: boolean;
 }
 
 export const SaveBtn: React.FC<ISaveBtnProps> = ({
   movie,
   wrapperClassName,
   label,
+  round,
 }) => {
   const session = useSession();
   const email = session?.data?.user?.email;
@@ -56,7 +58,7 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
   return (
     <div className={classNames(label && styles.wrapper, wrapperClassName)}>
       <Button
-        className={styles.btn}
+        className={round ? styles.round : ''}
         disabled={isLoading}
         onClick={handleSaveToggle}
         stylesType="bg"

@@ -36,6 +36,7 @@ export const CopyBtn = () => {
   return (
     <button
       onClick={copyToClipboard}
+      disabled={copied}
       className={classNames('btn-reset', styles.copy)}
     >
       <span className={styles.icon}>

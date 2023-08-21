@@ -1,5 +1,6 @@
 .container {
   width: calc(100% - 18px);
+  max-width: 768px;
   border-radius: 15px;
   margin-bottom: 12px;
   background-color: var(--color-gray-100);

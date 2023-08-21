@@ -31,10 +31,14 @@ export const MobileActions: React.FC<IMobileActionsProps> = ({
       <span className={styles.label}>Трейлер</span>
     </div>
     <div className={styles.item}>
-      <SaveBtn movie={{ name, rating, id, movieLength: length, year }} label />
+      <SaveBtn
+        round
+        movie={{ name, rating, id, movieLength: length, year }}
+        label
+      />
     </div>
     <div className={styles.item}>
-      <ShareBtn />
+      <ShareBtn round />
       <span className={styles.label}>Поделиться</span>
     </div>
   </div>

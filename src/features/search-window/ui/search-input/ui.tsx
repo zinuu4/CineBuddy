@@ -13,11 +13,15 @@ export const SearchInput = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const dispatch = useAppDispatch();
-  const { search } = useAppSelector((state) => state.search);
+  const { search, searchWindow } = useAppSelector((state) => state.search);
 
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
+
+  useEffect(() => {
+    dispatch(setSearch(''));
+  }, [searchWindow]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

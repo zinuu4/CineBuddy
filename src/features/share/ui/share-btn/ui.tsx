@@ -11,15 +11,16 @@ import styles from './styles.module.scss';
 
 interface IShareBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
+  round?: boolean;
 }
 
-export const ShareBtn: React.FC<IShareBtnProps> = ({ className }) => {
+export const ShareBtn: React.FC<IShareBtnProps> = ({ className, round }) => {
   const dispatch = useAppDispatch();
 
   return (
     <Button
       onClick={() => dispatch(setShareModal(true))}
-      className={classNames(className, styles.btn)}
+      className={classNames(className, round ? styles.round : '')}
       stylesType="bg"
     >
       <Image

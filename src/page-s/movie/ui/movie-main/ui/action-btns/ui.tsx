@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react';
 import React from 'react';
 
 import { SaveBtn } from '@/features/save-movie';
+import { ShareBtn } from '@/features/share';
 import { usePostMovieMutation } from '@/shared/api/firebase/api';
 import { collections } from '@/shared/lib/firebase-collections';
 import { Button } from '@/shared/ui/btn-base';
@@ -70,6 +71,7 @@ export const ActionBtns: React.FC<IActionBtnsProps> = ({
         wrapperClassName={styles.btn}
         movie={{ name, rating, id, movieLength: length, year }}
       />
+      <ShareBtn />
     </div>
   );
 };
