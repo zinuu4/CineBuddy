@@ -45,6 +45,7 @@ export const Movie = ({ id }: IMovieProps) => {
             length={data?.movieLength ?? 0}
             shortDescription={data?.shortDescription ?? ''}
             persons={data?.persons ?? []}
+            // @ts-ignore
             trailers={data?.videos ?? []}
             id={data?.id ?? 0}
             name={data?.name ?? ''}
