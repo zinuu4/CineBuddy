@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="google.com">    
-    <img src="./public/project-logo.png" alt="Logo" width="400">
+    <img src="https://firebasestorage.googleapis.com/v0/b/cinebuddy.appspot.com/o/project-logo.png?alt=media&token=46e73ed3-8e08-4fc1-9a68-2d49c4be760a" alt="Logo" width="400">
   </a>
   
   <h1 align="center">CineBuddy📹</h1>

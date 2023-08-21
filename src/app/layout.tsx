@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/cinebuddy.appspot.com/o/project-logo.png?alt=media&token=46e73ed3-8e08-4fc1-9a68-2d49c4be760a',
+        url: 'https://firebasestorage.googleapis.com/v0/b/cinebuddy.appspot.com/o/project-logo-with-bg.png?alt=media&token=5a114a18-9b49-446a-9e8d-4497e5950e82',
         alt: title,
       },
     ],
