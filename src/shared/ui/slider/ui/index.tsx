@@ -33,6 +33,7 @@ export const Slider: React.FC<SliderProps> = ({
   loop,
   spaceBetween = 14,
   centeredSlides,
+  modules,
   navigation = true,
   slideClassName,
   swiperClassName,
@@ -40,6 +41,8 @@ export const Slider: React.FC<SliderProps> = ({
 }) => {
   const [nextEl, nextElRef] = useDomRefWithSetter<HTMLButtonElement>();
   const [prevEl, prevElRef] = useDomRefWithSetter<HTMLButtonElement>();
+
+  const DEFAULT_MODULES = [Navigation];
 
   return (
     <Swiper
@@ -59,7 +62,7 @@ export const Slider: React.FC<SliderProps> = ({
           spaceBetween,
         },
       }}
-      modules={[Navigation]}
+      modules={[...(modules ?? DEFAULT_MODULES)]}
       className={swiperClassName}
       {...props}
     >

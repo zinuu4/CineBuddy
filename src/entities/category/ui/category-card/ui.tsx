@@ -1,6 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import React from 'react';
+
+import { createQueryString } from '@/shared/lib/helpers';
 
 import styles from './styles.module.scss';
 
@@ -12,13 +17,25 @@ interface ISwiperItemProps {
     name: string;
     value: string;
   };
-  onClick: (name: string, value: string) => void;
 }
 
-export const CategoryCard: React.FC<ISwiperItemProps> = ({ data, onClick }) => {
+export const CategoryCard: React.FC<ISwiperItemProps> = ({ data }) => {
   const { title, img, href, name, value } = data;
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const onChooseCategory = (name: string, value: string) => {
+    if (searchParams) {
+      router.push(
+        `${pathname}films?${createQueryString(name, value, searchParams)}`,
+      );
+    }
+  };
+
   return (
-    <div onClick={() => onClick(name, value)} className={styles.item}>
+    <div onClick={() => onChooseCategory(name, value)} className={styles.item}>
       <Link className={styles.link} href={href}>
         <Image
           className={styles.icon}

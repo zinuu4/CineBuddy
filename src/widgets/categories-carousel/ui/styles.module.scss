@@ -1,38 +1,63 @@
 .section {
   padding: 20px 0 45px;
   position: relative;
+  overflow: hidden;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 55px 55px var(--color-main);
+    transition: opacity var(--duration);
+
+    @media (width <= 576px) {
+      box-shadow: 0 0 48px 48px var(--color-main);
+    }
+  }
+
+  &::before {
+    left: 0;
+    opacity: 0;
+  }
+
+  &::after {
+    opacity: 1;
+    right: 0;
+  }
 
   @media (width <= 576px) {
     padding: 13px 0 28px;
   }
 }
 
-.base {
-  width: 100%;
-  position: relative;
+.isStart {
+  &::after {
+    opacity: 0;
+  }
+
+  &::before {
+    opacity: 1;
+  }
 }
 
-.list {
-  display: flex;
-  overflow-x: auto;
+.isCenter {
+  &::after {
+    opacity: 1;
+  }
+
+  &::before {
+    opacity: 1;
+  }
 }
 
-.list::-webkit-scrollbar {
-  display: none;
+.carousel {
+  overflow: visible;
 }
 
-.end::before,
-.start::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  box-shadow: 0 0 55px 55px var(--color-main);
-  transition: opacity var(--duration);
-}
-
-.start::after {
-  right: 0;
+.slide {
+  width: auto;
 }
