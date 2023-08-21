@@ -1,0 +1,33 @@
+.btns {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 15px 5px;
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+}
+
+.btns::-webkit-scrollbar {
+  display: none;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 300 !important;
+  font-size: 10px !important;
+  line-height: 15px !important;
+  color: hsl(0deg 0% 100% / 60%) !important;
+}
+
+.btn:not(:last-child) {
+  margin-right: 25px;
+}
+
+.icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}

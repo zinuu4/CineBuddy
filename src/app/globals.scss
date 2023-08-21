@@ -1,0 +1,91 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "./styles/variables";
+@import './styles/fonts';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-main);
+  font-size: 16px;
+  color: var(--color-white);
+  font-family: var(--font-family) !important;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding-left: var(--container-offset);
+  padding-right: var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.container-narrow {
+  max-width: 1100px;
+}
+
+.pageContainer {
+  flex: 1;
+}
+
+.flex-1-expand {
+  flex: 1;
+}
+
+.btn-reset {
+  border: none;
+  font-family: inherit;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.row, 
+.sidebar-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.child-container {
+  width: 100%;
+  height: 100%;
+}
+
+.divider {
+  height: 2px;
+  width: 100%;
+  background: var(--color-second);
+}
+
+.list-reset {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (width <= 768px) {
+  .sidebar-wrapper {
+    flex-direction: column;
+  }
+}
+
+.input-reset {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  background-color: var(--color-white);
+}

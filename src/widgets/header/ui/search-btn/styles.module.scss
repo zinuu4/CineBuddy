@@ -1,0 +1,12 @@
+.openSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 27px;
+
+  @media (width <= 576px) {
+    margin-right: 13px;
+  }
+}

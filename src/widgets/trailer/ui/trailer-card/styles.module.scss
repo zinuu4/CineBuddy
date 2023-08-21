@@ -1,0 +1,122 @@
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 56.25%;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  border: 1px solid hsl(0deg 0% 100% / 10%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.link {
+  color: var(--color-white);
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img {
+  z-index: 4;
+  border-radius: 20px;
+  color: transparent;
+  display: block;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  transition: opacity var(--duration);
+
+  &.done {
+    opacity: 0;
+  }
+}
+
+.genre {
+  display: block;
+  text-shadow: 0 0.75px 0 rgb(0 0 0 / 20%);
+  filter: drop-shadow(0 1px 0 rgb(0 0 0 / 20%))
+    drop-shadow(0 -1px 15px rgb(0 0 0 / 12%));
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.year {
+  display: block;
+  text-shadow: 0 0.75px 0 rgb(0 0 0 / 20%);
+  filter: drop-shadow(0 1px 0 rgb(0 0 0 / 20%))
+    drop-shadow(0 -1px 15px rgb(0 0 0 / 12%));
+  font-size: 16px;
+  margin-right: 15px;
+  margin-left: 15px;
+  line-height: 20px;
+}
+
+.title {
+  position: relative;
+  text-shadow: 0 0.75px 0 rgb(0 0 0 / 20%);
+  margin-bottom: 15px;
+  transition:
+    transform var(--duration),
+    margin-bottom var(--duration);
+
+  &.done {
+    transform-origin: left bottom;
+    margin-bottom: 0;
+    transform: translateY(20px) scale(0.9);
+
+    @media (width <= 576px) {
+      transform: translateY(23px) scale(0.9);
+    }
+  }
+
+  @media (width <= 576px) {
+    height: 40px;
+    margin-bottom: 8px;
+    max-width: 230px;
+  }
+}
+
+@media only screen and (width <= 576px) {
+  .content {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .genre {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .year {
+    margin-right: 12px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  pointer-events: none;
+  transform: scale(1.4);
+}

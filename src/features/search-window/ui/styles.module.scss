@@ -1,0 +1,20 @@
+.container {
+  width: 850px;
+  padding: 55px 20px;
+
+  @media (width <= 824px) {
+    width: 95%;
+  }
+
+  @media (width <= 576px) {
+    padding: 35px 20px 40px;
+  }
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.modal::before {
+  vertical-align: top !important;
+}

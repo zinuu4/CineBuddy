@@ -1,0 +1,32 @@
+{
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "trailingComma": "all",
+  "useTabs": false,
+  "semi": true,
+  "tabWidth": 2,
+  "jsxBracketSameLine": false,
+  "endOfLine": "lf",
+  "singleQuote": true,
+  "singleAttributePerLine": false,
+  "overrides": [
+    {
+      "files": "*.{css,scss}",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ],
+  "importOrder": [
+    "app/**",
+    "pages/*/**",
+    "features/*/**",
+    "entities/*/**",
+    "shared/*/*/**",
+    "../**/app",
+    "../**/pages",
+    "../**/features",
+    "../**/entities",
+    "../**/shared"
+  ]
+}

@@ -1,0 +1,1 @@
+export { TrailersCarousel } from './ui';

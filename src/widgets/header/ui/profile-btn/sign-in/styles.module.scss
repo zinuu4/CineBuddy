@@ -1,0 +1,16 @@
+.link {
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  img {
+    margin-right: 3px;
+  }
+
+  @media (width <= 768px) {
+    span {
+      display: none;
+    }
+  }
+}

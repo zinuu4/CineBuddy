@@ -1,0 +1,1 @@
+export { MoviesHeader } from './ui';

@@ -1,0 +1,38 @@
+.modal {
+  @media (width >= 769px) {
+    display: none !important;
+  }
+}
+
+.container {
+  padding: 70px 25px 30px;
+  width: 100%;
+  vertical-align: top !important;
+  align-items: start;
+}
+
+.listItem {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: start;
+
+  &.active {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 2px;
+      height: 100%;
+      background-color: var(--color-white);
+    }
+  }
+}
+
+.link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--color-white);
+}

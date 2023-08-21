@@ -1,0 +1,23 @@
+.btn {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 27px;
+  transition: opacity var(--duration);
+
+  @media (width <= 864px) {
+    opacity: 0.5;
+    visibility: visible;
+
+    &.open {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @media (width <= 576px) {
+    margin-left: 13px;
+  }
+}

@@ -1,0 +1,20 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  min-width: 52px;
+  min-height: 52px;
+  background-color: hsl(0deg 0% 100% / 20%);
+  backdrop-filter: blur(5px);
+  border-radius: 100%;
+
+  @media (width <= 576px) {
+    scale: .8;
+    top: 10px;
+    left: 7px;
+  }
+}

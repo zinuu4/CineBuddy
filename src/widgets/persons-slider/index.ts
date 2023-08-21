@@ -1,0 +1,1 @@
+export { PersonsSlider } from './ui';

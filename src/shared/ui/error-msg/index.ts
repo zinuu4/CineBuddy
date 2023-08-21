@@ -1,0 +1,1 @@
+export { ErrorMsg } from './ui';

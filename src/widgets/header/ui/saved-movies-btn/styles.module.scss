@@ -1,0 +1,7 @@
+.btn {
+  margin-right: 27px;
+
+  @media (width <= 576px) {
+    display: none;
+  }
+}

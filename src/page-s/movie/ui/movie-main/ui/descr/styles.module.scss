@@ -1,0 +1,14 @@
+.descr {
+  max-width: 500px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+  color: hsl(0deg 0% 100% / 90%);
+  margin: 0 0 20px;
+
+  @media (width <= 576px) {
+    color: hsl(0deg 0% 100% / 80%);
+    font-size: 14px;
+    line-height: 22.6px;
+  }
+}

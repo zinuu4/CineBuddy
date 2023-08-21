@@ -1,0 +1,15 @@
+.title {
+  margin-bottom: 30px;
+
+  @media (width <= 576px) {
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  padding-bottom: 80px;
+
+  @media (width <= 576px) {
+    padding-bottom: 40px;
+  }
+}

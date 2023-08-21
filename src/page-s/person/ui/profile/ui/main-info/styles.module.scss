@@ -1,0 +1,47 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: title;
+}
+
+.name {
+  margin-bottom: 12px;
+}
+
+.enName {
+  font-size: 17px;
+  letter-spacing: .7px;
+  color: hsl(0deg 0% 100% / 50%);
+  margin-bottom: 14px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  grid-area: info;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.value {
+  font-size: 14px;
+  line-height: 18px;
+  color: hsl(0deg 0% 100% / 50%);
+}
+
+.value:first-child {
+  min-width: 145px;
+}
+
+.value:last-child {
+  letter-spacing: .3px;
+  color: hsl(0deg 0% 100% / 95%);
+}

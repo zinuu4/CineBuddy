@@ -1,4 +1,41 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nest-kinomore-server-gnzn.onrender.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'st.kp.yandex.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.mds.yandex.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'imagetmdb.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+      },
+    ],
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    API_KEY: process.env.API_KEY,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
