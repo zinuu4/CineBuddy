@@ -45,10 +45,10 @@ export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
 
   const searchParams = useSearchParams();
 
-  const queryValue = searchParams?.get(name.toString());
+  const queryValue = searchParams?.get(name?.toString());
 
   const selectedOption =
-    filter.options.find((option) => option.value === queryValue) ??
+    filter.options.find((option) => option?.value === queryValue) ??
     filter.options[0];
 
   // prettier-ignore

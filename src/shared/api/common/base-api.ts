@@ -19,7 +19,7 @@ export const $api = createApi({
 
 export const $nextApi = createApi({
   reducerPath: 'api/next',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://cine-buddy.vercel.app/api/' }),
   endpoints: () => ({}),
 });
 

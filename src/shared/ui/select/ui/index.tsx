@@ -35,7 +35,7 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
   const selectRef = useRef<HTMLDivElement | null>(null);
   const searchParams = useSearchParams();
 
-  const queryValue = searchParams?.get(name.toString());
+  const queryValue = searchParams?.get(name?.toString());
 
   useClickOutside(selectRef, () => setIsOpen(false));
 
@@ -44,7 +44,7 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
     setIsOpen(false);
   };
 
-  const selectedOption = options.find((option) => option.value === queryValue);
+  const selectedOption = options.find((option) => option?.value === queryValue);
 
   return (
     <div
