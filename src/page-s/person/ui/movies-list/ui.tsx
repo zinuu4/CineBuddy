@@ -12,16 +12,24 @@ import styles from './styles.module.scss';
 
 interface IMoviesListProps {
   movies: IMovieCard[];
+  className: string;
 }
 
-export const PersonMoviesList: React.FC<IMoviesListProps> = ({ movies }) => {
+export const PersonMoviesList: React.FC<IMoviesListProps> = ({
+  movies,
+  className,
+}) => {
   const [moviesAmount, setMoviesAmount] = useState(20);
 
   const limitedMovies = movies.slice(0, moviesAmount);
 
   return (
     <section
-      className={classNames('container container-narrow', styles.container)}
+      className={classNames(
+        'container container-narrow',
+        styles.container,
+        className,
+      )}
     >
       <Title
         className={styles.title}

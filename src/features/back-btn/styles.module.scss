@@ -4,7 +4,7 @@
   align-items: center;
   z-index: 1;
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 10px;
   min-width: 52px;
   min-height: 52px;
@@ -14,7 +14,6 @@
 
   @media (width <= 576px) {
     scale: .8;
-    top: 10px;
     left: 7px;
   }
 }

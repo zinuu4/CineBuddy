@@ -20,7 +20,7 @@ export const MainInfo: React.FC<IMainInfoProps> = ({
   profession,
   enName,
 }) => {
-  const fomratedProfessions = getProfessions(profession);
+  const formattedProfessions = getProfessions(profession);
 
   return (
     <>
@@ -31,7 +31,7 @@ export const MainInfo: React.FC<IMainInfoProps> = ({
       <div className={styles.info}>
         <div className={styles.row}>
           <span className={styles.value}>Карьера:</span>
-          <span className={styles.value}>{fomratedProfessions}</span>
+          <span className={styles.value}>{formattedProfessions}</span>
         </div>
         <div className={styles.row}>
           <span className={styles.value}>Дата рождения:</span>

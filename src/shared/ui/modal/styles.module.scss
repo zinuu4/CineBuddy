@@ -3,13 +3,17 @@
   inset: 0;
   overflow-x: hidden;
   text-align: center;
-  z-index: var(--modalbg-z-index);
+  z-index: var(--modal-bg-z-index);
   padding: 26px;
   transition: opacity var(--duration);
   opacity: 0;
 
   &.open {
     opacity: 1;
+  }
+
+  @media (width <= 576px) {
+    padding: 20px;
   }
 }
 

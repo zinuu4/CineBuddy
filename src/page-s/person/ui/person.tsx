@@ -22,7 +22,6 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
   const { data, isFetching, isLoading, isError } = useGetPersonQuery({
     id: +id,
   });
-  console.log(data);
 
   useEffect(() => {
     ErrorMsg(isError);
@@ -35,9 +34,10 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
           className={classNames(
             'container container-narrow',
             styles.containerProfile,
+            styles.container,
           )}
         >
-          <BtnBack />
+          <BtnBack className={styles.back} />
           <Profile
             photo={data?.photo ?? ''}
             name={data?.name ?? ''}
@@ -47,13 +47,13 @@ export const Person: React.FC<IPersonProps> = ({ id }) => {
           />
         </div>
       </section>
-      <PersonMoviesList movies={data?.movies ?? []} />
+      <PersonMoviesList
+        movies={data?.movies ?? []}
+        className={styles.container}
+      />
       <section>
         <div
-          className={classNames(
-            'container container-narrow',
-            styles.containerFacts,
-          )}
+          className={classNames('container container-narrow', styles.container)}
         >
           {data?.facts && data?.facts?.length >= 1 && (
             <FactsList facts={data.facts} />

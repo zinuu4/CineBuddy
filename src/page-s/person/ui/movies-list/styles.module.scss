@@ -1,5 +1,9 @@
 .container {
-  padding: 0 72px 65px;
+  padding-bottom: 65px;
+
+  @media (width <= 576px) {
+    padding-bottom: 50px;
+  }
 }
 
 .title {
@@ -12,9 +16,13 @@
   grid-gap: 20px;
   margin-bottom: 35px;
 
+  @media (width <= 992px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+
   @media (width <= 768px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
   }
 
   @media (width <= 480px) {
