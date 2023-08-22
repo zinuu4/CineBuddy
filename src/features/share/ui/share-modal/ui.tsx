@@ -36,7 +36,7 @@ export const ShareModal = () => {
     >
       <div className={styles.content}>
         <Title className={styles.title} title="Поделиться" />
-        <ShareBtns url={`https://cine-buddy.vercel.app/${pathname}`} />
+        <ShareBtns url={`https://cine-buddy.vercel.app${pathname}`} />
         <CopyBtn />
       </div>
     </Modal>

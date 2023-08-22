@@ -13,7 +13,7 @@ export const CopyBtn = () => {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(
-        `${process.env.APP_BASE_URL}${pathname}`,
+        `https://cine-buddy.vercel.app${pathname}`,
       );
       setCopied(true);
       toast('Успешно скопировано ✅', {
