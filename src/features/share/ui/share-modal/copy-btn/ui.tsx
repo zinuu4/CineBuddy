@@ -16,7 +16,7 @@ export const CopyBtn = () => {
         `https://cine-buddy.vercel.app${pathname}`,
       );
       setCopied(true);
-      toast('Успешно скопировано ✅', {
+      toast('Успешно скопировано', {
         theme: 'dark',
         autoClose: 5000,
         position: 'top-right',

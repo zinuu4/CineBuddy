@@ -29,7 +29,7 @@ export const FactsList: React.FC<IFactsListProps> = ({ facts }) => {
             <FactItem key={value} text={ReactHtmlParser(value) ?? ''} />
           ))}
         </ul>
-        {facts.length >= 5 && (
+        {facts.length > 5 && (
           <Button
             onClick={() => setIsExpanded(!isExpanded)}
             className={styles.btn}

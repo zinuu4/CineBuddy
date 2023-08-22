@@ -55,7 +55,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         >
           <Image
             src="/icons/common/close-black.svg"
-            alt="Cleare"
+            alt="Clear"
             fill
             sizes="100%"
           />

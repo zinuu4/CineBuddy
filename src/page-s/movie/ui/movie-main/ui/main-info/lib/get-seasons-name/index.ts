@@ -1,10 +1,10 @@
 /* eslint-disable no-else-return */
 export const getSeasonsName = (seasons: number) => {
   if (seasons === 1) {
-    return `${seasons} Сезон`;
+    return `${seasons} сезон`;
   } else if (seasons >= 2 && seasons <= 4) {
-    return `${seasons} Сезона`;
+    return `${seasons} сезона`;
   } else {
-    return `${seasons} Сезонов`;
+    return `${seasons} сезонов`;
   }
 };
