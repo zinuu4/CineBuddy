@@ -3,7 +3,7 @@
 'use client';
 
 import React from 'react';
-import { Navigation } from 'swiper/modules';
+import { FreeMode, Navigation } from 'swiper/modules';
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 
 import { useDomRefWithSetter } from '../lib';
@@ -42,7 +42,7 @@ export const Slider: React.FC<SliderProps> = ({
   const [nextEl, nextElRef] = useDomRefWithSetter<HTMLButtonElement>();
   const [prevEl, prevElRef] = useDomRefWithSetter<HTMLButtonElement>();
 
-  const DEFAULT_MODULES = [Navigation];
+  const DEFAULT_MODULES = [Navigation, FreeMode];
 
   return (
     <Swiper
@@ -63,6 +63,7 @@ export const Slider: React.FC<SliderProps> = ({
         },
       }}
       modules={[...(modules ?? DEFAULT_MODULES)]}
+      freeMode={{ momentumBounceRatio: 0 }}
       className={swiperClassName}
       {...props}
     >
