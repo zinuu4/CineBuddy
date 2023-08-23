@@ -16,18 +16,13 @@ export const CopyBtn = () => {
         `https://cine-buddy.vercel.app${pathname}`,
       );
       setCopied(true);
-      toast.success('Успешно скопировано', {
-        theme: 'dark',
-        autoClose: 5000,
-        position: 'top-right',
-      });
       setTimeout(() => {
         setCopied(false);
-      }, 6000);
+      }, 3000);
     } catch (error) {
       toast('Что-то пошло не так', {
         theme: 'dark',
-        autoClose: 5000,
+        autoClose: 3000,
         position: 'top-right',
       });
     }

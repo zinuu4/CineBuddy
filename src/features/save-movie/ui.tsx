@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { IMovieCard } from '@/shared/api';
 import {
@@ -44,6 +45,12 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
         collectionName: collections.saved,
         documentId: email,
         movie,
+      });
+    } else {
+      toast.error('Войдите или зарегистрируйтесь, чтобы сохранить', {
+        theme: 'dark',
+        autoClose: 5000,
+        position: 'top-right',
       });
     }
   };
