@@ -9,7 +9,7 @@
   <h1 align="center">CineBuddy📹</h1>
 
   <p align="center">
-    <a href="google.com">View Project</a>
+    <a href="https://cine-buddy.vercel.app">View Project</a>
     ·
     <a href="https://github.com/zinuu4/CineBuddy/issues">Report Bug</a>
     ·
