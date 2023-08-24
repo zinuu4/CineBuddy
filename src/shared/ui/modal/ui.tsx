@@ -4,6 +4,7 @@ import React, { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { Button } from '../btn-base';
+import { Portal } from '../portal';
 import { useEscape } from './lib';
 
 import styles from './styles.module.scss';
@@ -48,39 +49,41 @@ export const Modal: React.FC<IModalProps> = ({
   useEscape(onClose);
 
   return (
-    <CSSTransition
-      in={isOpen}
-      timeout={0}
-      classNames={{
-        enterDone: styles.open,
-      }}
-      unmountOnExit
-    >
-      <div
-        onClick={(e) => handleWrapperClick(e)}
-        className={classNames(
-          styles.modal,
-          darkBg && styles.darkBg,
-          modalClassName,
-        )}
+    <Portal>
+      <CSSTransition
+        in={isOpen}
+        timeout={0}
+        classNames={{
+          enterDone: styles.open,
+        }}
+        unmountOnExit
       >
-        {close && (
-          <Button
-            onClick={onClose}
-            className={classNames(styles.btn, closeClassName)}
-          >
-            <Image
-              src="/icons/common/close.svg"
-              alt="close"
-              width={closeSize}
-              height={closeSize}
-            />
-          </Button>
-        )}
-        <div className={classNames(styles.container, containerClassName)}>
-          {children}
+        <div
+          onClick={(e) => handleWrapperClick(e)}
+          className={classNames(
+            styles.modal,
+            darkBg && styles.darkBg,
+            modalClassName,
+          )}
+        >
+          {close && (
+            <Button
+              onClick={onClose}
+              className={classNames(styles.btn, closeClassName)}
+            >
+              <Image
+                src="/icons/common/close.svg"
+                alt="close"
+                width={closeSize}
+                height={closeSize}
+              />
+            </Button>
+          )}
+          <div className={classNames(styles.container, containerClassName)}>
+            {children}
+          </div>
         </div>
-      </div>
-    </CSSTransition>
+      </CSSTransition>
+    </Portal>
   );
 };
