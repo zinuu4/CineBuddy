@@ -1,1 +1,1 @@
-export { createObserver } from './create-observer';
+export { usePlayer } from './use-player';

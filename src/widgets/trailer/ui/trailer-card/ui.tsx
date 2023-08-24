@@ -10,59 +10,68 @@ import { VolumeButton } from '@/features/volume-btn';
 import { routes } from '@/shared/lib/routing';
 import { Rating } from '@/shared/ui/rating';
 import { Title } from '@/shared/ui/title';
+import { Loader } from '@/shared/ui/loader';
 
-import { createObserver } from '../../lib';
+import { usePlayer } from '../../lib';
 import { ITrailerCard } from './types';
 
 import styles from './styles.module.scss';
+import classNames from 'classnames';
 
 interface ITrailerCardProps {
   data: ITrailerCard;
+  isActiveSlide: boolean;
 }
 
-export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
+export const TrailerCard: React.FC<ITrailerCardProps> = ({
+  data,
+  isActiveSlide,
+}) => {
   const { img, trailer, title, rating, year, genre, id } = data;
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const [isMuted, setIsMuted] = useState(true);
-  const [isActive, setIsActive] = useState(false);
+  const { play, stop } = usePlayer(videoRef);
 
-  const toggleMuted = () => {
-    const videoElement = videoRef.current;
-    if (videoElement) {
-      videoElement.muted = !videoElement.muted;
-      setIsMuted(videoElement.muted);
-    }
-  };
+  const [isMuted, setIsMuted] = useState(true);
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const videoElement = videoRef.current;
+    // eslint-disable-next-line no-undef
+    let timeout: NodeJS.Timeout;
 
-    const { observer } = createObserver(videoElement, setIsActive)!;
-
-    if (videoElement) {
-      observer.observe(videoElement);
+    if (isActiveSlide) {
+      timeout = setTimeout(() => {
+        play();
+        setIsActive(true);
+      }, 2000);
+    } else {
+      setIsActive(false);
+      setIsMuted(true);
+      stop();
     }
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [trailer]);
+    return () => clearTimeout(timeout);
+  }, [isActiveSlide, play, stop]);
 
   return (
     data && (
       <div className={styles.card}>
         <Link href={routes.movie(id)} className={styles.link}>
-          <video
-            ref={videoRef}
-            className={styles.video}
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            src={trailer}
-          />
+          {isActive && (
+            <video
+              ref={videoRef}
+              className={styles.video}
+              onCanPlay={() => setIsLoading(false)}
+              onWaiting={() => setIsLoading(true)}
+              autoPlay
+              muted={isMuted}
+              loop
+              playsInline
+              src={trailer}
+            />
+          )}
           <div className={styles.content}>
             <CSSTransition
               timeout={0}
@@ -98,8 +107,16 @@ export const TrailerCard: React.FC<ITrailerCardProps> = ({ data }) => {
               priority
             />
           )}
+          <div
+            className={classNames(styles.spinner, isLoading && styles.loading)}
+          >
+            <Loader />
+          </div>
         </Link>
-        <VolumeButton onClick={toggleMuted} isMuted={isMuted} />
+        <VolumeButton
+          onClick={() => setIsMuted((prev) => !prev)}
+          isMuted={isMuted}
+        />
       </div>
     )
   );

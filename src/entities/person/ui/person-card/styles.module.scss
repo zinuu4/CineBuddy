@@ -30,7 +30,7 @@
   padding-bottom: 100%;
   overflow: hidden;
   margin: 0 auto 15px;
-  border-radius: 100%;
+  border-radius: var(--rounded-full);
   border: 1px solid hsl(0deg 0% 100% / 10%);
   background-color: var(--color-loader);
 }

@@ -2,8 +2,8 @@
 
 'use client';
 
-import React from 'react';
-import { FreeMode, Navigation } from 'swiper/modules';
+import React, { useState } from 'react';
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 
 import { useDomRefWithSetter } from '../lib';
@@ -42,7 +42,9 @@ export const Slider: React.FC<SliderProps> = ({
   const [nextEl, nextElRef] = useDomRefWithSetter<HTMLButtonElement>();
   const [prevEl, prevElRef] = useDomRefWithSetter<HTMLButtonElement>();
 
-  const DEFAULT_MODULES = [Navigation, FreeMode];
+  const DEFAULT_MODULES = [Navigation];
+
+  const [realIndex, setRealIndex] = useState<number>(0);
 
   return (
     <Swiper
@@ -50,6 +52,7 @@ export const Slider: React.FC<SliderProps> = ({
       loop={loop}
       spaceBetween={spaceBetween}
       centeredSlides={centeredSlides}
+      onSlideChange={(swiper) => setRealIndex(swiper.realIndex)}
       navigation={{
         prevEl,
         nextEl,
@@ -76,7 +79,7 @@ export const Slider: React.FC<SliderProps> = ({
       {slidesData.map((data: any, index: number) => (
         // eslint-disable-next-line react/no-array-index-key
         <SwiperSlide className={slideClassName} key={index}>
-          <Card data={data} />
+          <Card isActiveSlide={realIndex === index} data={data} />
         </SwiperSlide>
       ))}
     </Swiper>

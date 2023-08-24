@@ -2,6 +2,7 @@
 
 import classNames from 'classnames';
 import React from 'react';
+import { FreeMode, Navigation } from 'swiper/modules';
 
 import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { IMovieCard } from '@/shared/api';
@@ -26,5 +27,6 @@ export const MoviesSlider: React.FC<IMoviesSliderProps> = ({
     slidesData={data}
     Card={MovieCard}
     spaceBetween={14}
+    modules={[FreeMode, Navigation]}
   />
 );

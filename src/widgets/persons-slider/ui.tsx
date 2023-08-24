@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { FreeMode, Navigation } from 'swiper/modules';
 
 import { PersonCard } from '@/entities/person/ui/person-card';
 import { IPersonInMovie } from '@/shared/api';
@@ -20,5 +21,6 @@ export const PersonsSlider: React.FC<IActorsSliderProps> = ({ data }) => (
     spaceBetween={14}
     slideClassName={styles.slide}
     swiperClassName={styles.swiper}
+    modules={[FreeMode, Navigation]}
   />
 );

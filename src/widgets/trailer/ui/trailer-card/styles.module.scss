@@ -8,6 +8,7 @@
   border: 1px solid hsl(0deg 0% 100% / 10%);
   border-radius: 20px;
   overflow: hidden;
+  background-color: var(--color-loader);
 }
 
 .link {
@@ -119,4 +120,26 @@
   border-radius: 20px;
   pointer-events: none;
   transform: scale(1.4);
+}
+
+.spinner {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s;
+
+  @media (width <= 576px) {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  @media (width <= 360px) {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  &.loading {
+    opacity: 1;
+  }
 }

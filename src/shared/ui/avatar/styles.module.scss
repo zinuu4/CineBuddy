@@ -1,7 +1,7 @@
 .photoWrapper {
   position: relative;
   display: block;
-  border-radius: 100%;
+  border-radius: var(--rounded-full);
   flex-shrink: 0;
   width: 160px;
   height: 160px;
