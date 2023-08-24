@@ -9,7 +9,7 @@ import { setSearchWindow } from '@/features/search-window/model';
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
 import { Logo } from '@/shared/ui/logo';
 
-import { useSetSearchWindow } from '../lib';
+import { useHeaderFixed, useSetSearchWindow } from '../lib';
 import { Burger } from './burger';
 import { Menu } from './menu';
 import { Nav } from './nav';
@@ -27,13 +27,19 @@ export const Header = () => {
 
   useSetSearchWindow();
 
+  const { isFixed } = useHeaderFixed();
+
   const onToggle = () => {
     setIsOpen((prev) => !prev);
   };
 
   return (
     <>
-      <header className={styles.header}>
+      <header
+        className={classNames(styles.header, {
+          [styles.fixed]: isFixed,
+        })}
+      >
         <div className={classNames('container', styles.container)}>
           <div className="row">
             <Logo />
