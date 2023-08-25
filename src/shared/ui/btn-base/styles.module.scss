@@ -22,7 +22,9 @@
   justify-content: center;
   color: var(--color-white);
   background-color: hsl(216deg 4% 55% / 30%);
-  transition: background-color var(--duration), color var(--duration);
+  transition:
+    background-color var(--duration),
+    color var(--duration);
 }
 
 .bgBtn:not(:first-child) {
@@ -43,5 +45,5 @@
   padding: 14px;
   font-size: 15.5px;
   line-height: 1;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }

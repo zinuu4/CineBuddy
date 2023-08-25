@@ -1,4 +1,4 @@
-name: Linting and building
+name: Lint, test and build
 on:
   push:
     branches:
@@ -44,10 +44,13 @@ jobs:
         run: yarn install
 
       - name: Linting ts
-        run: yarn lint
+        run: yarn lint:ts
 
       - name: Linting scss
         run: yarn lint:scss
+
+      - name: Testing
+        run: yarn test
 
       - name: Build
         run: yarn build

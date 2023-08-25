@@ -1,8 +1,8 @@
 .profile {
   display: grid;
   grid-template-areas:
-      "photo title"
-      "photo info";
+    "photo title"
+    "photo info";
   grid-template-columns: auto 1fr;
 
   @media (width <= 576px) {

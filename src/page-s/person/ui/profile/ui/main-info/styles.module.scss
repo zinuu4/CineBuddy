@@ -26,7 +26,7 @@
 
 .enName {
   font-size: 17px;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
   color: hsl(0deg 0% 100% / 50%);
   margin-bottom: 14px;
 }
@@ -56,7 +56,7 @@
   font-size: 14px;
   line-height: 18px;
   color: hsl(0deg 0% 100% / 50%);
-  
+
   @media (width <= 576px) {
     line-height: 17px;
   }
@@ -67,6 +67,6 @@
 }
 
 .value:last-child {
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   color: hsl(0deg 0% 100% / 95%);
 }

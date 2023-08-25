@@ -28,7 +28,11 @@
   transform: translateY(-50%);
   pointer-events: none;
   color: rgba(#000, 0.45);
-  transition: font-size var(--duration), line-height var(--duration), top var(--duration), color var(--duration);
+  transition:
+    font-size var(--duration),
+    line-height var(--duration),
+    top var(--duration),
+    color var(--duration);
 
   @media (width <= 576px) {
     font-size: 12px;
@@ -70,7 +74,9 @@
   height: 13px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--duration), visibility var(--duration);
+  transition:
+    opacity var(--duration),
+    visibility var(--duration);
 
   &.visible {
     opacity: 1;

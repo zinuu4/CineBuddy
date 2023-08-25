@@ -56,7 +56,9 @@
     background-color: var(--color-second);
     opacity: 0;
     transform: translateY(2px);
-    transition: opacity var(--duration), transform var(--duration);
+    transition:
+      opacity var(--duration),
+      transform var(--duration);
   }
 
   &.selected {
