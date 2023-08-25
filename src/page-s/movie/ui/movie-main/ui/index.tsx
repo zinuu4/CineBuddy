@@ -91,7 +91,6 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
         onClose={() => setYouTubePlayer(false)}
         isOpen={youTubePlayer}
         containerClassName={styles.trailer}
-        closeSize={12}
         closeClassName={styles.close}
       >
         {trailer && <YouTubePlayer videoLink={trailer?.url ?? ''} />}
@@ -100,7 +99,6 @@ export const MovieMain: React.FC<IMovieMainProps> = ({
         onClose={() => setMoviePlayer(false)}
         isOpen={moviePlayer}
         containerClassName={styles.movie}
-        closeSize={12}
         closeClassName={styles.close}
       >
         {moviePlayer && <Player id={id} />}
