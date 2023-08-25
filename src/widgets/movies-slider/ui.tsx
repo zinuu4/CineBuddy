@@ -6,7 +6,7 @@ import { FreeMode, Navigation } from 'swiper/modules';
 
 import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { IMovieCard } from '@/shared/api';
-import { Slider } from '@/shared/ui/slider';
+import { Slider } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

@@ -1,8 +1,5 @@
 import React, { FormEvent, useEffect, useRef } from 'react';
-import {
-  useAppDispatch,
-  useAppSelector,
-} from '@/shared/lib/hooks/use-app-state';
+import { useAppDispatch, useAppSelector } from '@/shared/lib';
 import { Input } from '@/shared/ui/input';
 
 import { setSearch } from '../../model/search-slice';

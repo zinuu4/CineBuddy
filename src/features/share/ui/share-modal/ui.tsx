@@ -4,12 +4,8 @@ import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import {
-  useAppDispatch,
-  useAppSelector,
-} from '@/shared/lib/hooks/use-app-state';
-import { Modal } from '@/shared/ui/modal';
-import { Title } from '@/shared/ui/title';
+import { useAppDispatch, useAppSelector } from '@/shared/lib';
+import { Modal, Title } from '@/shared/ui';
 
 import { setShareModal } from '../../model';
 import { CopyBtn } from './copy-btn';

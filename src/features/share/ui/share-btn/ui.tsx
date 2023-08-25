@@ -1,9 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
-import { Button } from '@/shared/ui/btn-base';
-import { Icon } from '@/shared/ui/icon';
+import { useAppDispatch } from '@/shared/lib';
+import { Button, Icon } from '@/shared/ui';
 
 import { setShareModal } from '../../model';
 

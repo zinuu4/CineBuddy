@@ -3,8 +3,8 @@
 import { signOut } from 'next-auth/react';
 import React from 'react';
 
-import { routes } from '@/shared/lib/routing';
-import { Button } from '@/shared/ui/btn-base';
+import { routes } from '@/shared/lib';
+import { Button } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

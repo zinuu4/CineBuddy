@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { convertMinutes, capitalizeFirstLetter } from '@/shared/lib/helpers';
-import { Rating } from '@/shared/ui/rating';
+import { convertMinutes, capitalizeFirstLetter } from '@/shared/lib';
+import { Rating } from '@/shared/ui';
 
 import { getSeasonsName } from './lib';
 

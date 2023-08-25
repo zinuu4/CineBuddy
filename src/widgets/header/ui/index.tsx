@@ -6,8 +6,8 @@ import React, { useState } from 'react';
 
 import { SearchWindow } from '@/features/search-window';
 import { setSearchWindow } from '@/features/search-window/model';
-import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
-import { Logo } from '@/shared/ui/logo';
+import { useAppDispatch } from '@/shared/lib';
+import { Logo } from '@/shared/ui';
 
 import { useHeaderFixed, useSetSearchWindow } from '../lib';
 import { Burger } from './burger';

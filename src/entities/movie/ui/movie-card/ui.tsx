@@ -4,9 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 
 import { IMovieCard } from '@/shared/api';
-import { convertMinutes } from '@/shared/lib/helpers';
-import { routes } from '@/shared/lib/routing';
-import { Rating } from '@/shared/ui/rating';
+import { routes, convertMinutes } from '@/shared/lib';
+import { Rating } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

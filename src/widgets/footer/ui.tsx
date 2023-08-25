@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { Title } from '@/shared/ui/title';
+import { Title } from '@/shared/ui';
 
 import { Socials } from './socials';
 

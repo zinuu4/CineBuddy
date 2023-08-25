@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import React from 'react';
 
 import { MoviesFilters, genreOptions } from '@/features/movies-filters';
-import { Title } from '@/shared/ui/title';
+import { Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

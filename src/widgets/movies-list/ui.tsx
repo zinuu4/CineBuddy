@@ -7,10 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { genreOptions } from '@/features/movies-filters';
 import { useGetMoviesQuery } from '@/entities/movie/api';
 import { MovieCard } from '@/entities/movie/ui/movie-card';
-import { ErrorMsg } from '@/shared/ui/error-msg';
-import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
-import { Loader } from '@/shared/ui/loader';
-import { NoResultsMessage } from '@/shared/ui/no-result-msg';
+import { ErrorMsg, LoadMoreBtn, Loader, NoResultsMessage } from '@/shared/ui';
 
 import { useScroll } from './lib';
 

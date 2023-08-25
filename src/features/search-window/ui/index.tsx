@@ -1,11 +1,7 @@
 import React from 'react';
 
-import {
-  useAppDispatch,
-  useAppSelector,
-} from '@/shared/lib/hooks/use-app-state';
-import { Modal } from '@/shared/ui/modal';
-import { Title } from '@/shared/ui/title';
+import { useAppDispatch, useAppSelector } from '@/shared/lib';
+import { Modal, Title } from '@/shared/ui';
 
 import { setSearchWindow } from '../model';
 import { SearchInput } from './search-input';

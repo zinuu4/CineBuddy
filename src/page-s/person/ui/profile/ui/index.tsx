@@ -2,7 +2,7 @@ import React from 'react';
 
 import { IProfession } from '@/shared/api';
 
-import { Avatar } from '@/shared/ui/avatar';
+import { Avatar } from '@/shared/ui';
 import { MainInfo } from './main-info';
 
 import styles from './styles.module.scss';

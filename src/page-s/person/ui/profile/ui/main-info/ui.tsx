@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { IProfession } from '@/shared/api';
-import { formatDate } from '@/shared/lib/helpers';
-import { Title } from '@/shared/ui/title';
+import { formatDate } from '@/shared/lib';
+import { Title } from '@/shared/ui';
 import { getProfessions } from '../../lib';
 
 import styles from './styles.module.scss';

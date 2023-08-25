@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Button } from '@/shared/ui/btn-base';
+import { Button } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

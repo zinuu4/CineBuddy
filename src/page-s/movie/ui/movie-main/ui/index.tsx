@@ -2,8 +2,7 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 
 import { BtnBack } from '@/features/back-btn';
-import { Modal } from '@/shared/ui/modal';
-import { YouTubePlayer, Player } from '@/shared/ui/players';
+import { Modal, YouTubePlayer, Player } from '@/shared/ui';
 
 import { getTrailer } from '../lib';
 import { IMovieMainProps } from '../types';

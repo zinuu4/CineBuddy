@@ -6,7 +6,7 @@ import {
   FacebookShareButton,
   EmailShareButton,
 } from 'react-share';
-import { Icon } from 'shared/ui/icon';
+import { Icon } from 'shared/ui';
 
 export const items = [
   {

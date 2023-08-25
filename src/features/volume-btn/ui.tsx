@@ -3,7 +3,7 @@
 import React from 'react';
 import { CiVolumeHigh, CiVolumeMute } from 'react-icons/ci';
 
-import { Button } from '@/shared/ui/btn-base';
+import { Button } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

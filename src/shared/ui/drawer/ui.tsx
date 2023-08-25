@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { useRef, ReactNode } from 'react';
 import { FiX } from 'react-icons/fi';
 
-import { useClickOutside } from '@/shared/lib/hooks/use-click-outside';
+import { useClickOutside } from '@/shared/lib';
 
 import { Button } from '../btn-base';
 

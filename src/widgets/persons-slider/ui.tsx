@@ -5,7 +5,7 @@ import { FreeMode, Navigation } from 'swiper/modules';
 
 import { PersonCard } from '@/entities/person/ui/person-card';
 import { IPersonInMovie } from '@/shared/api';
-import { Slider } from '@/shared/ui/slider';
+import { Slider } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

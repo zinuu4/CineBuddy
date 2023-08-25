@@ -1,4 +1,4 @@
-import { routes } from '@/shared/lib/routing';
+import { routes } from '@/shared/lib';
 
 import { IProfileConfig } from '../types';
 

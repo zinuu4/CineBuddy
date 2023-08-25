@@ -3,9 +3,8 @@
 import Link from 'next/link';
 import React from 'react';
 
-import { routes } from '@/shared/lib/routing';
-import { Button } from '@/shared/ui/btn-base';
-import { Icon } from '@/shared/ui/icon';
+import { routes } from '@/shared/lib';
+import { Button, Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

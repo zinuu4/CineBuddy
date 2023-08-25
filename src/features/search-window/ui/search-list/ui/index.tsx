@@ -3,10 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { useGetSearchMoviesQuery } from '@/features/search-window/api';
 import { filterMovies } from '@/features/search-window/lib';
-import { useAppSelector } from '@/shared/lib/hooks/use-app-state';
-import { ErrorMsg } from '@/shared/ui/error-msg';
-import { Loader } from '@/shared/ui/loader';
-import { NoResultsMessage } from '@/shared/ui/no-result-msg';
+import { useAppSelector } from '@/shared/lib';
+import { ErrorMsg, NoResultsMessage, Loader } from '@/shared/ui';
 
 import { SearchItem } from './search-item';
 

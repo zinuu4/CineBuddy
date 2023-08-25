@@ -1,6 +1,6 @@
 import { Genres } from '@/shared/api';
 import { LIMIT } from '@/shared/consts';
-import { getCurrentYear } from '@/shared/lib/helpers/date';
+import { getCurrentYear } from '@/shared/lib';
 
 export const categories = [
   {

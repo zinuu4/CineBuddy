@@ -5,8 +5,7 @@ import React, { useState } from 'react';
 
 import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { IMovieCard } from '@/shared/api';
-import { LoadMoreBtn } from '@/shared/ui/load-more-btn';
-import { Title } from '@/shared/ui/title';
+import { LoadMoreBtn, Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

@@ -7,10 +7,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { VolumeButton } from '@/features/volume-btn';
-import { routes } from '@/shared/lib/routing';
-import { Rating } from '@/shared/ui/rating';
-import { Title } from '@/shared/ui/title';
-import { Loader } from '@/shared/ui/loader';
+import { routes } from '@/shared/lib';
+import { Rating, Title, Loader } from '@/shared/ui';
 
 import { usePlayer } from '../../lib';
 import { ITrailerCard } from './types';

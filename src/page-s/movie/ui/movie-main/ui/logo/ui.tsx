@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Title } from '@/shared/ui/title';
+import { Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

@@ -4,8 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 import { FactItem } from '@/entities/fact/ui/fact-card';
 import { IFact } from '@/shared/api';
-import { Button } from '@/shared/ui/btn-base';
-import { Title } from '@/shared/ui/title';
+import { Button, Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

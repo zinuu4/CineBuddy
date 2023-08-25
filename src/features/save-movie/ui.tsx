@@ -8,9 +8,8 @@ import {
   useGetMoviesQuery,
   usePostMovieMutation,
 } from '@/shared/api/firebase/api';
-import { collections } from '@/shared/lib/firebase-collections';
-import { Button } from '@/shared/ui/btn-base';
-import { Icon } from '@/shared/ui/icon';
+import { collections } from '@/shared/lib';
+import { Button, Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

@@ -7,10 +7,8 @@ import React, { useEffect } from 'react';
 
 import { MoviesSlider } from '@/widgets/movies-slider';
 import { ICategoriesApiProps, useGetMoviesQuery } from '@/entities/movie/api';
-import { createQueryString } from '@/shared/lib/helpers';
-import { ErrorMsg } from '@/shared/ui/error-msg';
-import { Loader } from '@/shared/ui/loader';
-import { Title } from '@/shared/ui/title';
+import { createQueryString } from '@/shared/lib';
+import { ErrorMsg, Loader, Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

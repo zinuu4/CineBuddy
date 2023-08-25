@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 
 import { navItemsBurger } from '@/shared/consts';
-import { Modal } from '@/shared/ui/modal';
+import { Modal } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

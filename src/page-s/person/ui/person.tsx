@@ -5,8 +5,7 @@ import React, { useEffect } from 'react';
 
 import { FactsList } from '@/widgets/facts-list';
 import { BtnBack } from '@/features/back-btn';
-import { ErrorMsg } from '@/shared/ui/error-msg';
-import { Loader } from '@/shared/ui/loader';
+import { ErrorMsg, Loader } from '@/shared/ui';
 
 import { useGetPersonQuery } from '../api';
 import { PersonMoviesList } from './movies-list';

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 
-import { Icon } from '@/shared/ui/icon';
+import { Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import React from 'react';
 
-import { createQueryString } from '@/shared/lib/helpers';
-import { Icon } from '@/shared/ui/icon';
+import { createQueryString } from '@/shared/lib';
+import { Icon } from '@/shared/ui';
 
 import { ICategoryCard } from '../../types';
 

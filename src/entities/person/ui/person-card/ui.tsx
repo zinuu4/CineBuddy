@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { IPersonInMovie } from '@/shared/api';
-import { routes } from '@/shared/lib/routing';
+import { routes } from '@/shared/lib';
 import { Title } from '@/shared/ui/title';
 
 import { convertName, convertProfession } from '../../lib';

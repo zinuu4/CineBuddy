@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import React, { useState, useRef } from 'react';
 import { FiChevronDown, FiCheck } from 'react-icons/fi';
 
-import { useClickOutside } from '@/shared/lib/hooks/use-click-outside';
+import { useClickOutside } from '@/shared/lib';
 import { Icon } from '../../icon';
 
 import { IOption, Size, Position } from '../config';

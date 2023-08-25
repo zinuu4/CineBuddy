@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 
-import { Button } from '@/shared/ui/btn-base';
+import { Button } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

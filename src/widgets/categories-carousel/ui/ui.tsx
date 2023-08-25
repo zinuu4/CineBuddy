@@ -6,7 +6,7 @@ import SwiperClass from 'swiper';
 import { FreeMode, Mousewheel } from 'swiper/modules';
 
 import { CategoryCard } from '@/entities/category/ui/category-card';
-import { Slider } from '@/shared/ui/slider';
+import { Slider } from '@/shared/ui';
 
 import { categories } from '../config';
 

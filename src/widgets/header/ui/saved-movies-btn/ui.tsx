@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import { routes } from '@/shared/lib/routing';
-import { Icon } from '@/shared/ui/icon';
+import { routes } from '@/shared/lib';
+import { Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

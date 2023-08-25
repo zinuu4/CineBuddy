@@ -7,8 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import React, { useState } from 'react';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 
-import { Drawer } from '@/shared/ui/drawer';
-import { Title } from '@/shared/ui/title';
+import { Drawer, Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

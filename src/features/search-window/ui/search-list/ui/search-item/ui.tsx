@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { IMovieCard } from '@/shared/api';
-import { routes } from '@/shared/lib/routing';
-import { Rating } from '@/shared/ui/rating';
+import { routes } from '@/shared/lib';
+import { Rating } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

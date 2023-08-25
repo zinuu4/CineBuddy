@@ -5,9 +5,7 @@ import React, { useEffect } from 'react';
 
 import { MovieCard } from '@/entities/movie/ui/movie-card';
 import { useGetMoviesQuery } from '@/shared/api/firebase/api';
-import { ErrorMsg } from '@/shared/ui/error-msg';
-import { Loader } from '@/shared/ui/loader';
-import { Slider } from '@/shared/ui/slider';
+import { ErrorMsg, Loader, Slider } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

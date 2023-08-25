@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { IProfile } from '@/shared/api';
-import { Avatar } from '@/shared/ui/avatar';
-import { Label } from '@/shared/ui/label';
+import { Avatar, Label } from '@/shared/ui';
 import { SignOutBtn } from './sign-out';
 
 import styles from './styles.module.scss';

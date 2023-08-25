@@ -3,7 +3,7 @@ import React from 'react';
 
 import { MoviesSlider } from '@/widgets/movies-slider';
 import { IMovieCard } from '@/shared/api';
-import { Title } from '@/shared/ui/title';
+import { Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

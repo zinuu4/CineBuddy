@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { IProfile } from '@/shared/api';
-import { routes } from '@/shared/lib/routing';
+import { routes } from '@/shared/lib';
 
 import styles from './styles.module.scss';
 

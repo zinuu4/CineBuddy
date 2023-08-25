@@ -5,11 +5,8 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useState } from 'react';
 import { VscSettings, VscClose } from 'react-icons/vsc';
 
-import { createQueryString } from '@/shared/lib/helpers/create-query';
-import { Button } from '@/shared/ui/btn-base';
-import { Logo } from '@/shared/ui/logo';
-import { Select } from '@/shared/ui/select';
-import { Title } from '@/shared/ui/title';
+import { createQueryString } from '@/shared/lib';
+import { Button, Title, Select, Logo } from '@/shared/ui';
 
 import { initialFilter, FilterType, filters, sortFilter } from '../config';
 

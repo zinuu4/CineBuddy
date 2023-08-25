@@ -5,8 +5,8 @@ import React from 'react';
 import { SaveBtn } from '@/features/save-movie';
 import { ShareBtn } from '@/features/share';
 import { usePostMovieMutation } from '@/shared/api/firebase/api';
-import { collections } from '@/shared/lib/firebase-collections';
-import { Button } from '@/shared/ui/btn-base';
+import { collections } from '@/shared/lib';
+import { Button } from '@/shared/ui';
 
 import { getMovieType } from './lib';
 
