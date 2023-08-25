@@ -1,12 +1,13 @@
 'use client';
 
 import classNames from 'classnames';
-import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import React, { useState, useRef } from 'react';
 import { FiChevronDown, FiCheck } from 'react-icons/fi';
 
 import { useClickOutside } from '@/shared/lib/hooks/use-click-outside';
+import { Icon } from '../../icon';
+
 import { IOption, Size, Position } from '../config';
 
 import styles from './styles.module.scss';
@@ -53,9 +54,7 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
     >
       <div onClick={() => setIsOpen((prev) => !prev)} className={styles.label}>
         {name === 'sort' && (
-          <span className={styles.icon}>
-            <Image src="icons/common/sort.svg" alt="Sort" fill sizes="100%" />
-          </span>
+          <Icon type="common" name="sort" className={styles.icon} />
         )}
         <span className={styles.value}>{selectedOption?.label ?? label}</span>
         <span className={styles.arrow}>

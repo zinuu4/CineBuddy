@@ -21,7 +21,7 @@ export const ShareBtns: React.FC<IShareBtnsProps> = ({ url }) => (
           url={url}
           className={classNames('btn-reset', styles.btn)}
         >
-          <div className={styles.icon}>{icon}</div>
+          {icon}
           {text}
         </Button>
       );

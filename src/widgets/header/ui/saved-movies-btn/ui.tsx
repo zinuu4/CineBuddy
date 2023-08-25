@@ -1,32 +1,26 @@
 'use client';
 
 import classNames from 'classnames';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
 import { routes } from '@/shared/lib/routing';
+import { Icon } from '@/shared/ui/icon';
 
 import styles from './styles.module.scss';
 
 export const SavedMoviesBtn = () => {
   const pathname = usePathname();
-  const baseImgUrl = '/icons/common/';
+
+  const fill = pathname === routes.saved;
 
   return (
-    <button className={classNames('btn-reset', styles.btn)}>
+    <button
+      className={classNames('btn-reset', styles.btn, fill && styles.fill)}
+    >
       <Link href={routes.saved}>
-        <Image
-          src={
-            pathname !== routes.saved
-              ? `${baseImgUrl}bookmark.svg`
-              : `${baseImgUrl}fill-bookmark.svg`
-          }
-          alt="Saved movies"
-          width={20}
-          height={20}
-        />
+        <Icon type="common" name="bookmark" />
       </Link>
     </button>
   );

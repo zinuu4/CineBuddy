@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
+
+import { Icon } from '@/shared/ui/icon';
 
 import styles from './styles.module.scss';
 
@@ -19,16 +20,10 @@ export const NavBtn = forwardRef<HTMLButtonElement, INavBtnProps>(
       {...props}
       ref={ref}
     >
-      <Image
-        className={classNames(
-          styles.img,
-          isNext ? styles.nextImg : '',
-          'btn-reset',
-        )}
-        src="/icons/common/chevron.svg"
-        width={30}
-        height={30}
-        alt={isNext ? 'Вперед' : 'Назад'}
+      <Icon
+        className={isNext ? styles.nextImg : ''}
+        type="common"
+        name="chevron"
       />
     </button>
   ),

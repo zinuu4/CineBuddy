@@ -1,7 +1,9 @@
-import Image from 'next/image';
 import React from 'react';
 
 import { Button } from '@/shared/ui/btn-base';
+import { Icon } from '@/shared/ui/icon';
+
+import styles from './styles.module.scss';
 
 interface ITrailerBtnProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,6 +20,6 @@ export const TrailerBtn: React.FC<ITrailerBtnProps> = ({
     className={className}
     stylesType="bg"
   >
-    <Image src="/icons/common/play.svg" alt="Трейлер" width={20} height={20} />
+    <Icon type="common" name="play" className={styles.icon} />
   </Button>
 );

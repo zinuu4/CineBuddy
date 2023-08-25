@@ -1,74 +1,42 @@
-import Image from 'next/image';
 import {
-  EmailShareButton,
-  FacebookShareButton,
   TelegramShareButton,
-  TwitterShareButton,
   ViberShareButton,
   WhatsappShareButton,
+  VKShareButton,
+  FacebookShareButton,
+  EmailShareButton,
 } from 'react-share';
+import { Icon } from 'shared/ui/icon';
 
 export const items = [
   {
     button: TelegramShareButton,
     text: 'Telegram',
-    icon: (
-      <Image
-        src="/icons/social/telegram.svg"
-        alt="Gmail"
-        width={50}
-        height={50}
-      />
-    ),
+    icon: <Icon type="social" name="telegram" />,
   },
   {
     button: ViberShareButton,
     text: 'Viber',
-    icon: (
-      <Image src="/icons/social/viber.svg" alt="Gmail" width={50} height={50} />
-    ),
+    icon: <Icon type="social" name="viber" />,
   },
   {
     button: FacebookShareButton,
     text: 'Лента новостей',
-    icon: (
-      <Image
-        src="/icons/social/facebook.svg"
-        alt="Gmail"
-        width={50}
-        height={50}
-      />
-    ),
+    icon: <Icon type="social" name="facebook" />,
   },
   {
     button: WhatsappShareButton,
-    text: 'Whatsapp',
-    icon: (
-      <Image
-        src="/icons/social/whatsapp.svg"
-        alt="Gmail"
-        width={50}
-        height={50}
-      />
-    ),
+    text: 'WhatsApp',
+    icon: <Icon type="social" name="whatsapp" />,
   },
   {
-    button: TwitterShareButton,
-    text: 'Twitter',
-    icon: (
-      <Image
-        src="/icons/social/twitter.svg"
-        alt="Gmail"
-        width={50}
-        height={50}
-      />
-    ),
+    button: VKShareButton,
+    text: 'ВКонтакте',
+    icon: <Icon type="social" name="vk" />,
   },
   {
     button: EmailShareButton,
     text: 'Gmail',
-    icon: (
-      <Image src="/icons/social/gmail.svg" alt="Gmail" width={50} height={50} />
-    ),
+    icon: <Icon type="social" name="gmail" />,
   },
 ];

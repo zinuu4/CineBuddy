@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import React, { InputHTMLAttributes, forwardRef, useState } from 'react';
+
+import { Icon } from '../icon';
 
 import styles from './styles.module.scss';
 
@@ -53,12 +54,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
           type="button"
         >
-          <Image
-            src="/icons/common/close-black.svg"
-            alt="Clear"
-            fill
-            sizes="100%"
-          />
+          <Icon type="common" name="close" />
         </button>
       </div>
     );

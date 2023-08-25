@@ -1,26 +1,22 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import React from 'react';
 
 import { createQueryString } from '@/shared/lib/helpers';
+import { Icon } from '@/shared/ui/icon';
+
+import { ICategoryCard } from '../../types';
 
 import styles from './styles.module.scss';
 
 interface ISwiperItemProps {
-  data: {
-    title: string;
-    img: string;
-    href: string;
-    name: string;
-    value: string;
-  };
+  data: ICategoryCard;
 }
 
 export const CategoryCard: React.FC<ISwiperItemProps> = ({ data }) => {
-  const { title, img, href, name, value } = data;
+  const { title, iconName, href, name, value } = data;
 
   const router = useRouter();
   const pathname = usePathname();
@@ -37,13 +33,7 @@ export const CategoryCard: React.FC<ISwiperItemProps> = ({ data }) => {
   return (
     <div onClick={() => onChooseCategory(name, value)} className={styles.item}>
       <Link className={styles.link} href={href}>
-        <Image
-          className={styles.icon}
-          src={img}
-          alt={title}
-          width={23}
-          height={23}
-        />
+        <Icon type="genres" name={iconName} className={styles.icon} />
         <span className={styles.title}>{title}</span>
       </Link>
     </div>

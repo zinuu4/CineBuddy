@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import React, { ElementType } from 'react';
+
+import { Icon } from '../icon';
 
 import styles from './styles.module.scss';
 
@@ -44,13 +45,7 @@ export const Title: React.FC<TitleProps> = ({
       {children}
       {chevron && (
         <span className={styles.iconWrapper}>
-          <Image
-            className={styles.icon}
-            src="/icons/common/chevron.svg"
-            alt={title}
-            width={15}
-            height={15}
-          />
+          <Icon type="common" name="chevron" className={styles.icon} />
         </span>
       )}
     </Element>

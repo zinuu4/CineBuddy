@@ -1,3 +1,10 @@
 .round {
   border-radius: var(--rounded-full);
 }
+
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: transparent;
+}

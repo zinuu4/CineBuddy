@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -11,6 +10,7 @@ import {
 } from '@/shared/api/firebase/api';
 import { collections } from '@/shared/lib/firebase-collections';
 import { Button } from '@/shared/ui/btn-base';
+import { Icon } from '@/shared/ui/icon';
 
 import styles from './styles.module.scss';
 
@@ -29,7 +29,6 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
 }) => {
   const session = useSession();
   const email = session?.data?.user?.email;
-  const baseImgUrl = '/icons/common/';
 
   const { data } = useGetMoviesQuery({
     collectionName: collections.saved,
@@ -70,15 +69,10 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
         onClick={handleSaveToggle}
         stylesType="bg"
       >
-        <Image
-          src={
-            isSaved
-              ? `${baseImgUrl}fill-bookmark.svg`
-              : `${baseImgUrl}bookmark.svg`
-          }
-          alt="Add to favorites"
-          width={22}
-          height={22}
+        <Icon
+          type="common"
+          name="bookmark"
+          className={classNames(styles.icon, isSaved && styles.fill)}
         />
       </Button>
       {label && (

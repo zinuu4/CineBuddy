@@ -11,6 +11,13 @@
   z-index: 2;
   transform: translateY(-50%);
 
+  svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+    fill: var(--color-white);
+  }
+
   @media (width <= 768px) {
     display: none;
   }

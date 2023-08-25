@@ -43,6 +43,8 @@ export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
     setIsOpen(false);
   };
 
+  // TODO: fix initial filters display
+
   const searchParams = useSearchParams();
 
   const queryValue = searchParams?.get(name?.toString());

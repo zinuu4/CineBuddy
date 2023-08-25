@@ -32,6 +32,9 @@
 
 .icon {
   margin-right: 8px;
+  display: block;
+  width: 23px;
+  height: 23px;
   opacity: 0.7;
 
   @media (width <= 768px) {

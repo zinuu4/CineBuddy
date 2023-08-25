@@ -12,6 +12,7 @@
     "lint:fix": "next lint --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "sprite": "sprite --group --root src/shared/ui/icon/assets -o public/sprite -d src/shared/ui/icon/sprite.h.ts",
     "format": "yarn prettier --write ."
   },
   "dependencies": {
@@ -42,7 +43,6 @@
     "next": "13.4.12",
     "next-auth": "^4.23.0",
     "next-nprogress-bar": "^2.1.0",
-    "nextjs-progressbar": "^0.0.16",
     "prettier": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -61,6 +61,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@neodx/svg": "^0.5.1",
     "@types/youtube-player": "^5.5.7"
   }
 }

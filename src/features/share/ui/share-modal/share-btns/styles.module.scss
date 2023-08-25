@@ -19,13 +19,15 @@
   font-size: 10px !important;
   line-height: 15px !important;
   color: hsl(0deg 0% 100% / 60%) !important;
+
+  svg {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
 }
 
 .btn:not(:last-child) {
   margin-right: 25px;
-}
-
-.icon {
-  display: block;
-  margin-bottom: 6px;
 }

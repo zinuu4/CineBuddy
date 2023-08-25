@@ -1,74 +1,75 @@
+import { ICategoryCard } from '@/entities/category/types';
 import { Genres } from '@/shared/api';
 
-export const categories = [
+export const categories: ICategoryCard[] = [
   {
     title: 'Лучшие',
     name: '',
     value: '',
-    img: '/icons/genres/cup.svg',
+    iconName: 'cup',
     href: '/films',
   },
   {
     title: 'Новые',
     name: 'release',
     value: '2022-2023',
-    img: '/icons/genres/fire.svg',
+    iconName: 'fire',
     href: '/films',
   },
   {
     title: 'Мелодраммы',
     name: 'genre',
     value: Genres.Romance,
-    img: '/icons/genres/hearts.svg',
+    iconName: 'hearts',
     href: '/films',
   },
   {
     title: 'Ужасы',
     name: 'genre',
     value: Genres.Horror,
-    img: '/icons/genres/knife.svg',
+    iconName: 'knife',
     href: '/films',
   },
   {
     title: 'Приключения',
     name: 'genre',
     value: Genres.Adventure,
-    img: '/icons/genres/map.svg',
+    iconName: 'map',
     href: '/films',
   },
   {
     title: 'Фантастика',
     name: 'genre',
     value: Genres.Fantasy,
-    img: '/icons/genres/rocket.svg',
+    iconName: 'rocket',
     href: '/films',
   },
   {
     title: 'Семейные',
     name: 'genre',
     value: Genres.Family,
-    img: '/icons/genres/people.svg',
+    iconName: 'people',
     href: '/films',
   },
   {
     title: 'Комедии',
     name: 'genre',
     value: Genres.Comedy,
-    img: '/icons/genres/happy.svg',
+    iconName: 'happy',
     href: '/films',
   },
   {
     title: 'Концерты',
     name: 'genre',
     value: Genres.Concert,
-    img: '/icons/genres/music.svg',
+    iconName: 'music',
     href: '/films',
   },
   {
     title: 'Военные',
     name: 'genre',
     value: Genres.War,
-    img: '/icons/genres/tank.svg',
+    iconName: 'tank',
     href: '/films',
   },
 ];

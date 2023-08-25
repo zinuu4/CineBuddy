@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import React from 'react';
 
 import { useAppDispatch } from '@/shared/lib/hooks/use-app-state';
 import { Button } from '@/shared/ui/btn-base';
+import { Icon } from '@/shared/ui/icon';
 
 import { setShareModal } from '../../model';
 
@@ -23,12 +23,7 @@ export const ShareBtn: React.FC<IShareBtnProps> = ({ className, round }) => {
       className={classNames(className, round ? styles.round : '')}
       stylesType="bg"
     >
-      <Image
-        src="/icons/common/share.svg"
-        alt="Поделиться"
-        width={20}
-        height={20}
-      />
+      <Icon type="common" name="share" className={styles.icon} />
     </Button>
   );
 };

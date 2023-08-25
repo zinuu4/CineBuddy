@@ -13,6 +13,8 @@ interface IBtnBackProps {
   className?: string;
 }
 
+// TODO: implement back icon via sprite
+
 export const BtnBack: React.FC<IBtnBackProps> = ({ className }) => {
   const router = useRouter();
 
@@ -25,12 +27,7 @@ export const BtnBack: React.FC<IBtnBackProps> = ({ className }) => {
       className={classNames(styles.btn, className)}
       onClick={handleGoBack}
     >
-      <Image
-        src="/icons/common/back.svg"
-        alt="Come back"
-        width={24}
-        height={24}
-      />
+      <Image src="/back.svg" alt="Come back" width={24} height={24} />
     </Button>
   );
 };

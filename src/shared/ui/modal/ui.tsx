@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import React, { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { Button } from '../btn-base';
+import { Icon } from '../icon';
 import { Portal } from '../portal';
 import { useEscape } from './lib';
 
@@ -19,7 +19,6 @@ interface IModalProps {
   wrapperClose?: boolean;
   darkBg?: boolean;
   close?: boolean;
-  closeSize?: number;
 }
 
 export const Modal: React.FC<IModalProps> = ({
@@ -32,7 +31,6 @@ export const Modal: React.FC<IModalProps> = ({
   onClose,
   wrapperClose = true,
   close = true,
-  closeSize = 18,
 }) => {
   if (isOpen) {
     document.body.style.overflow = 'hidden';
@@ -71,12 +69,7 @@ export const Modal: React.FC<IModalProps> = ({
               onClick={onClose}
               className={classNames(styles.btn, closeClassName)}
             >
-              <Image
-                src="/icons/common/close.svg"
-                alt="close"
-                width={closeSize}
-                height={closeSize}
-              />
+              <Icon type="common" name="close" />
             </Button>
           )}
           <div className={classNames(styles.container, containerClassName)}>
