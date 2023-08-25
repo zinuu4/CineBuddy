@@ -45,6 +45,8 @@ export const Select = <T extends string | number>(props: SelectorProps<T>) => {
     setIsOpen(false);
   };
 
+  // TODO: refactor
+
   const selectedOption = options.find((option) => option?.value === queryValue);
 
   return (

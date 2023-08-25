@@ -43,7 +43,7 @@ export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
     setIsOpen(false);
   };
 
-  // TODO: fix initial filters display
+  // TODO: refactor
 
   const searchParams = useSearchParams();
 
@@ -81,14 +81,16 @@ export const MoviesDrawer: React.FC<IMoviesDrawerProps> = ({
         <ul className={styles.options}>
           {filter.options.map((option) => {
             const isSelected = option.value === queryValue;
+            const nothingSelected = queryValue === null;
+
             return (
               <li
                 key={option.value}
-                className={classNames(styles.option, isSelected && styles.selected)}
+                className={classNames(styles.option, (isSelected || (nothingSelected && option.value === '')) && styles.selected)}
                 onClick={() => handleChange(option.value)}
               >
                 {option.label}
-                {isSelected && (
+                {(isSelected || (nothingSelected && option.value === '')) && (
                   <span className={styles.check}>
                     <FiCheck size={20} />
                   </span>

@@ -38,6 +38,8 @@ export const MoviesFilters: React.FC = () => {
     }
   };
 
+  // TODO: refactor
+
   return (
     <section className={classNames(styles.root, isOpen && styles.open)}>
       <Button onClick={() => setIsOpen(true)} className={styles.triggerBtn}>
