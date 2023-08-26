@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
 
-import { Button } from '@/shared/ui';
+import { Button, Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
@@ -16,6 +15,6 @@ export const Burger: React.FC<BurgerProps> = ({ isOpen, onOpen }) => (
     onClick={onOpen}
     className={classNames(styles.btn, isOpen && styles.open)}
   >
-    <AiOutlineMenu size={24} />
+    <Icon type="common" name="burger" />
   </Button>
 );

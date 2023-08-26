@@ -9,6 +9,10 @@
 
   &.fixed {
     transform: translateY(-100%);
+
+    @media (width <= 1024px) {
+      transform: translateY(0);
+    }
   }
 }
 

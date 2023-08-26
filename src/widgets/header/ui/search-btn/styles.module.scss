@@ -7,7 +7,9 @@
   margin-right: 27px;
 
   @media (width <= 576px) {
-    margin-right: 13px;
+    width: 22px;
+    height: 22px;
+    margin-right: 19px;
   }
 
   svg {

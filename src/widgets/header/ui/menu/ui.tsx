@@ -30,7 +30,7 @@ export const Menu: React.FC<MenuProps> = ({ onClose, isOpen }) => {
           <li
             key={href}
             className={classNames(
-              styles.listItem,
+              styles.item,
               pathname === href && styles.active,
             )}
           >

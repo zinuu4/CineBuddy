@@ -179,4 +179,12 @@
   border-radius: var(--rounded-full);
   backdrop-filter: blur(7px);
   background-color: hsl(0deg 0% 100% / 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 50%;
+    height: 50%;
+  }
 }
