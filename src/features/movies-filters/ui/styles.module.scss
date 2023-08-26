@@ -1,74 +1,3 @@
-.root {
-  @media (width <= 768px) {
-    .drawersContainer {
-      position: fixed;
-      background-color: var(--color-overlay-dark);
-      z-index: var(--modal-z-index);
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-      padding: 24px 30px 30px;
-      opacity: 0;
-      visibility: hidden;
-      transition:
-        opacity var(--duration),
-        visibility var(--duration);
-    }
-
-    &.open {
-      .drawersContainer {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .filtersBtn {
-        display: none;
-      }
-
-      .closeBtn {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.triggerBtn {
-  display: none;
-
-  @media (width <= 768px) {
-    display: block;
-    align-self: flex-end;
-    transform: rotate(90deg);
-  }
-}
-
-.closeBtn {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 25px;
-  right: 25px;
-}
-
-.drawersContainer {
-  display: none;
-
-  @media (width <= 768px) {
-    display: block;
-  }
-}
-
 .options {
   display: flex;
   justify-content: space-between;
@@ -96,13 +25,4 @@
 
 .title {
   padding: 20px 0;
-}
-
-.resultsBtn {
-  width: 100%;
-  background-color: var(--color-second);
-  opacity: 1;
-  padding: 15px 0;
-  margin: 15px 0;
-  border-radius: var(--rounded-md);
 }

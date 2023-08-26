@@ -2,10 +2,10 @@
 
 import classNames from 'classnames';
 import React, { useRef, ReactNode } from 'react';
-import { FiX } from 'react-icons/fi';
 
 import { useClickOutside } from '@/shared/lib';
 
+import { Icon } from '..';
 import { Button } from '../btn-base';
 
 import styles from './styles.module.scss';
@@ -37,9 +37,7 @@ export const Drawer = (props: DrawerProps) => {
       >
         <div className={styles.wrapper} ref={drawerRef}>
           <Button onClick={() => onClose?.()} className={styles.closeBtn}>
-            <span className={styles.close}>
-              <FiX size={25} />
-            </span>
+            <Icon type="common" name="close" className={styles.close} />
           </Button>
           {children}
         </div>

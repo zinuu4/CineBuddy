@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';

@@ -1,0 +1,1 @@
+export { MovieDrawersTrigger } from './ui';

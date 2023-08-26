@@ -1,0 +1,9 @@
+.btn {
+  display: none;
+
+  @media (width <= 768px) {
+    display: block;
+    align-self: flex-end;
+    transform: rotate(90deg);
+  }
+}

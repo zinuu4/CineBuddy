@@ -14,12 +14,13 @@
   transition: transform var(--duration);
 }
 
-.closeBtn {
-  opacity: 0;
-  visibility: hidden;
+.close {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  fill: var(--color-white);
 }
 
 .drawer {
