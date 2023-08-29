@@ -39,6 +39,8 @@
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/overview)
 - [Firebase 10](https://firebase.google.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Stylelint](https://stylelint.io/)
