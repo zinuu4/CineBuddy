@@ -38,9 +38,5 @@ export async function generateMetadata({
 }
 
 export default function PersonPage({ params: { id } }: IProps) {
-  return (
-    <main className="pageContainer">
-      <Person id={id} />
-    </main>
-  );
+  return <Person id={id} />;
 }

@@ -40,8 +40,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Header />
-          {children}
-          <div id="modal" />
+          <main className="page-container">
+            {children}
+            <div id="modal" />
+          </main>
         </Providers>
       </body>
     </html>

@@ -38,9 +38,5 @@ export async function generateMetadata({
 }
 
 export default function MoviePage({ params: { id } }: IProps) {
-  return (
-    <main className="pageContainer">
-      <Movie id={id} />
-    </main>
-  );
+  return <Movie id={id} />;
 }
