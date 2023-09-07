@@ -3137,10 +3137,10 @@ eslint-module-utils@2.8.0, eslint-module-utils@^2.7.4, eslint-module-utils@^2.8.
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-boundaries@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-boundaries/-/eslint-plugin-boundaries-3.3.0.tgz#913272187c2f772ad0ed8702f2bcee44b8195971"
-  integrity sha512-fWr8RTOjp9e2F36kJCRPxXhH7ObgTVcqgQO1SaquN2bjLl83MgQ6z0zlJe2SEYHhO4i+GnDpJGb+CZbGKux9oA==
+eslint-plugin-boundaries@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-boundaries/-/eslint-plugin-boundaries-3.4.0.tgz#f026da6378013ff72ba40f1a687f9f80f78e3359"
+  integrity sha512-bKB/XMu+zx14DCVkxe2yzkKgAoJQn+J7p0kmZm53/JzADbOdK5irhXG1THs92iCpgmTKtoQPjrGg3PA2FUwq6A==
   dependencies:
     chalk "4.1.2"
     eslint-import-resolver-node "0.3.9"
