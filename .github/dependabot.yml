@@ -5,20 +5,19 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"  # Using npm for dependency management
-    directory: "/"
+  - package-ecosystem: 'npm' # Using npm for dependency management
+    directory: '/'
     open-pull-requests-limit: 10
     schedule:
-      interval: "weekly"
-    automerge: true
-    versioning-strategy: "increase"
-    target-branch: "main"
+      interval: 'weekly'
+    versioning-strategy: 'increase'
+    target-branch: 'main'
     commit-message:
-      prefix: "chore"  # Updated to "chore"
-      include: "scope"
+      prefix: 'chore' # Updated to "chore"
+      include: 'scope'
     labels:
-      - "dependencies"
-      - "automerge"
+      - 'dependencies'
+      - 'automerge'
     ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
