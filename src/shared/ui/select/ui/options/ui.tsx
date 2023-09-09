@@ -47,7 +47,7 @@ export const SelectOptions: React.FC<ISelectOptionsProps> = ({
         >
           {option.label}
           {(isSelected || (nothingSelected && option.value === '')) && (
-            <Icon type="common" name="check" className={styles.check} />
+            <Icon name="check" className={styles.check} />
           )}
         </div>
       );

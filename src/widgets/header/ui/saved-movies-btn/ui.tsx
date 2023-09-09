@@ -20,7 +20,7 @@ export const SavedMoviesBtn = () => {
       className={classNames('btn-reset', styles.btn, fill && styles.fill)}
     >
       <Link href={routes.saved}>
-        <Icon type="common" name="bookmark" />
+        <Icon name="bookmark" />
       </Link>
     </button>
   );

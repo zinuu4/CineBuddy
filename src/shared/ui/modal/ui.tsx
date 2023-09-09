@@ -34,10 +34,12 @@ export const Modal: React.FC<IModalProps> = ({
   wrapperClose = true,
   close = true,
 }) => {
-  if (isOpen) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
+  if (typeof window !== 'undefined') {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   const handleWrapperClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -71,7 +73,7 @@ export const Modal: React.FC<IModalProps> = ({
               onClick={onClose}
               className={classNames(styles.btn, closeClassName)}
             >
-              <Icon type="common" name="close" />
+              <Icon name="close" />
             </Button>
           )}
           <div className={classNames(styles.container, containerClassName)}>

@@ -19,6 +19,6 @@ export const TrailerBtn: React.FC<ITrailerBtnProps> = ({
     className={className}
     stylesType="bg"
   >
-    <Icon type="common" name="play" className={styles.icon} />
+    <Icon name="play" className={styles.icon} />
   </Button>
 );

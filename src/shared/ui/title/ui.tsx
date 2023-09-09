@@ -45,7 +45,7 @@ export const Title: React.FC<TitleProps> = ({
       {children}
       {chevron && (
         <span className={styles.iconWrapper}>
-          <Icon type="common" name="chevron" className={styles.icon} />
+          <Icon name="chevron" className={styles.icon} />
         </span>
       )}
     </Element>

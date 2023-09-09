@@ -22,7 +22,7 @@ export const ShareBtn: React.FC<IShareBtnProps> = ({ className, round }) => {
       className={classNames(className, round ? styles.round : '')}
       stylesType="bg"
     >
-      <Icon type="common" name="share" className={styles.icon} />
+      <Icon name="share" className={styles.icon} />
     </Button>
   );
 };

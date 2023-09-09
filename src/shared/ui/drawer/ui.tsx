@@ -37,7 +37,7 @@ export const Drawer = (props: DrawerProps) => {
       >
         <div className={styles.wrapper} ref={drawerRef}>
           <Button onClick={() => onClose?.()} className={styles.closeBtn}>
-            <Icon type="common" name="close" className={styles.close} />
+            <Icon name="close" className={styles.close} />
           </Button>
           {children}
         </div>

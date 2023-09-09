@@ -1,19 +1,16 @@
 'use client';
 
 import classNames from 'classnames';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-import { Button } from '@/shared/ui';
+import { Button, Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
 interface IBtnBackProps {
   className?: string;
 }
-
-// TODO: implement back icon via sprite
 
 export const BtnBack: React.FC<IBtnBackProps> = ({ className }) => {
   const router = useRouter();
@@ -27,7 +24,7 @@ export const BtnBack: React.FC<IBtnBackProps> = ({ className }) => {
       className={classNames(styles.btn, className)}
       onClick={handleGoBack}
     >
-      <Image src="/back.svg" alt="Come back" width={24} height={24} />
+      <Icon name="back" />
     </Button>
   );
 };

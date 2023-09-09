@@ -33,7 +33,7 @@ export const CategoryCard: React.FC<ISwiperItemProps> = ({ data }) => {
   return (
     <div onClick={() => onChooseCategory(name, value)} className={styles.item}>
       <Link className={styles.link} href={href}>
-        <Icon type="genres" name={iconName} className={styles.icon} />
+        <Icon name={iconName} className={styles.icon} />
         <span className={styles.title}>{title}</span>
       </Link>
     </div>

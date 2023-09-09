@@ -69,7 +69,6 @@ export const SaveBtn: React.FC<ISaveBtnProps> = ({
         stylesType="bg"
       >
         <Icon
-          type="common"
           name="bookmark"
           className={classNames(styles.icon, isSaved && styles.fill)}
         />

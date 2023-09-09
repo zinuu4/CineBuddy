@@ -10,6 +10,6 @@ interface ISearchButtonProps {
 
 export const SearchButton: React.FC<ISearchButtonProps> = ({ onClick }) => (
   <Button onClick={onClick} className={styles.openSearch}>
-    <Icon type="common" name="search" />
+    <Icon name="search" />
   </Button>
 );

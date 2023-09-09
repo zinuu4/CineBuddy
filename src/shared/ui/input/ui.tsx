@@ -54,7 +54,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
           type="button"
         >
-          <Icon type="common" name="close" />
+          <Icon name="close" />
         </button>
       </div>
     );

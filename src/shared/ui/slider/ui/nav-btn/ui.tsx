@@ -20,11 +20,7 @@ export const NavBtn = forwardRef<HTMLButtonElement, INavBtnProps>(
       {...props}
       ref={ref}
     >
-      <Icon
-        className={isNext ? styles.nextImg : ''}
-        type="common"
-        name="chevron"
-      />
+      <Icon className={isNext ? styles.nextImg : ''} name="chevron" />
     </button>
   ),
 );

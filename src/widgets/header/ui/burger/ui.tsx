@@ -15,6 +15,6 @@ export const Burger: React.FC<BurgerProps> = ({ isOpen, onOpen }) => (
     onClick={onOpen}
     className={classNames(styles.btn, isOpen && styles.open)}
   >
-    <Icon type="common" name="burger" />
+    <Icon name="burger" />
   </Button>
 );

@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const searchSlice = createSlice({
-  name: 'todos',
+  name: 'search',
   initialState,
   reducers: {
     setSearch(state, action: PayloadAction<string>) {

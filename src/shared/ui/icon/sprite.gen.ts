@@ -1,5 +1,6 @@
 export interface SpritesMap {
-  common:
+  sprite:
+    | 'back'
     | 'bookmark'
     | 'burger'
     | 'check'
@@ -15,8 +16,7 @@ export interface SpritesMap {
     | 'sort'
     | 'star'
     | 'volume-high'
-    | 'volume-slash';
-  genres:
+    | 'volume-slash'
     | 'cup'
     | 'fire'
     | 'happy'
@@ -26,12 +26,19 @@ export interface SpritesMap {
     | 'music'
     | 'people'
     | 'rocket'
-    | 'tank';
-  social: 'facebook' | 'gmail' | 'telegram' | 'viber' | 'vk' | 'whatsapp';
+    | 'tank'
+    | 'facebook'
+    | 'github'
+    | 'gmail'
+    | 'telegram'
+    | 'viber'
+    | 'vk'
+    | 'whatsapp';
 }
 
 export const SPRITES_META: { [K in keyof SpritesMap]: SpritesMap[K][] } = {
-  common: [
+  sprite: [
+    'back',
     'bookmark',
     'burger',
     'check',
@@ -48,8 +55,6 @@ export const SPRITES_META: { [K in keyof SpritesMap]: SpritesMap[K][] } = {
     'star',
     'volume-high',
     'volume-slash',
-  ],
-  genres: [
     'cup',
     'fire',
     'happy',
@@ -60,6 +65,12 @@ export const SPRITES_META: { [K in keyof SpritesMap]: SpritesMap[K][] } = {
     'people',
     'rocket',
     'tank',
+    'facebook',
+    'github',
+    'gmail',
+    'telegram',
+    'viber',
+    'vk',
+    'whatsapp',
   ],
-  social: ['facebook', 'gmail', 'telegram', 'viber', 'vk', 'whatsapp'],
 };

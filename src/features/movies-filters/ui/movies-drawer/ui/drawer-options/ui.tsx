@@ -40,7 +40,7 @@ export const DrawerOptions: React.FC<IDrawerModalProps> = ({
           >
             {option.label}
             {(isSelected || (nothingSelected && option.value === '')) && (
-              <Icon type="common" name="check" className={styles.check} />
+              <Icon name="check" className={styles.check} />
             )}
           </li>
         );

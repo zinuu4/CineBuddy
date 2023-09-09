@@ -1,5 +1,22 @@
+import svg from '@neodx/svg/webpack';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  webpack: (config, { isServer }) => {
+    // We don't want to run generator twice
+    if (!isServer) {
+      config.plugins.push(
+        svg({
+          root: 'src/shared/ui/icon/assets',
+          output: 'public',
+          definitions: 'src/shared/ui/icon/sprite.gen.ts',
+          resetColors: false,
+        }),
+      );
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
@@ -38,4 +55,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
