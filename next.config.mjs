@@ -10,7 +10,7 @@ const nextConfig = {
         svg({
           root: 'src/shared/ui/icon/assets',
           output: 'public',
-          definitions: 'src/shared/ui/icon/sprite.gen.ts',
+          metadata: 'src/shared/ui/icon/sprite.gen.ts',
           resetColors: false,
         }),
       );

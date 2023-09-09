@@ -1,8 +1,8 @@
-import { SpritesMap } from '@/shared/ui/icon/sprite.h';
+import { SpritesMap } from '@/shared/ui/icon/sprite.gen';
 
 export interface ICategoryCard {
   title: string;
-  iconName: SpritesMap['genres'];
+  iconName: SpritesMap['sprite'];
   href: string;
   name: string;
   value: string;
