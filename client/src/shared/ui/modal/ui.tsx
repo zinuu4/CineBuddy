@@ -4,9 +4,7 @@ import classNames from 'classnames';
 import React, { ReactNode } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import { Button } from '../btn-base';
-import { Icon } from '../icon';
-import { Portal } from '../portal';
+import { Button, Icon, Portal } from '@/shared/ui';
 import { useEscape } from './lib';
 
 import styles from './styles.module.scss';

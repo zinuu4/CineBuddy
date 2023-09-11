@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title } from '../title';
+import { Title } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

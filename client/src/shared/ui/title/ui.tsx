@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
 
-import { Icon } from '../icon';
+import { Icon } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 

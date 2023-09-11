@@ -5,8 +5,7 @@ import React, { useRef, ReactNode } from 'react';
 
 import { useClickOutside } from '@/shared/lib';
 
-import { Icon } from '..';
-import { Button } from '../btn-base';
+import { Icon, Button } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
