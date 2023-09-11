@@ -1,0 +1,1 @@
+export { ProfileMoviesList } from './ui';

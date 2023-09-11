@@ -1,0 +1,14 @@
+.profile {
+  display: grid;
+  grid-template-areas:
+    "photo title"
+    "photo info";
+  grid-template-columns: auto 1fr;
+
+  @media (width <= 576px) {
+    grid-template-areas:
+      "photo title"
+      "photo title"
+      "info info";
+  }
+}

@@ -1,0 +1,11 @@
+.section {
+  margin: 15px 0 20px;
+
+  @media (width <= 576px) {
+    margin: 0 0 10px;
+  }
+}
+
+.slider {
+  z-index: 1;
+}

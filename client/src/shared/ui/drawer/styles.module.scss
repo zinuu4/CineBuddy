@@ -1,0 +1,51 @@
+.wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--color-gray-300);
+  border-top-left-radius: var(--rounded-lg);
+  border-top-right-radius: var(--rounded-lg);
+  transform: translateY(150vh);
+  transition: transform var(--duration);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  fill: var(--color-white);
+}
+
+.drawer {
+  position: fixed;
+  z-index: var(--drawer-z-index);
+  inset: 0;
+  margin: 0 auto;
+  background-color: var(--color-overlay);
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    &,
+    .closeBtn {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .wrapper {
+      transform: translateY(0);
+    }
+  }
+
+  overflow: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}

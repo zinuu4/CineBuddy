@@ -1,0 +1,43 @@
+.content {
+  width: 100%;
+}
+
+.options {
+  max-height: 60vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.option {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 20px;
+
+  &.selected {
+    background-color: var(--color-gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    font-weight: 400;
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-gray-200);
+}
+
+.title {
+  text-align: left;
+  padding: 15px;
+}
+
+.check {
+  width: 27px;
+  height: 27px;
+  fill: var(--color-white);
+}

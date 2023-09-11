@@ -1,0 +1,41 @@
+.containerProfile {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+
+  @media (width <= 1199px) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+.container {
+  padding-left: 72px;
+  padding-right: 72px;
+
+  @media (width <= 1200px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (width <= 1024px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (width <= 576px) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  @media (width <= 576px) {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+.back {
+  @media (width <= 576px) {
+    top: -10px;
+  }
+}

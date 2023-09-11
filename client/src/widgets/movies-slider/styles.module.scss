@@ -1,0 +1,27 @@
+.swiper {
+  overflow: visible !important;
+}
+
+.swiperSlide {
+  width: 17% !important;
+
+  @media (width <= 1400px) {
+    width: 18% !important;
+  }
+
+  @media (width <= 1300px) {
+    width: 250px !important;
+  }
+
+  @media (width <= 1024px) {
+    width: 25% !important;
+  }
+
+  @media (width <= 768px) {
+    width: 30% !important;
+  }
+
+  @media (width <= 576px) {
+    width: 38% !important;
+  }
+}

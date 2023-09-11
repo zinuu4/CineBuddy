@@ -1,0 +1,39 @@
+.label {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+}
+
+.sort {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.chevron {
+  display: block;
+  width: 14px;
+  height: 14px;
+  fill: hsl(0deg 0% 100% / 85%);
+}
+
+.arrow {
+  transform: rotate(-90deg);
+  display: flex;
+  align-items: center;
+  transition: transform var(--duration);
+  opacity: .6;
+  margin-left: 14px;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
+
+.value {
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 400;
+}

@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+
+  @media (width >= 577px) {
+    display: none;
+  }
+}
+
+.btn {
+  border-radius: var(--rounded-full);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85px;
+  width: 85px;
+}
+
+.item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.label {
+  font-size: 11px;
+  line-height: 18px;
+  color: var(--color-white);
+  margin-top: 7px;
+}

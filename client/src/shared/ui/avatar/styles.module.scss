@@ -1,0 +1,26 @@
+.photoWrapper {
+  position: relative;
+  display: block;
+  border-radius: var(--rounded-full);
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  grid-area: photo;
+  background-color: hsl(0deg 0% 100% / 8%);
+
+  @media (width <= 576px) {
+    width: 113px;
+    height: 113px;
+  }
+}
+
+.photo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  color: transparent;
+  max-width: 100%;
+  object-fit: cover;
+}

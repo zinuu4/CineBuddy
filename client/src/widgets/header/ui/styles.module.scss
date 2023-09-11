@@ -1,0 +1,25 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--header-z-index);
+  background-color: var(--color-main);
+  transition: transform var(--duration);
+
+  &.fixed {
+    transform: translateY(-100%);
+
+    @media (width <= 1024px) {
+      transform: translateY(0);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  width: 100%;
+}

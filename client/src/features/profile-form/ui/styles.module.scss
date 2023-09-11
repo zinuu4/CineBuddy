@@ -1,0 +1,23 @@
+.container {
+  max-width: 90%;
+  margin: 30px auto 0;
+
+  @media (width <= 768px) {
+    max-width: 100%;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.input {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray, #d2d2d7);
+  background: var(--white, #fff);
+  width: 100%;
+}

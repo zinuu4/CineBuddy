@@ -1,0 +1,16 @@
+.list {
+  display: grid;
+  row-gap: 17px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (width <= 576px) {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

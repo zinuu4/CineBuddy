@@ -1,0 +1,14 @@
+.select {
+  position: relative;
+  border-radius: var(--rounded-sm);
+  background-color: var(--color-gray-300);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: var(--select-z-index);
+
+  &:hover {
+    background-color: var(--color-gray-200);
+  }
+
+}

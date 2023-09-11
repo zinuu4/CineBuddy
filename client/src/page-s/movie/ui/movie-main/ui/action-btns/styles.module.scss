@@ -1,0 +1,47 @@
+.btns {
+  display: flex;
+  align-items: center;
+
+  @media (width <= 576px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.btn {
+  @media (width <= 576px) {
+    width: 100%;
+  }
+
+  &:not(:first-child) {
+    margin-left: 12px;
+
+    @media (width <= 576px) {
+      display: none;
+    }
+  }
+}
+
+.btnWatch {
+  background: linear-gradient(85.23deg, #b22222, #c51919);
+}
+
+.btnWatchText {
+  z-index: 2;
+}
+
+.btnWatch::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  transition: background-color var(--duration);
+}
+
+.btnWatch:hover::before {
+  background: #d01414;
+
+  @media (width <= 576px) {
+    background: linear-gradient(85.23deg, #b22222, #c51919);
+  }
+}

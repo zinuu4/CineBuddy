@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  min-width: 42px;
+  min-height: 42px;
+  background-color: hsl(0deg 0% 100% / 20%);
+  backdrop-filter: blur(5px);
+  border-radius: var(--rounded-full);
+
+  @media (width <= 992px) {
+    bottom: 25px;
+    right: 25px;
+  }
+
+  @media (width <= 768px) {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @media (width <= 768px) {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @media (width <= 576px) {
+    scale: 0.9;
+  }
+}

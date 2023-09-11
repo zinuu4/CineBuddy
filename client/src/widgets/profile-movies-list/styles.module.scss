@@ -1,0 +1,38 @@
+.container {
+  height: calc(100vh - 250px);
+  max-width: 90%;
+  margin: 45px auto 0;
+
+  @media (width <= 768px) {
+    max-width: 100%;
+  }
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper {
+  padding: 6px 4px;
+}
+
+.swiperSlide {
+  width: 20% !important;
+
+  @media (width <= 1400px) {
+    width: 23% !important;
+  }
+
+  @media (width <= 1300px) {
+    width: 29% !important;
+  }
+
+  @media (width <= 1024px) {
+    width: 36% !important;
+  }
+
+  @media (width <= 768px) {
+    width: 33% !important;
+  }
+}
