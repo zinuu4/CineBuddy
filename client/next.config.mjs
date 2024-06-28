@@ -47,6 +47,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'firebasestorage.googleapis.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.openmoviedb.com',
+      },
     ],
   },
   env: {
